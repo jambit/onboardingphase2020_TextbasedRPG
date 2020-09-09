@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class GameState {
 
-   private int healtState;
+   private int healthState;
    private String gamerName;
    private ArrayList<Item> itemList;
 
@@ -16,12 +16,12 @@ public class GameState {
 
    }
 
-   public int getHealtState() {
-      return healtState;
+   public int getHealthState() {
+      return healthState;
    }
 
-   public void setHealtState(int healtState) {
-      this.healtState = healtState;
+   public void setHealthState(int healthState) {
+      this.healthState = healthState;
    }
 
    public String getGamerName() {

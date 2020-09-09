@@ -1,6 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
-public class AbstractRoom {
+public abstract class AbstractRoom {
 
    public void printWelcomeMessage() {
       System.out.println("Du stehst vor Raum XY. Hier kannst du dies und das machen. Möchtest du eintreten?");
