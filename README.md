@@ -1,3 +1,6 @@
 # onboardingphase2020_TextbasedRPG
 Level bases randomized text based RPG with challenges, monsters and fighting :)
-S73FAIV
+
+Steffi
+Cherry
+Stefan
