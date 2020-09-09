@@ -1,5 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.domain;
 
-public class AbstractRoom {
+public class Item {
+
+   //implement item here...
 
 }
