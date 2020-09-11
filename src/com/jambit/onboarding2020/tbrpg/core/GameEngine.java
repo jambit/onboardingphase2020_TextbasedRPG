@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
+import com.jambit.onboarding2020.tbrpg.domain.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,8 +11,11 @@ public class GameEngine {
 
    private ArrayList<AbstractRoom> rooms;
 
-   public GameEngine(ArrayList<AbstractRoom> rooms){
+   private Player player;
+
+   public GameEngine(ArrayList<AbstractRoom> rooms, Player player){
       this.rooms = rooms;
+      this.player = player;
    }
 
    public void run() throws IOException {
@@ -26,7 +30,7 @@ public class GameEngine {
             //Ask user for interaction
             line = in.readLine();
             if(line.equalsIgnoreCase("enter")){
-               room.enter();
+               room.enter(this.player);
                //Remove room from list after entered
             }
             else if(line.equalsIgnoreCase("skip")){
