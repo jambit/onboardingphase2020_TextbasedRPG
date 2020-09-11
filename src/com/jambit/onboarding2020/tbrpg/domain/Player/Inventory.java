@@ -34,4 +34,10 @@ public class Inventory {
         this.inventory.remove(item);
     }
 
+    public void printInventory(){
+        for (Item item: inventory) {
+            System.out.print(item.getName() + " : ");
+        }
+    }
+
 }

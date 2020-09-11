@@ -1,6 +1,10 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
+import com.jambit.onboarding2020.tbrpg.domain.Item.*;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Tradeable;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
+import com.jambit.onboarding2020.tbrpg.domain.Room.Merchant;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -9,10 +13,18 @@ public class Test_Room {
 
     public static void main(String[] args) {
 
-        Random r = new Random();
-        int low = 10;
-        int high = 100;
-        System.out.println(r.nextInt(high-low) +low );
+        ItemGenerator itemGenerator = new ItemGenerator();
+        Player player = new Player();
+        Merchant merchant = new Merchant(itemGenerator, player);
+
+        player.putInInventory(itemGenerator.newJunk());
+        System.out.print("Spielerinventar:");
+        player.printInventory();
+        System.out.println("");
+        System.out.println(player.getBalance());
+
+        System.out.print("Händlerinventar: ");
+        merchant.printInventory();
 
     }
 }
