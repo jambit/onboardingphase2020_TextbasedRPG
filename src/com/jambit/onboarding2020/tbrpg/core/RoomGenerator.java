@@ -2,6 +2,7 @@ package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.ExampleRoom;
+import com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom;
 
 import java.util.ArrayList;
 import java.util.Random;
