@@ -1,5 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.domain;
 
+import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
+
 import java.util.ArrayList;
 
 /**
