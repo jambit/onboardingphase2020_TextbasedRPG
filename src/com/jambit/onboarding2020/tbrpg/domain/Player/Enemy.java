@@ -1,4 +1,4 @@
-package com.jambit.onboarding2020.tbrpg.domain;
+package com.jambit.onboarding2020.tbrpg.domain.Player;
 
 public class Enemy extends Person {
 

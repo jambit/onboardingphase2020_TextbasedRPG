@@ -2,6 +2,7 @@ package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.ExampleRoom;
+import com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class RoomGenerator {
 
     //Konstruktor
     public RoomGenerator() {
-        possibleRooms.add(new ExampleRoom());
+        possibleRooms.add(new MerchantRoom());
     }
 
     //Methoden
