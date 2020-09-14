@@ -2,7 +2,10 @@ package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.ExampleRoom;
+<<<<<<< HEAD
 import com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom;
+=======
+>>>>>>> 990c8c582886d1b35902cd98b906fdb8f3f32bbf
 import com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom;
 
 import java.util.ArrayList;
@@ -41,10 +44,17 @@ public class RoomGenerator {
         return rooms;
     }
 
+<<<<<<< HEAD
     //returns a number between minCount and minCount+3
     // with different probabilities
     private int roomCount(int minCount) {
         return random.nextInt(3) + minCount;
     }
+=======
+      rooms.add(new MobRoom());
+      //add more rooms to your list here and randomize
+      return rooms;
+   }
+>>>>>>> 990c8c582886d1b35902cd98b906fdb8f3f32bbf
 
 }
