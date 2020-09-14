@@ -1,63 +1,37 @@
 package com.jambit.onboarding2020.tbrpg.domain.Player;
 
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
-import com.jambit.onboarding2020.tbrpg.domain.Room.Merchant;
+import java.util.ArrayList;
 
-import javax.naming.InsufficientResourcesException;
+public class Player extends Person {
 
-public class Player implements Tradeable {
-
-    private int balance;
-    private int atkDamage;
-    private Inventory inventory;
+    private int balance = 100;
+    private final ArrayList<Item> inventory;
 
     public Player() {
-        this.balance = 100;
-        this.atkDamage = 10;
-        this.inventory = new Inventory();
+        inventory = new ArrayList<>();
     }
 
     public int getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
-
-    public int getAtkDamage() {
-        return atkDamage;
-    }
-
-    public void setAtkDamage(int atkDamage) {
-        this.atkDamage = atkDamage;
-    }
-
-    public Inventory getInventory() {
-        return inventory;
-    }
-
-    @Override
     public void sell(Item item) {
-        this.inventory.pullFromInventory(item);
-        this.setBalance(this.getBalance() + item.getSellValue());
+        this.inventory.remove(item);
+        this.balance += item.getSellValue();
     }
 
-    public void buy(Item item, Merchant merchant) {
-        try {
-            merchant.sell(item, this);
-        } catch (InsufficientResourcesException e) {
-            System.out.println("Du hast nicht genug Geld, um dir das zu leisten");
-        }
-    }
-
-    @Override
-    public void putInInventory(Item item) {
-        inventory.putInInventory(item);
+    public void buy(ArrayList merchantInventory, Item item) {
+        // if balance nicht ausreichend oder inventory voll, dann exception werfen
+        this.inventory.add(item);
+        merchantInventory.remove(item);
+        this.balance -= item.getSellValue();
     }
 
     public void printInventory() {
-        this.inventory.printInventory();
+        System.out.println("Your Inventory is");
+        for (Item i : inventory) {
+            System.out.println(i);
+        }
     }
-
 }
