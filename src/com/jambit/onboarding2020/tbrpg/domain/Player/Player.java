@@ -5,7 +5,7 @@ import com.jambit.onboarding2020.tbrpg.domain.Room.Merchant;
 
 import javax.naming.InsufficientResourcesException;
 
-public class Player implements Tradeable{
+public class Player implements Tradeable {
 
     private int balance;
     private int atkDamage;
@@ -38,15 +38,15 @@ public class Player implements Tradeable{
     }
 
     @Override
-    public void sell(Item item){
-            this.inventory.pullFromInventory(item);
-            this.setBalance(this.getBalance()+item.getSellValue());
+    public void sell(Item item) {
+        this.inventory.pullFromInventory(item);
+        this.setBalance(this.getBalance() + item.getSellValue());
     }
 
-    public void buy(Item item, Merchant merchant){
-        try{
+    public void buy(Item item, Merchant merchant) {
+        try {
             merchant.sell(item, this);
-        }catch(InsufficientResourcesException e){
+        } catch (InsufficientResourcesException e) {
             System.out.println("Du hast nicht genug Geld, um dir das zu leisten");
         }
     }

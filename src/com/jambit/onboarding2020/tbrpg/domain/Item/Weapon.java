@@ -1,6 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.domain.Item;
 
-public class Weapon extends Item{
+public class Weapon extends Item {
 
     //Attributes
     private int atkDamage;

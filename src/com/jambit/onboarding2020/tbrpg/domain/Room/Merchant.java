@@ -5,13 +5,14 @@ import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Inventory;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Tradeable;
+
 import javax.naming.InsufficientResourcesException;
 
 public class Merchant extends AbstractRoom {
 
     private Inventory inventory;
 
-    public Merchant(ItemGenerator itemGenerator, Tradeable player){
+    public Merchant(ItemGenerator itemGenerator, Tradeable player) {
         this.inventory = new Inventory();
         this.inventory.putInInventory(itemGenerator.newJunk());
         this.inventory.putInInventory(itemGenerator.newJunk());
@@ -30,8 +31,8 @@ public class Merchant extends AbstractRoom {
         if (player.getBalance() < item.getSellValue()) {
             this.inventory.pullFromInventory(item);
             player.putInInventory(item);
-            player.setBalance(player.getBalance()-item.getSellValue());
-        }else{
+            player.setBalance(player.getBalance() - item.getSellValue());
+        } else {
             throw new InsufficientResourcesException();
         }
     }

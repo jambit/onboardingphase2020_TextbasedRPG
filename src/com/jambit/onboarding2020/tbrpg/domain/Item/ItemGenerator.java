@@ -14,44 +14,43 @@ public class ItemGenerator {
     ArrayList<String> weaponNames = new ArrayList<>();
     ArrayList<String> weaponLore = new ArrayList<>();
 
-    public ItemGenerator(){
+    public ItemGenerator() {
         this.initializeJunkNames();
         this.initializeJunkLore();
         this.initializeWeaponNames();
         this.initializeWeaponLore();
     }
 
-    public Item newJunk(){
+    public Item newJunk() {
         return new Item(20,
                 junkNames.get(random.nextInt(junkNames.size())),
                 junkLore.get(random.nextInt(junkLore.size())));
     }
 
-    public Weapon newWeapon(int currentAtk){
+    public Weapon newWeapon(int currentAtk) {
         int nameindex = random.nextInt(weaponNames.size());
-        int atkDamage = currentAtk-5+ random.nextInt(20);
-        return new Weapon(atkDamage, weaponNames.get(nameindex), weaponLore.get(nameindex),atkDamage);
+        int atkDamage = currentAtk - 5 + random.nextInt(20);
+        return new Weapon(atkDamage, weaponNames.get(nameindex), weaponLore.get(nameindex), atkDamage);
     }
 
-    public Item newConsumable(Consumable consumable){
-        if(consumable.equals(HEALTH)){
+    public Item newConsumable(Consumable consumable) {
+        if (consumable.equals(HEALTH)) {
             return newHealthPotion();
-        }
-        else if( consumable.equals(ESCAPE)) {
+        } else if (consumable.equals(ESCAPE)) {
             return newEscapeRope();
         }
         return null;
     }
 
-    private Item newHealthPotion(){
+    private Item newHealthPotion() {
         return new Item(5, "Heiltrank", "Heilt dich ein bisschen :)");
     }
 
-    private Item newEscapeRope(){
+    private Item newEscapeRope() {
         return new Item(10, "Fluchttrick", "Bruder muss los!");
     }
 
-    private void initializeJunkNames(){
+    private void initializeJunkNames() {
         junkNames.add("Rubin");
         junkNames.add("Smaragd");
         junkNames.add("Diamant");
@@ -60,7 +59,7 @@ public class ItemGenerator {
         junkNames.add("Medallion");
     }
 
-    private void initializeJunkLore(){
+    private void initializeJunkLore() {
         this.junkLore.add("Wie das glitzert...");
         this.junkLore.add("Das sieht wertvoll aus.");
         this.junkLore.add("Ich hoffe das ist wertvoller als es aussieht.");
@@ -69,7 +68,7 @@ public class ItemGenerator {
         this.junkLore.add("#Insert junk-lore here");
     }
 
-    private void initializeWeaponNames(){
+    private void initializeWeaponNames() {
         this.weaponNames.add("Schwert");
         this.weaponNames.add("Dolch");
         this.weaponNames.add("Messer");

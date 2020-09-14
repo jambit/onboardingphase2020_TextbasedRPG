@@ -2,13 +2,14 @@ package com.jambit.onboarding2020.tbrpg.domain.Item;
 
 public class Item {
 
-   //Attribute
+    //Attribute
     private int sellValue;
     private String name;
     private String lore;
 
     //Konstruktor
-    public Item() {}
+    public Item() {
+    }
 
     public Item(int sellValue, String name, String lore) {
         this.sellValue = sellValue;
