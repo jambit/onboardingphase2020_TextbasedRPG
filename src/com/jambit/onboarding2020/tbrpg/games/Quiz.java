@@ -38,10 +38,7 @@ public class Quiz implements Playable{
     @Override
     public void play() {
 
-
             }
-
-
 
     }
 
