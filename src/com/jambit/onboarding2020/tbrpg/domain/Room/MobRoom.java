@@ -6,6 +6,7 @@ import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Random;
 
 public class MobRoom extends AbstractRoom {
 
@@ -20,22 +21,46 @@ public class MobRoom extends AbstractRoom {
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";
       Enemy enemy = new Enemy(); // Name übergeben von Enemy
+      Random random = new Random();
+
+      System.out.println("Attack Damage Player: " + player.getHealthState());
+      System.out.println("Attack Damage Enemy: " + enemy.getHealthState());
 
       while (line.equalsIgnoreCase("quit") == false) {
          System.out.println("Du bist gefangen und kommst nur raus, wenn du den Gegner tötest, oder 'quit' drückst");
-         //Implement your custom room logic here
+         System.out.println("Drücke 1) um anzugreifen oder 2) um zu verteidigen.");
 
-         // Angriff - Sinn dahinter
+         if (line.equals("1")) {
+            if (random.nextBoolean()) {
+               player.attack(enemy);
+               System.out.println("Treffer!");
+            } else {
+               System.out.println("Der Gegner hat den Angriff abgewehrt");
+            }
+         }
+
+         if (random.nextBoolean() && !line.equals("enter")) {
+            if (line.equals("2")) {
+               System.out.println("Du hast den Angriff des Gegner abgewehrt!");
+            } else if(line.equals("1")) {
+               enemy.attack(player);
+               System.out.println("Du wurdest getroffen!");
+            }
+         }
+
          System.out.println("Attack Damage Player: " + player.getHealthState());
          System.out.println("Attack Damage Enemy: " + enemy.getHealthState());
-         player.attack(enemy);
-         enemy.attack(player);
-         System.out.println("Attack Damage Player: " + player.getHealthState());
-         System.out.println("Attack Damage Enemy: " + enemy.getHealthState());
 
-         // Wenn Gegner HP 0 oder eigene HP 0 dann Spiel beendet
-         // --
-         //
+         if (player.getHealthState() == 0) {
+            System.out.println("Du hast leider verloren!");
+            return;
+         }
+
+         if (enemy.getHealthState() == 0) {
+            System.out.println("Sieg! Du kommst nun in den Merchant Room und kannst dir was aussuchen!");
+            return;
+         }
+
          try {
             line = in.readLine();
          } catch (IOException e) {
