@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.domain.Player;
 
+import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import java.util.ArrayList;
 
@@ -10,6 +11,7 @@ public class Player extends Person {
 
     public Player() {
         inventory = new ArrayList<>();
+        attackDamage = GameConstants.PLAYER_ATTACK_DAMAGE;
     }
 
     public int getBalance() {
@@ -30,8 +32,8 @@ public class Player extends Person {
 
     public void printInventory() {
         System.out.println("Your Inventory is");
-        for (Item i : inventory) {
-            System.out.println(i);
+        for (int j = 0; j < inventory.size(); j++) {
+            System.out.println(j + ") " + inventory.get(j).getName());
         }
     }
 }

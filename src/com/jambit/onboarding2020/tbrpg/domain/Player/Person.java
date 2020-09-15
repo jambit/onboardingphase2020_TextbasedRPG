@@ -8,6 +8,13 @@ public abstract class Person {
 
     public void attack (Person damagedPerson) {
         damagedPerson.healthState -= this.attackDamage;
+        if (damagedPerson.healthState < 0) {
+           damagedPerson.healthState = 0;
+        }
+    }
+
+    public void defend () {
+
     }
 
     public int getHealthState() {
