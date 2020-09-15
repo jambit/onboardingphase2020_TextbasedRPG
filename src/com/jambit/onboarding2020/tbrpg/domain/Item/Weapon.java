@@ -31,8 +31,8 @@ public class Weapon extends Item {
 
     @Override
     public String toString() {
-        return this.getName() + ", "+
-                "Preis = " + this.getSellValue() + ", " +
+        return this.getName() + ", \t"+
+                "Preis = " + this.getSellValue() + ", \t" +
                 "Atk = " + this.getAtkDamage();
     }
 

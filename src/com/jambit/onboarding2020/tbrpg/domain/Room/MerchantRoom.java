@@ -23,24 +23,18 @@ public class MerchantRoom extends AbstractRoom {
     }
 
     @Override
-    public void printWelcomeMessage() {
-        System.out.println("Du siest das Schild \" Tante Emmas\" willst du eintreten");
-    }
-
-    public void initializeInventory(Player player) {
-        inventory.add(itemGenerator.newJunk());
-        inventory.add(itemGenerator.newJunk());
-        inventory.add(itemGenerator.newConsumable("health"));
-        inventory.add(itemGenerator.newConsumable("escape"));
-        inventory.add(itemGenerator.newWeapon(player.getAttackDamage()));
-        inventory.add(itemGenerator.newWeapon(player.getAttackDamage()));
-    }
-
-    @Override
     public void enter(Player player) {
 
         String line = "";
-        this.printWelcomeMessage();
+        System.out.println("Willkommen in Tante Emmas Waffenladen");
+        System.out.println("                             _        ,\n" +
+                "                            (_\\______/________\n" +
+                "                               \\-|-|/|-|-|-|-|/\n" +
+                "                                \\==/-|-|-|-|-/\n" +
+                "                                 \\/|-|-|-|,-'\n" +
+                "                                  \\--|-'''\n" +
+                "                                   \\_j________\n" +
+                "                                   (_)     (_)");
         this.initializeInventory(player);
 
         while (line.equalsIgnoreCase("quit") == false) {
@@ -69,6 +63,20 @@ public class MerchantRoom extends AbstractRoom {
 
     }
 
+    @Override
+    public void printWelcomeMessage() {
+        System.out.println("Du siest das Schild \" Tante Emmas\" willst du eintreten");
+    }
+
+    public void initializeInventory(Player player) {
+        inventory.add(itemGenerator.newJunk());
+        inventory.add(itemGenerator.newJunk());
+        inventory.add(itemGenerator.newConsumable("health"));
+        inventory.add(itemGenerator.newConsumable("escape"));
+        inventory.add(itemGenerator.newWeapon(player.getAttackDamage()));
+        inventory.add(itemGenerator.newWeapon(player.getAttackDamage()));
+    }
+
     //includes the complete handling for the buy-action
     private void sellToMerchant(Player player) {
 
@@ -93,6 +101,7 @@ public class MerchantRoom extends AbstractRoom {
         exitcode = 0;
 
         while (exitcode != 99) {
+            System.out.println("Du hast " + player.getBalance() + " an Geld zur verfügung");
             this.printInventory();
             System.out.println("Was möchtest du kaufen? \nWähle die Nummer des Items:");
             index = this.takeIntFromCLI();
@@ -112,11 +121,16 @@ public class MerchantRoom extends AbstractRoom {
 
     //Prints the current Inventory of the Merchant
     public void printInventory() {
-        System.out.println("Der Händler hat folgendes Angebot:");
-        int counter = 1;
-        for (Item item : inventory) {
-            System.out.println(counter + ":\t" + item.toString());
-            counter++;
+
+        if(this.inventory.size() == 0){
+            System.out.println("--AUSVERKAUFT--");
+        }else {
+            System.out.println("Der Händler hat folgendes Angebot:");
+            int counter = 1;
+            for (Item item : inventory) {
+                System.out.println(counter + ":\t" + item.toString());
+                counter++;
+            }
         }
     }
 

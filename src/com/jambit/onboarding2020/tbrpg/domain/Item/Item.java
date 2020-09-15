@@ -45,7 +45,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return this.getName() + ", " +
+        return this.getName() + ", \t" +
                 "Preis = " + this.getSellValue();
     }
 }

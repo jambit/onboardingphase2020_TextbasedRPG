@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class Player extends Person {
 
-    private int balance = 100;
     private final ArrayList<Item> inventory;
+    private int balance = 100;
 
     public Player() {
         inventory = new ArrayList<>();
@@ -32,11 +32,15 @@ public class Player extends Person {
     }
 
     public void printInventory() {
-        int counter = 1;
-        System.out.println("Your Inventory is");
-        for (Item i : inventory) {
-            System.out.println(counter + ": " + i);
-            counter++;
+        if (this.inventory.size() == 0) {
+            System.out.println("--LEER--");
+        } else {
+            System.out.println("Dein Inventar:");
+            int counter = 1;
+            for (Item i : inventory) {
+                System.out.println(counter + ": " + i);
+                counter++;
+            }
         }
     }
 
