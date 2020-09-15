@@ -34,54 +34,45 @@ public class TicTacToe {
             return false; //NPC starts
     }
 
-    private boolean PCtip(String place, int [][] board) { //PC is 5 NPC is 2
+    private void PCtip(String place, int [][] board) { //PC is 5 NPC is 2
+
         if (place.equals("links oben") && board[0][0] == 0) {
             board[0][0] = 5;
-            return true;
         }
 
         else if (place.equals("links unten") && board[2][0] == 0) {
             board[2][0] = 5;
-            return true;
         }
 
         else if (place.equals("links mitte") && board[1][0] == 0) {
             board[1][0] = 5;
-            return true;
         }
 
         else if (place.equals("rechts oben") && board[0][2] == 0) {
             board[0][2] = 5;
-            return true;
         }
 
         else if (place.equals("rechts unten") && board[2][2] == 0) {
             board[2][2] = 5;
-            return true;
         }
 
         else if (place.equals("rechts mitte") && board[1][2] == 0) {
             board[1][2] = 5;
-            return true;
         }
 
         else if (place.equals("mitte") && board[1][1] == 0) {
             board[1][1] = 5;
-            return true;
         }
 
         else if (place.equals("oben mitte") && board[0][1] == 0) {
             board[0][1] = 5;
-            return true;
         }
 
         else if (place.equals("unten mitte") && board[2][1] == 0) {
             board[2][1] = 5;
-            return true;
         }
         else {
             Exception(board);
-            return false;
         }
     }
 
@@ -305,7 +296,7 @@ public class TicTacToe {
 
             System.out.println("Falsche Eingabe! Bitte einfach, mittel oder schwer eintippen");
             Scanner scanDificulty2 = new Scanner(System.in);
-            String diff2 = scanDificulty.nextLine();
+            String diff2 = scanDificulty2.nextLine();
 
             if (diff2.equals("einfach") || diff2.equals("mittel") || diff2.equals("schwer")) {
                 return diff2;
