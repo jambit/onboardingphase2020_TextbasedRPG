@@ -251,7 +251,7 @@ public class TicTacToe {
 
     public void play() {
 
-        System.out.println("Welche Schwierigkeit? Tippe einfach, mittel schwer");
+        System.out.println("Welche Schwierigkeit? Tippe einfach, mittel oder schwer");
         Scanner scanDificulty = new Scanner(System.in);
         String dificulty = scanDificulty.nextLine();
 
@@ -263,13 +263,16 @@ public class TicTacToe {
 
         if (whoBegins == true) {
 
-            System.out.println("Wo setzt du dein Kreuz? Tippe links oben, links unten, links mitte, mitte, etc.");
-
+            System.out.println("Du darfst anfangen, wo setzt du dein Kreuz? Tippe links oben, links unten, links mitte, mitte, etc.");
 
             Scanner scaner2 = new Scanner(System.in);
             String place = scaner2.nextLine(); //player tips in first position
+
             PCtip(place, board);
-            printBoard(board);
+//            printBoard(board);
+        }
+        else {
+            System.out.println("Dein Gegner darf anfangen");
         }
 
         while (counter < 9) { //PC start
@@ -283,16 +286,19 @@ public class TicTacToe {
             String place = scan.nextLine(); //player tips in first position
 
             PCtip(place, board);
-            printBoard(board);
+//            printBoard(board);
 
             if (win(board) == -1) { //check if somebody won
+                printBoard(board);
                 System.out.println("Du hast verloren");
                 break;
             }
             else if (win(board) == 1) {
+                printBoard(board);
                 System.out.println("Glückwunsch, du hast gewonnen!");
                 break;
             }
+
 
 
 

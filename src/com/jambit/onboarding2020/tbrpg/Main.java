@@ -11,16 +11,18 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        System.out.println("Welcome to our game :)");
+//        System.out.println("Welcome to our game :)");
 
-        RoomGenerator roomGenerator = new RoomGenerator();
-        ArrayList<AbstractRoom> rooms = roomGenerator.generateRooms();
-
-        GameEngine gameEngine = new GameEngine(rooms);
-        gameEngine.run();
+//        RoomGenerator roomGenerator = new RoomGenerator();
+//        ArrayList<AbstractRoom> rooms = roomGenerator.generateRooms();
+//
+//        GameEngine gameEngine = new GameEngine(rooms);
+//        gameEngine.run();
 
         TicTacToe ticTacToe = new TicTacToe();
         ticTacToe.play();
+
+
 
     }
 }
