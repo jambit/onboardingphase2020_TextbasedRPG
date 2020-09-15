@@ -12,17 +12,27 @@ import java.util.ArrayList;
 public class MerchantRoom extends AbstractRoom {
 
     private ArrayList<Item> inventory;
+    ItemGenerator itemGenerator;
 
     public MerchantRoom() {
-        ItemGenerator itemGenerator = new ItemGenerator();
+        this.itemGenerator = new ItemGenerator();
         this.inventory = new ArrayList<Item>();
-        this.inventory.add(itemGenerator.newWeapon(10));
     }
 
     @Override
     public void printWelcomeMessage() {
         System.out.println("Du siest das Schild \" Tante Emmas\" willst du eintreten");
     }
+
+    public void initializeInventory(Player player) {
+        inventory.add(itemGenerator.newJunk());
+        inventory.add(itemGenerator.newJunk());
+        inventory.add(itemGenerator.newConsumable("health"));
+        inventory.add(itemGenerator.newConsumable("escape"));
+        inventory.add(itemGenerator.newWeapon(player.getAttackDamage()));
+        inventory.add(itemGenerator.newWeapon(player.getAttackDamage()));
+    }
+
     @Override
     public void enter(Player player) {
 
