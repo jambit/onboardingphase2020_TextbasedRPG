@@ -126,6 +126,54 @@ public class TicTacToe {
             easy(board);
     }
 
+    public void dificult(int [][] board) {
+        if (tryToWin(board))
+            return;
+        else if(preventWinning(board)) {
+            return;
+        }
+        else if (tipNear(board))
+            return;
+        else
+            easy(board);
+    }
+
+    private boolean preventWinning(int[][] board) {
+
+        for (int i = 0; i < board.length; i++) { //checks vertical
+            if (board[i][0] + board[i][1] + board[i][2] == 10)
+                for (int k = 0; k < board.length; k++)
+                    if (board[i][k] == 0) {
+                        board[i][k] = 2;
+                        return true;
+                    }
+        }
+
+        for (int i = 0; i < board.length; i++)  //checks horizontal
+            if (board[0][i] + board[1][i] + board[2][i] == 10)
+                for (int k = 0; k < board.length; k++)
+                    if (board[k][i] == 0 ) {
+                        board[k][i] = 2;
+                        return true;
+                    }
+
+        if (board[0][0] + board[1][1] + board[2][2] == 10)  //checks diagonals
+            for (int i = 0; i < board.length; i++)
+                if (board[i][i] == 0) {
+                    board[i][i] = 2;
+                    return true;
+                }
+
+        if (board[0][2] + board[1][1] + board[2][0] == 10)  //checks diagonals
+            for (int i = 0; i < board.length; i++)
+                for (int k = board.length-1; k >= 0; k--)
+                    if (board[i][k] ==0) {
+                        board[i][k] = 2;
+                        return true;
+                    }
+        return false;
+    }
+
     public boolean tipNear(int[][] board) {
 
         for (int i = 0; i < board.length; i++)  //checks horizontal
@@ -163,7 +211,7 @@ public class TicTacToe {
     }
 
 
-    public boolean tryToWin(int[][] board) {
+    public boolean tryToWin(int[][] board) { //NPC checks if he can win
 
         for (int i = 0; i < board.length; i++) { //checks vertical
             if (board[i][0] + board[i][1] + board[i][2] == 4)
@@ -192,7 +240,7 @@ public class TicTacToe {
 
         if (board[0][2] + board[1][1] + board[2][0] == 4)  //checks diagonals
             for (int i = 0; i < board.length; i++)
-                for (int k = board.length; i >= 0; i--)
+                for (int k = board.length -1; k >= 0; k--)
                     if (board[i][k] ==0) {
                         board[i][k] = 2;
                         return true;
@@ -200,9 +248,7 @@ public class TicTacToe {
         return false;
     }
 
-    public void dificult(int [][] board) {
 
-    }
 
     public int randomGenerator() {
         double random = Math.random();
@@ -249,15 +295,31 @@ public class TicTacToe {
         return 0;
     }
 
-    public void play() {
+    public String getDifficulty() {
 
         System.out.println("Welche Schwierigkeit? Tippe einfach, mittel oder schwer");
         Scanner scanDificulty = new Scanner(System.in);
-        String dificulty = scanDificulty.nextLine();
+        String diff = scanDificulty.nextLine();
+
+        while (!(diff.equals("einfach") || diff.equals("mittel") || diff.equals("schwer"))) {
+
+            System.out.println("Falsche Eingabe! Bitte einfach, mittel oder schwer eintippen");
+            Scanner scanDificulty2 = new Scanner(System.in);
+            String diff2 = scanDificulty.nextLine();
+
+            if (diff2.equals("einfach") || diff2.equals("mittel") || diff2.equals("schwer")) {
+                return diff2;
+            }
+        }
+        return diff;
+    }
+
+    public void play() {
+
+        String dificulty = getDifficulty();
 
         int [][] board = new int [3][3];
         boolean whoBegins = whoBegins();
-        printBoard(board);
 
         int counter = 0;
 
@@ -269,7 +331,7 @@ public class TicTacToe {
             String place = scaner2.nextLine(); //player tips in first position
 
             PCtip(place, board);
-//            printBoard(board);
+            counter++;
         }
         else {
             System.out.println("Dein Gegner darf anfangen");
@@ -279,6 +341,18 @@ public class TicTacToe {
 
             NPCtip(dificulty, board); // NPC sets
             printBoard(board);
+            counter++;
+
+            if (win(board) == -1) { //check if somebody won
+                printBoard(board);
+                System.out.println("Du hast verloren");
+                return;
+            }
+            else if (win(board) == 1) {
+                printBoard(board);
+                System.out.println("Glückwunsch, du hast gewonnen!");
+                return;
+            }
 
             System.out.println("Wo setzt du dein Kreuz? Tippe links oben, links unten, links mitte, mitte, etc.");
 
@@ -286,26 +360,22 @@ public class TicTacToe {
             String place = scan.nextLine(); //player tips in first position
 
             PCtip(place, board);
-//            printBoard(board);
+            counter++;
 
             if (win(board) == -1) { //check if somebody won
                 printBoard(board);
                 System.out.println("Du hast verloren");
-                break;
+                return;
             }
             else if (win(board) == 1) {
                 printBoard(board);
                 System.out.println("Glückwunsch, du hast gewonnen!");
-                break;
+                return;
             }
-
-
-
-
-            counter++;
 
             if (counter == 8) {
                 System.out.println("Unentschieden!");
+                return;
             }
 
         }
