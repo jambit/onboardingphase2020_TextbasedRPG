@@ -11,7 +11,7 @@ public class TicTacToe {
         System.out.println(getToken(1,0, board)+" | "+getToken(1,1, board)+" | "+getToken(1,2, board));
         System.out.println("--+---+--");
         System.out.println(getToken(2,0, board)+" | "+getToken(2,1, board)+" | "+getToken(2,2, board));
-        System.out.println("");
+        System.out.println();
     }
 
     public char getToken(int i, int j, int [][] board){
@@ -323,7 +323,7 @@ public class TicTacToe {
 
         int counter = 0;
 
-        if (whoBegins == true) {
+        if (whoBegins) {
 
             System.out.println("Du darfst anfangen, wo setzt du dein Kreuz? Tippe links oben, links unten, links mitte, mitte, etc.");
 
