@@ -29,4 +29,11 @@ public class Weapon extends Item {
         this.atkDamage = atkDamage;
     }*/
 
+    @Override
+    public String toString() {
+        return this.getName() + ", "+
+                "Preis = " + this.getSellValue() + ", " +
+                "Atk = " + this.getAtkDamage();
+    }
+
 }

@@ -43,4 +43,9 @@ public class Item {
         this.lore = lore;
     }
 
+    @Override
+    public String toString() {
+        return this.getName() + ", " +
+                "Preis = " + this.getSellValue();
+    }
 }
