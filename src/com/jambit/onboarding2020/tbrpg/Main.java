@@ -1,16 +1,16 @@
 package com.jambit.onboarding2020.tbrpg;
 
-import com.jambit.onboarding2020.tbrpg.games.Quiz;
+import com.jambit.onboarding2020.tbrpg.games.QuizMaster;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
 
-   public static void main(String[] args) {
+   /*public static void main(String[] args) {
 
-      Quiz quiz = new Quiz("Wie viele Newbies hat Jambit dieses Jahr?", "Sechs");
-      System.out.println("Frage: " + quiz.getQuizQuestion());
+      QuizMaster quizMaster = new QuizMaster("Wie viele Newbies hat Jambit dieses Jahr?", "Sechs");
+      System.out.println("Frage: " + quizMaster.getQuizQuestion());
       System.out.println("[1] Fünf" +
           "\n[2] Sieben" +
           "\n[3] Sechs");
@@ -45,7 +45,7 @@ public class Main {
          }
       }
       return playerInput;
-   }
+   }*/
   /*  public static void main(String[] args) throws IOException {
         System.out.println("Welcome to our game :)");
 
