@@ -364,7 +364,7 @@ public class TicTacToe {
                 return;
             }
 
-            if (counter == 8) {
+            if (counter == 8) {  // TODO: 16.09.2020 Untenschieden sometimes doesn´t work 
                 System.out.println("Unentschieden!");
                 return;
             }
