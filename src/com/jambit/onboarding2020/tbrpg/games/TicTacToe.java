@@ -276,7 +276,7 @@ public class TicTacToe {
             else if (board [0][i] + board [1][i] + board [2][i] == NPCinteger * 3)
                 return -1;
         }
-^
+
         if (board [0][0] + board [1][1] + board [2][2] == PCinteger * 3)  //checks diagonals
             return 1;
         else if (board [0][0] + board [1][1] + board [2][2] == NPCinteger * 3)
