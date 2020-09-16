@@ -11,29 +11,43 @@ public class QuizMaster implements Playable {
     @Override
     public void play() {
 
-        System.out.println("Mein Name ist Günther Jauch...");
+        System.out.println(">>Willkommen bei diesem...<<" +
+                "\n" +
+                "\n" +
+                "  █████   █    ██  ██▓▒███████▒ ▐██▌ \n" +
+                "▒██▓  ██▒ ██  ▓██▒▓██▒▒ ▒ ▒ ▄▀░ ▐██▌ \n" +
+                "▒██▒  ██░▓██  ▒██░▒██▒░ ▒ ▄▀▒░  ▐██▌ \n" +
+                "░██  █▀ ░▓▓█  ░██░░██░  ▄▀▒   ░ ▓██▒ \n" +
+                "░▒███▒█▄ ▒▒█████▓ ░██░▒███████▒ ▒▄▄  \n" +
+                "░░ ▒▒░ ▒ ░▒▓▒ ▒ ▒ ░▓  ░▒▒ ▓░▒░▒ ░▀▀▒ \n" +
+                " ░ ▒░  ░ ░░▒░ ░ ░  ▒ ░░░▒ ▒ ░ ▒ ░  ░ \n" +
+                "   ░   ░  ░░░ ░ ░  ▒ ░░ ░ ░ ░ ░    ░ \n" +
+                "    ░       ░      ░    ░ ░     ░    ");
+        System.out.println(">>Du wirst drei Fragen beantworten müssen... nur so kannst du diesen Raum verlassen!<<");
+        System.out.println(">>Die erste Frage lautet...<<");
 
         ArrayList<Quizzzable> possibleQuizzes = new ArrayList<>();
         possibleQuizzes.add(new Quiz_01());
         possibleQuizzes.add(new Quiz_02());
         possibleQuizzes.add(new Quiz_03());
         possibleQuizzes.add(new Quiz_04());
+        int startSizeofPossibleList = possibleQuizzes.size();
         //todo: Make more quizzes and add them here (actual questions --lore?)
 
         ArrayList<Quizzzable> quizList = new ArrayList<>();
-        int randomIndex = random.nextInt(possibleQuizzes.size());
         for (int i = 0; i < 3; i++) {
+            int randomIndex = random.nextInt(possibleQuizzes.size());
             quizList.add(possibleQuizzes.get(randomIndex));
             possibleQuizzes.remove(randomIndex);
 
         }
-
+        int rightAnswerCount = 0;
         for (Quizzzable quiz : quizList) {
-            System.out.println("Frage: " + quiz.getQuizQuestion());
+            System.out.println(quiz.getQuizQuestion());
             List<Integer> answers = quiz.getAnswers();
-            System.out.println("Ist die Antwort [" + answers.get(0) + "]?");
+            System.out.println(">>Ist die Antwort [" + answers.get(0) + "]?");
             System.out.println("Oder vielleicht [" + answers.get(1) + "]?");
-            System.out.println("Oder doch [" + answers.get(2) + "]?");
+            System.out.println("Oder doch [" + answers.get(2) + "]?<<");
 
 
             //while loop and check with user input
@@ -41,25 +55,37 @@ public class QuizMaster implements Playable {
             while (quiz.checkAnswer(nextIntegerInput) == false) {
 
                 if (quiz.checkWrongs(nextIntegerInput) == true) {
-                    System.out.println("Nicht richtig.");
-                    nextIntegerInput = getNextIntegerInput();
+                    System.out.println(">>Nicht... richtig!<<");
+                    System.out.println("Der Quizmaster tritt dich.");
                     System.out.println("<hier wird dem Spieler Leben abgezogen>");
-                    // -HP
+                    nextIntegerInput = getNextIntegerInput();
+
+                    //todo: -HP
                 } else {
-                    System.out.println("Wähle eine der drei Möglichkeiten.");
+                    System.out.println(">>Wähle eine der drei Möglichkeiten.<<");
+                    System.out.println("Der Quizmaster sieht ungeduldig aus.");
                     nextIntegerInput = getNextIntegerInput();
                 }
+
+
             }
 
             if (quiz.checkAnswer(nextIntegerInput) == true) {
-                System.out.println("Richtig!");
+                System.out.println(">>Richtig!<<");
 
+                rightAnswerCount++;
 
+                if (rightAnswerCount == 3) {
+
+                    return;
+
+                } else {
+                    System.out.println(">>Hier kommt die nächste Frage...<<");
+                }
             }
             // todo: if 3 correct then leave
 
         }
-
 
     }
 

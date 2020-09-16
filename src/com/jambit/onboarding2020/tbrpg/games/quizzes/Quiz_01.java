@@ -9,7 +9,7 @@ public class Quiz_01 implements Quizzzable {
     private int wrongAnswer1 = 5;
     private int wrongAnswer2 = 3;
     private int correctAnswer = 6;
-    private String question = "Quiz01: Sag 6";
+    private String question = "Quiz01: Dies ist ein placeholder. Die Antwort ist 6.";
 
     public List<Integer> getAnswers() {
         List<Integer> answerList = new ArrayList<>();

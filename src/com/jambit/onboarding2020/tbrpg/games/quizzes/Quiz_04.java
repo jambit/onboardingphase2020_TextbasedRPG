@@ -9,7 +9,7 @@ public class Quiz_04 implements Quizzzable {
     private int wrongAnswer1 = 1;
     private int wrongAnswer2 = 2;
     private int correctAnswer = 3;
-    private String question = "Quiz04: Sag 3";
+    private String question = "Quiz04: Dies ist ein placeholder. Die Antwort ist 3.";
 
 
     @Override
