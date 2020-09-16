@@ -6,19 +6,20 @@ public class TicTacToe {
 
     private final int PCinteger = 5;
     private final int NPCinteger = 2;
+    private int [][] board = new int [3][3];
 
-    public void printBoard(int [][] board) {
+    public void printBoard() {
 
-        System.out.println(getToken(0,0, board)+" | "+getToken(0,1, board)+" | "+getToken(0,2, board));
+        System.out.println(getToken(0,0)+" | "+getToken(0,1)+" | "+getToken(0,2));
         System.out.println("--+---+--");
-        System.out.println(getToken(1,0, board)+" | "+getToken(1,1, board)+" | "+getToken(1,2, board));
+        System.out.println(getToken(1,0)+" | "+getToken(1,1)+" | "+getToken(1,2));
         System.out.println("--+---+--");
-        System.out.println(getToken(2,0, board)+" | "+getToken(2,1, board)+" | "+getToken(2,2, board));
+        System.out.println(getToken(2,0)+" | "+getToken(2,1)+" | "+getToken(2,2));
         System.out.println();
     }
 
     //muss es public sein?
-    public char getToken(int i, int j, int [][] board){
+    public char getToken(int i, int j){
         if(board[i][j] == PCinteger)
             return 'X';
 
@@ -38,7 +39,7 @@ public class TicTacToe {
             return false; //NPC starts
     }
 
-    private void pcTip(String place, int [][] board) { //PC is 5 NPC is 2
+    private void pcTip(String place) { //PC is 5 NPC is 2
 
         if (place.equals("links oben") && board[0][0] == 0) {
             board[0][0] = PCinteger;
@@ -76,30 +77,30 @@ public class TicTacToe {
             board[2][1] = PCinteger;
         }
         else {
-            exception(board);
+            exception();
         }
     }
 
-    public void exception (int [][] board) {
+    public void exception () {
         System.out.println("Feld ist schon belegt, bitte wähle einanderes! oder ungültige Eingabe");
         Scanner scan = new Scanner(System.in);
         String place = scan.nextLine();
-        pcTip(place, board);
+        pcTip(place);
     }
 
 
-    public void NPCtip(String dificulty, int[][] board) {
+    public void NPCtip(String dificulty) {
         if (dificulty.equals("einfach"))
-            easy(board);
+            easy();
         else if(dificulty.equals("mittel"))
-            medium(board);
+            medium();
         else if (dificulty.equals(("schwer")))
-            dificult(board);
+            dificult();
         else
             System.out.println("Falsche Eingabe"); //noch anpassen!!!!
     }
 
-    public void easy(int[][] board) { //Level 1: random, easy
+    public void easy() { //Level 1: random, easy
 
         while (true) {
             int y = randomGenerator();
@@ -111,29 +112,29 @@ public class TicTacToe {
         }
     }
 
-    public void medium(int [][] board) {
+    public void medium() {
 
-        if (tryToWin(board))
+        if (tryToWin())
             return;
-        else if (tipNear(board))
+        else if (tipNear())
             return;
         else
-            easy(board);
+            easy();
     }
 
-    public void dificult(int [][] board) {
-        if (tryToWin(board))
+    public void dificult() {
+        if (tryToWin())
             return;
-        else if(preventWinning(board)) {
+        else if(preventWinning()) {
             return;
         }
-        else if (tipNear(board))
+        else if (tipNear())
             return;
         else
-            easy(board);
+            easy();
     }
 
-    private boolean preventWinning(int[][] board) {
+    private boolean preventWinning() {
 
         for (int i = 0; i < board.length; i++) { //checks vertical
             if (board[i][0] + board[i][1] + board[i][2] == PCinteger * 2)
@@ -169,7 +170,7 @@ public class TicTacToe {
         return false;
     }
 
-    public boolean tipNear(int[][] board) {
+    public boolean tipNear() {
 
         for (int i = 0; i < board.length; i++)  //checks horizontal
             if (board[i][0] + board[i][1] + board[i][2] == NPCinteger)
@@ -206,7 +207,7 @@ public class TicTacToe {
     }
 
 
-    public boolean tryToWin(int[][] board) { //NPC checks if he can win
+    public boolean tryToWin() { //NPC checks if he can win
 
         for (int i = 0; i < board.length; i++) { //checks vertical
             if (board[i][0] + board[i][1] + board[i][2] == NPCinteger * 2)
@@ -260,7 +261,7 @@ public class TicTacToe {
         return random2;
     }
 
-    public int win (int [][] board) { //-1 PC lose; 1 PC wins; 0 nobody wins;
+    public int win () { //-1 PC lose; 1 PC wins; 0 nobody wins;
 
         for (int i = 0; i < board.length; i++) { //checks vertical
             if (board [i][0] + board [i][1] + board [i][2] == PCinteger * 3)
@@ -275,7 +276,7 @@ public class TicTacToe {
             else if (board [0][i] + board [1][i] + board [2][i] == NPCinteger * 3)
                 return -1;
         }
-
+^
         if (board [0][0] + board [1][1] + board [2][2] == PCinteger * 3)  //checks diagonals
             return 1;
         else if (board [0][0] + board [1][1] + board [2][2] == NPCinteger * 3)
@@ -307,8 +308,6 @@ public class TicTacToe {
 
         String dificulty = getDifficulty();
 
-        int [][] board = new int [3][3];
-
         int counter = 0;
 
         if (whoBegins()) {
@@ -318,8 +317,7 @@ public class TicTacToe {
             Scanner scaner2 = new Scanner(System.in);
             String place = scaner2.nextLine(); //player tips in first position
             //Todo: Ihr könnt die oberen zwei Zeilen in eine Methode auslagern und direkt im Parameter von PCtip aufrufen. Bspw. getPlayerMove
-            //Todo: Das board könntet ihr als Klassenvariable deklarieren, dann müsst ihr sie nicht mehr jedes mal übergeben.
-            pcTip(place, board);
+            pcTip(place);
             counter++;
         }
         else {
@@ -329,17 +327,17 @@ public class TicTacToe {
         //  und die Variable counter in "playerMoveCounter" umbenennen. Dann liest es sich einfacher. :)
         while (counter < 9) { //PC start
             // Todo: same here: boord als parameter könnt ihr euch sparen, wenn ihr es als Klassenvariable deklariert
-            NPCtip(dificulty, board); // NPC sets
-            printBoard(board);
+            NPCtip(dificulty); // NPC sets
+            printBoard();
             counter++;
 
-            if (win(board) == -1) { //check if somebody won
-                printBoard(board);
+            if (win() == -1) { //check if somebody won
+                printBoard();
                 System.out.println("Du hast verloren");
                 return;
             }
-            else if (win(board) == 1) {
-                printBoard(board);
+            else if (win() == 1) {
+                printBoard();
                 System.out.println("Glückwunsch, du hast gewonnen!");
                 return;
             }
@@ -351,17 +349,17 @@ public class TicTacToe {
             Scanner scan = new Scanner(System.in);
             String place = scan.nextLine(); //player tips in first position
 
-            pcTip(place, board);
+            pcTip(place);
             counter++;
 
             //Todo: Das ist der gleiche Code wie in Zeilen 345-354 --> ein eigene Methode bietet sich an
-            if (win(board) == -1) { //check if somebody won
-                printBoard(board);
+            if (win() == -1) { //check if somebody won
+                printBoard();
                 System.out.println("Du hast verloren");
                 return;
             }
-            else if (win(board) == 1) {
-                printBoard(board);
+            else if (win() == 1) {
+                printBoard();
                 System.out.println("Glückwunsch, du hast gewonnen!");
                 return;
             }
