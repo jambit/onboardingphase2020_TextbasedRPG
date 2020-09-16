@@ -1,6 +1,7 @@
-package com.jambit.onboarding2020.tbrpg.games;
+package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
-import com.jambit.onboarding2020.tbrpg.games.quizzes.*;
+import com.jambit.onboarding2020.tbrpg.games.Playable;
+import com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.*;
 
 import java.util.*;
 
@@ -43,11 +44,13 @@ public class QuizMaster implements Playable {
         }
         int rightAnswerCount = 0;
         for (Quizzzable quiz : quizList) {
-            System.out.println(quiz.getQuizQuestion());
+            System.out.println("*******************************************************");
+            System.out.println("| "+quiz.getQuizQuestion());
             List<Integer> answers = quiz.getAnswers();
-            System.out.println(">>Ist die Antwort [" + answers.get(0) + "]?");
-            System.out.println("Oder vielleicht [" + answers.get(1) + "]?");
-            System.out.println("Oder doch [" + answers.get(2) + "]?<<");
+            System.out.println("|  Ist die Antwort [" + answers.get(0) + "]?");
+            System.out.println("|  Oder vielleicht [" + answers.get(1) + "]?");
+            System.out.println("|  Oder doch [" + answers.get(2) + "]?");
+            System.out.println("*******************************************************");
 
 
             //while loop and check with user input
@@ -83,7 +86,7 @@ public class QuizMaster implements Playable {
                     System.out.println(">>Hier kommt die nächste Frage...<<");
                 }
             }
-            // todo: if 3 correct then leave
+
 
         }
 

@@ -1,15 +1,15 @@
-package com.jambit.onboarding2020.tbrpg.games.quizzes;
+package com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Quiz_02 implements Quizzzable {
+public class Quiz_04 implements Quizzzable {
 
     private int wrongAnswer1 = 1;
     private int wrongAnswer2 = 2;
     private int correctAnswer = 3;
-    private String question = "Quiz02: Dies ist ein placeholder. Die Antwort ist 3";
+    private String question = "Quiz04: Dies ist ein placeholder. Die Antwort ist 3.";
 
 
     @Override
@@ -46,4 +46,3 @@ public class Quiz_02 implements Quizzzable {
             return false;
     }
 }
-

@@ -1,4 +1,4 @@
-package com.jambit.onboarding2020.tbrpg.games.quizzes;
+package com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes;
 
 import java.util.List;
 
