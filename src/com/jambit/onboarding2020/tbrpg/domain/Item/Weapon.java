@@ -20,7 +20,6 @@ public class Weapon extends Item {
     }
 
     //Methods
-
     public int getAtkDamage() {
         return atkDamage;
     }

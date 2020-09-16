@@ -27,14 +27,14 @@ public class MerchantRoom extends AbstractRoom {
 
         String line = "";
         System.out.println("Willkommen in Tante Emmas Waffenladen");
-        System.out.println("                             _        ,\n" +
-                "                            (_\\______/________\n" +
-                "                               \\-|-|/|-|-|-|-|/\n" +
-                "                                \\==/-|-|-|-|-/\n" +
-                "                                 \\/|-|-|-|,-'\n" +
-                "                                  \\--|-'''\n" +
-                "                                   \\_j________\n" +
-                "                                   (_)     (_)");
+        System.out.println("                       _        ,\n" +
+                "                      (_\\______/________\n" +
+                "                         \\-|-|/|-|-|-|-|/\n" +
+                "                          \\==/-|-|-|-|-/\n" +
+                "                           \\/|-|-|-|,-'\n" +
+                "                            \\--|-'''\n" +
+                "                             \\_j________\n" +
+                "                             (_)     (_)");
         this.initializeInventory(player);
 
         while (line.equalsIgnoreCase("quit") == false) {
@@ -68,7 +68,7 @@ public class MerchantRoom extends AbstractRoom {
         System.out.println("Du siest das Schild \" Tante Emmas\" willst du eintreten");
     }
 
-    public void initializeInventory(Player player) {
+    private void initializeInventory(Player player) {
         inventory.add(itemGenerator.newJunk());
         inventory.add(itemGenerator.newJunk());
         inventory.add(itemGenerator.newConsumable("health"));
@@ -122,9 +122,9 @@ public class MerchantRoom extends AbstractRoom {
     //Prints the current Inventory of the Merchant
     public void printInventory() {
 
-        if(this.inventory.size() == 0){
+        if (this.inventory.size() == 0) {
             System.out.println("--AUSVERKAUFT--");
-        }else {
+        } else {
             System.out.println("Der Händler hat folgendes Angebot:");
             int counter = 1;
             for (Item item : inventory) {
@@ -136,7 +136,7 @@ public class MerchantRoom extends AbstractRoom {
 
     //gets a new Int from the CLI and catches all possible exceptions
     //if the Read-In String ist quit it returns 99
-    public int takeIntFromCLI() {
+    private int takeIntFromCLI() {
         String line = "";
 
         try {
