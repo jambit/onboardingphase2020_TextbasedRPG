@@ -1,6 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,9 +22,8 @@ public class GameEngine {
 
       while (line.equalsIgnoreCase("quit") == false) {
          for (AbstractRoom room : rooms) {
-            room.printWelcomeMessage();
-
             //Ask user for interaction
+            System.out.println("Du stest vor folgendem Raum: " + room.getClass() + " Willst du eintreten?");
             line = in.readLine();
             if(line.equalsIgnoreCase("enter")){
                room.enter();
