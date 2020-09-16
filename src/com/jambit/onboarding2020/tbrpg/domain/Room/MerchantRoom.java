@@ -11,11 +11,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class MerchantRoom extends AbstractRoom {
-
-    private ArrayList<Item> inventory;
+    boolean playerWantsToLeave = false;
     ItemGenerator itemGenerator;
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    int exitcode = 0;
+    // TODO: 16.09.2020 Abhängigkeiten der Methoden voneinander auflösen
+    private ArrayList<Item> inventory;
 
     public MerchantRoom() {
         this.itemGenerator = new ItemGenerator();
@@ -40,7 +40,7 @@ public class MerchantRoom extends AbstractRoom {
         while (line.equalsIgnoreCase("quit") == false) {
 
             System.out.println("Möchtest du kaufen oder verkaufen?");
-            exitcode = 0;
+            playerWantsToLeave = false;
             //Buy or sell
             if (line.equalsIgnoreCase("kaufen")) {
                 this.buyFromMerchant(player);
@@ -52,7 +52,7 @@ public class MerchantRoom extends AbstractRoom {
                 System.out.println("Du hast folgende Möglichkeiten: \"kaufen\" , \"verkaufen\" oder quit");
             }
 
-            if (exitcode != 99) {
+            if (!playerWantsToLeave) {
                 try {
                     line = in.readLine();
                 } catch (IOException e) {
@@ -60,7 +60,7 @@ public class MerchantRoom extends AbstractRoom {
                 }
             }
         }
-
+        return;
     }
 
     @Override
@@ -80,15 +80,15 @@ public class MerchantRoom extends AbstractRoom {
     //includes the complete handling for the buy-action
     private void sellToMerchant(Player player) {
 
-        exitcode = 0;
-        while (exitcode != 99) {
+        playerWantsToLeave = false;
+        while (!playerWantsToLeave) {
             System.out.println("Du hast folgendes im Inventar:");
             player.printInventory();
             System.out.println("Was möchtest du verkaufen? \nWähle die Nummer des Items:");
             int index = this.takeIntFromCLI();
-            if (index <= player.getInventory().size()) {
+            if (index <= player.getInventory().size() && index > 0) {
                 player.sell(player.getInventory().get(index - 1));
-            } else if (exitcode == 99) break;
+            } else if (!playerWantsToLeave) break;
             else {
                 System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder quit");
             }
@@ -98,14 +98,14 @@ public class MerchantRoom extends AbstractRoom {
     //includes the complete handling for the buy-action
     private void buyFromMerchant(Player player) {
         int index;
-        exitcode = 0;
+        playerWantsToLeave = false;
 
-        while (exitcode != 99) {
+        while (!playerWantsToLeave) {
             System.out.println("Du hast " + player.getBalance() + " an Geld zur verfügung");
             this.printInventory();
             System.out.println("Was möchtest du kaufen? \nWähle die Nummer des Items:");
             index = this.takeIntFromCLI();
-            if (index <= this.inventory.size()) {
+            if (index <= this.inventory.size() && index > 0) {
                 try {
                     player.buy(this.inventory.get(index - 1));
                     this.inventory.remove(index - 1);
@@ -138,7 +138,7 @@ public class MerchantRoom extends AbstractRoom {
     //if the Read-In String ist quit it returns 99
     private int takeIntFromCLI() {
         String line = "";
-
+// TODO: 16.09.2020 Eingaben über statische Klasse zentralisiert realisieren 
         try {
             line = in.readLine();
         } catch (IOException e) {
@@ -158,7 +158,7 @@ public class MerchantRoom extends AbstractRoom {
                 e.printStackTrace();
             }
         }
-        this.exitcode = 99;
+        this.playerWantsToLeave = false;
         return 99;
     }
 

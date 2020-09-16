@@ -3,14 +3,13 @@ package com.jambit.onboarding2020.tbrpg.core;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom;
 
-
 import java.util.ArrayList;
 import java.util.Random;
 
 public class RoomGenerator {
-
+    // TODO: 16.09.2020 Namensgebung überarbeiten! 
     //Attribute
-    int roomCountPreset = 4;   //Noch anzupassen!!!
+    int roomCountPreset = 4;   // TODO: 16.09.2020  Noch anzupassen!!!
     Random random = new Random();
     ArrayList<AbstractRoom> possibleRooms = new ArrayList<>();
 

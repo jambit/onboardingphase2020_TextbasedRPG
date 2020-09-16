@@ -4,7 +4,7 @@ import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
 public class HealthPotion extends Item implements Consumable {
 
-    public HealthPotion(int sellValue) {
+    public HealthPotion() {
         this.setName("Heiltrank");
         this.setLore("Damit du nicht gleich abkrazt...");
         this.setSellValue(5);
