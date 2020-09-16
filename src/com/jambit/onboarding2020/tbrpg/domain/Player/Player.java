@@ -1,7 +1,9 @@
 package com.jambit.onboarding2020.tbrpg.domain.Player;
 
-import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
+import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
+import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
+
 import javax.naming.InsufficientResourcesException;
 import java.util.ArrayList;
 
@@ -9,6 +11,7 @@ public class Player extends Person {
 
     private int balance = 100;
     private final ArrayList<Item> inventory;
+    private Weapon equippedWeapon;
 
     public Player() {
         inventory = new ArrayList<>();
@@ -48,4 +51,23 @@ public class Player extends Person {
     public ArrayList<Item> getInventory() {
         return this.inventory;
     }
+
+    public void equipWeapon(Weapon weapon) {
+        if (equippedWeapon == null) {
+            this.attackDamage = this.attackDamage + weapon.getAtkDamage();
+            this.equippedWeapon = weapon;
+        } else {
+            System.out.println("Du hast bereits" + equippedWeapon + " ausgerüstet.");
+            System.out.println("Du musst die Waffe erst ablegen.");
+        }
+    }
+
+    public void unequipWeapon() {
+        if (equippedWeapon == null) {
+            System.out.println("Du hast aktuell keine Waffe ausgerüstet.");
+        } else {
+            System.out.println("Du hast " + equippedWeapon + " abgelegt.");
+        }
+    }
+
 }
