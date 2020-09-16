@@ -1,5 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,7 +14,7 @@ public class ExampleRoom extends AbstractRoom {
    }
 
    @Override
-   public void enter() {
+   public void enter(Player player) {
 
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";
