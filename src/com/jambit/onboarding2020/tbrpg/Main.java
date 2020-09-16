@@ -6,7 +6,12 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static void main(String[] args) {
 
+
+
+
+    }
    /*public static void main(String[] args) {
 
       QuizMaster quizMaster = new QuizMaster("Wie viele Newbies hat Jambit dieses Jahr?", "Sechs");

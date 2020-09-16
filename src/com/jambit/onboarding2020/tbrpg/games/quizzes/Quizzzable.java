@@ -10,4 +10,5 @@ public interface Quizzzable {
 
     public boolean checkAnswer(int answer);
 
+    public boolean checkWrongs(int answer);
 }
