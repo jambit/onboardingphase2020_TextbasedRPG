@@ -1,14 +1,17 @@
 package com.jambit.onboarding2020.tbrpg;
 
-import com.jambit.onboarding2020.tbrpg.games.QuizMaster;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import com.jambit.onboarding2020.tbrpg.domain.Room.QuizRoom;
+import com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        QuizRoom qr = new QuizRoom();
+        qr.printWelcomeMessage();
+        qr.enter();
 
+        System.out.println("Raus aus dem Raum");
 
 
     }
