@@ -1,17 +1,18 @@
 package com.jambit.onboarding2020.tbrpg.domain.Player;
 
+import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
-
 import javax.naming.InsufficientResourcesException;
 import java.util.ArrayList;
 
 public class Player extends Person {
 
-    private final ArrayList<Item> inventory;
     private int balance = 100;
+    private final ArrayList<Item> inventory;
 
     public Player() {
         inventory = new ArrayList<>();
+        attackDamage = GameConstants.PLAYER_ATTACK_DAMAGE;
     }
 
     public int getBalance() {

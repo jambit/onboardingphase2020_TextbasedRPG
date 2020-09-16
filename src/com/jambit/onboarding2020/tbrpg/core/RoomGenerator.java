@@ -2,12 +2,14 @@ package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom;
+import com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom;
+import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class RoomGenerator {
-    // TODO: 16.09.2020 Namensgebung überarbeiten! 
+    // TODO: 16.09.2020 Namensgebung überarbeiten!
     //Attribute
     int roomCountPreset = 4;   // TODO: 16.09.2020  Noch anzupassen!!!
     Random random = new Random();
@@ -15,7 +17,7 @@ public class RoomGenerator {
 
     //Konstruktor
     public RoomGenerator() {
-        possibleRooms.add(new MerchantRoom());
+        possibleRooms.add(new MobRoom());
     }
 
     //Methoden
