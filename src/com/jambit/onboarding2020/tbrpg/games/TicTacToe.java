@@ -8,6 +8,7 @@ public class TicTacToe {
     private final int NPC_INTEGER = 2;
     private  final int MAXIMUM_PLAYER_MOVES = 8;
     private int [][] board = new int [3][3];
+    public Scanner scan = new Scanner(System.in);
 
     public void printBoard() {
 
@@ -30,7 +31,6 @@ public class TicTacToe {
         else
             return ' ';
     }
-    //Todo: ein passenderer Name wäre: getRandomTrueFalse(), von einem Spieler muss die Methode ja nichts wissen. Oder?
     private boolean whoBegins() { //random selection who get the first shot
         double ran = Math.random();
 
@@ -84,7 +84,6 @@ public class TicTacToe {
 
     public void exception () {
         System.out.println("Feld ist schon belegt, bitte wähle einanderes! oder ungültige Eingabe");
-        Scanner scan = new Scanner(System.in);
         String place = scan.nextLine();
         pcTip(place);
     }
@@ -295,12 +294,11 @@ public class TicTacToe {
     public String getDifficulty() {
 
         System.out.println("Welche Schwierigkeit? Tippe einfach, mittel oder schwer");
-        Scanner scanDificulty = new Scanner(System.in);
-        String diff = scanDificulty.nextLine();
+        String diff = scan.nextLine();
 
         while (!(diff.equals("einfach") || diff.equals("mittel") || diff.equals("schwer"))) {
             System.out.println("Falsche Eingabe! Bitte einfach, mittel oder schwer eintippen");
-            diff = scanDificulty.nextLine();
+            diff = scan.nextLine();
         }
         return diff;
     }
@@ -314,8 +312,7 @@ public class TicTacToe {
         if (whoBegins()) {
 
             System.out.println("Du darfst anfangen, wo setzt du dein Kreuz? Tippe links oben, links unten, links mitte, mitte, etc.");
-            Scanner scanner = new Scanner(System.in);
-            String place = scanner.nextLine(); //player tips in first position
+            String place = scan.nextLine(); //player tips in first position
             pcTip(place);
             PlayerMovesCounter++;
         }
@@ -332,9 +329,6 @@ public class TicTacToe {
 
             System.out.println("Wo setzt du dein Kreuz? Tippe links oben, links unten, links mitte, mitte, etc.");
 
-            //Todo: WEnn ihr das Scannerobjekt als Klassenvariable deklariert, könnt ihr es überall in der Klasse nutzen.
-            // Das ist vollkommen in Ordnung. :)
-            Scanner scan = new Scanner(System.in);
             String place = scan.nextLine(); //player tips in first position
 
             pcTip(place);
@@ -342,13 +336,11 @@ public class TicTacToe {
 
             if (endsGameIfWon()) return;
 
-            if (PlayerMovesCounter == 8) {  // TODO: 16.09.2020 Untenschieden sometimes doesn´t work
-                System.out.println("Unentschieden!");
+            if (PlayerMovesCounter == MAXIMUM_PLAYER_MOVES) {  // TODO: 16.09.2020 Untenschieden sometimes doesn´t work
+                System.out.println("Unentschieden!, du darfst nochmal spielen");
                 return;
             }
-
         }
-
     }
 
     public boolean endsGameIfWon () {
