@@ -3,9 +3,6 @@ package com.jambit.onboarding2020.tbrpg.domain.Item;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static com.jambit.onboarding2020.tbrpg.domain.Item.Consumable.ESCAPE;
-import static com.jambit.onboarding2020.tbrpg.domain.Item.Consumable.HEALTH;
-
 public class ItemGenerator {
 
     Random random = new Random();
@@ -33,10 +30,10 @@ public class ItemGenerator {
         return new Weapon(atkDamage, weaponNames.get(nameindex), weaponLore.get(nameindex), atkDamage);
     }
 
-    public Item newConsumable(Consumable consumable) {
-        if (consumable.equals(HEALTH)) {
+    public Item newConsumable(String consumable) {
+        if (consumable.equals("health")) {
             return newHealthPotion();
-        } else if (consumable.equals(ESCAPE)) {
+        } else if (consumable.equals("escape")) {
             return newEscapeRope();
         }
         return null;

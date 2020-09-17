@@ -15,53 +15,56 @@ public class MobRoom extends AbstractRoom {
    }
 
    @Override
-   public void enter(Player player) {
+   public void enter() {
 
       GameInput in = new GameInput(new InputStreamReader(System.in));
       Enemy enemy = new Enemy(); // Name übergeben von Enemy
       Random random = new Random();
 
       System.out.println("Du bist gefangen und kommst nur raus, wenn du den Gegner tötest, oder 'quit' drückst");
-      System.out.println("Attack Damage Player: " + player.getHealthState());
+      System.out.println("Attack Damage Player: " + Player.getPlayerInstance().getHealthState());
       System.out.println("Attack Damage Enemy: " + enemy.getHealthState());
 
       while (in.gameState()) {
          System.out.println("Drücke 1) um anzugreifen oder 2) um zu verteidigen.");
 
          try {
-            fight(player, in, enemy, random);
+            fight(in, enemy, random);
          } catch (Exception e) {
             System.out.println(e.getMessage());
          }
 
-         evaluateFight(player, in, enemy);
+         evaluateFight(in, enemy);
       }
    }
 
-   private void fight(Player player, GameInput in, Enemy enemy, Random random) throws Exception {
+   private void fight(GameInput in, Enemy enemy, Random random) throws Exception {
       int input = in.inputInteger();
+
       if (input == 1) {
          if (random.nextBoolean()) {
-            player.attack(enemy);
+            Player.getPlayerInstance().attack(enemy);
             System.out.println("Treffer!");
          } else {
             System.out.println("Der Gegner hat den Angriff abgewehrt");
          }
-      } else if (random.nextBoolean()) {
+      }
+
+      if (random.nextBoolean()) {
          if (input == 2) {
             System.out.println("Du hast den Angriff des Gegner abgewehrt!");
-         } else if(in.inputInteger() == 1) {
-            enemy.attack(player);
+         } else {
+            enemy.attack(Player.getPlayerInstance());
             System.out.println("Du wurdest getroffen!");
          }
       }
    }
 
-   private void evaluateFight(Player player, GameInput in, Enemy enemy) {
-      System.out.println("Attack Damage Player: " + player.getHealthState());
+   private void evaluateFight(GameInput in, Enemy enemy) {
+      System.out.println("Attack Damage Player: " + Player.getPlayerInstance().getHealthState());
       System.out.println("Attack Damage Enemy: " + enemy.getHealthState());
 
-      if (player.getHealthState() == 0) {
+      if (Player.getPlayerInstance().getHealthState() == 0) {
          in.looseGame();
       }
 

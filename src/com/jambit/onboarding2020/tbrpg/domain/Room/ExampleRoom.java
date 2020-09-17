@@ -14,7 +14,7 @@ public class ExampleRoom extends AbstractRoom {
    }
 
    @Override
-   public void enter(Player player) {
+   public void enter() {
 
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";

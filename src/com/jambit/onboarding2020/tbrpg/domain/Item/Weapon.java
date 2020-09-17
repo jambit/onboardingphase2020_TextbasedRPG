@@ -20,7 +20,6 @@ public class Weapon extends Item {
     }
 
     //Methods
-
     public int getAtkDamage() {
         return atkDamage;
     }
@@ -28,5 +27,12 @@ public class Weapon extends Item {
     /*public void setAtkDamage(int atkDamage) {
         this.atkDamage = atkDamage;
     }*/
+
+    @Override
+    public String toString() {
+        return this.getName() + ", \t"+
+                "Preis = " + this.getSellValue() + ", \t" +
+                "Atk = " + this.getAtkDamage();
+    }
 
 }
