@@ -17,15 +17,13 @@ public class QuizRoom extends AbstractRoom {
     }
 
     @Override
-    public void enter(Player player) {
+    public void enter() {
         QuizMaster quizMaster = new QuizMaster();
-        quizMaster.play(player);
+        quizMaster.play(Player.getPlayerInstance());
         System.out.println("Der QuizMaster fässt sich ans Herz." +
                 "\nSeine schlitzartigen Pupillen weiten sich." +
                 "\n>>Argh! Du hast mich... besiegt!<<" +
                 "\nDer QuizMaster sinkt zu Boden. Dein Weg ist frei!");
-        return;
-
     }
 
 }

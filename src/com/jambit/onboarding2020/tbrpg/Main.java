@@ -21,7 +21,7 @@ public class Main {
 
         Player player = Player.getPlayerInstance();
 
-        GameEngine gameEngine = new GameEngine(rooms, player);
+        GameEngine gameEngine = new GameEngine(rooms);
         gameEngine.run();
     }
 }

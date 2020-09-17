@@ -13,10 +13,6 @@ public abstract class Person {
         }
     }
 
-    public void defend () {
-
-    }
-
     public int getHealthState() {
         return healthState;
     }

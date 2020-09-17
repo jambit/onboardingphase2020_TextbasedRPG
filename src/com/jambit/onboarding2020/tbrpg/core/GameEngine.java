@@ -3,8 +3,6 @@ package com.jambit.onboarding2020.tbrpg.core;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.Hallway;
-
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -12,28 +10,35 @@ import java.util.ArrayList;
 public class GameEngine {
 
    private final ArrayList<AbstractRoom> rooms;
-   private final Player player;
 
-   public GameEngine(ArrayList<AbstractRoom> rooms, Player player) {
+   public GameEngine(ArrayList<AbstractRoom> rooms) {
       this.rooms = rooms;
-      this.player = player;
    }
 
    public void run() throws IOException {
 
-      BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-      String line = "";
+      GameInput in = new GameInput(new InputStreamReader(System.in));
+      System.out.println("Du kannst 'enter' und 'quit' tippen.");
 
-      while (line.equalsIgnoreCase("quit") == false) {
+      while (in.gameState()) {
 
          Hallway hallway = new Hallway();
 
          for (AbstractRoom room : rooms) {
-            room.enter(this.player);
-            hallway.enter(this.player);
+            room.printWelcomeMessage();
+
+            try {
+               if (in.inputRoomdecision()) {
+                  room.enter();
+                  hallway.enter();
+               } else {
+                  break;
+               }
+            } catch (Exception e) {
+               System.out.println(e.getMessage());
+            }
          }
       }
-      System.out.println("Spiel beendet.");
       in.close();
    }
 
