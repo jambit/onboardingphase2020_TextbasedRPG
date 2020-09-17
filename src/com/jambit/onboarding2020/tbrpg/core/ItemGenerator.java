@@ -1,4 +1,7 @@
-package com.jambit.onboarding2020.tbrpg.domain.Item;
+package com.jambit.onboarding2020.tbrpg.core;
+
+import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
+import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
 
 import java.util.ArrayList;
 import java.util.Random;
