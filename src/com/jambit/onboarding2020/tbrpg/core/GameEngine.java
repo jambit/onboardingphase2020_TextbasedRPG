@@ -1,9 +1,8 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.Hallway;
-import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -37,9 +36,6 @@ public class GameEngine {
                }
             } catch (Exception e) {
                System.out.println(e.getMessage());
-            }
-            else{
-               System.out.println("Deine Eingabe war nicht gültig. Du kannst 'enter', 'skip' und 'quit' tippen.");
             }
          }
       }
