@@ -2,7 +2,7 @@ package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
-import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -20,28 +20,26 @@ public class GameEngine {
 
    public void run() throws IOException {
 
-      BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-      String line = "";
+      GameInput in = new GameInput(new InputStreamReader(System.in));
+      System.out.println("Du kannst 'enter' und 'quit' tippen.");
 
-      while (line.equalsIgnoreCase("quit") == false) {
+      while (in.gameState()) {
          for (AbstractRoom room : rooms) {
             room.printWelcomeMessage();
 
             //Ask user for interaction
-            line = in.readLine();
-            if(line.equalsIgnoreCase("enter")){
-               room.enter(this.player);
-               //Remove room from list after entered
-            }
-            else if(line.equalsIgnoreCase("skip")){
-               room.skip();
-            }
-            else{
-               System.out.println("Deine Eingabe war nicht gültig. Du kannst 'enter', 'skip' und 'quit' tippen.");
+            try {
+               if (in.inputRoomdecision()) {
+                  room.enter(this.player);
+                  //Remove room from list after entered
+               } else {
+                  break;
+               }
+            } catch (Exception e) {
+               System.out.println(e.getMessage());
             }
          }
       }
-      System.out.println("Spiel beendet.");
       in.close();
    }
 
