@@ -61,8 +61,8 @@ public class MobRoom extends AbstractRoom {
    }
 
    private void evaluateFight(GameInput in, Enemy enemy) {
-      System.out.println("Attack Damage Player: " + Player.getPlayerInstance().getHealthState());
-      System.out.println("Attack Damage Enemy: " + enemy.getHealthState());
+      System.out.println("Lebenspunkte des Players: " + Player.getPlayerInstance().getHealthState());
+      System.out.println("Lebenspunkte des Enemy: " + enemy.getHealthState());
 
       if (Player.getPlayerInstance().getHealthState() == 0) {
          in.looseGame();

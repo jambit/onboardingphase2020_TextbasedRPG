@@ -11,7 +11,8 @@ public class Hallway extends AbstractRoom {
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
     @Override
-    public void enter(Player player) {
+    public void enter() {
+        Player player = Player.getPlayerInstance();
 
         String line = "";
 
