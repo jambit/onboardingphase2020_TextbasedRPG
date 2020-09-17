@@ -6,10 +6,12 @@ import java.util.List;
 
 public class Quiz_02 implements Quizzzable {
 
-    private int wrongAnswer1 = 1;
-    private int wrongAnswer2 = 2;
-    private int correctAnswer = 3;
-    private String question = "Quiz02: Dies ist ein placeholder. Die Antwort ist 3";
+    private int wrongAnswer1 = 15;
+    private int wrongAnswer2 = 10;
+    private int correctAnswer = 5;
+    private String question = " Eine Flasche ̶K̶i̶n̶d̶e̶r̶b̶l̶u̶t̶... Eine Flasche Wein kostet mit Korken 110 Gold. " +
+            "\nDie Flasche allein kostet schon 100 Gold mehr als der Korken. " +
+            "\nWie viel kostet der Korken?";
 
 
     @Override

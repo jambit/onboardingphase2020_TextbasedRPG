@@ -13,7 +13,7 @@ public class QuizMaster implements Playable {
     @Override
     public void play(Player player) {
 
-        System.out.println(">>Willkommen bei diesem...<<" +
+        System.out.println(">>Willkommen bei meinem...<<" +
                 "\n" +
                 "\n" +
                 "  █████   █    ██  ██▓▒███████▒ ▐██▌ \n" +
@@ -46,11 +46,11 @@ public class QuizMaster implements Playable {
         int rightAnswerCount = 0;
         for (Quizzzable quiz : quizList) {
             System.out.println("**************************************************************");
-            System.out.println("| "+quiz.getQuizQuestion());
+            System.out.println(quiz.getQuizQuestion());
             List<Integer> answers = quiz.getAnswers();
             System.out.println("|  Ist die Antwort [" + answers.get(0) + "]?");
             System.out.println("|  Oder vielleicht [" + answers.get(1) + "]?");
-            System.out.println("|  Oder doch [" + answers.get(2) + "]?");
+            System.out.println("|  Oder etwa doch  [" + answers.get(2) + "]?");
             System.out.println("**************************************************************");
 
 
@@ -60,15 +60,15 @@ public class QuizMaster implements Playable {
 
                 if (quiz.checkWrongs(nextIntegerInput) == true) {
                     System.out.println(">>Nicht... richtig!<<");
-                    System.out.println("Der Quizmaster tritt dich.");
-                    System.out.println("<hier wird dem Spieler Leben abgezogen>");
+                    System.out.println("Der QuizMaster tritt dich.");
+                    System.err.println("<hier wird dem Spieler Leben abgezogen>");
                     nextIntegerInput = getNextIntegerInput();
 
 
 
 
                 } else {
-                    System.out.println(">>Wähle eine der drei Möglichkeiten.<<");
+                    System.out.println("Wähle eine der drei Möglichkeiten.");
                     System.out.println("Der Quizmaster sieht ungeduldig aus.");
                     nextIntegerInput = getNextIntegerInput();
                 }
