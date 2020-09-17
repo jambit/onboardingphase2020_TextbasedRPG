@@ -14,20 +14,15 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
-        QuizRoom quizRoom = new QuizRoom();
-        quizRoom.printWelcomeMessage();
-        quizRoom.enter(Player.getPlayerInstance());
-
-
-        /*System.out.println("Welcome to our game :)");
+        System.out.println("Welcome to our game :)");
 
         DungeonGenerator dungeonGenerator = new DungeonGenerator();
         ArrayList<AbstractRoom> rooms = dungeonGenerator.generateRooms();
 
-        Player player = new Player();
+        Player player = Player.getPlayerInstance();
 
         GameEngine gameEngine = new GameEngine(rooms, player);
-        gameEngine.run();*/
+        gameEngine.run();
     }
 }
 
