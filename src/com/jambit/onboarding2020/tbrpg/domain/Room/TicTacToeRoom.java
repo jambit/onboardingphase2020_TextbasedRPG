@@ -27,7 +27,12 @@ public class TicTacToeRoom extends AbstractRoom {
     @Override
     public void enter() {
         TicTacToe game = new TicTacToe();
+//        while (game.getGameresult() == GameResult.TIE){
+//            game.play();
+//        }
         game.play();
         return;
+        //TODO: If lost --> reduce life balance
+        //TODO: If won --> party hard
     }
 }

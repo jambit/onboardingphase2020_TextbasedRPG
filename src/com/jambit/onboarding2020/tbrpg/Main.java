@@ -14,6 +14,8 @@ public class Main {
         TicTacToeRoom ticTacToeRoom = new TicTacToeRoom();
         ticTacToeRoom.printWelcomeMessage();
 
+        ticTacToeRoom.enter();
+
 //        System.out.println("Welcome to our game :)");
 //
 //        RoomGenerator roomGenerator = new RoomGenerator();
