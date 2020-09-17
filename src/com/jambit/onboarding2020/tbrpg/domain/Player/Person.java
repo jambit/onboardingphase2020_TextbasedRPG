@@ -13,10 +13,6 @@ public abstract class Person {
         }
     }
 
-    public void defend () {
-
-    }
-
     public int getHealthState() {
         return healthState;
     }
@@ -40,4 +36,6 @@ public abstract class Person {
     public void setAttackDamage(int attackDamage) {
         this.attackDamage = attackDamage;
     }
+
+
 }

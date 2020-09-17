@@ -1,7 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
+import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
-import com.jambit.onboarding2020.tbrpg.domain.Item.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
 import javax.naming.InsufficientResourcesException;
@@ -15,7 +15,7 @@ public class MerchantRoom extends AbstractRoom {
     ItemGenerator itemGenerator;
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     // TODO: 16.09.2020 Abhängigkeiten der Methoden voneinander auflösen
-    private ArrayList<Item> inventory;
+    private final ArrayList<Item> inventory;
 
     public MerchantRoom() {
         this.itemGenerator = new ItemGenerator();
@@ -23,8 +23,9 @@ public class MerchantRoom extends AbstractRoom {
     }
 
     @Override
-    public void enter(Player player) {
+    public void enter() {
 
+        Player player = Player.getPlayerInstance();
         String line = "";
         System.out.println("Willkommen in Tante Emmas Waffenladen");
         System.out.println("                       _        ,\n" +

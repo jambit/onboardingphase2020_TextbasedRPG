@@ -1,6 +1,5 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.Hallway;
 
@@ -12,11 +11,9 @@ import java.util.ArrayList;
 public class GameEngine {
 
    private final ArrayList<AbstractRoom> rooms;
-   private final Player player;
 
-   public GameEngine(ArrayList<AbstractRoom> rooms, Player player) {
+   public GameEngine(ArrayList<AbstractRoom> rooms) {
       this.rooms = rooms;
-      this.player = player;
    }
 
    public void run() throws IOException {
@@ -29,12 +26,11 @@ public class GameEngine {
          Hallway hallway = new Hallway();
 
          for (AbstractRoom room : rooms) {
-            room.enter(this.player);
-            hallway.enter(this.player);
+            room.enter();
+            hallway.enter();
          }
       }
       System.out.println("Spiel beendet.");
       in.close();
    }
-
 }
