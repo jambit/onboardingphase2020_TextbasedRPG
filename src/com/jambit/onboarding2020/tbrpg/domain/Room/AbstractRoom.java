@@ -1,5 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+
 public abstract class AbstractRoom {
 
    public void printWelcomeMessage() {
@@ -7,6 +9,7 @@ public abstract class AbstractRoom {
    }
 
    public void enter() {
+
       System.out.println("Du bist im eingetreten. Mach dich bereit...");
    }
 
