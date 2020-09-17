@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.games.Playable;
 import com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.*;
 
@@ -10,7 +11,7 @@ public class QuizMaster implements Playable {
     Random random = new Random();
 
     @Override
-    public void play() {
+    public void play(Player player) {
 
         System.out.println(">>Willkommen bei diesem...<<" +
                 "\n" +
@@ -44,13 +45,13 @@ public class QuizMaster implements Playable {
         }
         int rightAnswerCount = 0;
         for (Quizzzable quiz : quizList) {
-            System.out.println("*******************************************************");
+            System.out.println("**************************************************************");
             System.out.println("| "+quiz.getQuizQuestion());
             List<Integer> answers = quiz.getAnswers();
             System.out.println("|  Ist die Antwort [" + answers.get(0) + "]?");
             System.out.println("|  Oder vielleicht [" + answers.get(1) + "]?");
             System.out.println("|  Oder doch [" + answers.get(2) + "]?");
-            System.out.println("*******************************************************");
+            System.out.println("**************************************************************");
 
 
             //while loop and check with user input
@@ -63,7 +64,9 @@ public class QuizMaster implements Playable {
                     System.out.println("<hier wird dem Spieler Leben abgezogen>");
                     nextIntegerInput = getNextIntegerInput();
 
-                    //todo: -HP
+
+
+
                 } else {
                     System.out.println(">>Wähle eine der drei Möglichkeiten.<<");
                     System.out.println("Der Quizmaster sieht ungeduldig aus.");

@@ -1,19 +1,27 @@
 package com.jambit.onboarding2020.tbrpg.domain.Player;
-
 import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
+
 import java.util.ArrayList;
+
 
 public class Player extends Person {
 
+    private static Player instance;
     private int balance = 100;
     private final ArrayList<Item> inventory;
 
-    public Player() {
+    private Player() {
         inventory = new ArrayList<>();
         attackDamage = GameConstants.PLAYER_ATTACK_DAMAGE;
     }
 
+    public static Player getInstance() {
+        if (Player.instance == null) {
+            Player.instance = new Player();
+        }
+        return Player.instance;
+    }
     public int getBalance() {
         return balance;
     }
@@ -37,3 +45,14 @@ public class Player extends Person {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+

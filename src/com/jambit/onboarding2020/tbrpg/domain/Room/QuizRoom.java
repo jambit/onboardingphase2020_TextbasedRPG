@@ -14,11 +14,11 @@ public class QuizRoom extends AbstractRoom{
     @Override
     public void enter(Player player) {
         QuizMaster quizMaster = new QuizMaster();
-        quizMaster.play();
+        quizMaster.play(player);
         System.out.println("Die Gestalt fässt sich ans Herz." +
                 "\n>>Argh! Du hast mich... besiegt!<<" +
                 "\nDer QuizMaster sinkt zu Boden. Dein Weg ist frei!");
-        return;
+        return ;
 
     }
 

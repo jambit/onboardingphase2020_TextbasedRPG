@@ -40,4 +40,6 @@ public abstract class Person {
     public void setAttackDamage(int attackDamage) {
         this.attackDamage = attackDamage;
     }
+
+
 }
