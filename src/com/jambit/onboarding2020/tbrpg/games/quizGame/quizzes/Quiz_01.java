@@ -7,9 +7,11 @@ import java.util.List;
 public class Quiz_01 implements Quizzzable {
 
     private int wrongAnswer1 = 5;
-    private int wrongAnswer2 = 3;
-    private int correctAnswer = 6;
-    private String question = "Quiz01: Dies ist ein placeholder. Die Antwort ist 6.";
+    private int wrongAnswer2 = 7;
+    private int correctAnswer = 9;
+    private String question = "In einem Teich wächst eine Seerose, die sich schnell vermehren kann. " +
+            "\nJeden Tag verdoppelt sie sich, und nach zehn Tagen ist der Teich voll. ̴l̴̴e̴̴c̴̴k̴̴e̴̴r̴ " +
+            "\nWie viele Tage würde es dauern, wenn es am Anfang zwei Seerosen gäbe?.";
 
     public List<Integer> getAnswers() {
         List<Integer> answerList = new ArrayList<>();

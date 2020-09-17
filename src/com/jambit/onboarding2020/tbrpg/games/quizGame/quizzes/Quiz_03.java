@@ -7,10 +7,13 @@ import java.util.List;
 public class Quiz_03 implements Quizzzable {
 
 
-    private int wrongAnswer1 = 4;
-    private int wrongAnswer2 = 7;
-    private int correctAnswer = 12;
-    private String question = "Quiz03: Dies ist ein placeholder. Die Antwort ist 12.";
+    private int wrongAnswer1 = 3;
+    private int wrongAnswer2 = 5;
+    private int correctAnswer = 6;
+    private String question = "Der kleine Hans leiht sich von ̶m̶i̶r̶ seinem lieben Freund 150 Gold und verspricht,\n" +
+            "jeden Tag doppelt so viel wie am letzten zu zahlen... Am ersten Tag 5 Gold, am zweiten 10 und so weiter.\n" +
+            "̶s̶o̶n̶s̶t̶ ̶g̶e̶h̶ö̶r̶t̶ ̶e̶r̶ ̶m̶i̶r̶\n" +
+            "In wievielen Tagen schuldet er  ̶m̶i̶r̶ nichts mehr?";
 
 
     @Override
