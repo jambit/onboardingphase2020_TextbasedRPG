@@ -1,6 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
+import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.Hallway;
 
 import java.io.BufferedReader;
@@ -20,16 +21,20 @@ public class GameEngine {
 
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";
+      BossRoom bossRoom = new BossRoom();
 
-      while (line.equalsIgnoreCase("quit") == false) {
+//      while (line.equalsIgnoreCase("quit") == false) {
 
-         Hallway hallway = new Hallway();
+      Hallway hallway = new Hallway();
 
-         for (AbstractRoom room : rooms) {
-            room.enter();
-            hallway.enter();
-         }
+      for (AbstractRoom room : rooms) {
+         room.enter();
+         hallway.enter();
       }
+//      }
+
+      bossRoom.enter();
+
       System.out.println("Spiel beendet.");
       in.close();
    }
