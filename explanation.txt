@@ -1,0 +1,2 @@
+Dieser Branch ist nur für Rechtschreibfehler, schöneren Output etc.
+Sollte die Gamelogik nicht beeinflussen

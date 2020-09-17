@@ -1,0 +1,41 @@
+package com.jambit.onboarding2020.tbrpg;
+
+import com.jambit.onboarding2020.tbrpg.core.DungeonGenerator;
+import com.jambit.onboarding2020.tbrpg.core.GameEngine;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
+<<<<<<< HEAD
+import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
+=======
+import com.jambit.onboarding2020.tbrpg.domain.Room.TicTacToeRoom;
+
+>>>>>>> 1e28d6886ad8545b1a0f0857da3c090a7e701d80
+import com.jambit.onboarding2020.tbrpg.domain.Room.QuizRoom;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+<<<<<<< HEAD
+
+
+        BossRoom bossRoom = new BossRoom();
+        bossRoom.enter();
+
+/*
+=======
+>>>>>>> 1e28d6886ad8545b1a0f0857da3c090a7e701d80
+        System.out.println("Welcome to our game :)");
+
+        DungeonGenerator dungeonGenerator = new DungeonGenerator();
+        ArrayList<AbstractRoom> rooms = dungeonGenerator.generateRooms();
+
+        Player player = Player.getPlayerInstance();
+
+        GameEngine gameEngine = new GameEngine(rooms);
+        gameEngine.run();*/
+    }
+}
+
