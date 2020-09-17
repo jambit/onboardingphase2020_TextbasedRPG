@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Player extends Person {
 
-    private static Player instance;
+    private static Player playerInstance;
     private int balance = 100;
     private final ArrayList<Item> inventory;
 
@@ -16,11 +16,11 @@ public class Player extends Person {
         attackDamage = GameConstants.PLAYER_ATTACK_DAMAGE;
     }
 
-    public static Player getInstance() {
-        if (Player.instance == null) {
-            Player.instance = new Player();
+    public static Player getPlayerInstance() {
+        if (Player.playerInstance == null) {
+            Player.playerInstance = new Player();
         }
-        return Player.instance;
+        return Player.playerInstance;
     }
     public int getBalance() {
         return balance;
