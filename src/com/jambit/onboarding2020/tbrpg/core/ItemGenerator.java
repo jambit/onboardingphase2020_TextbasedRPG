@@ -88,23 +88,39 @@ public class ItemGenerator {
 
 
     ArrayList<Item> lootList = new ArrayList<>();
+
     private Item getRoomLoot() {
         lootList.add(newWeapon(Player.getPlayerInstance().getAttackDamage()));
         lootList.add(newJunk());
         lootList.add(newConsumable("health"));
         lootList.add(newConsumable("escape"));
 
-        Item lootList.get(random.nextInt(lootList.size()));
-        Player.getPlayerInstance().putInInventory(item);
+        return lootList.get(random.nextInt(lootList.size()));
+
 
     }
 
+    public void interactWithRoomLoot() {
+
+        Item lootItem = this.getRoomLoot();
+        int lootMoney = (random.nextInt(10) + random.nextInt(10) + 3);
+
+        Player.getPlayerInstance().increaseBalance(lootMoney);
+        System.out.println("Beim Verlassen des Raumes findest du "+lootMoney+".");
+        System.out.println("Jetzt hast du "+Player.getPlayerInstance().getBalance()+" Gold.");
+
+        System.out.println("Außerdem findest folgendes Item: "+lootItem);
+        System.out.println("Möchtest du es [einstecken] oder [liegen lassen]?");
 
 
 
 
 
+        //2) putininventory
+        //3)lie
 
+        Player.getPlayerInstance().putInInventory(lootItem);
+    }
 
 
 }
