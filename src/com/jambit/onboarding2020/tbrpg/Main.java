@@ -15,10 +15,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        BossRoom bossRoom = new BossRoom();
-        bossRoom.enter();
 
-/*
         System.out.println("Welcome to our game :)");
 
         DungeonGenerator dungeonGenerator = new DungeonGenerator();
@@ -27,7 +24,7 @@ public class Main {
         Player player = Player.getPlayerInstance();
 
         GameEngine gameEngine = new GameEngine(rooms);
-        gameEngine.run();*/
+        gameEngine.run();
     }
 }
 
