@@ -26,14 +26,16 @@ public class GameEngine {
       String line = "";
 
       for (AbstractRoom room : rooms) {
-         room.printWelcomeMessage();
+         room.printRoomMessage();
 
-         System.out.println("Wenn du willst, kannst du dein Inventar verwalten? Tippe: " +
+         System.out.println("Wenn du willst, kannst du vorher dein Inventar verwalten? Tippe: " +
                  "\n [ja] [nein]");
          line = this.getPlayerInput();
          if (line.equalsIgnoreCase("ja")) {
             this.interactWithInventory();
          }
+
+         room.printWelcomeMessage();
 
          if (!gameState.escapeRopeActive) {
             gameState.escapeRopeActive = false;

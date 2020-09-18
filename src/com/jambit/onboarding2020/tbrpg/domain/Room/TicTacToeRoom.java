@@ -8,6 +8,9 @@ import com.jambit.onboarding2020.tbrpg.games.TicTacToe;
 public class TicTacToeRoom extends AbstractRoom {
 
     @Override
+    public void printRoomMessage() {
+        System.out.println("Als nächstes musst du den TicTacToe Room überleben...");
+    }
     public void printWelcomeMessage() {
         System.out.println("Willkommen im TicTacToe Room" + "" +
                 "\n  _________  ___  ________ _________  ________  ________ _________  ________  _______      \n" +
