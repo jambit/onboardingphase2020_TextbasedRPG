@@ -29,6 +29,7 @@ public class GameEngine {
          room.printWelcomeMessage();
 
          System.out.println("Willst du dein Inventar verwalten? (tippe: <nutze Inventar>)");
+         line = this.getPlayerInput();
          if (line.equalsIgnoreCase("nutze Inventar")) {
             this.interactWithInventory();
          }
@@ -100,6 +101,15 @@ public class GameEngine {
             e.printStackTrace();
          }
       }
+   }
+
+   public String getPlayerInput() {
+      try {
+         return in.readLine();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+      return null;
    }
 
 }
