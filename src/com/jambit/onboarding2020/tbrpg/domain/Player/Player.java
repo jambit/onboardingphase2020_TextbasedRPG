@@ -4,7 +4,6 @@ import com.jambit.onboarding2020.tbrpg.domain.Item.Consumable;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
 import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
-import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 
 import javax.naming.InsufficientResourcesException;
 import java.util.ArrayList;
@@ -32,6 +31,20 @@ public class Player extends Person {
     public void sell(Item item) {
         this.inventory.remove(item);
         this.balance += item.getSellValue();
+    }
+
+    public void attack (Enemy damagedPerson) throws EnemyDeadException {
+        damagedPerson.decreaseHealthState(this.attackDamage);
+    }
+
+    @Override
+    public void decreaseHealthState(int lostHP) throws PlayerDeadException {
+        this.healthState -= lostHP;
+
+        if (this.healthState <= 0) {
+            this.healthState = 0;
+            throw new PlayerDeadException("Spieler ist tot");
+        }
     }
 
     public void buy(Item item) throws InsufficientResourcesException {

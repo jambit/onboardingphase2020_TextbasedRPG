@@ -1,6 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 
@@ -23,7 +24,6 @@ public class GameEngine {
 
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";
-      BossRoom bossRoom = new BossRoom();
 
       for (AbstractRoom room : rooms) {
          room.printWelcomeMessage();
@@ -34,14 +34,18 @@ public class GameEngine {
             this.interactWithInventory();
          }
 
-
          if (!gameState.escapeRopeActive) {
             gameState.escapeRopeActive = false;
-            room.enter();
+
+            try {
+               room.enter();
+            } catch (PlayerDeadException e) {
+               System.out.println(e.getMessage());
+               break;
+            }
          }
       }
 
-      bossRoom.enter();
 
       System.out.println("Spiel beendet.");
       in.close();

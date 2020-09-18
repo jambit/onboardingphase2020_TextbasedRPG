@@ -15,7 +15,6 @@ public class Main {
 
         DungeonGenerator dungeonGenerator = new DungeonGenerator();
         ArrayList<AbstractRoom> rooms = dungeonGenerator.generateRooms();
-        Player player = Player.getPlayerInstance();
 
         GameEngine gameEngine = new GameEngine(rooms);
         gameEngine.run();
