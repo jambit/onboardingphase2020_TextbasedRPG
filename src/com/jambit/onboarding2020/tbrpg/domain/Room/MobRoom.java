@@ -12,9 +12,13 @@ import java.util.Random;
 
 public class MobRoom extends AbstractRoom {
 
+   public void printRoomMessage() {
+      System.out.println("Um weiter zu kommen musst du einen Gegner bezwingen");
+   }
+
    @Override
    public void printWelcomeMessage() {
-      System.out.println("Du stehst vor Raum '" + this.getClass().getSimpleName() + "'. Hier kannst du dies und das machen. Möchtest du eintreten?");
+      System.out.println("Du stehst einem mächtigen Gegner gegenüber.");
    }
 
    @Override

@@ -7,6 +7,10 @@ import com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster;
 
 public class QuizRoom extends AbstractRoom {
     @Override
+
+    public void printRoomMessage() {
+        System.out.println("Eine neue Herausforderung wartet: der Quizraum...");
+    }
     public void printWelcomeMessage() {
         System.out.println("Du betrittst den Raum." +
                 "\nVor dir siehst du eine große Höhle, die kaum von ein paar Kerzen auf dem Boden erhellt wird." +
