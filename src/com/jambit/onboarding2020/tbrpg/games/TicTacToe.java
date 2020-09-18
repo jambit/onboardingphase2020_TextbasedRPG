@@ -1,6 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.games;
 
-import com.jambit.onboarding2020.tbrpg.domain.Room.GameResult;
+import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 
 import java.util.Scanner;
 
@@ -11,11 +11,11 @@ public class TicTacToe {
     private final int MAXIMUM_PLAYER_MOVES = 8;
     private int[][] board = new int[3][3];
 
-    public GameResult getGameresult () {
+    public RoomGamesResult getGameresult () {
         return gameresult;
     }
 
-    private GameResult gameresult;
+    private RoomGamesResult gameresult;
     public Scanner scan = new Scanner(System.in);
 
     public void printBoard () {
@@ -81,13 +81,19 @@ public class TicTacToe {
     }
 
 
-    public void NPCtip (String dificulty) {
-        if (dificulty.equals("einfach"))
+    public void NPCtip (String difficulty) {
+        if (difficulty.equals("einfach")) {
+            gameresult = RoomGamesResult.WON_EASY;
             easy();
-        else if (dificulty.equals("mittel"))
+        }
+        else if (difficulty.equals("mittel")) {
+            gameresult = RoomGamesResult.WON_MIDDLE;
             medium();
-        else if (dificulty.equals(("schwer")))
+        }
+        else if (difficulty.equals(("schwer"))) {
+            gameresult = RoomGamesResult.WON_DIFFICULT;
             dificult();
+        }
         else
             System.out.println("Falsche Eingabe"); //noch anpassen!!!!
     }
@@ -343,7 +349,9 @@ public class TicTacToe {
         if (win() == -1) { //check if somebody won
             printBoard();
             System.out.println("Du hast verloren");
+            gameresult = RoomGamesResult.LOST;
             return true;
+
         } else if (win() == 1) {
             printBoard();
             System.out.println("Glückwunsch, du hast gewonnen!");

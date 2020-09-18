@@ -8,6 +8,7 @@ import com.jambit.onboarding2020.tbrpg.domain.Room.TicTacToeRoom;
 
 import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.QuizRoom;
+import com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster;
 
 import java.io.IOException;
 import java.util.ArrayList;

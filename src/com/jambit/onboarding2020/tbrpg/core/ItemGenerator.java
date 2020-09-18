@@ -3,11 +3,15 @@ package com.jambit.onboarding2020.tbrpg.core;
 import com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class ItemGenerator {
+
+
 
     Random random = new Random();
     ArrayList<String> junkNames = new ArrayList<>();
@@ -84,5 +88,27 @@ public class ItemGenerator {
         this.weaponLore.add("KATANA!");
         this.weaponLore.add("Was ein Bastard...");
     }
+    public Item generateRandomItem() {
+
+        ArrayList<Item> roomLoot = new ArrayList<>();
+            roomLoot.add(newJunk());
+            roomLoot.add(newConsumable("health"));
+            roomLoot.add(newConsumable("escape"));
+            roomLoot.add(newWeapon(Player.getPlayerInstance().getAttackDamage()));
+
+        return roomLoot.get(random.nextInt(roomLoot.size()));
+    }
+    public void dropLoot(){
+
+//todo: ausprinten + später erst ins inventar
+
+//todo:if player wants to take item
+
+        Player.getPlayerInstance().putInInventory(generateRandomItem());
+
+
+    }
+
+
 
 }
