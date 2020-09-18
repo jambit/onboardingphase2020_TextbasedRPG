@@ -80,8 +80,17 @@ public class BossRoom extends AbstractRoom {
                 "\nPlötzlich bist du von Ehrfurcht für die Spieleentwickler erfüllt." +
                 "\nDas ist wahrhaftig das beste Spiel, das du je gesehen hast.");
 
+<<<<<<< HEAD
+}
+//DAS SPIEL ENDET HIER: WIE?
 
-
+=======
+        
     }
 
 }
+    //DAS SPIEL ENDET HIER: WIE?
+>>>>>>> Development
+
+
+
