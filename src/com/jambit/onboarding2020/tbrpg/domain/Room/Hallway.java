@@ -13,7 +13,9 @@ public class Hallway extends AbstractRoom {
     @Override
     public void enter() {
 
-        Player player = Player.getPlayerInstance();
+2
+
+
         String line = "";
 
         System.out.println("Nicht schlecht, du hast den Raum geschafft\n " +

@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 public class BossRoom extends AbstractRoom {
+
     @Override
     public void printWelcomeMessage() {
         System.out.println("Du entscheidest dich, dem Boss gegenüberzutreten..." +
@@ -74,12 +75,17 @@ public class BossRoom extends AbstractRoom {
             in.winGame();
         }
 
+
+
         System.out.println("Du besiegst den Boss." +
                 "\nPlötzlich bist du von Ehrfurcht für die Spieleentwickler erfüllt." +
                 "\nDas ist wahrhaftig das beste Spiel, das du je gesehen hast.");
-        return ;
+
+        
     }
 
+    }
+    //DAS SPIEL ENDET HIER: WIE?
 
 }
 
