@@ -1,7 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
 import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
-import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.Playable;
@@ -38,7 +37,7 @@ public class QuizMaster implements Playable {
         possibleQuizzes.add(new Quiz_02());
         possibleQuizzes.add(new Quiz_03());
         possibleQuizzes.add(new Quiz_04());
-        int startSizeofPossibleList = possibleQuizzes.size();
+
         //todo: Make more quizzes and add them here
 
         ArrayList<Quizzzable> quizList = new ArrayList<>();

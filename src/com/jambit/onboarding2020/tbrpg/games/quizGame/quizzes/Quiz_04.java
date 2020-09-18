@@ -2,7 +2,7 @@ package com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes;
 
 import com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz;
 
-public class Quiz_04 extends Quiz {
+public class Quiz_04 extends Quiz implements Quizzzable  {
 
     private final int wrongAnswer1 = 30;
     private final int wrongAnswer2 = 45;
