@@ -5,6 +5,7 @@ import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -106,21 +107,27 @@ public class ItemGenerator {
         int lootMoney = (random.nextInt(10) + random.nextInt(10) + 3);
 
         Player.getPlayerInstance().increaseBalance(lootMoney);
-        System.out.println("Beim Verlassen des Raumes findest du "+lootMoney+".");
-        System.out.println("Jetzt hast du "+Player.getPlayerInstance().getBalance()+" Gold.");
+        System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + ".");
+        System.out.println("Jetzt hast du " + Player.getPlayerInstance().getBalance() + " Gold.");
 
-        System.out.println("Außerdem findest folgendes Item: "+lootItem);
-        System.out.println("Möchtest du es [einstecken] oder [liegen lassen]?");
-
-
+        System.out.println("SPIELERINVENTAR:");
+        //todo: print out nicely: inventory, balance, health, attack, equippedWeapon
 
 
+        System.out.println("Außerdem findest folgendes Item: " + lootItem);
+        System.out.println("Möchtest du es [einstecken] oder es liegen lassen und [weitergehen]?");
 
-        //2) putininventory
-        //3)lie
-
-        Player.getPlayerInstance().putInInventory(lootItem);
+        String line = "";
+        if (line.equalsIgnoreCase("einstecken")) {
+            Player.getPlayerInstance().putInInventory(lootItem);
+        } else if (line.equalsIgnoreCase("weitergehen")) ;
+        {
+            return;
+        }
+//TODO: exception handling!!
     }
-
-
 }
+
+
+
+
