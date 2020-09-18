@@ -85,4 +85,11 @@ public class ItemGenerator {
         this.weaponLore.add("Was ein Bastard...");
     }
 
+    private void getRandomItem(){
+        new ArrayList<Item>() roomList = new ArrayList<>();
+
+
+    }
+
+
 }
