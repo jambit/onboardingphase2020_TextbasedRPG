@@ -2,6 +2,7 @@ package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.core.InvalidInputException;
+import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Enemy;
 import com.jambit.onboarding2020.tbrpg.domain.Player.EnemyDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
@@ -43,6 +44,7 @@ public class MobRoom extends AbstractRoom {
 
    private void fight(GameInput in, Enemy enemy, Random random) throws InvalidInputException, PlayerDeadException {
       int input = in.inputInteger();
+      ItemGenerator itemGenerator = new ItemGenerator();
 
       if (input == 1) {
          if (random.nextBoolean()) {
@@ -51,6 +53,7 @@ public class MobRoom extends AbstractRoom {
             } catch (EnemyDeadException e) {
                System.out.println(e.getMessage());
                in.winGame();
+               itemGenerator.interactWithRoomLoot();
                return;
             }
             System.out.println("Treffer!");

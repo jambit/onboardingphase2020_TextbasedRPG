@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
+import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
@@ -10,11 +11,7 @@ import java.util.*;
 
 public class QuizMaster implements Playable {
 
-    public RoomGamesResult getGameresult () {
-        return gameresult;
-    }
-    private RoomGamesResult gameresult;
-
+    ItemGenerator itemGenerator = new ItemGenerator();
     Random random = new Random();
 
     @Override
@@ -36,7 +33,7 @@ public class QuizMaster implements Playable {
         System.out.println(">>Du wirst drei Fragen beantworten müssen... nur so kannst du diesen Raum verlassen!<<");
         System.out.println(">>Die erste Frage lautet...<<");
 
-        ArrayList<Quizzzable> possibleQuizzes = new ArrayList<>();
+        ArrayList<Quiz> possibleQuizzes = new ArrayList<>();
         possibleQuizzes.add(new Quiz_01());
         possibleQuizzes.add(new Quiz_02());
         possibleQuizzes.add(new Quiz_03());
@@ -93,8 +90,11 @@ public class QuizMaster implements Playable {
                 if (rightAnswerCount == 3) {
 
                     player.increaseHealthState(5);
-                    System.out.println("Du hast 5 Lebenspunkte erlangt." +
+                    System.out.println("Die Euphorie über die richtige Antwort heilt dich um 5 Lebenspunkte." +
                             "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+
+                    itemGenerator.interactWithRoomLoot();
+
 
                     return;
 
@@ -104,10 +104,9 @@ public class QuizMaster implements Playable {
 
             }
 
-            }
-
         }
 
+    }
 
 
     private static Integer getNextIntegerInput() {
