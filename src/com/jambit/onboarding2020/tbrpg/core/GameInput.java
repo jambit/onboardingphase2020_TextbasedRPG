@@ -18,36 +18,31 @@ public class GameInput extends BufferedReader {
         this.gameState = false;
     }
 
-    public void looseGame() {
-        System.out.println("Du hast das Spiel leider verloren! Versuche es nochmal?");
-        this.gameState = false;
-    }
-
     public void winGame() {
         System.out.println("Du hast gewonnen!");
         this.gameState = false;
     }
 
-    public int inputInteger() throws Exception {
+    public int inputInteger() throws InvalidInputException{
         int intInput;
 
         try {
             String input = this.readLine();
             intInput = Integer.parseInt(input);
         } catch (Exception e) {
-            throw new Exception("Der Input ist leider nicht valide, gib eine Zahl ein!");
+            throw new InvalidInputException("Der Input ist leider nicht valide, gib eine Zahl ein!");
         }
 
         return intInput;
     }
 
-    public boolean inputRoomdecision() throws Exception {
+    public boolean inputRoomdecision() throws InvalidInputException{
         String input = "";
 
         try {
             input = this.readLine();
         } catch (Exception e) {
-            throw new Exception("Eingabe ungültig");
+            throw new InvalidInputException("Eingabe ungültig");
         }
 
         if (input.equalsIgnoreCase("enter")) {
@@ -57,7 +52,7 @@ public class GameInput extends BufferedReader {
             return false;
         }
 
-        throw new Exception("Eingabe ungültig, bitte gib enter oder exit ein");
+        throw new InvalidInputException("Eingabe ungültig, bitte gib enter oder exit ein");
     }
 
     public static void clearScreen() {
