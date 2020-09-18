@@ -1,9 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
-import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
-import com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom;
-import com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom;
-import com.jambit.onboarding2020.tbrpg.domain.Room.QuizRoom;
+import com.jambit.onboarding2020.tbrpg.domain.Room.*;
 import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
 
 import java.util.ArrayList;
@@ -20,6 +17,7 @@ public class DungeonGenerator {
         possibleRooms.add(new MobRoom());
         possibleRooms.add(new MerchantRoom());
         possibleRooms.add(new QuizRoom());
+        possibleRooms.add(new TicTacToeRoom());
 
     }
 

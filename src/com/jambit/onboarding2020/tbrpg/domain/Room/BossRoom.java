@@ -80,6 +80,8 @@ public class BossRoom extends AbstractRoom {
         return;
     }
 
+    }
+    //DAS SPIEL ENDET HIER: WIE?
 
 }
 

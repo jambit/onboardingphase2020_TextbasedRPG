@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
+import com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
 
@@ -35,16 +36,16 @@ public class ItemGenerator {
 
     public Item newConsumable(String consumable) {
         if (consumable.equals("health")) {
-            return newHealthPotion();
+            return new HealthPotion();
         } else if (consumable.equals("escape")) {
             return newEscapeRope();
         }
         return null;
     }
 
-    private Item newHealthPotion() {
+    /*private Item newHealthPotion() {
         return new Item(5, "Heiltrank", "Heilt dich ein bisschen :)");
-    }
+    }*/
 
     private Item newEscapeRope() {
         return new Item(10, "Fluchttrick", "Bruder muss los!");
