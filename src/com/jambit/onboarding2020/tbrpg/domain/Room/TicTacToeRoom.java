@@ -1,5 +1,8 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
+import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.TicTacToe;
 
 public class TicTacToeRoom extends AbstractRoom {
@@ -16,23 +19,45 @@ public class TicTacToeRoom extends AbstractRoom {
                 "        \\|__|  \\|__|\\|_______|   \\|__|  \\|__|\\|__|\\|_______|   \\|__|  \\|_______|\\|_______|\n" +
                 "                                                                                          " +
                 "\n ________  ________  ________  _____ ______      \n" +
-                        "|\\   __  \\|\\   __  \\|\\   __  \\|\\   _ \\  _   \\    \n" +
-                        "\\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\\\\\__\\ \\  \\   \n" +
-                        " \\ \\   _  _\\ \\  \\\\\\  \\ \\  \\\\\\  \\ \\  \\\\|__| \\  \\  \n" +
-                        "  \\ \\  \\\\  \\\\ \\  \\\\\\  \\ \\  \\\\\\  \\ \\  \\    \\ \\  \\ \n" +
-                        "   \\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\__\\    \\ \\__\\\n" +
-                        "    \\|__|\\|__|\\|_______|\\|_______|\\|__|     \\|__|");
+                "|\\   __  \\|\\   __  \\|\\   __  \\|\\   _ \\  _   \\    \n" +
+                "\\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\\\\\__\\ \\  \\   \n" +
+                " \\ \\   _  _\\ \\  \\\\\\  \\ \\  \\\\\\  \\ \\  \\\\|__| \\  \\  \n" +
+                "  \\ \\  \\\\  \\\\ \\  \\\\\\  \\ \\  \\\\\\  \\ \\  \\    \\ \\  \\ \n" +
+                "   \\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\__\\    \\ \\__\\\n" +
+                "    \\|__|\\|__|\\|_______|\\|_______|\\|__|     \\|__|");
     }
 
     @Override
-    public void enter() {
+    public void enter() throws PlayerDeadException {
+        Player player = Player.getPlayerInstance();
+
         TicTacToe game = new TicTacToe();
-//        while (game.getGameresult() == GameResult.TIE){
-//            game.play();
-//        }
+//
         game.play();
+
+        System.out.println("Du hast " + player.getHealthState() + " Leben.");
+
+        if (game.getGameresult() == RoomGamesResult.WON_EASY) {
+            player.increaseHealthState(5);
+            System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 5 Lebenspunkte." +
+                    "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+        } else if (game.getGameresult() == RoomGamesResult.WON_MIDDLE) {
+            player.increaseHealthState(10);
+            System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 10 Lebenspunkte." +
+                    "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+        } else if (game.getGameresult() == RoomGamesResult.WON_DIFFICULT) {
+            player.increaseHealthState(15);
+            System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 15 Lebenspunkte." +
+                    "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+        } else if (game.getGameresult() == RoomGamesResult.LOST) {
+            player.decreaseHealthState(10);
+            System.out.println("Vor Frustration hast du 10 Lebenspunkte verloren." +
+                    "\nDu hast noch " + player.getHealthState() + " Lebenspunkte.");
+        }
+
+
         return;
-        //TODO: If lost --> reduce life balance
+
         //TODO: If won --> party hard
     }
 }

@@ -1,11 +1,11 @@
 package com.jambit.onboarding2020.tbrpg.domain.Item;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.core.GameState;
 
 public class EscapeRope implements Consumable {
 
     @Override
-    public void consume(Player player) {
-        //skip next room?
+    public void consume() {
+        GameState.getGameStateInstance().escapeRopeActive = true;
     }
 }

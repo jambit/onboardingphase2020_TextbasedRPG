@@ -1,6 +1,8 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
+import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster;
 
 public class QuizRoom extends AbstractRoom {
@@ -17,13 +19,20 @@ public class QuizRoom extends AbstractRoom {
     }
 
     @Override
-    public void enter() {
+    public void enter() throws PlayerDeadException {
+        Player player = Player.getPlayerInstance();
         QuizMaster quizMaster = new QuizMaster();
-        quizMaster.play(Player.getPlayerInstance());
+        quizMaster.play();
         System.out.println("Der QuizMaster fässt sich ans Herz." +
                 "\nSeine schlitzartigen Pupillen weiten sich." +
                 "\n>>Argh! Du hast mich... besiegt!<<" +
                 "\nDer QuizMaster sinkt zu Boden. Dein Weg ist frei!");
+
+
+        System.out.println("Du hast " + player.getHealthState() + " Leben.");
+
+
+
     }
 
 }

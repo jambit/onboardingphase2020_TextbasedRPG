@@ -1,6 +1,8 @@
 package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
+import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.Playable;
 import com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.*;
 
@@ -8,10 +10,16 @@ import java.util.*;
 
 public class QuizMaster implements Playable {
 
+    public RoomGamesResult getGameresult () {
+        return gameresult;
+    }
+    private RoomGamesResult gameresult;
+
     Random random = new Random();
 
     @Override
-    public void play(Player player) {
+    public void play() throws PlayerDeadException {
+
 
         System.out.println(">>Willkommen bei meinem...<<" +
                 "\n" +
@@ -61,11 +69,13 @@ public class QuizMaster implements Playable {
                 if (quiz.checkWrongs(nextIntegerInput) == true) {
                     System.out.println(">>Nicht... richtig!<<");
                     System.out.println("Der QuizMaster tritt dich.");
-                    System.err.println("<hier wird dem Spieler Leben abgezogen>");
+
                     nextIntegerInput = getNextIntegerInput();
 
-
-
+                    player.decreaseHealthState(10);
+                    System.out.println("Du hast 10 Lebenspunkte verloren." +
+                            "\nDu hast noch " + player.getHealthState() + " Lebenspunkte.");
+                    Player player = Player.getPlayerInstance();
 
                 } else {
                     System.out.println("Wähle eine der drei Möglichkeiten.");
@@ -78,22 +88,27 @@ public class QuizMaster implements Playable {
 
             if (quiz.checkAnswer(nextIntegerInput) == true) {
                 System.out.println(">>Richtig!<<");
-
                 rightAnswerCount++;
 
                 if (rightAnswerCount == 3) {
+
+                    player.increaseHealthState(5);
+                    System.out.println("Du hast 5 Lebenspunkte erlangt." +
+                            "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
 
                     return;
 
                 } else {
                     System.out.println(">>Hier kommt die nächste Frage...<<");
                 }
+
             }
 
+            }
 
         }
 
-    }
+
 
     private static Integer getNextIntegerInput() {
         Scanner scanner = new Scanner(System.in);

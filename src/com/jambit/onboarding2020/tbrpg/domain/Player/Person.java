@@ -3,39 +3,30 @@ package com.jambit.onboarding2020.tbrpg.domain.Player;
 public abstract class Person {
 
     protected int healthState = 100;
-    protected String name;
     protected int attackDamage;
 
-    public void attack (Person damagedPerson) {
-        damagedPerson.healthState -= this.attackDamage;
-        if (damagedPerson.healthState < 0) {
-           damagedPerson.healthState = 0;
-        }
-    }
 
     public int getHealthState() {
         return healthState;
     }
 
-    public void setHealthState(int healthState) {
-        this.healthState = healthState;
+    public void increaseHealthState(int additionalHP) {
+        this.healthState += additionalHP;
+
+        if (this.healthState > 100) {
+            this.healthState = 100;
+        }
     }
 
-    public String getName() {
-        return name;
-    }
+    public void decreaseHealthState(int lostHP) throws EnemyDeadException {
+        this.healthState -= lostHP;
 
-    public void setName(String name) {
-        this.name = name;
+        if (this.healthState <= 0) {
+            this.healthState = 0;
+        }
     }
 
     public int getAttackDamage() {
         return attackDamage;
     }
-
-    public void setAttackDamage(int attackDamage) {
-        this.attackDamage = attackDamage;
-    }
-
-
 }

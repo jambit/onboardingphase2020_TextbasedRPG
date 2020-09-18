@@ -23,6 +23,7 @@ public class DungeonGenerator {
 
     public ArrayList<AbstractRoom> generateRooms() {
         Collections.shuffle(possibleRooms);
+        possibleRooms.add(new BossRoom());
         return possibleRooms;
     }
 
