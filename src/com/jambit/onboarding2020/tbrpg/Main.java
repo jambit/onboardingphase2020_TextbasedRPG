@@ -11,8 +11,13 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        System.out.println("Welcome to our game :)");
 
-}
+        DungeonGenerator dungeonGenerator = new DungeonGenerator();
+        ArrayList<AbstractRoom> rooms = dungeonGenerator.generateRooms();
+        Player player = Player.getPlayerInstance();
+
+        GameEngine gameEngine = new GameEngine(rooms);
         gameEngine.run();
     }
 }

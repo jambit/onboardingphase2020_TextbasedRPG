@@ -3,7 +3,6 @@ package com.jambit.onboarding2020.tbrpg.domain.Room;
 import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Enemy;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
-import com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster;
 
 import java.io.InputStreamReader;
 import java.util.Random;
@@ -84,9 +83,8 @@ public class BossRoom extends AbstractRoom {
         
     }
 
-    }
+}
     //DAS SPIEL ENDET HIER: WIE?
 
-}
 
 
