@@ -2,6 +2,7 @@ package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
 import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.Playable;
 import com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.*;
 
@@ -17,7 +18,7 @@ public class QuizMaster implements Playable {
     Random random = new Random();
 
     @Override
-    public void play() {
+    public void play() throws PlayerDeadException {
 
 
         System.out.println(">>Willkommen bei meinem...<<" +
