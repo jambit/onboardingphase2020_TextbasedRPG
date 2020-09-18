@@ -3,13 +3,12 @@ package com.jambit.onboarding2020.tbrpg.domain.Player;
 public abstract class Person {
 
     protected int healthState = 100;
-    protected String name;
     protected int attackDamage;
 
     public void attack (Person damagedPerson) {
         damagedPerson.healthState -= this.attackDamage;
         if (damagedPerson.healthState < 0) {
-           damagedPerson.healthState = 0;
+            damagedPerson.healthState = 0;
         }
     }
 
@@ -17,25 +16,16 @@ public abstract class Person {
         return healthState;
     }
 
-    public void setHealthState(int healthState) {
-        this.healthState = healthState;
+    public void increaseHealthState(int additionalHP) {
+        this.healthState += additionalHP;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void decreaseHealthState(int lostHP) {
+        this.healthState -= lostHP;
     }
 
     public int getAttackDamage() {
         return attackDamage;
     }
-
-    public void setAttackDamage(int attackDamage) {
-        this.attackDamage = attackDamage;
-    }
-
 
 }
