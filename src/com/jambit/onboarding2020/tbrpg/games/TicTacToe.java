@@ -290,7 +290,7 @@ public class TicTacToe {
     public String getDifficulty () {
 
         System.out.println("Welche Schwierigkeit? Tippe:" +
-                "\n[einfach] [mittel] [schwer]");
+                "\n [einfach] [mittel] [schwer]");
         String diff = scan.nextLine();
 
         while (!(diff.equals("einfach") || diff.equals("mittel") || diff.equals("schwer"))) {
@@ -309,9 +309,9 @@ public class TicTacToe {
         if (whoBegins()) {
 
             System.out.println("Du darfst anfangen, wo setzt du dein Kreuz? Tippe: " +
-                    "\n[links oben] [oben mitte] [rechts oben]" +
-                    "\n[links mitte] [mitte] [rechts mitte]" +
-                    "\n[links unten] [unten mitte] [rechts unten]");
+                    "\n [links oben] [oben mitte] [rechts oben]" +
+                    "\n [links mitte] [mitte] [rechts mitte]" +
+                    "\n [links unten] [unten mitte] [rechts unten]");
             printBoard();
             String place = scan.nextLine(); //player tips in first position
             pcTip(place);
@@ -330,9 +330,9 @@ public class TicTacToe {
             }
 
             System.out.println("Wo setzt du dein Kreuz? Tippe: " +
-                    "\n[links oben] [oben mitte] [rechts oben]" +
-                    "\n[links mitte] [mitte] [rechts mitte]" +
-                    "\n[links unten] [unten mitte] [rechts unten]");
+                    "\n [links oben] [oben mitte] [rechts oben]" +
+                    "\n [links mitte] [mitte] [rechts mitte]" +
+                    "\n [links unten] [unten mitte] [rechts unten]");
             String place = scan.nextLine(); //player tips in first position
 
             pcTip(place);
