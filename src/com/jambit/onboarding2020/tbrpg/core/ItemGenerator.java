@@ -5,13 +5,18 @@ import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class ItemGenerator {
 
-
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
     Random random = new Random();
     ArrayList<String> junkNames = new ArrayList<>();
@@ -88,27 +93,52 @@ public class ItemGenerator {
         this.weaponLore.add("KATANA!");
         this.weaponLore.add("Was ein Bastard...");
     }
-    public Item generateRandomItem() {
 
-        ArrayList<Item> roomLoot = new ArrayList<>();
-            roomLoot.add(newJunk());
-            roomLoot.add(newConsumable("health"));
-            roomLoot.add(newConsumable("escape"));
-            roomLoot.add(newWeapon(Player.getPlayerInstance().getAttackDamage()));
+    private Item getRoomLoot() {
+        ArrayList<Item> lootList = new ArrayList<>();
+        lootList.add(newWeapon(Player.getPlayerInstance().getAttackDamage()));
+        lootList.add(newJunk());
+        lootList.add(newConsumable("health"));
+        lootList.add(newConsumable("escape"));
 
-        return roomLoot.get(random.nextInt(roomLoot.size()));
-    }
-    public void dropLoot(){
-
-//todo: ausprinten + später erst ins inventar
-
-//todo:if player wants to take item
-
-        Player.getPlayerInstance().putInInventory(generateRandomItem());
-
+        return lootList.get(random.nextInt(lootList.size()));
 
     }
 
+    public void interactWithRoomLoot() {
+
+        Item lootItem = this.getRoomLoot();
+        int lootMoney = (random.nextInt(10) + random.nextInt(10) + 3);
+
+        Player.getPlayerInstance().increaseBalance(lootMoney);
+        System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + " Gold.");
+        System.out.println("Jetzt hast du " + Player.getPlayerInstance().getBalance() + " Gold.");
+
+        System.out.println("SPIELERINVENTAR:");
+        //todo: print out nicely: inventory, balance, health, attack, equippedWeapon
 
 
+        System.out.println("Außerdem findest folgendes Item: " + lootItem);
+        System.out.println("Möchtest du es [einstecken] oder es liegen lassen und [weitergehen]?");
+
+
+        String gameInput = "";
+        try {
+            gameInput = in.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (gameInput.equalsIgnoreCase("einstecken")) {
+            Player.getPlayerInstance().putInInventory(lootItem);
+            System.out.println("Du steckst das Item ein und gehst weiter.");
+        } else if (gameInput.equalsIgnoreCase("weitergehen")) ;
+            System.out.println("Du lässt das Item liegen und gehst weiter.");
+        {
+            return;
+        }
+    }
 }
+
+
+
+

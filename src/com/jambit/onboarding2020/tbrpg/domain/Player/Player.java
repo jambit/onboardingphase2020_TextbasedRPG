@@ -28,6 +28,11 @@ public class Player extends Person {
         return balance;
     }
 
+    public int increaseBalance(int addedMoney){
+        this.balance = balance + addedMoney;
+        return balance;
+    }
+
     public void sell(Item item) {
         this.inventory.remove(item);
         this.balance += item.getSellValue();
