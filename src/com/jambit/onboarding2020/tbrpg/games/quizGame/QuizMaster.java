@@ -39,7 +39,7 @@ public class QuizMaster implements Playable {
         possibleQuizzes.add(new Quiz_03());
         possibleQuizzes.add(new Quiz_04());
         int startSizeofPossibleList = possibleQuizzes.size();
-        //todo: Make more quizzes and add them here (actual questions --lore?)
+        //todo: Make more quizzes and add them here
 
         ArrayList<Quizzzable> quizList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
