@@ -18,7 +18,7 @@ public class DungeonGenerator {
         possibleRooms.add(new MerchantRoom());
         possibleRooms.add(new QuizRoom());
         possibleRooms.add(new TicTacToeRoom());
-
+        possibleRooms.add(new HangmanRoom());
     }
 
     public ArrayList<AbstractRoom> generateRooms() {

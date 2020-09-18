@@ -36,6 +36,21 @@ public class GameInput extends BufferedReader {
         return intInput;
     }
 
+    public String inputHangmanString() throws InvalidInputException {
+        String input;
+
+        try {
+            input = this.readLine();
+        } catch (Exception e) {
+            throw new InvalidInputException("Ungültige Eingabe. Versuche es nochmal!");
+        }
+
+        if (input.length() == 0) {
+            throw new InvalidInputException("Gib einen Buchstabe oder das ganze Wort ein");
+        }
+
+        return input.toUpperCase();
+    }
     public boolean inputRoomdecision() throws InvalidInputException{
         String input = "";
 
