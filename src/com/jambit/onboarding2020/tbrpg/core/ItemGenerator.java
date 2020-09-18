@@ -3,6 +3,7 @@ package com.jambit.onboarding2020.tbrpg.core;
 import com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -85,11 +86,25 @@ public class ItemGenerator {
         this.weaponLore.add("Was ein Bastard...");
     }
 
-    private void getRandomItem(){
-        new ArrayList<Item>() roomList = new ArrayList<>();
 
+    ArrayList<Item> lootList = new ArrayList<>();
+    private Item getRoomLoot() {
+        lootList.add(newWeapon(Player.getPlayerInstance().getAttackDamage()));
+        lootList.add(newJunk());
+        lootList.add(newConsumable("health"));
+        lootList.add(newConsumable("escape"));
+
+        Item lootList.get(random.nextInt(lootList.size()));
+        Player.getPlayerInstance().putInInventory(item);
 
     }
+
+
+
+
+
+
+
 
 
 }
