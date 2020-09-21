@@ -2,10 +2,15 @@ package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster;
 
 public class QuizRoom extends AbstractRoom {
     @Override
+
+    public void printRoomMessage() {
+        System.out.println("Eine neue Herausforderung wartet: der Quizraum...");
+    }
     public void printWelcomeMessage() {
         System.out.println("Du betrittst den Raum." +
                 "\nVor dir siehst du eine große Höhle, die kaum von ein paar Kerzen auf dem Boden erhellt wird." +
@@ -18,7 +23,7 @@ public class QuizRoom extends AbstractRoom {
     }
 
     @Override
-    public void enter() {
+    public void enter() throws PlayerDeadException {
         Player player = Player.getPlayerInstance();
         QuizMaster quizMaster = new QuizMaster();
         quizMaster.play();

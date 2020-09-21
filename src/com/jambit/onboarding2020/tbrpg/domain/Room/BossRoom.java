@@ -1,13 +1,20 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.GameInput;
+import com.jambit.onboarding2020.tbrpg.core.InvalidInputException;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Enemy;
+import com.jambit.onboarding2020.tbrpg.domain.Player.EnemyDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 
 import java.io.InputStreamReader;
 import java.util.Random;
 
 public class BossRoom extends AbstractRoom {
+
+    public void printRoomMessage() {
+        System.out.println("Die finale Challenge: du musst den Boss bezwingen... ");
+    }
 
     @Override
     public void printWelcomeMessage() {
@@ -40,12 +47,20 @@ public class BossRoom extends AbstractRoom {
         }
     }
 
-    private void fight(GameInput in, Enemy enemy, Random random) throws Exception {
+    private void fight(GameInput in, Enemy enemy, Random random) throws InvalidInputException, PlayerDeadException {
         int input = in.inputInteger();
 
         if (input == 1) {
             if (random.nextBoolean()) {
-                Player.getPlayerInstance().attack(enemy);
+                try {
+                    Player.getPlayerInstance().attack(enemy);
+                } catch (EnemyDeadException e) {
+                    System.out.println("Du besiegst den Boss." +
+                            "\nPlötzlich bist du von Ehrfurcht für die Spieleentwickler erfüllt." +
+                            "\nDas ist wahrhaftig das beste Spiel, das du je gesehen hast.");
+                    in.winGame();
+                    return;
+                }
                 System.out.println("Treffer!");
             } else {
                 System.out.println("Der Boss hat den Angriff abgewehrt");
@@ -65,23 +80,7 @@ public class BossRoom extends AbstractRoom {
     private void evaluateFight(GameInput in, Enemy enemy) {
         System.out.println("Lebenspunkte des Players: " + Player.getPlayerInstance().getHealthState());
         System.out.println("Lebenspunkte des Boss: " + enemy.getHealthState());
-
-        if (Player.getPlayerInstance().getHealthState() == 0) {
-            in.looseGame();
-        }
-
-        if (enemy.getHealthState() == 0) {
-            in.winGame();
-        }
-
-
-
-        System.out.println("Du besiegst den Boss." +
-                "\nPlötzlich bist du von Ehrfurcht für die Spieleentwickler erfüllt." +
-                "\nDas ist wahrhaftig das beste Spiel, das du je gesehen hast.");
-
-
-
     }
-
 }
+
+

@@ -1,12 +1,17 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
+import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.TicTacToe;
 
 public class TicTacToeRoom extends AbstractRoom {
 
     @Override
+    public void printRoomMessage() {
+        System.out.println("Als nächstes musst du den TicTacToe Room überleben...");
+    }
     public void printWelcomeMessage() {
         System.out.println("Willkommen im TicTacToe Room" + "" +
                 "\n  _________  ___  ________ _________  ________  ________ _________  ________  _______      \n" +
@@ -27,7 +32,8 @@ public class TicTacToeRoom extends AbstractRoom {
     }
 
     @Override
-    public void enter() {
+    public void enter() throws PlayerDeadException {
+        ItemGenerator itemGenerator = new ItemGenerator();
         Player player = Player.getPlayerInstance();
 
         TicTacToe game = new TicTacToe();
@@ -40,14 +46,17 @@ public class TicTacToeRoom extends AbstractRoom {
             player.increaseHealthState(5);
             System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 5 Lebenspunkte." +
                     "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+            itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.WON_MIDDLE) {
             player.increaseHealthState(10);
             System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 10 Lebenspunkte." +
                     "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+            itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.WON_DIFFICULT) {
             player.increaseHealthState(15);
             System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 15 Lebenspunkte." +
                     "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+            itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.LOST) {
             player.decreaseHealthState(10);
             System.out.println("Vor Frustration hast du 10 Lebenspunkte verloren." +
@@ -57,6 +66,6 @@ public class TicTacToeRoom extends AbstractRoom {
 
         return;
 
-        //TODO: If won --> party hard
+
     }
 }

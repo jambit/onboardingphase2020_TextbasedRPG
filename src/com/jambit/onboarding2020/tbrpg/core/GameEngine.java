@@ -1,6 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 
@@ -23,25 +24,31 @@ public class GameEngine {
 
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";
-      BossRoom bossRoom = new BossRoom();
 
       for (AbstractRoom room : rooms) {
-         room.printWelcomeMessage();
+         room.printRoomMessage();
 
-         System.out.println("Willst du dein Inventar verwalten? (tippe: <nutze Inventar>)");
+         System.out.println("Wenn du willst, kannst du vorher dein Inventar verwalten? Tippe: " +
+                 "\n [ja] [nein]");
          line = this.getPlayerInput();
-         if (line.equalsIgnoreCase("nutze Inventar")) {
+         if (line.equalsIgnoreCase("ja")) {
             this.interactWithInventory();
          }
 
+         room.printWelcomeMessage();
 
          if (!gameState.escapeRopeActive) {
             gameState.escapeRopeActive = false;
-            room.enter();
+
+            try {
+               room.enter();
+            } catch (PlayerDeadException e) {
+               System.out.println(e.getMessage());
+               break;
+            }
          }
       }
 
-      bossRoom.enter();
 
       System.out.println("Spiel beendet.");
       in.close();
@@ -52,19 +59,19 @@ public class GameEngine {
       Player player = Player.getPlayerInstance();
       String line = "";
 
-      System.out.println("Nicht schlecht, du hast den Raum geschafft\n " +
+      System.out.println("Nicht schlecht, du hast den Raum geschafft \n" +
               "Du ruhst dich im Gang zwischen den Räumen kurz aus");
 
       while (!line.equalsIgnoreCase("enter")) {
 
-         if (line.equalsIgnoreCase("verwende Heiltrank")) {
+         if (line.equalsIgnoreCase("[Heiltrank]")) {
             if (player.getConsumableFromInventory("Heiltrank") != null) {
                player.getConsumableFromInventory("Heiltrank").consume();
             } else {
                System.out.println("Du hast keinen Heiltrank im Inventar!");
             }
 
-         } else if (line.equalsIgnoreCase("verwende Fluchttrick")) {
+         } else if (line.equalsIgnoreCase("[Fluchttrick]")) {
             if (player.getConsumableFromInventory("Fluchttrick") != null) {
                player.getConsumableFromInventory("Fluchttrick").consume();
             }
@@ -89,8 +96,10 @@ public class GameEngine {
             player.printInventory();
             System.out.println("Dein Gold: " + player.getBalance());
          } else {
-            System.out.println("Ungültige Eingabe. \nMögliche Handlungen: \"verwende Heiltrank\", \"verwende Fluchttrick\", " +
-                    "\n\"statte Waffe aus\", \"lege Waffe ab\", \"überprüfe Inventar\"");
+            System.out.println("Ungültige Eingabe. Tippe: +" +
+                    "\n [Heiltrank] [Fluchttrick]" +
+                    "\n [statte Waffe aus] [lege Waffe ab] +" +
+                    "\n [überprüfe Inventar]");
          }
 
          System.out.println("Was möchtest du in der zwischenzeit tun?");
