@@ -55,6 +55,16 @@ public class MarkovChain {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(markov("alice_oz.txt", 3, 200));
+        try {
+            byte[] content = Files.readAllBytes(Paths.get("alice_oz.txt"));
+            System.out.println(new String(content));
+
+            // for binary
+            //System.out.println(Arrays.toString(content));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //System.out.println(markov("alice_oz.txt", 3, 200));
     }
 }
