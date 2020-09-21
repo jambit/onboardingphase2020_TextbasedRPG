@@ -55,16 +55,16 @@ public class MarkovChain {
     }
 
     public static void main(String[] args) throws IOException {
-        try {
-            byte[] content = Files.readAllBytes(Paths.get("alice_oz.txt"));
-            System.out.println(new String(content));
+        System.out.println(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/alice_oz.txt", 3, 200));
+    }
 
-            // for binary
-            //System.out.println(Arrays.toString(content));
+    public static void printRandomSentence() {
+        try { //filePath has to be the complete Path from /src.../whatever.txt
+            // otherwise Files.readAllBites throws an FileNotFoundException
+            System.out.println(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/alice_oz.txt",
+                    3, 15));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        //System.out.println(markov("alice_oz.txt", 3, 200));
     }
 }
