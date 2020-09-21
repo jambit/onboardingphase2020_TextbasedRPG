@@ -290,6 +290,7 @@ public class TicTacToe {
 
     public String getDifficulty () {
 
+        System.out.println();
         System.out.println("Welche Schwierigkeit? Tippe:" +
                 "\n [einfach] [mittel] [schwer]");
         String diff = scan.nextLine();

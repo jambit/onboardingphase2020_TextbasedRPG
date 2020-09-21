@@ -13,7 +13,7 @@ public class QuizMaster implements Playable {
     Random random = new Random();
 
     @Override
-    public void play() throws PlayerDeadException {
+    public void play() throws PlayerDeadException, InterruptedException {
 
 
         System.out.println(">>Willkommen bei meinem...<<" +
@@ -28,6 +28,7 @@ public class QuizMaster implements Playable {
                 " ░ ▒░  ░ ░░▒░ ░ ░  ▒ ░░░▒ ▒ ░ ▒ ░  ░ \n" +
                 "   ░   ░  ░░░ ░ ░  ▒ ░░ ░ ░ ░ ░    ░ \n" +
                 "    ░       ░      ░    ░ ░     ░    ");
+        Thread.sleep(2000);
         System.out.println(">>Du wirst drei Fragen beantworten müssen... nur so kannst du diesen Raum verlassen!<<");
         System.out.println(">>Die erste Frage lautet...<<");
 

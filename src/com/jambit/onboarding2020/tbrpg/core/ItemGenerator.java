@@ -127,7 +127,7 @@ public class ItemGenerator {
 
         System.out.println();
 
-        //todo: print out nicely:  equippedWeapon
+        
 
 
         System.out.println("Außerdem findest folgendes Item:");
@@ -158,7 +158,10 @@ public class ItemGenerator {
                 }
             }
         }
-        System.out.println("Du lässt das Item liegen und gehst weiter.");
+        if (gameInput.equalsIgnoreCase("weitergehen"))  {
+            System.out.println("Du lässt das Item liegen und gehst weiter.");
+        }
+        System.out.println();
         return;
 
     }

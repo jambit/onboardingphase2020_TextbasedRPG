@@ -9,7 +9,7 @@ public abstract class AbstractRoom {
       System.out.println("Als nächstes musst du in den XY Raum");
    }
 
-   public void printWelcomeMessage() {
+   public void printWelcomeMessage() throws InterruptedException {
       System.out.println("Du stehst vor Raum XY. Hier kannst du dies und das machen. Möchtest du eintreten?");
    }
 

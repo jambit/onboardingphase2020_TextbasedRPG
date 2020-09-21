@@ -1,6 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
-import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
+import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster;
@@ -11,7 +11,7 @@ public class QuizRoom extends AbstractRoom {
     public void printRoomMessage() {
         System.out.println("Eine neue Herausforderung wartet: der Quizraum...");
     }
-    public void printWelcomeMessage() {
+    public void printWelcomeMessage() throws InterruptedException {
         System.out.println("Du betrittst den Raum." +
                 "\nVor dir siehst du eine große Höhle, die kaum von ein paar Kerzen auf dem Boden erhellt wird." +
                 "\nEine merkwürdige Gestalt erwartet dich, verborgen im Schatten nur wenige Meter vor dir." +
@@ -20,12 +20,12 @@ public class QuizRoom extends AbstractRoom {
                 "\n>>Du bist in meine Falle getappt, du Narr! Ich bin der QUIZMASTER!<<" +
                 "\nDer QuizMaster macht eine Verbeugung, wobei sein zu kurzer Anzug so etwas wie " +
                 "\neinen Echsenschwanz nicht verbergen kann.");
+        Thread.sleep(5000);
     }
 
     @Override
-    public void enter() throws PlayerDeadException {
-        ItemGenerator itemGenerator = new ItemGenerator();
-
+    public void enter() throws PlayerDeadException, InterruptedException {
+        Player player = Player.getPlayerInstance();
         QuizMaster quizMaster = new QuizMaster();
         quizMaster.play();
         System.out.println("Der QuizMaster fässt sich ans Herz." +
@@ -33,9 +33,8 @@ public class QuizRoom extends AbstractRoom {
                 "\n>>Argh! Du hast mich... besiegt!<<" +
                 "\nDer QuizMaster sinkt zu Boden. Dein Weg ist frei!");
 
-        itemGenerator.interactWithRoomLoot();
 
-        System.out.println("Du hast " + Player.getPlayerInstance().getHealthState() + " Leben.");
+        System.out.println("Du hast " + player.getHealthState() + " Leben.");
 
 
 
