@@ -1,9 +1,9 @@
 package com.jambit.onboarding2020.tbrpg.domain.Player;
 
-import com.jambit.onboarding2020.tbrpg.domain.Item.Consumable;
-import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
-import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
-import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
+import com.jambit.onboarding2020.tbrpg.domain.Items.*;
+import com.jambit.onboarding2020.tbrpg.domain.Items.Item;
+import com.jambit.onboarding2020.tbrpg.domain.Items.Weapon;
+import com.jambit.onboarding2020.tbrpg.utils.*;
 
 import javax.naming.InsufficientResourcesException;
 import java.util.ArrayList;
