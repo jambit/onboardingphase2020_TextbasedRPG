@@ -25,9 +25,12 @@ public class GameEngine {
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";
 
-      Thread.sleep(3000);
+
 
       for (AbstractRoom room : rooms) {
+
+         Thread.sleep(3000);
+         System.out.println();
          room.printRoomMessage();
 
          System.out.println("Wenn du willst, kannst du vorher dein Inventar verwalten? Tippe: " +

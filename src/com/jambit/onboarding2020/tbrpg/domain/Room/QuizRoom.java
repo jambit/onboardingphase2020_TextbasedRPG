@@ -11,7 +11,7 @@ public class QuizRoom extends AbstractRoom {
     public void printRoomMessage() {
         System.out.println("Eine neue Herausforderung wartet: der Quizraum...");
     }
-    public void printWelcomeMessage() {
+    public void printWelcomeMessage() throws InterruptedException {
         System.out.println("Du betrittst den Raum." +
                 "\nVor dir siehst du eine große Höhle, die kaum von ein paar Kerzen auf dem Boden erhellt wird." +
                 "\nEine merkwürdige Gestalt erwartet dich, verborgen im Schatten nur wenige Meter vor dir." +
@@ -20,10 +20,11 @@ public class QuizRoom extends AbstractRoom {
                 "\n>>Du bist in meine Falle getappt, du Narr! Ich bin der QUIZMASTER!<<" +
                 "\nDer QuizMaster macht eine Verbeugung, wobei sein zu kurzer Anzug so etwas wie " +
                 "\neinen Echsenschwanz nicht verbergen kann.");
+        Thread.sleep(5000);
     }
 
     @Override
-    public void enter() throws PlayerDeadException {
+    public void enter() throws PlayerDeadException, InterruptedException {
         Player player = Player.getPlayerInstance();
         QuizMaster quizMaster = new QuizMaster();
         quizMaster.play();
