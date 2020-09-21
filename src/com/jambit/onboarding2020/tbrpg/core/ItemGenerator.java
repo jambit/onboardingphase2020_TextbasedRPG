@@ -112,7 +112,7 @@ public class ItemGenerator {
 
         Player.getPlayerInstance().increaseBalance(lootMoney);
         System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + " Gold.");
-        System.out.println("Jetzt hast du " + Player.getPlayerInstance().getBalance() + " Gold.");
+        System.out.println("Damit hast du insgesamt " + Player.getPlayerInstance().getBalance() + " Gold.");
 
         System.out.println("SPIELERINVENTAR:");
         //todo: print out nicely: inventory, balance, health, attack, equippedWeapon
@@ -131,11 +131,14 @@ public class ItemGenerator {
         if (gameInput.equalsIgnoreCase("einstecken")) {
             Player.getPlayerInstance().putInInventory(lootItem);
             System.out.println("Du steckst das Item ein und gehst weiter.");
-        } else if (gameInput.equalsIgnoreCase("weitergehen")) ;
-            System.out.println("Du lässt das Item liegen und gehst weiter.");
-        {
-            return;
+
         }
+        else if (gameInput.equalsIgnoreCase("weitergehen"))  {
+            System.out.println("Du lässt das Item liegen und gehst weiter.");
+        }
+        System.out.println();
+        return;
+
     }
 }
 

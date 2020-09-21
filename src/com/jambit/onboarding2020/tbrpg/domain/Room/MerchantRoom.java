@@ -56,7 +56,7 @@ public class MerchantRoom extends AbstractRoom {
                 } catch (Exception playerAbortsAction) {
                     playerWantsToLeave = true;
                 }
-
+            }
                 if (playerWantsToLeave) {
                     line = "";
                 } else {
@@ -71,7 +71,6 @@ public class MerchantRoom extends AbstractRoom {
 
             }
         }
-    }
 
     @Override
     public void printWelcomeMessage() {

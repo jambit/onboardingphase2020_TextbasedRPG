@@ -1,7 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
 import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
-import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.Playable;
@@ -11,11 +10,10 @@ import java.util.*;
 
 public class QuizMaster implements Playable {
 
-    ItemGenerator itemGenerator = new ItemGenerator();
     Random random = new Random();
 
     @Override
-    public void play() throws PlayerDeadException {
+    public void play() throws PlayerDeadException, InterruptedException {
 
 
         System.out.println(">>Willkommen bei meinem...<<" +
@@ -30,6 +28,7 @@ public class QuizMaster implements Playable {
                 " ░ ▒░  ░ ░░▒░ ░ ░  ▒ ░░░▒ ▒ ░ ▒ ░  ░ \n" +
                 "   ░   ░  ░░░ ░ ░  ▒ ░░ ░ ░ ░ ░    ░ \n" +
                 "    ░       ░      ░    ░ ░     ░    ");
+        Thread.sleep(2000);
         System.out.println(">>Du wirst drei Fragen beantworten müssen... nur so kannst du diesen Raum verlassen!<<");
         System.out.println(">>Die erste Frage lautet...<<");
 
@@ -38,8 +37,14 @@ public class QuizMaster implements Playable {
         possibleQuizzes.add(new Quiz_02());
         possibleQuizzes.add(new Quiz_03());
         possibleQuizzes.add(new Quiz_04());
-        int startSizeofPossibleList = possibleQuizzes.size();
-        //todo: Make more quizzes and add them here
+        possibleQuizzes.add(new Quiz_05());
+        possibleQuizzes.add(new Quiz_06());
+        possibleQuizzes.add(new Quiz_07());
+        possibleQuizzes.add(new Quiz_08());
+        possibleQuizzes.add(new Quiz_09());
+
+
+        //todo: no repitition
 
         ArrayList<Quizzzable> quizList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
@@ -92,8 +97,6 @@ public class QuizMaster implements Playable {
                     player.increaseHealthState(5);
                     System.out.println("Die Euphorie über die richtige Antwort heilt dich um 5 Lebenspunkte." +
                             "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
-
-                    itemGenerator.interactWithRoomLoot();
 
 
                     return;

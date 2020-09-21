@@ -8,10 +8,10 @@ import java.util.List;
 
 public class Quiz implements Quizzzable {
 
-    private final int wrongAnswer1 = 0;
-    private final int wrongAnswer2 = 0;
-    private final int correctAnswer = 0;
-    private final String question = "";
+    protected int wrongAnswer1 = 0;
+    protected int wrongAnswer2 = 0;
+    protected int correctAnswer = 0;
+    protected String question = "<NOT DEFINED>";
 
     public List<Integer> getAnswers() {
         List<Integer> answerList = new ArrayList<>();
