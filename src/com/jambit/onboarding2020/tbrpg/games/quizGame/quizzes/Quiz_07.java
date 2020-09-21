@@ -8,8 +8,8 @@ public class Quiz_07 extends Quiz implements Quizzzable {
         wrongAnswer1 = 100000;
         wrongAnswer2 = 10000;
         correctAnswer = 1000;
-        question = "Ein menschliches Haar wächst im Monat etwa um 1 cm. \n" +
-                "Man hat ca. 100.000 Haare am Kopf. \n" +
+        question = "E̶i̶n̶e̶ S̶c̶h̶u̶p̶p̶e̶  ...ein menschliches Haar wächst im Monat etwa um einen Zentimeter. \n" +
+                "Menschen haben um die 100.000 Haare am Kopf. \n" +
                 "Wie viele Meter Haar wächst in einem Monat am Kopf?";
 
 

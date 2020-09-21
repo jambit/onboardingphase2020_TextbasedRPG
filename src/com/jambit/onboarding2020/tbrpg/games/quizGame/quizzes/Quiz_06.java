@@ -8,9 +8,8 @@ public class Quiz_06 extends Quiz implements Quizzzable  {
         wrongAnswer1 = 45;
         wrongAnswer2 = 60;
         correctAnswer = 30;
-        question = "Ich zeige Dir meine Hände. Es sind 6 Finger.\n" +
-                "\n" +
-                "Wie viele Finger haben 10 Hände?";
+        question = "Ich zeige dir meine Hände. Es sind sechs l̶a̶n̶g̶e̶ b̶l̶e̶i̶c̶h̶e̶ Finger.\n" +
+                   "Wie viele Finger haben zehn Hände?";
     }
 
 

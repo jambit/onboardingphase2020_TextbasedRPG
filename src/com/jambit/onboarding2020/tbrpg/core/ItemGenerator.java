@@ -128,14 +128,24 @@ public class ItemGenerator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (gameInput.equalsIgnoreCase("einstecken")) {
-            Player.getPlayerInstance().putInInventory(lootItem);
-            System.out.println("Du steckst das Item ein und gehst weiter.");
-        } else if (gameInput.equalsIgnoreCase("weitergehen")) ;
-            System.out.println("Du lässt das Item liegen und gehst weiter.");
-        {
-            return;
+        while (!gameInput.equalsIgnoreCase("weitergehen")) {
+
+            if (gameInput.equalsIgnoreCase("einstecken")) {
+                Player.getPlayerInstance().putInInventory(lootItem);
+                System.out.println("Du steckst das Item ein und gehst weiter.");
+                return;
+            } else {
+                System.out.println("Du kannst das Item nur [einstecken] oder es liegen lassen und [weitergehen].");
+                try {
+                    gameInput = in.readLine();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
+        System.out.println("Du lässt das Item liegen und gehst weiter.");
+        return;
+
     }
 }
 
