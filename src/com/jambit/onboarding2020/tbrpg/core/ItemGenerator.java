@@ -150,17 +150,13 @@ public class ItemGenerator {
                 return;
             } else {
                 System.out.println("Du kannst das Item nur [einstecken] oder es liegen lassen und den Raum [verlassen].");
-                try {
-                    gameInput = in.readLine();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
             }
-        }
+
         if (gameInput.equalsIgnoreCase("weitergehen"))  {
             System.out.println("Du lässt das Item liegen und gehst weiter.");
         }
-        System.out.println();
+
         return;
 
     }
