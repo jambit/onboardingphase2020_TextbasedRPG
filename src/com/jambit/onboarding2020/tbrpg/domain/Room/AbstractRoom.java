@@ -13,7 +13,7 @@ public abstract class AbstractRoom {
       System.out.println("Du stehst vor Raum XY. Hier kannst du dies und das machen. Möchtest du eintreten?");
    }
 
-   public void enter() throws PlayerDeadException {
+   public void enter() throws PlayerDeadException, InterruptedException {
 
       System.out.println("Du bist im eingetreten. Mach dich bereit...");
    }

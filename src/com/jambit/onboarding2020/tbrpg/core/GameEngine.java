@@ -20,10 +20,12 @@ public class GameEngine {
       this.rooms = rooms;
    }
 
-   public void run() throws IOException {
+   public void run() throws IOException, InterruptedException {
 
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";
+
+      Thread.sleep(3000);
 
       for (AbstractRoom room : rooms) {
          room.printRoomMessage();
@@ -42,7 +44,7 @@ public class GameEngine {
 
             try {
                room.enter();
-            } catch (PlayerDeadException e) {
+            } catch (PlayerDeadException | InterruptedException e) {
                System.out.println(e.getMessage());
                break;
             }
