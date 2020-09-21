@@ -131,11 +131,14 @@ public class ItemGenerator {
         if (gameInput.equalsIgnoreCase("einstecken")) {
             Player.getPlayerInstance().putInInventory(lootItem);
             System.out.println("Du steckst das Item ein und gehst weiter.");
-        } else if (gameInput.equalsIgnoreCase("weitergehen")) ;
-            System.out.println("Du lässt das Item liegen und gehst weiter.");
-        {
-            return;
+
         }
+        else if (gameInput.equalsIgnoreCase("weitergehen"))  {
+            System.out.println("Du lässt das Item liegen und gehst weiter.");
+        }
+        System.out.println();
+        return;
+
     }
 }
 

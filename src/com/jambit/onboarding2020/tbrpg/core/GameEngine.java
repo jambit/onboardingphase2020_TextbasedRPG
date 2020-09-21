@@ -9,12 +9,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GameEngine {
 
    private final ArrayList<AbstractRoom> rooms;
    private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
    private final GameState gameState = new GameState();
+   public Scanner input = new Scanner(System.in);
 
    public GameEngine(ArrayList<AbstractRoom> rooms) {
       this.rooms = rooms;
@@ -62,10 +64,17 @@ public class GameEngine {
    public void interactWithInventory() {
 
       Player player = Player.getPlayerInstance();
-      String line = "";
+
 
       System.out.println("Nicht schlecht, du hast den Raum geschafft \n" +
               "Du ruhst dich im Gang zwischen den Räumen kurz aus");
+
+      System.out.println("Was möchtest du in der Zwischenzeit tun?" +
+              "\n [Heiltrank] [Fluchttrick]" +
+              "\n [statte Waffe aus] [lege Waffe ab] " +
+              "\n [überprüfe Inventar]");
+
+      String line = input.nextLine();
 
       while (!line.equalsIgnoreCase("enter")) {
 
@@ -101,13 +110,13 @@ public class GameEngine {
             player.printInventory();
             System.out.println("Dein Gold: " + player.getBalance());
          } else {
-            System.out.println("Ungültige Eingabe. Tippe: +" +
+            System.out.println("Ungültige Eingabe. Tippe: " +
                     "\n [Heiltrank] [Fluchttrick]" +
-                    "\n [statte Waffe aus] [lege Waffe ab] +" +
+                    "\n [statte Waffe aus] [lege Waffe ab] " +
                     "\n [überprüfe Inventar]");
          }
 
-         System.out.println("Was möchtest du in der zwischenzeit tun?");
+         System.out.println("Was möchtest du in der Zwischenzeit tun?");
 
          try {
             line = in.readLine();
