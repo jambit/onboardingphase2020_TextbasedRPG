@@ -75,7 +75,8 @@ public class TicTacToe {
     }
 
     public void exception () {
-        System.out.println("Feld ist schon belegt, bitte wähle einanderes! oder ungültige Eingabe");
+        System.out.println("Entweder ist das Feld schon belegt, bitte wähle ein einanderes! " +
+                " \nOder deine Eingabe war ungültig.");
         String place = scan.nextLine();
         pcTip(place);
     }

@@ -20,27 +20,31 @@ public class GameEngine {
       this.rooms = rooms;
    }
 
-   public void run() throws IOException {
+   public void run() throws IOException, InterruptedException {
 
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";
 
-      for (AbstractRoom room : rooms) {
-         room.printWelcomeMessage();
+      Thread.sleep(3000);
 
-         System.out.println("Wenn du willst, kannst du dein Inventar verwalten? Tippe: " +
+      for (AbstractRoom room : rooms) {
+         room.printRoomMessage();
+
+         System.out.println("Wenn du willst, kannst du vorher dein Inventar verwalten? Tippe: " +
                  "\n [ja] [nein]");
          line = this.getPlayerInput();
          if (line.equalsIgnoreCase("ja")) {
             this.interactWithInventory();
          }
 
+         room.printWelcomeMessage();
+
          if (!gameState.escapeRopeActive) {
             gameState.escapeRopeActive = false;
 
             try {
                room.enter();
-            } catch (PlayerDeadException e) {
+            } catch (PlayerDeadException | InterruptedException e) {
                System.out.println(e.getMessage());
                break;
             }

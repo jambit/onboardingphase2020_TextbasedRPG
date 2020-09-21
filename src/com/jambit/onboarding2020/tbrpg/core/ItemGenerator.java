@@ -112,7 +112,7 @@ public class ItemGenerator {
 
         Player.getPlayerInstance().increaseBalance(lootMoney);
         System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + " Gold.");
-        System.out.println("Jetzt hast du " + Player.getPlayerInstance().getBalance() + " Gold.");
+        System.out.println("Damit hast du insgesamt " + Player.getPlayerInstance().getBalance() + " Gold.");
 
         System.out.println("SPIELERINVENTAR:");
         //todo: print out nicely: inventory, balance, health, attack, equippedWeapon
