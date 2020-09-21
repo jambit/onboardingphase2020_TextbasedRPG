@@ -1,4 +1,4 @@
-package com.jambit.onboarding2020.tbrpg.domain.Player;
+package com.jambit.onboarding2020.tbrpg.domain.Players;
 
 import com.jambit.onboarding2020.tbrpg.domain.Items.*;
 import com.jambit.onboarding2020.tbrpg.domain.Items.Item;
@@ -16,7 +16,7 @@ public class Player extends Person {
     private final ArrayList<Item> inventory;
     private Weapon equippedWeapon;
 
-    private Player() {
+    public Player() {
         inventory = new ArrayList<>();
         attackDamage = GameConstants.PLAYER_ATTACK_DAMAGE;
     }
@@ -75,6 +75,10 @@ public class Player extends Person {
 
     public ArrayList<Item> getInventory() {
         return this.inventory;
+    }
+
+    public Weapon getEquippedWeapon(){
+        return equippedWeapon;
     }
 
     public void equipWeapon(Weapon weapon) {

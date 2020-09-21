@@ -1,6 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.games;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
 
 public class Magic8Ball implements Playable{
 

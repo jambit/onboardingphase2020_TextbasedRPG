@@ -1,7 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
-import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
+import com.jambit.onboarding2020.tbrpg.domain.Players.PlayerDeadException;
 
 public abstract class AbstractRoom {
 

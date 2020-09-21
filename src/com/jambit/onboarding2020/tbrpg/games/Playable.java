@@ -1,7 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.games;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
-import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
+import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Players.PlayerDeadException;
 
 public interface Playable {
 

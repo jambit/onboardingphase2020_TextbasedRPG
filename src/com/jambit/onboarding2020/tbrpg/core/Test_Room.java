@@ -1,6 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
 
 public class Test_Room {
     // TODO: 16.09.2020 Delete this class if not further needed

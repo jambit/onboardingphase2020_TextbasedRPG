@@ -1,6 +1,6 @@
-package com.jambit.onboarding2020.tbrpg.domain.Item;
+package com.jambit.onboarding2020.tbrpg.domain.Items;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
 
 public class HealthPotion extends Item implements Consumable {
 

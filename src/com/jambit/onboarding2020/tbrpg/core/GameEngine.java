@@ -1,9 +1,8 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
-import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
+import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Players.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
-import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 
 import java.io.BufferedReader;
 import java.io.IOException;

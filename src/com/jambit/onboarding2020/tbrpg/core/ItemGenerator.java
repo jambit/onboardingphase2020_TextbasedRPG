@@ -1,17 +1,14 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
-import com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion;
-import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
-import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Items.HealthPotion;
+import com.jambit.onboarding2020.tbrpg.domain.Items.Item;
+import com.jambit.onboarding2020.tbrpg.domain.Items.Weapon;
+import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class ItemGenerator {
