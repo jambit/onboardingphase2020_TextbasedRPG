@@ -148,12 +148,12 @@ public class Player extends Person {
 
     public boolean printWeaponsFromInventory() {
         ArrayList<Weapon> weaponsFromInventory = this.getWeaponsFromInventory();
-        int counter = 0;
+        int counter = 1;
         for (Weapon weapon : weaponsFromInventory) {
             System.out.println(counter + ": " + weapon);
             counter++;
         }
-        if (counter == 0)
+        if (counter == 1)
             return false;
         return true;
     }
