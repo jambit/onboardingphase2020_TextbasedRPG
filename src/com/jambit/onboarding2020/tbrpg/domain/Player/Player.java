@@ -158,6 +158,17 @@ public class Player extends Person {
         return true;
     }
 
+    public boolean isWeapenInventoryEmpty() {
+        ArrayList<Weapon> weaponsFromInventory = this.getWeaponsFromInventory();
+        int counter = 1;
+        for (Weapon weapon : weaponsFromInventory) {
+            counter++;
+        }
+        if (counter == 1)
+            return false;
+        return true;
+    }
+
     public Item takeItemFromInventory(String itemName) {
         Item item = this.getItemFromInventory(itemName);
         this.inventory.remove(item);

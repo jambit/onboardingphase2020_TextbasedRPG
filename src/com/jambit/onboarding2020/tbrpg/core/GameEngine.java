@@ -101,7 +101,7 @@ public class GameEngine {
             }
 
          } else if (line.equalsIgnoreCase("statte Waffe aus")) {
-            if (!player.printWeaponsFromInventory()) {
+            if (!player.isWeapenInventoryEmpty()) {
                System.out.println("Du hast im Moment keine Waffen im Inventar. Tippe: " +
                        "\n [Heiltrank] [Fluchttrick]" +
                        "\n [statte Waffe aus] [lege Waffe ab] " +
