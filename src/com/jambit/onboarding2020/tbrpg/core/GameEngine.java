@@ -32,6 +32,11 @@ public class GameEngine {
       for (AbstractRoom room : rooms) {
 
          Thread.sleep(3000);
+
+         System.out.println();
+         System.out.println("*************************************************************" +
+                            "\n            Ein neuer Raum wartet auf dich..." +
+                            "\n*************************************************************");
          System.out.println();
          room.printRoomMessage();
 
