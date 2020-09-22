@@ -39,6 +39,17 @@ public class Player extends Person {
     }
 
     public void attack (Enemy damagedPerson, Weapon equippedWeapon) throws EnemyDeadException {
+        if (equippedWeapon == null){
+            System.out.println("Du hast keine Waffe angelegt... viel Glück mit deinen Fäusten!");
+            if(Math.random() <= 0.8){
+            damagedPerson.decreaseHealthState(this.attackDamage);
+            System.out.println("Deine Fäuste treffen den Gegner! Aber der scheint nicht so viel davon zu halten...");
+            }
+            else {
+                System.out.println("Komm schon, das war ja meilenweit daneben geschlagen!");
+            }
+            return;
+        }
         if (Math.random() <= equippedWeapon.getHitChance()){
             if (Math.random()<= equippedWeapon.getCritChance()){
                 damagedPerson.decreaseHealthState((int) (this.attackDamage
