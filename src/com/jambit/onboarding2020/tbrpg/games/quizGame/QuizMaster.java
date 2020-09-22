@@ -72,12 +72,12 @@ public class QuizMaster implements Playable {
                     System.out.println(">>Nicht... richtig!<<");
                     System.out.println("Der QuizMaster tritt dich.");
 
-                    nextIntegerInput = getNextIntegerInput();
-
                     player.decreaseHealthState(10);
                     System.out.println("Du hast 10 Lebenspunkte verloren." +
-                            "\nDu hast noch " + player.getHealthState() + " Lebenspunkte.");
-                    Player player = Player.getPlayerInstance();
+                            "\nDu hast noch " + Player.getPlayerInstance().getHealthState() + " Lebenspunkte.");
+
+                    System.out.println(">>Versuch es nochmal!<<");
+                    nextIntegerInput = getNextIntegerInput();
 
                 } else {
                     System.out.println("Wähle eine der drei Möglichkeiten.");

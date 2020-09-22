@@ -43,7 +43,7 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
                 "\nweist es als einen Beamten des galaktischen Verwaltungsfachgremiums aus.");
         //todo: Ascii art von dem Schildchen
         System.out.print("Mit weit aufgerissenen Augen murmelt er vor sich hin: \n\n>>...");
-        MarkovChain.printRandomSentence();
+        printRandomSentence();
         System.out.println("...<<\n");
         System.out.println("Du musst hier vorbei. Vielleicht kannst du die Gestalt [ansprechen] und zum Gehen bewegen?");
 
@@ -77,7 +77,7 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
     private int printFirstTry(Random random, ArrayList<String> smallTalkList, int talkCount) {
         System.out.println("Du sagst: " + smallTalkList.get(random.nextInt(smallTalkList.size())));
         System.out.print("Der Beamte starrt an dir vorbei und murmelt: \n\n>>...");
-        MarkovChain.printRandomSentence();
+        printRandomSentence();
         System.out.println("...<<\n");
 
         System.out.println("Er macht keine Anstalten, sich zu bewegen.");
@@ -89,7 +89,7 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
     private int printSecondTry(Random random, ArrayList<String> smallTalkList, int talkCount) {
         System.out.println("Du versuchst es mit: " + smallTalkList.get(random.nextInt(smallTalkList.size())));
         System.out.print("Der Beamte zuckt kurz und murmelt dann: \n\n>>...");
-        MarkovChain.printRandomSentence();
+        printRandomSentence();
         System.out.println("...<<\n");
 
         System.out.println("Er bewegt sich nicht, aber du bist dir sicher, dass er dich hören kann.");
@@ -98,12 +98,11 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
         return talkCount;
     }
 
-
     private int printThirdTry(Random random, ArrayList<String> smallTalkList, int talkCount) {
         System.out.println("Du murmelst: " + smallTalkList.get(random.nextInt(smallTalkList.size())));
         System.out.print("Der Beamte sieht dich kurz an und schaut dann wieder auf dem Boden," +
                 "\nwährend er erklärt: \n\n>>...");
-        MarkovChain.printRandomSentence();
+        printRandomSentence();
         System.out.println("...<<\n");
 
         System.out.println("Du bist fast zu ihm durchgedrungen.");
@@ -111,6 +110,7 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
         talkCount = 3;
         return talkCount;
     }
+
 
 
     private String getInputStringFromPlayer(String line) {
@@ -121,6 +121,17 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
             e.printStackTrace();
         }
         return line;
+    }
+
+    public static void printRandomSentence() {
+        MarkovChain markovChain = new MarkovChain();
+        try { //filePath has to be the complete Path from /src.../whatever.txt
+            // otherwise Files.readAllBites throws an FileNotFoundException
+            System.out.print(markovChain.markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/administrativeLaw.txt",
+                    3, 15));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

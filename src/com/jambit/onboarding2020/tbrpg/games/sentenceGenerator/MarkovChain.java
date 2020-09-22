@@ -9,7 +9,7 @@ import java.util.*;
 public class MarkovChain {
     private static final Random r = new Random();
 
-    private static String markov(String filePath, int keySize, int outputSize) throws IOException {
+    public static String markov(String filePath, int keySize, int outputSize) throws IOException {
         if (keySize < 1) throw new IllegalArgumentException("Key size can't be less than 1");
         Path path = Paths.get(filePath);
         byte[] bytes = Files.readAllBytes(path);
@@ -66,7 +66,7 @@ public class MarkovChain {
         System.out.println(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/alice_oz.txt", 3, 200));
     }
 
-    public static void printRandomSentence() {
+/*    public static void printRandomSentence() {
         try { //filePath has to be the complete Path from /src.../whatever.txt
             // otherwise Files.readAllBites throws an FileNotFoundException
             System.out.print(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/administrativeLaw.txt",
@@ -74,5 +74,5 @@ public class MarkovChain {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
