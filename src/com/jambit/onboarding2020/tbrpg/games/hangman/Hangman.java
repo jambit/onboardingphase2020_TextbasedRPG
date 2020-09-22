@@ -1,17 +1,21 @@
 package com.jambit.onboarding2020.tbrpg.games.hangman;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Hangman {
-    private char[] searchedWord;
+    private final String wordlist = System.getProperty("user.dir") + "/resources/nouns_10-20.txt";
+    private final char[] searchedWord;
     private char[] knownWord;
     private int stage;
 
     public ArrayList<String> words = new ArrayList<String>();
 
-    public Hangman() {
+    public Hangman() throws FileNotFoundException {
         this.searchedWord = getRandomWord();
         initialisizeKnownWord();
     }
@@ -24,12 +28,22 @@ public class Hangman {
         this.knownWord[0] = searchedWord[0];
     }
 
-    private char[] getRandomWord() {
-        this.words.add("Buchstabe");
-        this.words.add("Geldbeutel");
-
+    public char[] getRandomWord() throws FileNotFoundException {
+        char[] result = null;
         Random rand = new Random();
-        return words.get(rand.nextInt(words.size() - 1)).toUpperCase().toCharArray();
+        int n = 0;
+        for (Scanner sc = new Scanner(new File(this.wordlist)); sc.hasNext(); ) {
+            ++n;
+            String line = sc.nextLine();
+            if (rand.nextInt(n) == 0)
+                result = line.toUpperCase().toCharArray();
+        }
+
+        return result;
+    }
+
+    public char[] getSearchedWord() {
+        return searchedWord;
     }
 
     public void drawPitch() {

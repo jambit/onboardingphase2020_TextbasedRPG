@@ -6,7 +6,10 @@ import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.hangman.Hangman;
 import com.jambit.onboarding2020.tbrpg.games.hangman.HangmanLoseException;
+
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class HangmanRoom extends AbstractRoom{
     @Override
@@ -15,7 +18,14 @@ public class HangmanRoom extends AbstractRoom{
         GameInput in = new GameInput(new InputStreamReader(System.in));
         String line = "";
 
-        Hangman hangman = new Hangman();
+        Hangman hangman = null;
+        try {
+            hangman = new Hangman();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
         hangman.drawPitch();
         hangman.drawLetterInput();
 
@@ -37,6 +47,7 @@ public class HangmanRoom extends AbstractRoom{
                 }
             } catch (HangmanLoseException e) {
                 System.out.println(e.getMessage());
+                System.out.println("Das richtige Wort wäre " + Arrays.toString(hangman.getSearchedWord()) + " gewesen..");
                 Player.getPlayerInstance().decreaseHealthState(20);
                 in.exitGame();
             }
