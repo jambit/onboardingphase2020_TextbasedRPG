@@ -11,7 +11,19 @@ public class DungeonGenerator {
 
     int roomCountPreset = GameConstants.ROOM_COUNT_PRESET;
     Random random = new Random();
+    int quizRoomPlayedCount = 0;
+
+    public int getQuizRoomPlayedCount() {
+        return quizRoomPlayedCount;
+    }
+
+    public void setQuizRoomPlayedCount(int quizRoomPlayedCount) {
+        this.quizRoomPlayedCount = quizRoomPlayedCount;
+    }
+
     ArrayList<AbstractRoom> possibleRooms = new ArrayList<>();
+
+
 
     public DungeonGenerator() {
         possibleRooms.add(new MobRoom());

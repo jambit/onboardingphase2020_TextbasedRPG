@@ -1,6 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
-import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
+import com.jambit.onboarding2020.tbrpg.core.DungeonGenerator;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.Playable;
@@ -10,7 +10,12 @@ import java.util.*;
 
 public class QuizMaster implements Playable {
 
+    ArrayList<Quiz> possibleQuizzes = new ArrayList<>();
+
+
     Random random = new Random();
+    DungeonGenerator dungeonGenerator = new DungeonGenerator();
+
 
     @Override
     public void play() throws PlayerDeadException, InterruptedException {
@@ -32,7 +37,8 @@ public class QuizMaster implements Playable {
         System.out.println(">>Du wirst drei Fragen beantworten müssen... nur so kannst du diesen Raum verlassen!<<");
         System.out.println(">>Die erste Frage lautet...<<");
 
-        ArrayList<Quiz> possibleQuizzes = new ArrayList<>();
+        if (dungeonGenerator.getQuizRoomPlayedCount() == 0) {
+
         possibleQuizzes.add(new Quiz_01());
         possibleQuizzes.add(new Quiz_02());
         possibleQuizzes.add(new Quiz_03());
@@ -44,15 +50,20 @@ public class QuizMaster implements Playable {
         possibleQuizzes.add(new Quiz_09());
 
 
+        }
+
+
         //todo: no repitition
+
 
         ArrayList<Quizzzable> quizList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            int randomIndex = random.nextInt(possibleQuizzes.size());
+            int randomIndex = random.nextInt(this.possibleQuizzes.size());
             quizList.add(possibleQuizzes.get(randomIndex));
             possibleQuizzes.remove(randomIndex);
 
         }
+
         int rightAnswerCount = 0;
         for (Quizzzable quiz : quizList) {
             System.out.println("**************************************************************");
@@ -72,15 +83,17 @@ public class QuizMaster implements Playable {
                     System.out.println(">>Nicht... richtig!<<");
                     System.out.println("Der QuizMaster tritt dich.");
 
-                    nextIntegerInput = getNextIntegerInput();
-
                     player.decreaseHealthState(10);
                     System.out.println("Du hast 10 Lebenspunkte verloren." +
                             "\nDu hast noch " + player.getHealthState() + " Lebenspunkte.");
                     Player player = Player.getPlayerInstance();
 
+                    nextIntegerInput = getNextIntegerInput();
+
+
+
                 } else {
-                    System.out.println("Wähle eine der drei Möglichkeiten.");
+                    System.out.println(">>Wähle eine der drei Möglichkeiten!<<");
                     System.out.println("Der Quizmaster sieht ungeduldig aus.");
                     nextIntegerInput = getNextIntegerInput();
                 }
@@ -97,6 +110,8 @@ public class QuizMaster implements Playable {
                     player.increaseHealthState(5);
                     System.out.println("Die Euphorie über die richtige Antwort heilt dich um 5 Lebenspunkte." +
                             "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+                    dungeonGenerator.setQuizRoomPlayedCount(dungeonGenerator.getQuizRoomPlayedCount() +1);
+                    System.out.println("Räume: "+dungeonGenerator.getQuizRoomPlayedCount());
 
 
                     return;

@@ -37,4 +37,5 @@ public class Quiz implements Quizzzable {
         return answer == wrongAnswer1 || answer == wrongAnswer2;
     }
 
+
 }
