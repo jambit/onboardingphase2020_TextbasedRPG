@@ -130,7 +130,7 @@ public class ItemGenerator {
         
 
 
-        System.out.println("Außerdem findest folgendes Item:");
+        System.out.println("Außerdem findest du folgendes Item:");
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
         System.out.println("=> "+lootItem);
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
