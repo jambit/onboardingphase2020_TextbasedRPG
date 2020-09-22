@@ -19,6 +19,7 @@ public class MarkovChain {
         }
         Map<String, List<String>> dict = new HashMap<>();
 
+        //initialize dictionary
         for (int i = 0; i < (words.length - keySize); ++i) {
             StringBuilder key = new StringBuilder(words[i]);
             for (int j = i + 1; j < i + keySize; ++j) {
@@ -30,7 +31,9 @@ public class MarkovChain {
                 list.add(value);
                 dict.put(key.toString(), list);
             } else {
-                dict.get(key.toString()).add(value);
+                if (!dict.get(key.toString()).contains(value)) {
+                    dict.get(key.toString()).add(value);
+                }
             }
         }
 
@@ -41,6 +44,9 @@ public class MarkovChain {
 
         while (true) {
             List<String> suffix = dict.get(prefix);
+            //To Fix the Null-PointerException if suffix is not in dictionary
+            if (suffix == null) return output.stream().reduce("", (a, b) -> a + " " + b);
+
             if (suffix.size() == 1) {
                 if (Objects.equals(suffix.get(0), "")) return output.stream().reduce("", (a, b) -> a + " " + b);
                 output.add(suffix.get(0));
@@ -63,7 +69,7 @@ public class MarkovChain {
     public static void printRandomSentence() {
         try { //filePath has to be the complete Path from /src.../whatever.txt
             // otherwise Files.readAllBites throws an FileNotFoundException
-            System.out.println(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/alice_oz.txt",
+            System.out.println(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/administrativeLaw.txt",
                     3, 15));
         } catch (IOException e) {
             e.printStackTrace();

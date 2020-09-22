@@ -8,6 +8,7 @@ public class Test_Room {
 
         for (int i = 0; i < 100; i++) {
             MarkovChain.printRandomSentence();
+            System.out.println();
         }
 
 
