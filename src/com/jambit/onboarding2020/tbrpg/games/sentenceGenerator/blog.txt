@@ -1,0 +1,460 @@
+Die Verschwörungstheorie der Woche kommt via Leserbrief rein:
+     u/maxwellhill, der reddit powermod und erste User, der über eine Million Karmapunkte erreicht hatte (inzwischen über 14 Millionen) hat seit der Verhaftung von Ghislaine Maxwell nichts mehr gepostet. Inzwischen ist das 83 Tage her.
+ Update: Ein Leser schlägt diesen Reddit-Link als Primärquelle vor.
+    Immerhin sind die USA immer wieder für einen Lacher gut.
+ US-Außenminister Pompeo erklärt unilateral die Uno-Sanktionen gegen den Iran für wieder eingesetzt. Und weil er für die USA spricht, muss er die Nummer natürlich direkt noch höher aufhängen und droht allen Ländern mit Sanktionen, die nicht mit gegen den Iran Sanktionen fahren.
+ Ich frage mich eigentlich, wer diese Länder sind, die sich von den Amis immer so rumschubsen lassen wie ein pickeliger Teenager auf dem Schulhof. Das müssen ja echt völlig behämmerte Vollidioten sein, die so ein Verhalten noch validieren, indem sie das mit sich machen lassen. Das müssten ja Länder sein, wo die Eliten vollindoktriniert Mitglied in zwielichtigen Kult-artigen Druckluft-Vereinen wie der Atlantik-Brücke sind. Anders wäre das ja gar nicht zu erklären, dass das nicht sofort mit schallendem Gelächter weggelacht wird.
+ Für mich fühlt sich das ja alles schon so an, als ob die Amis merken, dass sie sich jede Grundlage für Respekt verspielt haben, mit ihren ständigen unilateralen Kriegen, mit ihrer Assange-Auslieferung, mit ihren Drohnenmorden und ihren Folterknästen und ihren Rendition-Entführungen. Im Grunde hat der Pompeo ja nichts in der Hand. Damit das nicht so auffällt, macht er jetzt einen auf dicke Hose. Wie? Na indem er die Sanktionen gegen den Iran auch noch unilateral "verschärft", was immer das heißen soll.
+ Der Pompeo muss mal ne Weile mit Narrenkappe alleine in der Ecke stehen glaube ich.
+ Hmm irgendwie kann ich mich gerade nicht aufraffen, für diese Geldwäsche-Geschichte ein Interesse zu entwickeln.
+ Auf der einen Seite: Die Geldwäsche-Verhinderungs-Regularien wirken nicht. NA SOWAS! Was für eine epochale Erkenntnis! Meine Güte, hätte uns doch nur vorher jemand warnen können!1!!
+ Auf der anderen Seite: Die Deutsche Bank ist mal wieder bis zum Hals im Morast. NA SOWAS! Was für eine umhauende Überraschung! Hätte uns doch nur vorher jemand warnen können!1!!
+ Auf der dritten Seite: Die Sache, um die es im Kern zu gehen scheint, ist dass ein fieser Krimineller in Russland Aktien einer Firma in Rubel kauft, und dann anderswo dieselben Aktien sofort wieder gegen Dollar verkauft. Na sowas! Das geht?! Das ist ja unfassbar! Stop the presses!
+ Ach und winziges Randdetail: Das ist auch gar nicht verboten.
+ Das wirkt auf mich alles wie eine Sommerloch-Empörungs-Generator-Story ohne tatsächliche Substanz. Übersehe ich etwas?
+    Old and busted: Polizei verprügelt auf Demos Demonstranten.
+ New hotness: Polizei sucht dich zu Hause heim, verprügelt dich während Hausdurchsuchung.
+ Der Lockdown hat uns alle hart getroffen, aber besonders hart die armen Prügelcops, die jetzt gar keine Gelegenheit mehr hatten, ihre Gewalt-Triebe an unschuldigen Passanten auszuleben. Gut, es gab auch ein-zwei Covid-Demos aber das war ja nun im Vergleich zum regulären Programm nicht der Rede wert.
+ Außerdem rennen auf den Covid-Demos lauter Rechtsextreme rum. Da prügelst du am Ende versehentlich einen Kollegen krankenhausreif! Prügelcops verkloppen daher normalerweie nur linke Zecken.
+ Das Opfer war ein 19jähriger Jugendlicher, die Cops waren wegen Ruhestörung gerufen worden. Das Video gibt es, weil der Typ gerade auf Discord online in einer Videokonferenz war und die anderen Teilnehmer das aufgezeichnet haben. Leider nur das Bild, der Ton war stumm geschaltet.
+ Netgear reicht offiziell bei ihren Kunden den Antrag auf "kauft nie wieder unsere Produkte" ein.
+     Starting from firmware version 1.0.5.4, product registration is required to unlock full access to the local browser UI.
+ Yeah ... nope. How about you go fuck yourselves, Netgear.
+ Aber hey, vielleicht interpretiere ich das auch falsch und das ist tatsächlich der "benutzt bloß nicht unsere verkackte Firmware, nehmt lieber openwrt"-Antrag!
+    Lacher des Tages: Eine Instagram-Nutzerin hat Klage gegen Facebook eingereicht, weil die App ungefragt die Kamera aktiviert hatte.
+ Das war noch nicht der Lacher. Der Lacher ist Facebooks lahme Ausrede:
+     Facebook wies die Anschuldigung zurück und behauptet, dass es sich dabei lediglich um einen Bug in der Software gehandelt habe, der fälschlicherweise eine Benachrichtigung ausgab, nach der die Software auf die Kamera zugegriffen hätte.
+ Oh, die Kamera war an? *Pfeif* *flöt* Das muss sich um einen bedauerlichen Bug gehandelt haben!1!!
+ Ruth Bader Ginsburg ist gestorben. Sie war Richterin im US Supreme Court und häufig die ausschlaggebende Kraft für progressive Entscheidungen dort.
+ Damit ist ein Schreckensszenario eingetreten, vor dem viele Democrats Angst hatten, weil Richter am Supreme Court dort auf Lebenszeit benannt sind. Wenn Bader Ginsburg stirbt, ist das erstmal direkt ein Rechtsruck für das Gericht, weil sie links stand, aber wenn ein Präsident Trump den Nachfolger ernennen kann, wird der wahrscheinlich den Rechtsruck noch verstärken.
+ Die Tagesschau hat einen schönen Nachruf.
+    PSA: Es gibt endlich einen würdigen JPEG-Nachfolger. Es heißt AVIF und Firefox und Chrome unterstützten es bereits. Es handelt sich um das I-Frame-Format von AV1, dem ebenfalls relativ neuen Videocodec von Xiph.org.
+ Bei Firefox muss man aktuell noch in about:config nach avif suchen ein ein Flag auf true setzen.
+ Encoding ist im Moment noch ein bisschen fummelig, weil die üblichen Verdächtigen das noch nicht in ihre Toolchains eingebaut haben, aber es gibt ein simples Go-Frontend, das auf den Encoding-Code aus libaom aufsetzt, das ich eh schon für meine Videocodec-Testereien installiert hatte, und der hat spontan funktioniert und ein 5MB JPEG runterkomprimiert auf unter 400k. Das Encoding dauert noch echt lange (für mein 4k-Testbild sowas wie 30 Sekunden), aber das Decoding im Browser flutscht, und darauf kommt es ja an.
+ Nun war mein Testbild einfach irgendein Foto, das ich rumliegen hatte, das war jetzt wahrscheinlich auch nicht gerade effizient JPEG-komprimiert. Aber dass AVIF was kann, das könnt ihr hier selber gucken. Angeblich kann Windows 10 das auch schon seit einer Weile, wenn man den kostenlosen AV1-Codec aus dem Store nachinstalliert. Interessiert mich aber nicht außerhalb von Firefox, ehrlich gesagt.
+ Die Telekom schaltet im Sommer 2021 ihre UMTS ab.
+ Und Brandenburg so: Wie, UMTS abschalten?!?
+ Oh. Mein. Gott.
+ Ihr erinnert euch vielleicht, dass ich die Verräterpartei neulich kritisierte, weil sie jetzt Betroffenheit für die armen brennenden Flüchtlingsheime simulieren, aber davor konsequent jahrelang verhindert haben, dass denen geholfen wird.
+ Der eine oder andere meiner Leser scheint die damit konfrontiert zu haben.
+ Hier ist ein Tweet, in dem sich Saska Esken öffentlich zum Königsberger Klops macht.
+ Ich wollte ja erst nicht glauben, dass das ihr echter Account ist. Mit dem Simsons-Avatar? Come on! So unseriös ist nicht mal die SPD-Spitze, dachte ich.
+ Ich lag falsch.
+    Na das ist ja auch geil: Akten zu Corona-Entscheidungen wurden laut bayerischem Gesundheitsministerium gar nicht erst angelegt. Das wäre ja auch kontraproduktiv, am Ende kommt Gaby Weber und klagt die frei! Das geht ja GAR nicht! Also lieber gar keine Akten haben.
+ Die Ironie daran ist ja, dass das seit gefühlt Jahrzehnten meine Rede und die des CCC ist. Stichwort: Datensparsamkeit. Damit meinten wir aber nicht, dass Behörden gar nicht mehr demokratisch kontrollierbar sein sollten!
+ Wie schon Wau Holland formulierte: Private Daten schützen, öffentliche Daten nützen!
+ Das waren öffentliche Daten. (Danke, Jakob)
+ Wisst ihr, wie ich seit Jahren sage, Antiviren schafften zusätzliche Angriffsoberflächen? Nun, hier ist ein aktuelles Beispiel:
+     Damit keine Malware auf Linux-Servern landet, sollten Admins die eigentlich schützende Software ServerProtect for Linux (SPLX) von Trend Micro auf den aktuellen Stand bringen. Das von der Lücke ausgehende Risiko gilt als "kritisch".
+ Hat zufällig jemand eine Statistik greifbar, wie viel Linux-Malware Trend Micro so "erkennt"? Und in ihrer Firmengeschichte insgesamt abgewehrt hat? Ist jemandem ein einziger Fall bekannt?
+ Sprecht mir nach: Antiviren sind Schlangenöl!
+ Überlegt euch mal, wie offensichtlich verfassungswidrig das neue Hate-Speech-Gesetz sein muss, dass Frank-Walter Steinmeier es wegen offensichtlicher Verfassungswidrigkeit nicht unterzeichnen will.
+ Ja, DER Frank-Walter Steinmeier, der den Amis gesagt hat, sie können den deutschen Staatsbürger Murat Kurnaz ruhig weiterfoltern in Guantanamo. DER Steinmeier. Wenn das Gesetz bei DEM über dem Limit liegt. Wow.
+ Update: Hups, falsch dargestellt. Murat Kurnaz ist zwar in Deutschland geboren und aufgewachsen, aber türkischer Staatsbürger.
+ Ich krieg hier schon wieder nen dicken Hals ey. Die Uniklinik Düsseldorf hat nach einem Ransomware-Befall eine Patientin sterben lassen.
+     Laut Bericht des NRW-Justizministers starb eine Patientin, die wegen des Angriffs auf die Server der Klinik in ein weiter entferntes Krankenhaus nach Wuppertal gebracht werden musste.
+ Das ist zu 100% Verantwortung der Uniklinik. Ransomware müsst ihr euch wie Schimmel an der Wand vorstellen. Wenn im Operationssaal Schimmel an der Wand ist, dann ist nicht der Schimmel der Täter, sondern der Zuständige, der das soweit runterkommen ließ, dass sich da Schimmel bilden konnte.
+ Grotesk, wie sie das jetzt auf die Ransomware zu schieben versuchen! Und nicht nur auf die Ransomware, auf jeden der nicht bei drei auf den Bäumen ist!
+     Die Sicherheitslücke, die die Hacker ausnutzten, habe sich in einer marktüblichen und weltweit verbreiteten kommerziellen Zusatzsoftware befunden, teilt die Uniklinik mit.
+ Wenn ihr da den Bullshit zur Seite baggert, bleibt als Aussage übrig, dass WIR NICHT SCHULD SIND, denn die Software war MARKTÜBLICH, d.h. die anderen sind alle genau so scheiße aufgestellt wie wir.
+ Ich weiß ja nicht, wie es euch geht, aber in meiner Welt entschuldigt das gar nichts.
+ Aber wartet, geht noch weiter.
+     In dem Zeitfenster, das die Softwarefirma zum Schließen der Lücke benötigte, seien sie Täter in die Systeme eingedrungen.
+ Wenn ihr hier den Bullshit beiseite baggert, bleibt die Lüge übrig, dass der Zulieferer für das Updaten von Software halt Zeit brauchte. Nein, brauchte er nicht. Das kann man alles komplett wegautomatisieren. Seit Jahren. Hätte die Uniklinik machen können, HAT SIE ABER NICHT. Daher: Was sie uns hier eigentlich sagen wollen, ist dass es nicht ihre Schuld ist, sondern der Zulieferer war zu langsam.
+ Die würden gerade ihre eigene Mutter beschuldigen, wenn es irgendwie ginge, um sich selbst aus der Schusslinie zu bringen. Ich fände es gut, wenn da mal ein paar Leute ihren Job verlieren. Wie wäre es, wenn ihr mal ein paar überflüssige Verwaltungsjobs wegmacht und mit dem Geld euren Keller entschimmelt?
+ Aber der größte Hammer an der Story ist in meinen Augen das hier:
+     die Täter hätten nach Kontakt zur Polizei die Erpressung zurückgezogen
+ Oh ach so?
+     Die IT-Experten haben mittlerweile den Zugang zu den Daten wiederherstellen können.
+ Ja, äh, was für eine Ausrede bleibt euch denn dann noch, liebe Uniklinik?!
+ Könnt ihr mir nochmal erklären, wieso jetzt irgendjemand anderes als ihr für den Tod dieser Patientin die Verantwortung tragt?
+ Sagt mal, … gibt es da nicht persönliche Haftung für die Vorstände bei solchen Sachen? Mir war irgendwie so.
+ Update: Ein Vögelchen zwitschert mir gerade, dass das die Citrix-Lücke vom letzten Jahr war, über die die Ransomware reinkam. Ja, Shitrix. Das sollte strafrechtliche Konsequenzen haben, wenn jemandes Krankenhaus über ein halbes Jahr nach Bekanntwerden der Lücke und Verfügbarkeit von Patches über die Lücke angegriffen wird. Ab in den Knast mit den Zuständigen.
+ Update: Das BSI sagt auch, dass es Shitrix war.
+     Ein Sprecher der ZAC bestätigte, dass die Hacker eine Sicherheitslücke in einer Software genutzt hätten, die bei vielen Unternehmen genutzt werde. Laut dem Bundesamt für Sicherheit in der Informationstechnik (BSI) handelte es sich um ein Programm der Firma "Citrix". Eine seit Januar bekannte Schwachstelle in VPN-Produkten der Firma werde für Cyber-Angriffe ausgenutzt.
+ Dann erzählen sie was von Fällen, bei denen Leute gehackt wurden, bevor Citrix Patches fertig hatte. Ich bin ja auch ein Freund davon, Citrix öffentlich mit Scheiße zu bewerfen für ihr Verhalten bei der Lücke, aber in diesem Fall kam die Ransomware offensichtlich deutlich viel später als es Patches gab. MONATE später. Ein fucking halbes Jahr später.
+ Ja aber Cherry, was wenn die Ransomware-Leute über eine Backdoor reinkamen, die sie sich installiert haben, bevor es einen Patch gab? Mal abgesehen davon, dass da mehr Konjunktiv als in einer CDU-Rede über ihre Visionen für die Zukunft ist: NA DANN HÄTTE MAN VIELLEICHT MAL NACH BACKDOORS GUCKEN MÜSSEN? Wenn man sich nicht sicher ist, vielleicht ein paar zentrale Infrastrukturkomponenten neu aufsetzen? Das ist alles kein Hexenwerk. Aber bei der Methode "Kopf in den Sand" hat man halt unbefriedigende Ergebnisse.
+ Update: ACH NEE, die Uniklinik hat ein Statement veröffentlicht. Ich fasse mal zusammen: Sie sagen, sie haben alle Patches noch am selben Tag installiert, und das danach von zwei externen Firmen prüfen lassen, ob die Lücke jetzt auch wirklich zu ist.
+ Dann wundere ich mich über die vorherige Aussage derselben Leute, dass die mit der Wartung beauftragte Firma noch nicht dazu gekommen war, das zu patchen. Was stimmt denn jetzt? War das jetzt gepatcht oder nicht? Und wenn es gepatcht war, wie sind die dann reingekommen?
+ Lasst mich mal kurz wild spekulieren. Sie haben irgendwelche Workarounds ausgerollt, die nicht gereicht haben (sich später als unzureichend herausstellende Workarounds gab es wirklich und dafür trifft die Schuld zu 100% Citrix). Dann haben sie turnusmäßig einen Pentest machen lassen. Da geht es häufig nicht um Security sondern um Compliance. Der Kunde will im Wesentlichen eine Checkbox vom Pentester angekreuzt haben, dass alles OK ist. Entsprechend gibt es da einige Marktteilnehmer, die dann auch nicht so genau hingucken, denn wenn man was findet, macht das ja dem Kunden bloß Ärger, den keiner gebrauchen kann. Ich spekuliere weiter: Dem Pentester haben sie dann auch nicht gesagt, wonach er gucken soll, und vielleicht sogar noch, dass sie ja bei Citrix den Workaround eingespielt haben. Das hätte bei einigen Pentest-Anbietern gereicht, und schon fällt das hinten runter. Oder so.
+ Könnte so gewesen sein. Würde die Faktenlage erklären. Und dann könnte den Pentester eine Teilschuld treffen. Insiderinformationen habe ich in dieser Angelegenheit keine, insofern werden wir das wohl nie ausfinden. Wenn es tatsächlich stimmt, dass die noch am selben Tag alle Patches eingespielt haben, dann stellt sich zwar immer noch die Frage, wieso sie keine Backdoors gesucht und gefunden haben, aber dann wäre meinem Gerechtigkeitsgefühl nach Citrix in der Haftung. Wird natürlich alles nie passieren. Weil wir uns alle in einem großen Müllhaufen aus überkomplexen Frickelsystemen bewegen, deren Kontrolle uns längst entglitten ist. Mehr als Best Practices geht da in der Praxis nicht, und wenn die tatsächlich Patches noch am selben Tag einspielen, dann sind sie (so schmerzhaft das ist!) dem Rest der Industrie an der Stelle sogar weit voraus. Übliche Einspiellatenzen sind eher so im Monatsbereich.
+ Ist ja komisch! Seit bekannt wurde, dass die Polizei sich an den Corona-Meldedaten der Gastronomie vergreift, tragen die Leute da Fake-Daten ein und jetzt scheitert die Corona-Vorbeuge. VIELEN DANK, liebe Polizei! Habt ihr Deutschland wieder ein Stückchen sicherer gemacht!1!!
+ Habt ihr euch mal gefragt, wieso Sherlock Holmes in Serien immer als Arschloch dargestellt wird?
+ Weil die Nachfahren von Doyle das Urheberrecht auf den netten Holmes beanspruchen.
+ Was muss eigentlich noch passieren, damit dieses Urheberrecht mal auf ein paar Wochen eingedampft wird? (Danke, Friedrich)
+    Joe Bidens Wahlkampf-App hatte einen tollen Datenreichtum. Da konntest du nen Namen von einem Verwandten eingeben (oder von irgendjemandem) und der hat das dann in einer fetten Monsterdatenbank nachgeschlagen und dir die Anschrift und so weiter gegeben. Datenbanken sind eigentlich auch in den USA reguliert, aber natürlich gibt es für Wahlkampf eine Ausnahme. Denn Politiker nehmen sich ja nicht selbst die Butter vom Brot. Genauso wenig wie wir es hier in Deutschland schaffen, Politikerkorruption sinnvoll unter Strafe zu stellen. Es gibt inzwischen endlich einen Paragraphen, aber der kommt nie zur Anwendung, weil er so scheiße formuliert ist.
+ Manchmal ist es ja nicht die Meldung, die der Kracher ist, sondern die Kombination aus zwei Meldungen. Heute zum Beispiel auf der einen Seite diese Meldung, dass Horst Seehofer (!) die Aufnahme (!!) von 1553 (!!!) Flüchtlingen verteidigt (!!!!). Das ist ja schon Realsatire pur.
+ Aber wartet mal. Haltet da mal im Geiste diese Meldung daneben. Ich zitiere:
+     Die Bundesregierung hat nach Recherchen der ZEIT mit einer Milliarden-Offerte versucht, die umstrittene Ostsee-Pipeline Nord Stream 2 zu retten.
+ ACH WATT. Für eine verfickte Pipeline habt ihr ne Milliarde locker, aber bei 1500 Flüchtlingen muss der Innenminister ins Fernsehen, um die Aufnahme zu verteidigen? Die Pipeline, wohlgemerkt, die nicht uns nützt sondern den Russen? Wir haben das Erdgas auch vorher gekriegt, nur haben halt die Ex-Sowiet-Staaten auf dem Weg Erdgas abgezwackt, das Russland dann halt nachpumpen musste, um uns unser bestelltes und bezahltes Kontingent zukommen zu lassen. Nicht WIR brauchen diese Pipeline. Russland braucht diese Pipeline. Das müsste mir auch noch mal jemand erklären, wieso wir da überhaupt Geld reinstecken.
+ Am Rande: Um die Wegelagerer in der Mitte auszubooten geht die Pipeline durchs Meer. GANZ tolle Idee für den Umweltschutz! Wann hat jemals jemand von Lecks in Pipelines gehört?
+ Gute Laune? Dem kann ich abhelfen.
+ 1. Ihr erinnert euch doch bestimmt daran, dass der EuGH den "Privacy Shield" eingefaltet hat. Das ist das Ende für Facebook und co, habt ihr euch da vielleicht gedacht. Hahaaaa, weit gefehlt! so schnell lassen sich die Iren die Steuer-Euros von Facebook nicht vom Brot nehmen. Welche Steuer-Euros fragt ihr? Seit wann zahlt Facebook denn irgendwo Steuern? Nun, äh, dafür ist eine andere Behörde zuständig. Hier geht es ums Prinzip!1!!
+ Und 2. hat sich ja neulich beim Warntag die digitale Infrastruktur auch direkt selber eingefaltet. Da hieß es dann, ihr erinnert euch bestimmt, da seien einfach zu viele Warnungen parallel gekommen.
+ Als ITler hat man bei solchen Aussagen sofort einen nagenden Zyniker im Ohr, der einem sagt: Zuviele Anfragen? BULLSHIT! Wir haben hier Multicore-Gigahertz-Kisten, die sollten Hundertausende von Anfragen pro Minute abkönnen! Da hat bestimmt jemand so richtig massiv verkackt und das waren bloß 100 oder so parallele Anfragen!
+ Den überstimmt man dann, den Zyniker, denn auch als ITler will man ja gelegentlich an menschlicher Gesellschaft teilhaben, und niemand mag so Leute. Nun, was soll ich euch sagen... Es waren 30 Anfragen. Dreißig. Drei Null. Ja, 30. Nicht tausend, nicht Millionen. Einfach nur 30.
+     Es sei vereinbart gewesen, dass das Bundesamt die Apps alleine von Bonn aus bedienen würde. Stattdessen seien fast zeitgleich etwa 30 andere Warnmeldungen rausgegangen. "Das hat das System nicht verkraftet", sagte Unger.
+ FUCKING DREISSIG!!! Duuuude wer baut denn bitte ein Notfallsystem, oder IRGENDEIN System, dass mit 30 Anfragen nicht klarkommt!?!?
+ Ich bin ja eigentlich Pazifist, aber dafür sollten Köpfe rollen. Es geht hier um ein Warnsystem, das Menschenleben retten sollte. Wer sowas verbricht, sollte aus dem Verkehr gezogen werden, bevor er noch mehr Unheil anrichtet.
+ Sonst haben wir bald Tote auf den Straßen und von den Behörden heißt es nur "Softwareproblem. Kann man nichts machen."
+ Erinnert ihr euch noch, als Microsoft der EU ins Gesicht log, der Internet Explorer sei jetzt integraler Teil von Windows und nicht wegzumachen?
+ Und jetzt so: Ach scheiß drauf, wir nehmen lieber Chrome?
+ Das wäre doch eigentlich die Gelegenheit für eine Milliardenstrafe durch die EU gewesen. Wieso gab es die nicht?
+ PSA: Keine Fotos eurer Bordkarte veröffentlichen, auch nicht wenn sie schon abgelaufen ist. Da steht nämlich der Name und der Buchungscode drauf und damit kann man sich gerne mal bei der Airline einloggen und den Rest der persönlichen Daten abgreifen.
+ Hier hat das jemand am Beispiel einer Bordkarte des australischen Ex-Premierministers Tony Abbott durchexerziert. Sehr spaßig zu lesen! (Danke, Martin)
+ Old and busted: Microsoft operiert Windows aus Azure raus.
+ New hotness: Microsoft operiert Windows aus Windows raus :-)
+     Starting with Windows Insiders preview build 20211, WSL 2 will be offering a new feature: wsl --mount. This new parameter allows a physical disk to be attached and mounted inside WSL 2, which enables you to access filesystems that aren’t natively supported by Windows (such as ext4).
+ Ja, äh, wenn ich eine Linux-Partition mounte und davon Linux-Programme ausführe, … wieso hab ich dann überhaupt noch Windows?
+ Weitgehend unbemerkt von der Öffentlichkeit findet in Großbritannien gerade das Auslieferungsverfahren für Julian Assange statt. Einige Journalisten hatten sich ja in der Causa schon früher geäußert, das war dann häufig "Julian ist ein Journalist, und was er da tut ist Journalismus. Wenn man das kriminalisiert geht das auch gegen alle anderen Journalisten!"
+ Stellt sich raus: Ja, genau so sehen die Amis das auch. Denen geht es gar nicht um Julian Assange. Die wollen gerne alle Journalisten auf Linie bringen und statuieren daher jetzt ein Exempel an demjenigen, der am deutlichsten macht, dass niemand außerhalb der Reichweite ihrer Todesschwadrone ist: Ein Australier, der noch nie überhaupt einen Fuß in die USA gesetzt hat.
+ Craig Murray berichtet:
+     The gloves were off on Tuesday as the US Government explicitly argued that all journalists are liable to prosecution under the Espionage Act (1917) for publishing classified information, citing the Rosen case. Counsel for the US government also argued that the famous Pentagon Papers supreme court judgement on the New York Times only referred to pre-publication injunction and specifically did not preclude prosecution under the Espionage Act. The US Government even surmised in court that such an Espionage Act prosecution of the New York Times may have been successful.
+ Ich würde sogar soweit gehen zu sagen, dass es da nie um Spionage ging. Es ging schon immer darum, die eigenen Journalisten auf Linie zu halten. Das Gesetz ist aus der Zeit des 1. Weltkrieges. Das hätte man schon längst mal entsorgen oder klarer formulieren können, wenn das nicht so wäre, dass es eigentlich als Waffe gegen Journalisten dienen soll.
+ Ihr werdet jetzt genauso überrascht sein wie ich: NOCH ein rechtsextremes Netzwerk bei der Polizei aufdgedeckt, diesmal NRW.
+ Rechtsextreme? Bei der Polizei? WIE KANN DAS SEIN! Hätte uns doch nur jemand gewarnt!!
+ Leserbrief zu den "WTO-Regeln":
+     Boris Johnson hat schlicht und einfach keine Ahnung! Gar keine! Und ebensowenig jeder andere Brexitier, der von WTO faselt. Die fahren alle auf eine Wand zu und geben auch noch Gas und lösen den Anschnallgurt!
+     Die WTO setzt einen (bzw. eigentlich mehrere) Rahmen für den Welthandel und ein paar Regeln. Dazu gehören beispielsweise Prinzipien wie „Diskriminierungsverbot“ (kein Handelspartner darf willkürlich durch Absenkung von Zöllen oder Wegfall von Kontrollen bevorzugt werden), maximale Zölle für alle möglichen Produkte und noch vieles mehr.
+     Das sind aber nur absolute Untergrenzen - nur auf Basis dieser Regeln will kein Mensch heutzutage ernsthaft Handel betreiben. Deshalb hat die EU (die für die Handelsverträge aller Mitgliedsstaaten zuständig ist) mehrere Hundert Verträge mit fast allen Ländern der Welt geschlossen. Ich glaube es gibt rund zehn Staaten, mit denen wir keine zusätzlichen Verträge haben und nur nach „WTO-Regeln“ handeln und das sind die Wirtschaftsmächte wie Jemen, Somalia und Venezuela.
+     Mit allen anderen haben wir Verträge, unter anderem jeweils Dutzende mit China und den USA, um eben Handel zu erleichtern. Das sind keine Freihandelsabkommen sondern einfach Handelsverträge, die ein paar Hemmnisse beiseite schaffen und etwas mehr Rechtssicherheit bringen sollen.
+     Zusätzlich gibt es noch die großen Freihandelsabkommen. Die beinhalten in der Regel den Wegfall aller Zölle und Abbau einiger anderer Handelshemmnisse. Nur wenn man Freihandelsabkommen abschließt, entfällt meines Wissens das Diskriminierungsverbot der WTO und ein solches Freihandelsabkommen muss stets alle relevanten Güterhandelsbereiche umfassen.
+     Warum gibt es jetzt die Handelsabkommen, wo wir doch die WTO haben? Nun, nach dem Platzen der Doharunde Anfang der 2000er Jahre ist die Weiterentwicklung der WTO de facto tot. Das ist auch der Grund, warum wir seit etwa 2010 ständig diese großen Freihandelsabkommen haben (TTIP, CETA, JEFTA, Mercusor, ...). Die EU hat eingesehen, dass sie bei der WTO nicht weiterkommt und direkt mit bi- und multilateralen Verhandlungen angefangen um Handelshemmnisse abzubauen. Die dauern halt ein paar Jahre und nun sind die nach und nach ausverhandelt.
+     Man kann den Inhalt der Abkommen jetzt gut finden oder kritisieren, bilaterale oder multilaterale Abkommen werden die nächsten Jahre den Welthandel bestimmen. Globale Abkommen wird es so schnell nicht mehr geben. Und die EU ist der wohl härteste Verhandler der Welt - die USA mussten da wohl erstmals auf Augenhöhe agieren. Ich habe da mal einen Spruch gelesen der sinngemäß ging „Sie [die EU-Verhandler] kommen in eleganter Kleidung, sind außerordentlich höflich und häuten Dich bei lebendigem Leibe.“
+     Wenn jemand behauptet, man könne einfach nach WTO-Regeln Handel treiben, dann ist das einfach Schwachsinn, das alleine will niemand. Und schon gar nicht, wenn man aus dem wohl dichtesten Handelsvertragsnetz der Welt, dem der EU, aussteigt. Das zeugt von einer so unglaublichen Ignoranz der Realität, die mich über Auswanderung nachdenken lassen würde.
+     Nicht falsch verstehen, das alles muss nicht jeder wissen und man kann als Politiker auch öffentlich etwas anderes behaupten, aber wenn man als Regierungschef sein tatsächliches Handeln auf ein „WTO-Regeln reichen ja“ ausrichtet, dann kann einem um das Land nur Angst und Bange werden.
+ Kontext bei Wikipedia: Doha-Runde.
+ China hat sich vor der WTO über Trumps Strafzölle beschwert und vollumfänglich recht bekommen. Auswirkungen hat das allerdings keine.
+     Die Berufungsfrist beträgt 60 Tage Zeit. Allerdings vereiteln die USA seit geraumer Zeit die Ernennung neuer WTO-Schiedsrichter. Die Berufungsinstanz hat statt sieben Mitgliedern nur mehr eines und ist handlungsunfähig. Also kann es über eine Berufung gar nicht entscheiden. Die Folge: Die Volksrepublik China kann aus ihrem Sieg auf absehbare Zeit keinen Nutzen ziehen.
+ Das muss man sich mal auf der Zunge zergehen lassen.
+ Update: Einige Leser weisen darauf hin, dass Boris Johnson gerade die Vision des "Handels nach WTO-Regeln" für Großbritannien verbreitet, als Kontrastprogramm zu den ganzen bilateralen Abkommen, die die EU hatte. Wenn die WTO also de facto zerstört ist, dann kann das für UK nochmal unangenehm werden.
+    Mich beschäftigt ja seit einiger Zeit die Frage, wieso eigentlich so viele Leute Blockchain machen (oder das zumindest vorgeben), wenn das doch (für mich offensichtlich) alles heiße Luft gemixt mit Bullshit ist. Haben die das alle nicht verstanden?
+ Stellt sich raus: Genau so ist es.
+ Aber kommen wir mal von den billigen FDP-Witzen weg. Ich hab hier gerade eine Cryptowährung, deren Implementation ich angucken soll, Die hat einen distributed ledger, wie das so üblich ist bei Blockchain-Kram, und dann setzt sie auf SGX von Intel und Remote Attestation und Signaturen von sogenannten Validator-Nodes im Netz.
+ Bei Bitcoin ist das ja so, dass die Existenz der Transaktion im Ledger heißt, dass sie OK ist. In diesem System heißt die Anwesenheit im Ledger eigentlich gar nichts, entscheidend ist die gültige Signatur einer Validator-Node mit Remote Attestation, dass die Software in der SGX-Enklave auch sauber war. Bin ich jetzt kein Freund von. Erstens war SGX die Default-Angriffsoberfläche für praktisch alle Side-Channel-Angriffe nach Spectre. Zweitens holst du dir damit eine weitere Instanz in die TCB, von der im Risikomodell alles abhängt: Intel und ihre SGX- und Attestation-Infrastruktur. Und bei einer Kryptowährung geht es zumindest nominell um große Werte, da willst du niemandem einen finanziellen Anreiz dich zu bescheißen geben.
+ Aber gut, nehmen wir mal an, SGX sei sauber.
+ Wenn wir jetzt SGX vertrauen und nicht dem Ledger, wieso haben wir dann überhaupt einen Ledger?
+ Hab ich die mal gefragt. Antwort war: Na sonst fallen wir unter Finanzsektorregulierung.
+ Und DAS, meine Damen und Herren, ist die tiefere Wahrheit hinter dem ganzen Blockchain-Bullshit, den man gerade so hört. Das sind alles Tech-Bros, die sich im Keller einen runterholen, weil sie glauben, sie hätten den Regulator weggetrickst.
+ Was übrigens eine falsche Vermutung ist. Aber das rauhe Erwachen gönne ich den Tech Bros, sollen die mal ruhig selber rausfinden, wie das so ist.
+ Update: Um Missverständnissen aus dem Weg zu gehen: Ich spreche hier nicht von GNU Taler, das ich mir auch kürzlich angeguckt habe. Taler ist kein Blockchain-basierter Ansatz. Das Taler-Team sind auch keine Tech-Bros, die den Regulator umgehen wollen, sondern deren Ziel ist im Gegenteil, dass empfängerseitig Transparenz herrscht (aber nicht senderseitig!). Ich kann anonym für Dinge bezahlen, aber der Händler muss Steuern zahlen. Taler ist ein Bezahlsystem, keine Kryptowährung. Von den Zielen her ein sehr interessantes Projekt. Mir jedenfalls viel sympathischer als diese libertären Fieberträume der Silicon-Valley-Tech-Bros, die am Ende nur einer Gruppe helfen: Ransomware-Gangs beim einsammeln ihrer erpressten Gelder.
+ Benutzt hier jemand Active Directory?
+     Das Problem: Der Sicherheitsforscher Tom Tervoort hat entdeckt, dass der Parameter Clientcredential - Teil der Funktion ComputeNetlogonCredential - in einem aus 256 Fällen ebenfalls aus acht Nullen besteht, wenn Angreifende die Challenge, die zwischen Domänencontroller und -clients für eine Authentifizierung ausgetauscht wird, auf ausschließlich null setzen. Nach maximal 256 Brute-Force-Versuchen mit dem Call NetrServerAuthenticate3 kann sich das System in einer Domäne als Client authentifizieren, was laut dem Forscher etwa 3 Sekunden Rechenzeit entspricht.
+ Top Notch Engineering, Microsoft!
+ Ihr müsst jetzt sehr tapfer sein.
+ EuGH: Zero Rating verletzt Netzneutralität
+ No shit, Sherlock! Habt ihr das ganz alleine rausgekriegt?
+ Die finden ja alles raus, sage ich euch. Alles!
+     Der EuGH hat damit nach eigenen Angaben erstmals die Unionsordnung ausgelegt, mit der die Netzneutralität festgeschrieben wird.
+ Wieso war das eigentlich nötig, dazu ein Gericht anzurufen?
+ Hier ist einer für Security-Leute. Und jetzt sprecht mir alle nach: Antiviren sind Schlangenöl!
+ Im Radiospektrum der Venus fehlt die Wellenlänge von Phosphin. Das heißt, dass auf der Venus Phosphin in signifikanten Mengen vorhanden sein muss. Phosphin entsteht auf der Erde als Stoffwechselprodukt einiger anaerober Bakterienarten.
+ Gibt es also Leben auf der Venus?
+ Meine Theorie: Das ist das Protomolekül.
+ Microsoft reicht bei Linux einen Patch ein, um Linux als dom0 in ihrem Virtualisierungsstack fahren zu können. Die haben offensichtlich auch keinen Bock mehr, Windows an Stellen einsetzen zu müssen, wo was von abhängt. :-D (Danke, Kristian)
+ Leserbrief zu Google und dem Methan:
+     Man sollte vielleicht noch erwähnen, dass Methan sowieso nur 10 Jahre in der Atmosphäre bleibt (Lebensdauer — das nimmt exponentiell ab, aber bei konstanten Emissionen hat man einfach 10 mal so viel in der Luft wie man jedes Jahr emittiert). D.h. beim Methan gibt es keine kummulative Wirkung der Emissionen, sondern es sind halt die aktuellen Emissionen, die für 10 Jahre die Erde etwas erwärmen, und dann ist wieder gut (bzw. das wird durch neue Emissionen ersetzt).
+     Berechnet wird der CO2-Äquivalenzwert aber so, als ob das alles dauerhaft in der Atmosphäre verbleibt. Also, die Klima-Wirkung von Methan ist 25 mal so groß, aber nur für 10 Jahre. Bei CO2 rechnet man eher mit 1000 Jahren mittlerer Lebensdauer (auch wenn da die Modelle mehr divergieren).
+     [Ehemaliges Nachrichtenmagazin]
+     30% als Angabe ist ungefähr die mittlere Lebensdauer, denn da geht man von 1/e (eulersche Zahl) als Verbleib nach dieser mittleren Lebensdauer aus.
+     D.h. tatsächlich wirkt langfristig gesehen CO2 viermal so viel wie Methan. Als Schulden (environmental debt). Und alle Umweltsünden muss man immer als Schulden betrachten, d.h. Wirkung*Zeit.
+     Wenn jetzt Google also mehr Methan eingespart hat, als sie CO2 emittiert haben, und mit dieser Schummelrechnung herumlaufen, dann haben sie knapp über 1% ihres Klimabeitrags kompensiert.
+     Wirken tut natürlich eine Methan-Reduzierung schneller. Und natürlich ist es viel billiger, 1% der Schulden zu bezahlen als 100%.
+ Update: Ein anderer Leserbrief widerspricht:
+     Methan hat nicht eine Klimawirkung die 1% der von CO2 entspricht, wie faelschlich behauptet, sondern eine deutlich hoehere. Die relative Wirkung haengt davon ab, welchen Zeitraum wir betrachten. Der Teil des Kommentars stimmt. Im IPCC Bericht von 2007 wird von 12 Jahren verweildauer in der Atmosphaere ausgegangen, danach bleiben indirekte Effekte, z.B. Bildung von Ozon oder Abbauprodukte von Methan. Eines der Abbauprodukte ist uebrigens CO2 mit all seiner Treibhauswirkung.
+     Mit diesem Wissen kann ein relatives globales Erhitzungspotential (global warming potential, GWP) von Methan relativ zu CO2 berechnet werden. Das GWP von Methan ist 72 (auf 20 Jahre gesehen), 25 (auf 100 Jahre) und 7.6 (auf 500 Jahre). [Seite 212, 84 im pdf]. Selbst auf lange Zeitraeume ist Methan also ein deutlich staerkeres Treibhausgas als CO2.
+     Es gibt sogar Studien, die vertreten, dass die Werte etwas hoeher sein sollten (27 - 28 auf 100 Jahre), da die indirekten Effekte unterschaetzt wurden [PDF-Link]
+    Microsoft hat ihr vor zwei Jahren im Ozean versenktes "Untersee-Rechenzentrum" gehoben. Ergebnis: Die Ausfallrate war ein Achtel von regulären Rechenzentren. Nun ist die Sample Size klein, aber Microsoft vermutet, dass das für die Ausfallsicherheit gut ist, wenn da keine Menschen rumrennen wo gegenlaufen oder unegal Dinge anfassen und kaputtmachen, und außerdem ist der Container auch mit Stickstoff statt Sauerstoff gefüllt, vielleicht ist das auch hilfreich.
+ Schlagzeile des Tages: Google ist jetzt CO2-Negativ, d.h. sie haben soviel Emissionen bei sich und anderswo eingespart, wie sie insgesamt seit Firmenbeginn rausgeblasen haben.
+ Klingt super, bis man sich die Details anguckt.
+ Ich glaube ja, diese ganzen Tech-Firmen sind alle mit MMORPGs sozialisiert und haben dort gelernt, wie man ordentlich grindet. Du machst ne Liste mit allen Optionen und dann suchst du die raus, die am meisten Effekt pro investiertem Aufwand liefert.
+ Bei Klima-Emissionen ist das Methan, das von Müllhalden und Schweinezucht ausgedampft wird.
+ Ja, kein Scheiß. Google ist rumgegangen und hat bei Schweineställen und Müllhalden Methan-Auffanganlagen installiert.
+ Ich will das nicht kleinreden. Ist gut, dass das mal jemand macht. Ist aber nicht gut, dass es Google macht anstatt die fucking Betreiber der fucking Müllhalden und Schweineställe. Denn so ist das ein Nullsummenspiel. Die Tech-Excelkünstler, die das Spiel zuerst spielen, die greifen sich die lukrativsten Emissionen anderer Leute ab. Eine Regulierung für Schweineställe und Müllhalden wird es jetzt nicht mehr geben, denn das ist ja kein Problem mehr, wo die Tech-Bros von Google sich damit ihre Statistik frisieren.
+ Aber was wir eigentlich wollten, nämlich das Google nichts mehr emittiert und ihre Energie nur noch aus erneuerbaren Quellen bezieht, und dass die Schweineställe und Müllhalden ihre Emissionen auf Null senken, das erreichen wir so nicht. Das sind dieselben Taschenspielertricks wie bei den Emissionshandel-Zertifikaten. Was alles völlig absehbar.
+ Was für eine Verarschung ey.
+ Der nächste Job, der von Machine Learning wegautomatisiert wird: Terrorismus.
+     GPT-3 demonstrates significant improvement over its predecessor, GPT-2, in generating extremist texts.
+  Habt ihr ein Smartphone? Relativ zeitgenössisch, mit GPU? Dann ist die wahrscheinlich von ARM. Und im Einkauf so billig, dass es die Profite von Nvidia vergleichsweise obszön aussehen lässt. Aber keine Sorge. Das ändert sich jetzt. Nvidia kauft ARM von Softbank für 40 Milliarden.
+ Schade eigentlich, dass die EU da nicht im Namen der digitalen Souveränität zugeschlagen hat. Regulatorisch war der Einspruchs-Zug wahrscheinlich schon abgefahren, weil sie damals dem Verkauf an Softbank zugestimmt hatten, die Deppen. Schade eigentlich.
+ Ach naja, wird die EU halt zum reinen Konsumenten-Absatzmarkt für Unternehmen aus den USA und Fertigung aus China. Die Amis sind seit Jahren praktisch nur noch Konsumenten, und denen geht es doch auch super!1!!
+ Russland will jetzt Internet-Wahlen einführen. Blockchain-basiert. Und damit man dem trauen kann, open source. Entwickelt hat das die staatliche Telekom in Zusammenarbeit mit einer örtlichen Blockchain-Klitsche namens Waves Enterprise (nie gehört). Die bisher hochgeladenen Sourcen sind Java, Python, Scala und Typescript und ist Docker-basiert. Und was von Smart Contracts ist da wohl auch drin. Wie man in der Industrie sagt: Ein Koks&Nutten-Startup!
+ Kurzes Rüberscrollen über die Selbstdarstellung von Waves Enterprise und ihrer Hybrid-Blockchain-Business-Logik klingt für mich jedenfalls wie ein Haufen Bullshit.
+    Spätestens seit Gaby Weber wissen wir, dass der Staat völlig ungehemmt und inflationär Dinge als geheim erklärt, wenn es jemandem peinlich wäre, dass darüber öffentlich berichtet wird.
+ Aber so ein schönes Beispiel wie das hier ist kaum vorstellbar: Bordrestaurants in ICEs sind jetzt ein Staatsgeheimnis. Irgendein FDP-Abgeordneter wollte wissen, wie hoch der Anteil der Bahnkilometer ist, die in den letzten Jahren ohne funktionierendes Bordrestaurant befahren wurden. Antwort:
+     Das Verkehrsministerium habe darauf verwiesen, dass die Informationen "verfassungsrechtlich geschützte Betriebs- und Geschäftsgeheimnisse der betroffenen Unternehmen berühren" und daher nicht herausgeben werden dürfen. Unter Abwägung des parlamentarischen Auskunftsanspruchs und dem Schutz der Bahn-Geheimnisse "hat die Bundesregierung die erbetenen Informationen als VS-Vertraulich eingestuft", zitiert die "Welt am Sonntag" aus dem Schriftverkehr.
+ Und wenn die "Welt am Sonntag" den Scheiß nicht hinter eine Paywall getan hätte, hätte ich sie verlinkt statt des Sterns, der hier bloß abschreibt.
+ Hach ja, der Scheuer-Andi! Oder wie ihn die Titanic nennt: Andi B Scheuert! Ich fand ja so Namens-Klamauk immer unwürdig (also nicht für die beleidigte Person sondern für den Satiriker, der das nötig hat), aber der Scheuer-Andi hat echt alles in seiner Macht getan, um sich diesen Würdentitel zu verdienen.
+ Update: Falls sich da gerade jemand verarschen lässt: Die Bahn ist im Staatsbesitz. Wenn der Staat also argumentiert, er könne Informationen zur Bahn nicht rausrücken, weil das Geschäftsgeheimnisse betrifft (und die Bahn-Eigner nicht einverstanden wären) dann lügen sie euch direkt ins Gesicht, denn SIE SIND DIE FUCKING EIGNER. Hier werden keine Firmeninteressen gesichert, sondern hier will die Politik ihr monumentales Totalversagen vertuschen.
+    Wieso tun die gerade alle so, als würde dieser Brand im Flüchtlingslager irgendwas ändern. Europa hätte die seit Monaten aufnehmen können. Oder dachtet ihr, die sind da interniert, weil der Bus gerade in Reparatur ist?
+ Mich kotzt ja besonders diese Doppelzüngigkeit der SPD gerade an. Das Ausmaß der Betroffenheitssimulation sieht man gut auf Abgeordnetenwatch. Und dann haben die die STIRN uns ins Gesicht zu lügen, das läge an dem Seehofer, dass wir hier keine Flüchtlinge aufgenommen haben! Man kann auch auf den grünen Klotz klicken und die Namen kriegen. Klingbeil ist nicht darunter.
+ Ja, richtig gesehen, bei der fucking CDU hat einer mehr für eine Aufnahme gestimmt als bei den "Sozial""demokraten".
+ Und erzählt mir nicht, dass das was mit dem Geld zu tun hätte. Mir der Kohle, die die Parteien und Großfirmen für ihre Twitter-Bespielung ausgeben, könnte man die wahrscheinlich alle unterbringen und versorgen.
+ Könnt ihr schwimmen? Eure Kinder auch? Die sind wahrscheinlich die letzte Generation, die schwimmen lernt.
+ Kennt ihr den schon? Ein Hersteller von unsicheren Pfuscher-Wahlcomputern bittet den Supreme Court, Forschung zu Wahlcomputer-Sicherheit zu verbieten. Weil, äh, *papierraschel*
+     "Necessary research and testing can be performed by authorized parties," Voatz writes in an amicus brief to the Supreme Court. "Voatz’s own security experience provides a helpful illustration of the benefits of authorized security research, and also shows how unauthorized research and public dissemination of unvalidated or theoretical security vulnerabilities can actually cause harmful effects."
+ Genau! Was da rauszufinden ist, das können wir auch selber rausfinden!!1! Und wenn die Forscher ihre Erkenntnisse publizieren, dann könnte das die Bevölkerung verunsichern!
+ In diesem Fall geht es sogar gar nicht um Wahlcomputer selbst sondern um eine beschissene Rotz-App für Android.
+    Angeblich haben ein paar niederländische Cyberkriminelle Donald Trumps Twitteraccount übernommen. Das Passwort war "Yourefired", sagen sie.
+ Ransomware macht inzwischen 41% der Cyber-Versicherungs-Claims aus. Bald ist das nicht mehr versicherbar schätze ich.
+    Wir haben einen Schuldigen für den Epic Fail mit dem Testalarm: Bayern!
+ In Berlin ist das ja ein bisschen wie im Nahen Osten, wo auch immer erstmal Israel an allem Schuld ist. Bei uns in Berlin ist immer erstmal Bayern an allem Schuld. Diesmal ist die Herleitung:
+     Dr. Thomas Herzog, Vizepräsident des BBK erklärte, dass nach ersten Erkenntnissen die Warnung pünktlich ausgelöst wurde. Allerdings habe ein Bundesland entgegen der Absprache eine eigene Warnung über die App versendet. Nach Informationen der Berliner Morgenpost soll es sich dabei um Bayern handeln. Der Alleingang des Bundeslandes hatte zur Folge, dass die Warnung des BBK blockiert wurde. Daraus resultierte die zeitliche Verzögerung. Man überlege nun, ob man Warnungen des Bundes gegenüber der Länder priorisiert.
+ HAHAHAHAHAHAHA
+ Der Lacher ist ja, dass das soooo klar war, dass sowas eines Tages passieren würde. Auf der anderen Seite sollten die örtlichen Meldungen immer Priorität haben gegenüber denen des Bundes, weil die lokalen Behörden über lokale Probleme (und der Hauptanwendungsfall für solche Alarme sind "Brand in Chemiefabrik gegenüber" nicht "die Russen kommen"!) im Allgemeinen besser informiert sein werden.
+ Eine der Hauptanforderungen an eine Warnapp ist auch, dass sie keine Leute warnt, die nicht betroffen sind. Denn die Forschung ist sonnenklar an der Stelle: Nach zwei-drei Warnungen, die ihn nicht betreffen, ignoriert der Normalbürger alle weiteren Warnungen erstmal.
+ Wieso aber die Bayern eine Meldung des Bundes in anderen Bundesländern blockieren können, das sollte der Systemdesigner mal in aller Ruhe erläutern müssen, während er kopfüber an den Zähennägeln aufgehängt von der Decke über einem Lagerfeuer baumelt. Was zur Höllt habt ihr Knalltüten euch denn dabei gedacht? Gar nichts?! Wird schon nicht vorkommen, dass in Bayern jemand freidreht?!? Mann Mann Mann.
+ Oder, die wahrscheinlichere Lösung: Die Projektentwicklung fand in Bayern statt. Und die sehen da vermutlich kein Problem.
+ Wenn das hier irgendne belanglose Kleinanzeigenplattform wäre, könnte man ja verhandeln, aber es geht um ein Katastrophenwarnsystem. Niemand kann da sagen, es sei nicht klar gewesen, dass von einer ordentlichen Implementation Menschenleben abhängen.
+ Ein Leser weist gerade auf einen tollen Schildbürgerstreich hin.
+ Und zwar ist am 14. Oktober der Weltnormentag. Jedes Jahr. Der 14. Oktober. Ausgerufen u.a. von der ISO, der Internationalen Standardisierungsorganisation. Wo man sich darauf einigt, Dinge grenzübergreifend auf eine bestimmte Art zu machen.
+ Am 14. Oktober.
+ Außer in den USA. Dort hat die ANSI das auf den 22. Oktober verlegt.
+ Ein Erfolgsmodell, diese internationalen Normen!
+ Ein Leserbrief erklärt, wieso das Sirenennetz so kaputt ist:
+     Nach dem Einigungsvertrag stellte man fest, dass das Beitrittsgebiet nicht über ein Sirenennetz verfügt wie es in den Altländern seit anno knips existierte.
+     Die Bund und Länder müssen aber flächendeckend für vergleichbare Lebensverhältnisse sorgen (sagt das GG), hatten also zwei Möglichkeiten: in Neufünfland Sirenennetz baun oder das alte Sirenennetz abbaun (privatisieren wäre noch denkbar gewesen, aber das wollte offenbar nicht mal die Regierung Kohl).
+     Und nun raten wir mal, was billiger war.
+     Allerdings musste man ja weiter die Aufgabe der Bevölkerungswarnung erfüllen, also musste das abgebaute Sirenennetz ersetzt werden => SatWaS/MoWaS.
+     Das MoWaS-System der Bundesregierung/*Bundesamt für Bevölkerungsschutz und Katastrophenhilfe* (*BBK*) ist übrigens satellitenbasiert.
+     Das ist eine Lehre aus den Fluten an Oder und Elbe, die sehr viel Infrastruktur lahmgelegt haben, weil Strom abgeschaltet werden musste. Also an sich eine Gute Idee, nur ist Satellitenempfang halt so eine Spezialkunst. Auch daher ist MoWaS nur als eine Art Backbone zur Verteilung an weiter verteilende Stellen konzipiert, nicht für die direkte Bevölkerungswarnung.
+     Jedenfalls ist meines Wissens der aktuelle Sachstand bei der Bevölkerungswarnung: "Daumen drücken, wird schon nix schiefgehen" als Konsens aller "Verantwortlichen". Und das ist ja ein nachvollziehbarer Ansatz, denn in der föderal organisierten Verantwortungsdiffusion können alle Beteiligten davon ausgehen, nie persönliche Nachteile (=Definition von "was schiefgehen") zu erleben.
+     Also wie bei politischer Verantwortung oder Softwarefehlern heutzutage leider üblich.
+ Das wundert mich ehrlich gesagt ein bisschen, denn meine Ost-Freunde sind gerade erstaunter als meine West-Freunde, dass sie nicht einfach "die alten DDR-Sirenen weiterbetrieben" haben.
+ Update: Ein anderer Leser widerspricht:
+     selbstverständlich gab es "im Beitrittsgebiet" einen zentralen Warndienst: Alle 11.000 Sirenen der DDR konnten zentral gesteuert werden.
+     Das Ganze befand sich im ZGS-14, dem zentralen Gefechtsstand der Luftstreitkräfte der NVA, bei Fürstenwalde.
+     Die Abschaltung der Sirenen auf DDR-Gebiet hat einen anderen Hintergrund: Mit der Wende glaubte man, dass der ewige Friede ausgebrochen sei, das Bundesamt für Zivilschutz wurde dann langsam kaputtgespart. Die Sirenen wurden den Ländern übergeholfen, diese wieder den Gemeinden - jetzt kommts: Da hingen langfristige und teure Wartungsverträge dran, viele Gemeinden haben abgewunken. Viele Sirenen kamen weg.
+     Aber auch nicht überall: In hochwasser- oder waldbrandgefährdeten Gemeinden entschieden die Gemeindevertreter, dass die Sirene bleibt.
+     Mit dem Elbehochwasser 2002 änderte sich die Situation in der Elberegion: Dresden schaffte sich eine neue Sirenenanlage an. Landkreise bauten den Durchgriff von der Leitstelle auf alle Landkreissirenen wieder auf.
+  Hat hier jemand Kram in der Amazon-Cloud?
+ Ex-NSA-Direktor Keith Alexander sitzt da jetzt im Vorstand. Also ich an eurer Stelle würde da ja sofort alles abziehen, was irgendwie einen Wert hat.
+ Fragt sich nur wohin. Denn Microsoft hat ja gerade diesen "JEDI"-Monsterdeal mit dem Pentagon unterschrieben und ist auch raus.
+ Wer bleibt da noch? Google? Die Telekom?!? BWAHAHAHAHA
+ Ach was erzähl ich hier. Niemand von euch wird bei Amazon oder Microsoft aus der Cloud wieder ausziehen. Einmal dort haben die euch bei den Schamhaaren.
+ Hätte euch doch nur jemand rechtzeitig gewarnt!1!!
+ Oh, ich weiß, ich weiß! Die Alibaba-Cloud!!1! Da ist das bestimmt GANZ anders. Null staatliche Schnüffelstellen am Saugrüssel!
+ Die Uniklinik Düsseldorf ist platt. Ich vermute mal eine Ransomware. Denn das ist ja wie ein Akt Gottes, da kann man nichts machen. Wir hier setzen weiter auf Windows + Outlook + Active Directory. Da passiert das halt ab und zu. Cost of doing business!1!!
+ Wer sich jetzt denkt, naja, ist ne Klinik, das sind Ärzte und keine IT-Fachleute! Für den habe ich noch diese Meldung hier. Was macht Equinix? Die betreiben Rechenzentren. Unter anderem die, in denen DE-CIX, ECIX und AMS-IX stehen.
+ Wisst ihr, so langsam verstehe ich ja die Prepper.
+ Und ich verstehe auch, wieso da so viele Polizisten drunter sind. Die haben wahrscheinlich über ihre Arbeit einen Einblick gehabt, WIE verkackt unsere Infrastruktur ist, und wie wenig man sich auf sie in Notfällen verlassen kann.
+ Die taktische Ebene irritiert mich aber noch ein bisschen. Man hätte doch z.B. einfach den Fußballclubs und der freiwilligen Feuerwehr sagen können: um 11? Fire at will! Dann hätte das für die Bevölkerung wenigstens ein bisschen den Anschein gehabt, als hätten wir hier Warnsirenen. Oder man hätte in Berlin den Leuten Bescheid geben können, die sonst an türkischen Hochzeiten teilnehmen, indem sie stundenlang hupend durch die Innenstadt gondeln.
+ Der Trump ist ja immer nochmal eine Größenordnung inkompetenter als man eh angenommen hat. Der erzählt uns ja seit Monaten, Covid sei nicht so schlimm, und als sich dann die Leichen stapelten erzählte er uns, er habe einen großartigen Job bei der Abwehr gemacht.
+ Ich habe hier ja tatsächlich immer noch Leute in der Inbox, die mir erzählen, Covid sei ja gar nicht so schlimm. Wenn Trump das sagt, wird das schon stimmen!
+ Nun, selbst ein Dilettant wie Donald Trump wusste ziemlich früh, dass Covid doch schlimm ist. Das wissen wir, weil der Depp das Bob Woodward auf Band gesprochen hat.
+ Die haben sich sogar mehrfach getroffen. Beim zweiten Treffen im März war auch öffentlich bekannt, wie schlimm Covid ist, und da hat Trump dann dem Woodward gesagt, dass er die Gefährlichkeit runterspielen werden, damit keine Panik entsteht. Anstatt eines Lockdowns lieber den Leuten ins Gesicht lügen, und auf eine göttliche Intervention warten. Faith Based Politics!
+ Völlig überraschend gab es die göttliche Intervention dann nicht und stattdessen die Panik, die Trump angeblich vermeiden wollte. Und hunderttausende Tote.
+ Meine Inbox ist voll von Leuten, die mir schreiben, dass es auch bei ihnen keine Sirenen gab. Münster, Bielefeld, Bremen, Göttingen, Trier, Leipzig, etc. Die Warnapp hat offenbar landesweit versagt.
+ Vielleicht hätten die mal vorher jemanden fragen sollen, der sich mit sowas auskennt?
+ Was mich ja immer fasziniert: Das ist doch bekannt! Das weißt du doch als Kommune, wenn du keine funktionierenden Sirenen hast? Wieso dann einen Test? Wieso fragen die nicht vorher einmal rum?
+ Hey, Bremen, habt ihr Sirenen? Wie sieht es mit euch aus, Münster? Nicht? Nun, äh, dann verschieben wir die Tests mal.
+ Aber nee, so funktioniert das bizarrerweise nie. Dasselbe Phänomen kann ich auch bei Penetrationstests immer wieder sehen. Die wissen, dass ihr System Scheiße ist, und forcieren dann trotzdem einen Test. Die unten hoffen, dass der Test zeigt, wie scheiße alles ist, damit die oben mal aufhören, ihnen im Weg zu stehen, und vielleicht ein paar bewilligte Mittel freigeben. Die in der Mitte hoffen, dass der Tester ein sehbehinderter Gehörloser ist, der wie durch ein Wunder nichts findet. Und die oben waren die ganze Zeit überzeugt, dass alles super ist, weil die Horrormeldungen von unten in der Mitte rausgefiltert werden.
+ Ich glaube ja, wenn wir mal das ganze Middle Management rausschmeißen, könnten wir viele Menschenleben retten.
+ Aber es ist nicht so, dass GAR keine Sirenen funktioniert hätten. Der Postillon rettet uns alle.
+ Der größte Lacher, fand ich, war aber dieser Tweet des Bundesamtes für Bevölkerungsschutz und Katastrophenhilfe. Ich zitiere:
+     Die bundesweite MoWaS-Meldung konnte nur verspätet zugestellt werden. Grund dafür war eine nicht vorgesehene zeitgleiche Auslösung einer Vielzahl von Warnmeldungen über MoWaS.
+ Ja, gut, natürlich, damit konnte beim Auslegen des Systems niemand rechnen, dass da im Katastrophenfall zeitgleich viele Meldungen kommen würden. m(
+ Dann schrieben mir noch Leute, dass die App Tracker eingebaut hat (äh wat? Warum?!) und dass die unter Android nur warnt, wenn man Google Location Services angeschaltet hat.
+ Vielleicht haben wir den Untergang ja auch einfach verdient.
+ Eigentlich hätten um 11 die Sirenen losgehen sollen aber hier war nichts.
+ Berlin, fuck yeah!
+ Hey, so wie wir hier unsere Infrastruktur kaputtmachen, wieso sollte da ausgerechnet das Notfallwarnsystem nicht betroffen sein?
+ Update: Ah, stellt sich raus, das sollte so. Die haben das mit den Sirenen gar nicht erst versucht. Die Warnung ging nur über die app raus, die niemand installiert hat. Na ein Glück, dass wir das mal getestet haben!1!! Ich hab hier jedenfalls nichts mitgekriegt von einem Test.
+ Es wäre natürlich überhaupt gar kein Problem gewesen, neben der App auch einfach einmal den Cell Broadcast zu bespielen. Das haben alle Endgeräte eh eingebaut.
+ Update: Den schönsten Tweet dazu hat Heise ausgegraben: Der Deutsche Gehörlosenbund sagt, er habe nichts gehört. LMAO!
+ Leserbrief zur Situation bei den Berliner Gerichten:
+     die Darstellung im Tagesspiegel zur Berliner Justiz ist leider falsch.
+    In Wirklichkeit kam dort Windows 7 zum Einsatz und nicht Windows 95. Leider können viele der Redakteure wohl Word 95 und Windows 95 nicht auseinanderhalten, wenn sie News stur abschreiben.
+     Problematisch war dort die "selbst programmierte" Software AuLAK ("Automation des Landgerichts, der Amtsgerichte und des Kammergerichts"), die auf Basis von Word 95 (vermutlich Makro) lief. Diese war wahrscheinlich auch das Einfallstor des damaligen Trojaners. Es gab also schon lange keine Clients mit Windows 95 mehr und auf einem Rechner mit Windows 7 läuft zumeist auch Windows 10 einigermaßen (sofern man nicht wirklich Müll dort stehen hat).
+ Das wird ja immer schlimmer!
+ Wichtiger Leserbrief zum Server-side mute bei Bigbluebutton:
+     MS-Teams und Skype4Business weisen einen seit geraumer Zeit mit einem Popup darauf hin, wenn man spricht während Mute eingeschaltet ist.
+     Interessanterweise kommt das Popup nicht, wenn man einfach im Hintergrund Musik aufdreht, die werten da also mehr als bloß den Pegel aus und aus Anwendersicht ist die Funktion erstaunlich zuverlässig.
+     Teams bietet außerdem server-based automatic transcription an, und Moderatoren können anderer Leute Mikro in der Konferenz remote an- und ausschalten (ja, beides, in beliebiger Reihenfolge!).
+     Keine Ahnung ob das lokal geschaltet wird oder auch zentral, aber allein aus Effizienzgründen würde ich mal davon ausgehen, dass sie auch für die Mute-Notification die server-based Transcription engine nutzen, die eh schon da ist, also ginge der audiostream auch immer mit raus.
+     Anzunehmen, dass man nicht gehört wird, weil die Leitung gerade nicht bidirektional end-to-end durchgeschaltet ist, ist übrigens schon lange ein Trugschluss!
+     Ich habe gerade keine Onlinereferenz parat, aber ich erinnere mich, dass es schon in den 90ern Auswertungen darüber gab, was Leute so erzählen, während sie am Telefon in Warteschleifen hängen. Ich hab damals bei Springer gearbeitet, und Anrufern zur Überbrückung von Wartezeiten bei Rückfragen "Musik auf die Ohren zu geben", während wir sie weiter hören konnten, war eine gern genutzte Standardfunktion der Callcenter-Anlage. Andere Technologie, selbes Prinzip.
+  Habt ihr Bladerunner 2049 geguckt? Hat es euch gefallen? San Francisco sieht gerade aus wie in dem Film. Und dass da viele Roboter rumlaufen, wird ja wohl auch niemand bestreiten wollen. The future is now!
+ Update: Für das volle Filmfeeling hat jemand aktuelle Drohnenaufnahmen von San Francisco mit der Musik aus dem Film hinterlegt. Oscarwürdig!
+ Update: Übrigens, wenn ihr Bladerunner 2049 noch nicht geguckt habt, solltet ihr das nachholen.
+ Wollt ihr euch mal so richtig fremdschämen?
+ Das ehemalige Nachrichtenmagazin wollte wissen, wieso wir in Deutschland per App und nicht per Cell Broadcast warnen. Ein Cell Broadcast hat einen Haufen von Vorteilen. Erstens mal musst du die Warnung nur einmal rausschicken, nicht einmal pro Empfänger wie bei der App. Das spart Bandbreite und es ist auch besser für die Privatsphäre, weil bei Nicht-Broadcast-Kommunikation auch immer die Gefahr besteht, dass die App deine Bewegungsdaten mitschneidet und meldet. Und auf der Haben-Seite für eine App rollen ein paar Tumbleweeds an den Crickets vorbei, da herrscht gähnende Leere.
+ So und jetzt gucken wir mal gemeinsam, was die Antwort war:
+     Wir haben davon Abstand genommen, weil die Mobilfunknetze - wie man etwa an Silvester sieht - im Fall der Fälle nicht ausreichen. Hinzu kommt ein datenschutzrechtliches Problem. Wenn man direkt die Handys ansteuert, werden auch Bewegungsdaten erfasst. Wir setzen daher auf die App
+ Wer gut aufgepasst hat, wird gemerkt haben, dass hier jemand überhaupt gar nicht auch nur ansatzweise verstanden hat, wovon er redet, und die Fakten einfach genau andersherum darstellt als sie sind.
+ Mit wem haben die denn da geredet, fragt ihr euch jetzt? Nun, äh, ...
+     Christoph Unger, Jahrgang 1958, ist Verwaltungsjurist und seit 2004 Präsident des Bundesamts für Bevölkerungsschutz und Katastrophenhilfe. Zuvor befasste sich der frühere Richter aus Niedersachsen auch im Bundesinnenministerium mit Zivilschutz- und Katastrophenlagen. Er ist Mitglied der SPD.
+ Ein Verwaltungsjurist ist natürlich auch das ideale Personal, um technische Fragen beantworten zu können!1!! Hat der keine Berater, die ihm helfen, sich nicht öffentlich zum Stück Brot zu machen?!
+ Update: Hahaha, da ist wohl der Zensor vom Pinkeln zurückgekommen. Jetzt ist der Absatz weg und stattdessen steht da, die Mobilfunknetze in Deutschland würden das nicht unterstützen. Naja, äh, warum sollten sie auch? Privatwirtschaftliche Interessenten für das Feature gibt es nicht und der Gesetzgeber hat es verpeilt, das vorzuschreiben. Ich würde mich wundern, wenn das eine erwähnenswerte Investition wäre, das nachzurüsten. Man müsste nur wollen.
+ Man müsste nur wollen, dass im Katastrophenfalle wieder alles zusammenbricht. Das müsste man wollen.
+    Als Trump ins Amt kam, haben wir ja alle herumgescherzt, ab jetzt gäbe es keine Geheimnisse mehr, weil der doofe Donald nicht in der Lage sein würde, die Fresse zu halten.
+ Nur dachte ich damals an UFO-Akten (die ja jetzt in der Tat offengelegt wurden), aber stellt sich raus: auch bezüglich der Atomwaffen-Fähigkeiten der USA konnte Trump gegenüber Bob Woodward nicht die Klappe halten. Ausgerechnet, das ist einer der Watergate-Leute.
+ m(
+ Erinnert ihr euch, wie das Berliner Kammergericht monatelang ausgeknipst war, weil sie "Opfer eines Cyberangriffs" wurden? Ja?
+ Wo dann rauskam, dass die noch Windows 95 fuhren da?
+ Nun, das war bei den anderen Gerichten nicht anders mit Windows 95. Also haben die mal ein Upgrade zu Windows 10 gemacht.
+ Ohne die Hardware zu upgraden. Völlig überraschend stellt sich raus, dass das möglicherweise nicht so flutscht wie man gehofft hätte. Und jetzt? Na klar!
+     Inzwischen soll es Überlegungen geben, wieder auf die alte Windows95-Umgebung zurück zu wechseln.
+ NEEEEIIIINNNNN!!!
+ Benutzt hier jemand Bigbluebutton? Die haben "mute" serverseitig implementiert. Das heißt, wenn du im Client Audio ausschaltest, schickt der weiter Audio an den Server, und der Serveradmin könnte das anhören oder mitschneiden.
+ Bonus: Der Bug gammelt da seit dem 1. April herum.
+ Hat hier jemand, vielleicht zur Covid-Vorbeuge, Fieber-Erkennungs-Kameras gekauft? Man nimmt das Gesicht auf und er sagt einem, ob derjenige Fieber hat? Vielleicht aus China importiert gar? Dann habe ich schlechte Nachrichten für euch. Die Messmethodik ist Bullshit. Um das zu vertuschen, haben die Kameras eine Gesichtserkennung drin. Wenn man da ein Foto eines Gesichts vorhält, sagt die "Messung", die Temperaturen seien im grünen Bereich. LOL!
+ Nach der Reichstagstreppenstürmung durch die Eso-Sprallos und die Reichsbürger steht der Berliner "Verfassungsschutz" mit heruntergelassenen Hosen da. Sie mussten sich jetzt vor einem Ausschuss rechtfertigen. Ihre Antwort ist Realsatire.
+     "Es war nach unseren Informationen selbst für Szeneangehörige nicht vorhersehbar, dass es tatsächlich gelingen würde, auf die Reichstagstreppe zu gelangen".
+ Was hätte die noch gleich aufhalten sollen? Die zweieinhalb Touristen-Ordner, die da am Eingang standen?
+     Der Berliner Verfassungsschutz hat die kurzzeitige Besetzung der Reichstagstreppe bei der Corona-Demonstration am 29. August als "spontane" und nicht vorhersehbare Aktion eingeordnet.
+ Nicht vorhersehbar! Ja nee klar. Ist ja nicht so, als hätte es da Ankündigungen oder Aufrufe gegeben. Oh warte, doch, gab es. Aber die zählen nicht, denn das waren bloß
+     häufige und typische "Verbalaggressionen" in der Reichsbürgerszene
+ gewesen. Na dann ist ja alles klar. Gut, dass wir das mal geklärt haben.
+ Was ist noch gleich Aufgabe Ihrer Behörde? Wie war das? Risikoabschätzung? Gefährder rechtzeitig erkennen?
+ Können wir JETZT endlich diese Behörde zumachen? Den ständigen Schäden an Rechtstaat und Grundrechten steht ja auf der Guthabenseite gar nichts gegenüber. Oder fällt jemandem spontan was ein, was der Verfassungsschutz geleistet hat?
+ Old and busted: SIM-Karten-Lock an bestimmte Mobilfunknetze.
+ New hotness: AMD-Prozessoren-Lock an bestimmte Computerhersteller.
+ Gibt es eigentlich keine Idee, die so schlecht ist, dass Intel und AMD sie nicht aufgreifen würden?
+ In Finnland hat die Polizei herausgefunden, dass sechs Skulpturen des verstorbenen Bildhauers Markus Copper funktionierende Bomben sind.
+     Personally if a guy who sculpted a ball that kills you told a reporter "I want to make bombs" and then called his next work "Sixpack of Instant Death" I would probably ask some questions
+ Brilliante Polizeiarbeit, Inspektor Clouseau! (Danke, Philipp)
+ Die Verschwörungstheorie des Tages kommt von Trumps im Knast sitzenden Fixer Michael Cohen. Der glaubt, wenn Trump glaubt, dass er bei der Wahl verliert, dann wird er sofort das Amt niederlegen, damit sein Vizepräsident Mike Pence das Amt übernimmt und ihn von allen Bundesrechtsverletzungen begnadigen kann.
+ Ich glaube ja, dass schon die Prämisse nicht stimmt. Warum sollte Trump die Wahl verlieren? Das Szenario ist doch genau wie beim letzten Mal. Die Linke nimmt ihn nicht ernst, wähnt die Wahl schon in ihrer Tasche, und steigert sich da in eine Hysterie der Arroganz hinein.
+ Schlechter Tag für Elon Musk: Tesla-Aktienkurs bricht um 30% ein. Warum? Nun, ...
+     Dem Konzern war die Aufnahme in den S&P 500 Aktienindex verweigert worden, was unter anderem zu einem Kursrutsch von 20 Prozent führte. Einen Platz im S&P 500 bekam stattdessen die E-Commerce-Plattform für Selbstgemachtes Etsy.
+ Ausgebootet von Etsy! HAHAHAHAH OMG!
+ Den Abstand zwischen den Börsen und der Realwirtschaft muss man inzwischen in Parsec angeben.
+ Aber ist ja auch klar. Wir stecken ja mitten in der nächsten sinnlosen Tech-Bubble drin. Da wird dann auch nicht mehr rational entschieden, klar.
+ Wieviele der S&P 500 sind eigentlich Firmen, die Produkte herstellen?
+ Was für Leute fallen eigentlich auf Nigeria-Scammer rein? Nordrheinwestfalen, stellt sich raus.
+     The suspects, Babatunde Adesanya and Akinpelu Hassan Abass, were members of a "sophisticated transnational criminal network", Nigerian police said in a statement.
+ Sowas finde ich ja immer toll, wenn die Verlierer alle zusammenarbeiten, um sich gegenseitig das Gesicht zu wahren. Jaja, super sophisticated! Und transnational!!1! Guckt euch zum Abgleich nur mal das Foto der beiden Täter an.
+ Aus der beliebten Reihe "gibt es eigentlich irgendwas, das die nicht verkacken", heute: Sieht aus als seien die StVO-Reformen der letzten 12 Jahre nichtig. Wegen eines Formfehlers.
+ So und jetzt die Pointe:
+     Dabei geht es um einen sogenannten Zitierfehler, weil die rechtlichen Grundlagen der Verordnungen nach Ansicht der Juristen aus Stuttgart nicht vollständig wiedergegeben worden seien.
+ Tja, eigentlich lernt man ordentliches Zitieren ja an der Uni, bei seiner wissenschaftlichen Arbeit. Aber der Generation Ctrl-V fehlen da natürlich die Grundlagen.
+ Die EU-Kommission gegen Kindesmissbrauch hat eine großartige Idee: Verschlüsselung dürfen nur noch gute Menschen nutzen!1!!
+    Der Deutsche Presserat findet nicht, dass die taz-Kolumne "All cops are berufsunfähig" gegen den Pressekodex verstößt. Begründung:
+     da sich die Kritik auf eine ganze Berufsgruppe und nicht auf Einzelpersonen bezieht. Die Polizei ist zudem eine gesellschaftlich anerkannte Berufsgruppe, die nicht unter den Diskriminierungsschutz nach Ziffer 12 des Pressekodex fällt, anders als etwa Angehörige von religiösen oder ethnischen Minderheiten.
+ Ah, ach so. Gesellscahftlich anerkannte Berufsgruppen darf man ungestraft auf die Mülldeponie wünschen? Ob die Damen und (wahrscheinlich viel mehr) Herren Pressevertreter (Was hattet ihr denn geglaubt, wer da sitzt? Das ist ein Organ der freiwilligen Selbstkontrolle der Presse!) im Presserat das auch so sehen würden, wenn das nicht gegen die Polizei sondern gegen Journalisten gerichtet wäre?
+ Ich finde das erbärmlich, so schnell wie die Journalisten immer nach der Pressefreiheit schreien. Legt dann bitte auch mal einen ähnlich hohen Anspruch an euch selbst an.
+ Update: Ich möchte bei der Gelegenheit darauf hinweisen, dass die Rüge die dritte Eskalationsstufe ist, die die haben. Und die hat schon keinerlei Auswirkungen in der Praxis. Die "Bild"-"Zeitung" kassiert regelmäßig Rügen. Keine Auswirkungen.
+ Aber nicht mal die beiden kleineren Stufen (Hinweis und Mißbilligung) haben sie hier gezogen. Das ist echt armselig.
+ Der goldene Troll am Band geht diese Woche an Renate Kühnast.
+ Am Donnerstag ist übrigens Warn-Test-Tag. Da geht einmal auf allen Kanälen ein Testalarm raus, um mal zu testen, ob die Infrastruktur überhaupt funktioniert. Also: Sirenen, Radio, Fernsehen. Also achtet Donnerstag mal auf euer Smartphones, was da alles interessantes losbimmelt, von dessen Existenz ist bisher nichts wusstet.
+ Update: Zur Einstimmung dieser wunderschöne Sirenentest aus der Schweiz. Wer jetzt denkt, wow, besoffene Blaskapelle, die Sirene ist kaputt! der irrt. Das soll so.
+ Die "Querdenker" zerstreiten sich gerade.
+     Einem prominenten Querdenken-Redner wird vorgeworfen, einen anderen als „Satanisten“ bezeichnet zu haben. Ein Organisator soll einen weiteren Redner in einer SMS als „Idioten“ beschimpft haben.
+ Naja, äh, klar. Wenn du Leute versammelst, die ohne Beweis jeden Scheiß glauben, wieso sollten die nicht auch Behauptungen glauben, dass der Typ da drüben ein Satanist ist?
+     Ihn störe, dass die „eigene Szene völlig uneins" sei und dass Akteure nun übereinander herfielen und sich gegenseitig beschuldigten, von der Regierung gekauft oder gar Satanisten zu sein. Leider hätten viele noch immer nicht begriffen, dass wir „mächtige Lichtwesen sind“.
+ Oh ach so! Mächtige Lichtwesen! Sozusagen ... Thetane?
+ Update: Wer sich für die stinkenden Details interessiert: Hier gibt es eine Sammlung.
+ Neulich schrieb ich, die EU solle mal in Chipfertigung investieren. Wenn die Taiwanesen das können, und zwar mit Belichtungsmaschinen aus Europa, dann kann Europa das auch.
+ Und jetzt muss ich lesen: Das geht gar nicht!1!!
+     Ein anderes Problem wird die EPI nicht lösen können: Fertigungsanlagen in der EU für Prozessoren mit Strukturbreiten von 7 Nanometern und darunter. Die dazu nötigen "Fabs" kosten mehrere Milliarden Euro und arbeiten nur wirtschaftlich, wenn sie riesige Chip-Mengen ausstoßen. Die USA locken unterdessen TSMC zur Investition in Arizona an. In der EU hingegen werden sich High-End-Chips auf absehbare Zeit nur entwickeln, aber nicht physisch fertigen lassen.
+ Oh ACH SO ist das! Das rentiert sich nur in Taiwan und in Arizona. In der EU? Keine Chance!
+ Im Übrigen muss ich das Memo verpasst haben, das erklärt, was die Frage der digitalen Souveränität mit Wirtschaftlichkeit zu tun hat. Ich hielt das für unabhängige Fragestellungen.
+    Wisst ihr, womit wir noch keine Newspeak-Zensur hatten? Mit Schriftarten! Nun, das lässt sich ändern!1!! Warum nicht eine Schriftart machen, die per Ligatur böse Wörter netter macht? Aus "Westward Ho!" wird dann Kubismus, aus "whore" wird "sex worker", aus "bitch" wird "female dog" (das tut gleich viel weniger weh!!1!).
+ Ihr werdet sicher genau so überrascht sein wie ich, dass "nazi", "antisemite", "transphobic" und "islamophobe" nicht wegzensiert werden. Denn das ist ja keine Beleidigung, nein nein, das sind Tatsachenbeschreibungen! Die Linke irrt bei sowas nämlich nie, müsst ihr wissen.
+ Immerhin muss sich niemand mehr als "retard" beschimpfen lassen. Daraus wird "intellectually disabled person". So einfach ist das, nicht mehr beleidigt zu werden! Wer könnte da ein Problem mit haben, als "dirty female dog" beschimpft zu werden? Nur eine "intellectually disabled person"!
+ Ich bin ja dafür, nur noch sanfte Pastelltöne als Browserhintergrund zuzulassen. Damit die armen Leser nicht schockierenden Farben ausgesetzt werden, die ihren emotionalen Zustand beeinträchtigen könnten. Am besten gar keine Browser mehr erlauben. Nur noch eine Twitter-App. Und bei der reicht es ja auch, wenn die write only ist.
+ Zuviel Popcorn gefressen? Hier ist ein Brechmittel: Martin Jäger (Cheflobbyist bei Daimler) fordert mehr Militär. Oh warte, nee, der ist ja gar nicht mehr Cheflobbyist bei Daimler. Der ist jetzt *blätterraschel* WHAT THE FUCK?! Staatssekretär im Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung!
+ Wie konnte das denn passieren?!
+ Und seht euch nur mal an, was der da für Klopper rauskloppt.
+     Die Bundesrepublik wird sich auch künftig an Interventionen beteiligen müssen. Mehr noch: Deutschland und Europa sollten aus eigener Kraft interventionsfähig werden.
+ Ja aber Cherry, steht dem nicht das Grundgesetz im Weg?! Nicht doch! *abwink*
+     Völkerrecht und Grundgesetz lassen mehr Raum, als wir nutzen. Wollen wir ernsthaft behaupten, der Einsatz französischer Spezialkräfte bei der Terrorbekämpfung im Sahel sei völkerrechtswidrig? Er ist es nicht. Wir sollten uns vielmehr anschließen.
+ Seht ihr? Alles bloß ein Missverständnis!1!!
+ Außerdem sind militärische Interventionen alternativlos, findet Herr Jäger.
+     Europas Flanken im Südosten und am Mittelmeer bewachen die Amerikaner nicht mehr. Diese Aufgabe fällt jetzt den Europäern zu. In der näheren und weiteren Nachbarschaft Europas muss Ordnung herrschen, und diese Ordnung sollte eine europäische sein. [...] Resignativer Pazifismus hat darauf keine Antwort.
+ ORRRDNUNG MUSS SEIN *hackenzusammenschlag*
+ Wisst ihr, was wir jetzt brauchen? Einen Lenker. Ordentliches Führungspersonal, wenn ihr versteht, was ich meine. Man könnte sagen: Einen Führer. Dann ein paar schöne Angriffskrie, ... äh Interventionen, und dann haben wir endlich unser tausendjähriges Friedensreich!
+ Und die Waffen kaufen wir am besten bei Daimler.
+ Diese Tage hatte Extinction Rebellion die Druckerpresse-Zufahrtswege der Murdoch-Presse blockiert.
+ Das bietet eine schöne Gegenüberstellmöglichkeit, die Craig Murray für einen Vergleich mit dem Schauprozess gegen Julian Assange nutzt. Wo sind denn da die, die bei Murdoch eben noch Pressefreiheit-Proponenten waren?
+ Aber eigentlich wollte ich diesen Absatz hier hervorheben. Vorgeschichte: Craig Murray begleitet den Assange-Schauprozess von Anfang an, und kam dann völlig überraschend aus Platzgründen nicht mehr rein eines Tages. Dann passiert das hier:
+     Given these restrictions, I was very conscious I may need to queue from 5am tomorrow, to get one of the 4 public places, if I drop off the family list. So I went this morning at 6am to the Old Bailey to check out the queue and work out the system. The first six people in the queue were all people who, entirely off their own bat, without my knowledge and with no coordination between them, had arrived while London slept just to reserve a place for me.
+ Wie geil ist DAS denn?
+ Oh apropos, wo wir gerade bei Julian Assange waren. Da ist jetzt völlig überraschend herausgekommen, dass der in der Botschaft umfassender abgehört wurde als bisher bekannt war! Ich weiß! Völlig überraschend kam das! Die finden ja alles raus! Alles! Immerhin hat die ARD auch eine einstündige Doku produzieren lassen, die jetzt in der Mediathek anguckbar ist.
+ Sagt mal, dieser Berliner Großflughafen, … rechnet der sich überhaupt?
+ Das ist ja schon unter normalen Umständen ein Problem, aber jetzt mit Corona und Airline-Pleitedomino?
+ Und tatsächlich:
+     Werden nicht sofort Millionen gezahlt, ist der BER zur Eröffnung pleite
+ Haha, Millionen, da lachen wir doch drüber! Nach den Milliarden, den der schon verschlungen hat!1!!
+     300 Millionen Euro sind nötig.
+ Oh, äh, ja gut, technisch gesehen sind das Millionen. Aber halt dreistellig.
+     Bis 2024 fehlen 1,5 Milliarden Euro
+ Ach so, pro Jahr! Der Flughafen ist nicht nur verschuldet, der arbeitet auch noch krass defizitär!
+     Sollte Brüssel neue öffentliche Hilfen nicht genehmigen, bliebe als Ausweg eine Teilprivatisierung, die von den Eignern nur der Berliner Senat bislang strikt ablehnt.
+ Ich habe eine Vision. Wie wäre es mit … einem Einkaufszentrum? Genau was die Gegend braucht! Berlin hat viel zu wenig Einkaufszentren! Oder wartet, warum nicht auch Büroraum? Berlin braucht mehr Büroräume! Fragt nur Sony und die Bahn, wie gut deren Büroraumangebote sich verkauft haben!
+    Noch Popcorn übrig? Neuer Gaby Weber-Film darüber, wie der BND mit Taschenspielertricks verhindern will, dass sie Akten rausrücken müssen.
+ Was für Akten? 60 Jahre alte Akten. Die zu Eichmann, aus dem Jahre 1960. Die Schutzfrist wäre jetzt abgelaufen. Gaby hat geduldig gewartet, bis jetzt, 2020, und natürlich wollen sie die Akten immer noch nicht rausgeben.
+ Meine Damen und Herren, der Kampf gegen die Antifa ist so gut wie gewonnen. Aus einem Leserbrief:
+     Abonnenten meldeten, dass AVG und Avast die taz vom 14.8. als gefährlich einstufen, siehe Virustotal.
+     Auf Nachfrage hat Avast bestätigt, dass das kein false positive ist ("Our virus specialists have been working on this problem and they informed me that this detection is correct.").
+     Nun habe ich die Datei mal einer bisection unterzogen und es liegt an der Seite 15.
+     Dort ist ein Link auf http://antifa.de/ im Text.
+     Und wenn ich jetzt mit Libreoffice ein Dokument mache, wo nur ein paar Worte mit dem Link zu http://antifa.de/ drin sind, dann schlagen AVG und Avast auch darauf an.
+     Mir fehlen die Worte.
+ Die Witze schreiben sich praktisch von selbst!
+ Kauft mehr Schlangenöl! Wegen der Sicherheit!!
+ Update: Wartet, geht noch weiter!
+     Achso, und dass von der entsprechenden Komponente des Virenscanners deswegen der ganze Server dl.taz.de als Malwareserver ("infiziert mit URL:blacklist") eingestuft und Verbindungen dahin unterbrochen werden, versteht sich von selbst.
+  Memo des Tages:
+     It has come to the President's attention that Executive Branch agencies have spent millions of taxpayer dollars to date "training" government workers to believe divisive, anti-American propaganda.
+ Hmm, was meinen sie denn damit ...?
+     The President has directed me to ensure that Federal agencies cease and desist from using taxpayer dollars to fund these divisive, un-American propaganda training sessions. Accordingly, to that end, the Office of Management and Budget will shortly issue more detailed guidance on implementing the President's directive. In the meantime, all agencies are directed to begin to identify all contracts or other agency spending related to any training on "critical race theory/9 "white privilege," or any other training or propaganda effort that teaches or suggests either (1) that the United States is an inherently racist or evil country or (2) that any race or ethnicity is inherently racist or evil. In addition, all agencies should begin to identify all available avenues within the law to cancel any such contracts and/or to divert Federal dollars away from these un-American propaganda training sessions.
+ Ich bin ja ehrlich gesagt fasziniert, dass das überhaupt ein Budgetposten in Exekutivorganen der USA war.
+ Update: Und hier ist das Fox News-Segment, das das offenbar losgetreten hat.
+    Schöne Twitter-Challenge:
+     Name someone who is universally agreed to be evil (genocidal dictator, serial killer etc) and I'll defend them and their actions using conservative logic.
+ Gute idee und gut ausgeführt. Jetzt brauchen wir das nur nochmal für die Linke.
+    Benutzt hier jemand GnuPG? Da gibt es einen Buffer Overflow. Im Key-Import.
+ Naja, werdet ihr euch jetzt denken, das ist bestimmt alter Gammelcode. Heute würde sowas in neuem Code nicht mehr passieren.
+ Doch, würde es. Das ist brandneuer Code.
+ m(
+ Warner Music hatte einen Datenreichtum.
+     This could have included your name, email address, telephone number, billing address, and payment card details (card number, CVC/CVV and expiration date).
+ Eigentlich müsste Warner jetzt direkt aus dem Payment-Verkehr gezogen werden, denn die CVC-Nummern darf man extra nirgendwo speichern, auch nicht zum Debuggen. Wer es doch macht, dem drohen auf dem Papier saftige Strafen. Allerdings passiert in der Praxis natürlich nichts, denn die Payment-Mafia schneidet sich doch nicht den Ast ab, auf dem sie sitzt.
+ Wenn die Contentmafia mal halb so viel Energie in die Sicherung ihrer Infrastruktur investiert hätte wie in Bullshit-"Kopierschutz"-Gängelscheiße für den Krieg gegen ihre Kunden, dann hätten wir das Schlamassel vermeiden können.
+ Threema soll Open Source werden. Begründung: Um reproduzierbare Builds zu ermöglichen.
+ *Applaus*
+ Der Europäische Menschenrechtsgerichtshof weist die Klage von Privacy International und dem CCC gegen die GCHQ-Massenspionage ab. Begründung: Man habe den Gerichten in Großbritannien nicht genug Gelegenheit gegeben, den Fall lokal zu klären.
+ Wie blöde sind die Covidioten? Aktueller Datenpunkt: Attila Hildmann kriegt hunderte Wutschriften seiner Ex-Fans nach der Postillon-Recherche. Jetzt muss er ihnen Quellenarbeit erklären. Ich gehe gerade rasant durch meine Popcornvorräte.
+ Tja, wer hätte gedacht, dass Medienkompetenz nochmal wichtig sein würde? Hätten wir doch nur ein Blog gehabt, was das trainiert!
+ Ich für meinen Teil bin ja schockiert, dass Leute, die Bullshit-Theorien wie dass Bill Gates uns alle chippen will glauben, dann auch einfach Bullshit-Theorien in die andere Richtung glauben würden!!1! Damit konnte ja wohl NIEMAND rechnen! Man muss sich fast fragen, wieso die Geheimdienste das nicht schon längst zur Meinungskontrolle einsetzen!!1! Oooooooh...
+ Tolle Idee: Schüler-Tests von einer KI benoten lassen.
+    Trump versucht ja seit Wochen, die Briefwahl zu verhindern, und auch sonst alles, was ärmeren Bürgern die Wahl in Covid-Zeiten erleichtern würde.
+ Weil es dafür keine moralisch akzeptable Begründung gibt, lügt er an einem Stück was von Wahlbetrug in die Kameras.
+ Aktueller Höhepunkt: Trump sagt den Wählern in North Carolina, sie sollen doch zweimal wählen, um "das System zu testen".
+ Wer sich jetzt denkt, hey, so blöde kann niemand sein!, dem empfehle ich einen Blick auf die Amis, die ins Krankenhaus mussten, weil sie Bleiche gegen Corona getrunken haben.
+    Erinnert ihr euch an Trumps ehemalige Pressesprecherin Sarah Huckabee-Sanders?
+ Die hat jetzt ein Buch geschrieben. Ja, wie all die anderen geschassten Trumpisten.
+ Ich glaube, dass das die Karotte ist, die die sich vor der Nase baumeln zum durchhalten. Wenn das hier vorbei ist, dann schreibe ich ein Buch und muss nie wieder arbeiten!1!!
+ Ich kenne mich ja mit dem Buchmarkt nicht aus, aber dass da jemand wirklich reich wird ist m.W. die Ausnahme.
+ Was steht denn jetzt drin? Eines Tages hat wohl Kim Jong Un sie angezwinkert. Und Trump soll dann so zu ihr gemeint haben: Take one for the team. Ach was ist denn schon so ein bisschen Zwangsprostitution zwischen Chef und Untergebener! Wer abheben will muss halt auch einzahlen!1!! Gut, außer Donald Trump, versteht sich. Der hebt immer nur ab, was andere eingezahlt haben.
+ Wenn die Polizei die Corona-Listen von Gaststätten nutzt, fühlt sich das ja an wie ein Verrat am Bürger. Jedenfalls aus Sicht der Bürger. Da werden Daten missbraucht, die ich als Bürger für einen völlig anderen Zweck abgelegt habe, und zwar nicht freiwillig!!, im Vertrauen darauf, dass der Staat sich ein einziges fucking Mal zurückhalten kann. Kann er natürlich nicht, jedenfalls in Bayern. Wo ein Trog ist, da kommen die Schweine.
+ Und natürlich mit der üblichen Lügentaktik.
+    Würden wir doch nie machen.
+    Nur für schwerste Kriminalität / Triggerdelikte wie Kindesmissbrauch.
+    Nachträglich zeigt sich, dass es auch gegen Kleinkriminalität eingesetzt wurde.
+     Neben Mord und Totschlag, schwerem Raub oder gefährlicher Körperverletzung finden sich in der Liste durchaus weniger gravierende Straftaten: wie Beleidigung, unerlaubtes Entfernen vom Unfallort und Diebstahl. Drei Fälle betrafen Vermisstensuchen. Strafverfahren wurde bis Ende Juli keine eingeleitet.
+ Naja gut, aber sie werden ja wenigstens die Leute benachrichtigt haben, deren Daten sie hier vergewaltigt haben?
+     Das Ministerium betont die "Berücksichtigung des Grundsatzes der Verhältnismäßigkeit", eine Benachrichtigungspflicht jener Gäste, deren Daten man einsah, bestehe nicht.
+ Natürlich nicht! Wo kämen wir da hin! Denn die Strategie sieht ja vor, dass man sich tot stellt, und hofft, dass es erst auffliegt, wenn die Leute keinen Puls mehr deshalb kriegen.
+ Wer wählt eigentlich immer und immer wieder diese CSU-Typen ins Amt in Bayern? Seid ihr alle ein bisschen doof, dass ihr das nicht merkt, was das für Verbrecher sind?
+ Ich meine, wenn die wenigstens ihre Strategie ab und zu ein bisschen ändern würden, damit man sagen könnte, ihr habt es nicht gemerkt, weil sie euch diesmal anders verarscht haben als sonst. Aber nein! Machen sie ja nicht! Immer dieselbe Masche!
+ Kompromissvorschlag: Wählt lieber die Bayernpartei. Spaltet euch ab. Der Rest des Landes kann dann endlich ein Tempolimit auf der Autobahn einführen. Ihr könnt da in Bayern euren Faschismus ausrollen. Und wir müssen nicht mehr eure Seehofers und Scheuers ertragen.
+ Und was wollt ihr so werden, wenn ihr mal groß seid? Astronaut?
+ Fandet ihr das auch so lustig, wie die Covidioten auf ihrer Demo Meinungsfreiheit-Plakate hochhielten, und dann Saska Esken anzeigten, weil sie sie als Covidioten bezeichnete?
+ Die Generalstaatsanwaltschaft fand das auch sehr unterhaltsam.
+ Meinungsfreiheit für mich! Die da drüben haben gefälligste die Fresse zu halten!1!!
+ Und das ist nicht alles. Wünschen sich einen autoritären Staat zurück, aber verklagen dann die Polizei in diesem Staat, wenn sie sich autoritär verhält. Ja nee, klar.
+    Der Postillon hat jetzt auch eine Investigativ-Abteilung, und die hat direkt einen Scoop gelandet:
+     Unglaublicher Verdacht: Wird Attila Hildmann von Merkel bezahlt, um die Querdenker-Szene lächerlich zu machen?
+ Ich fürchte ja, der Hildmann wirkt im Vergleich sogar noch vergleichsweise zurechnungsfähig.
+ Wie kommt es eigentlich, dass die Bafin Wirecard nicht schon vor Monaten runtergefahren hat?
+ Die Antwort könnte die Bevölkerung verunsichern:
+     Mit keiner Aktie haben Bafin-Mitarbeiter in den vergangenen anderthalb Jahren so viel gehandelt wie mit der von Wirecard.
+ Gibt es eigentlich irgendeinen Bereich unseres Staates, der nicht durch und durch korrupt ist?
+ Gutes Timing, Apple! Letzte Woche erst schrieben mir Leute, die 30% von Apple seien gerechtfertigt, weil die ja so hart die Apps im App Store prüfen und Betrüger und Malware fernhalten.
+ Es gab Montag den ersten direkten El-Al-Flug von Tel Aviv nach Abu Dhabi, durch saudischen Luftraum. Alles sehr symbolisch und emotional.
+ Die einzigen, die nicht begeistert sind, sind die Palästinenser.
+ Man müsste mal ein Trinkspiel machen, finde ich. Jedesmal einen Shot, wenn auf Demos Leute Transparente für Meinungsfreiheit herumwedeln, während direkt daneben Presse ausgegrenzt oder Leute weggeschickt werden.
+ Aber eigentlich wollte ich euch das hier zeigen. Eine Analyse, was da alles für rechtsextreme aufmarschiert sind unter dem Feigenblättchen der Coronamaßnahmen-Kritik.

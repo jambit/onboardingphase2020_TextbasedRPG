@@ -48,7 +48,9 @@ public class MarkovChain {
                 rn = r.nextInt(suffix.size());
                 output.add(suffix.get(rn));
             }
-            if (output.size() >= outputSize) return output.stream().limit(outputSize).reduce("", (a, b) -> a + " " + b);
+            if (output.size() >= outputSize) {
+                return output.stream().limit(outputSize).reduce("", (a, b) -> a + " " + b);
+            }
             n++;
             prefix = output.stream().skip(n).limit(keySize).reduce("", (a, b) -> a + " " + b).trim();
         }
@@ -61,7 +63,7 @@ public class MarkovChain {
     public static void printRandomSentence() {
         try { //filePath has to be the complete Path from /src.../whatever.txt
             // otherwise Files.readAllBites throws an FileNotFoundException
-            System.out.println(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/alice_oz.txt",
+            System.out.println(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/blog.txt",
                     3, 15));
         } catch (IOException e) {
             e.printStackTrace();
