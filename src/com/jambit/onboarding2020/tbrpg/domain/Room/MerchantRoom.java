@@ -23,12 +23,18 @@ public class MerchantRoom extends AbstractRoom {
         this.inventory = new ArrayList<>();
     }
 
+    public void printRoomMessage() {
+        System.out.println("Zur abwechslung mal ein kleiner Shoppingtrip... ");
+    }
+
+
+
     @Override
     public void enter() {
 
+        System.out.println("Willkommen in Tante Emmas Waffenladen");
 
         String line = "";
-        System.out.println("Willkommen in Tante Emmas Waffenladen");
         System.out.println("                       _        ,\n" +
                 "                      (_\\______/________\n" +
                 "                         \\-|-|/|-|-|-|-|/\n" +
