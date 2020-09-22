@@ -77,6 +77,16 @@ public class Player extends Person {
         return this.inventory;
     }
 
+    public Weapon getEquippedWeapon() {
+               return equippedWeapon;
+    }
+    public String printEquippedWeapon() {
+        if (equippedWeapon == null){
+            return "Keine";
+        }
+        return getEquippedWeapon().toString();
+    }
+
     public void equipWeapon(Weapon weapon) {
         if (equippedWeapon == null) {
             this.attackDamage = this.attackDamage + weapon.getAtkDamage();
@@ -136,13 +146,27 @@ public class Player extends Person {
         return weaponList;
     }
 
-    public void printWeaponsFromInventory() {
+    public boolean printWeaponsFromInventory() {
         ArrayList<Weapon> weaponsFromInventory = this.getWeaponsFromInventory();
         int counter = 1;
         for (Weapon weapon : weaponsFromInventory) {
             System.out.println(counter + ": " + weapon);
             counter++;
         }
+        if (counter == 1)
+            return false;
+        return true;
+    }
+
+    public boolean isWeapenInventoryEmpty() {
+        ArrayList<Weapon> weaponsFromInventory = this.getWeaponsFromInventory();
+        int counter = 1;
+        for (Weapon weapon : weaponsFromInventory) {
+            counter++;
+        }
+        if (counter == 1)
+            return false;
+        return true;
     }
 
     public Item takeItemFromInventory(String itemName) {

@@ -34,7 +34,6 @@ public class QuizRoom extends AbstractRoom {
                 "\nDer QuizMaster sinkt zu Boden. Dein Weg ist frei!");
 
 
-        System.out.println("Du hast " + player.getHealthState() + " Leben.");
 
 
 
