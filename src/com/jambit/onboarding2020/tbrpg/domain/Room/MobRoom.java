@@ -113,8 +113,8 @@ public class MobRoom extends AbstractRoom {
              else{
              for (Item i : Inventory) {
                 if (i.getName().equals("Heiltrank")) {
-                   player.getConsumableFromInventory("Heiltrank").consume();
                    System.out.println("Du setzt einen Heiltrank ein");
+                   player.getConsumableFromInventory("Heiltrank").consume();
                 } else {
                    System.out.println("Du hast keinen Heiltrank!");
                 }
@@ -127,14 +127,18 @@ public class MobRoom extends AbstractRoom {
 
              break;
           case "Escape Rope":
-             for (Item i : Inventory) {
-                if (i.getName().equals(input)) {
-                   player.takeItemFromInventory("Escape Rope");
-                   System.out.println("Du setzt ein Escape Rope ein!");
-                   skip();
-                } else {
-                   System.out.println("Du hast kein Escape Rope!");
+             if (Inventory.size()==0)
+                System.out.println("Dein Inventar ist leer!");
+             else {
+                for (Item i : Inventory) {
+                   if (i.getName().equals(input)) {
+                      System.out.println("Du setzt ein Escape Rope ein!");
+                      skip();
+                      player.getConsumableFromInventory("Escape Rope").consume();
+                   } else {
+                      System.out.println("Du hast kein Escape Rope!");
 
+                   }
                 }
              }
              break;

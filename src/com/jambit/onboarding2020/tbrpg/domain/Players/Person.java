@@ -12,7 +12,7 @@ public abstract class Person {
 
     public void increaseHealthState(int additionalHP) {
 
-        if (this.healthState > 100) {
+        if (this.healthState >= 100) {
             this.healthState = 100;
             System.out.println("Du hast bereits maximale Lebenspunkte!");
         }
