@@ -29,8 +29,9 @@ public class NPCRoom extends AbstractRoom {
         String line = "";
         while (!line.equalsIgnoreCase("verlassen")) {
             if (line.equalsIgnoreCase("ansprechen")) {
-                System.out.println("Der NPC starrt an dir vorbei und murmelt:");
+                System.out.print("Der NPC starrt an dir vorbei und murmelt: >>...");
                 MarkovChain.printRandomSentence();
+                System.out.println("...<<");
                 line = "";
             } else {
                 System.out.println("Möchtest du den NPC [ansprechen] oder den Raum [verlassen]?");

@@ -69,7 +69,7 @@ public class MarkovChain {
     public static void printRandomSentence() {
         try { //filePath has to be the complete Path from /src.../whatever.txt
             // otherwise Files.readAllBites throws an FileNotFoundException
-            System.out.println(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/administrativeLaw.txt",
+            System.out.print(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/administrativeLaw.txt",
                     3, 15));
         } catch (IOException e) {
             e.printStackTrace();
