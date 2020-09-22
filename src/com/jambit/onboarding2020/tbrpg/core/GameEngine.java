@@ -74,20 +74,26 @@ public class GameEngine {
               "\n [statte Waffe aus] [lege Waffe ab] " +
               "\n [überprüfe Inventar]");
 
+      System.out.println();
+      System.out.println("Oder wenn du den nächsten Raum direkt betreten willst, tipppe: " +
+              "\n [eintreten]");
+
       String line = input.nextLine();
 
-      while (!line.equalsIgnoreCase("enter")) {
+      while (!line.equalsIgnoreCase("eintreten")) {
 
-         if (line.equalsIgnoreCase("[Heiltrank]")) {
+         if (line.equalsIgnoreCase("Heiltrank")) {
             if (player.getConsumableFromInventory("Heiltrank") != null) {
                player.getConsumableFromInventory("Heiltrank").consume();
             } else {
                System.out.println("Du hast keinen Heiltrank im Inventar!");
             }
 
-         } else if (line.equalsIgnoreCase("[Fluchttrick]")) {
+         } else if (line.equalsIgnoreCase("Fluchttrick")) {
             if (player.getConsumableFromInventory("Fluchttrick") != null) {
                player.getConsumableFromInventory("Fluchttrick").consume();
+            } else {
+               System.out.println("Du hast keinen Fluchttrick im Inventar!");
             }
 
          } else if (line.equalsIgnoreCase("statte Waffe aus")) {
