@@ -2,6 +2,7 @@ package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.core.InvalidInputException;
+import com.jambit.onboarding2020.tbrpg.domain.Items.Weapon;
 import com.jambit.onboarding2020.tbrpg.domain.Players.Enemy;
 import com.jambit.onboarding2020.tbrpg.domain.Players.EnemyDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
@@ -11,6 +12,13 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 public class BossRoom extends AbstractRoom {
+
+    Player player = Player.getPlayerInstance();
+
+    GameInput in = new GameInput(new InputStreamReader(System.in));
+    Enemy enemy = new Enemy(); // Name übergeben von Enemy
+    Random random = new Random();
+    Weapon equippedWeapon = player.getEquippedWeapon();
 
     public void printRoomMessage() {
         System.out.println("Die finale Challenge: du musst den Boss bezwingen... ");
@@ -24,11 +32,7 @@ public class BossRoom extends AbstractRoom {
 //todo: make real boss
 
     public void enter() {
-        Player player = Player.getPlayerInstance();
 
-        GameInput in = new GameInput(new InputStreamReader(System.in));
-        Enemy enemy = new Enemy(); // Name übergeben von Enemy
-        Random random = new Random();
 
         System.out.println("Du bist gefangen und kommst nur raus, wenn du den Gegner tötest, oder 'quit' drückst");
         System.out.println("Attack Damage Player: " + Player.getPlayerInstance().getHealthState());
@@ -53,7 +57,7 @@ public class BossRoom extends AbstractRoom {
         if (input == 1) {
             if (random.nextBoolean()) {
                 try {
-                    Player.getPlayerInstance().attack(enemy);
+                    Player.getPlayerInstance().attack(enemy, equippedWeapon);
                 } catch (EnemyDeadException e) {
                     System.out.println("Du besiegst den Boss." +
                             "\nPlötzlich bist du von Ehrfurcht für die Spieleentwickler erfüllt." +

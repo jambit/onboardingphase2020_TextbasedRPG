@@ -38,8 +38,20 @@ public class Player extends Person {
         this.balance += item.getSellValue();
     }
 
-    public void attack (Enemy damagedPerson) throws EnemyDeadException {
-        damagedPerson.decreaseHealthState(this.attackDamage);
+    public void attack (Enemy damagedPerson, Weapon equippedWeapon) throws EnemyDeadException {
+        if (Math.random() <= equippedWeapon.getHitChance()){
+            if (Math.random()<= equippedWeapon.getCritChance()){
+                damagedPerson.decreaseHealthState((int) (this.attackDamage
+                        + (this.attackDamage*equippedWeapon.getCritChance())));
+                System.out.println("< Ha nimm das! > Das ist sehr effektiv!");
+            }
+            else{
+                damagedPerson.decreaseHealthState(this.attackDamage);
+                System.out.println("Das war ja nicht gerade ein harter Schlag... Naja, immerhin hast du getroffen");
+            }
+    }
+        else
+            System.out.println("Was ist denn mit deinem Aim los?! Das war ja nicht mal knapp daneben!");
     }
 
     @Override

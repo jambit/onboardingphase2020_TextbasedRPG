@@ -5,6 +5,7 @@ import com.jambit.onboarding2020.tbrpg.core.InvalidInputException;
 import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.domain.Items.HealthPotion;
 import com.jambit.onboarding2020.tbrpg.domain.Items.Item;
+import com.jambit.onboarding2020.tbrpg.domain.Items.Weapon;
 import com.jambit.onboarding2020.tbrpg.domain.Players.Enemy;
 import com.jambit.onboarding2020.tbrpg.domain.Players.EnemyDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
@@ -16,6 +17,7 @@ import java.util.Scanner;
 
 public class MobRoom extends AbstractRoom {
 
+   Player player = Player.getPlayerInstance();
    Scanner scan = new Scanner(System.in);
 
    public void printRoomMessage() {
@@ -30,10 +32,11 @@ public class MobRoom extends AbstractRoom {
    @Override
    public void enter() throws PlayerDeadException {
 
-      Player player = Player.getPlayerInstance();
+
       GameInput in = new GameInput(new InputStreamReader(System.in));
       Enemy enemy = new Enemy(); // Name übergeben von Enemy
       Random random = new Random();
+      Weapon equippedWeapon = player.getEquippedWeapon();
 
       System.out.println("Du bist gefangen und kommst nur raus, wenn du den Gegner tötest, oder 'quit' drückst");
       System.out.println("Health State Player: " + player.getHealthState());
@@ -46,7 +49,7 @@ public class MobRoom extends AbstractRoom {
          System.out.println("Drücke 1) um anzugreifen oder 2) um zu verteidigen.");
 
          try {
-            fight(in, enemy, random);
+            fight(in, enemy, equippedWeapon);
          } catch (InvalidInputException e) {
             System.out.println(e.getMessage());
          }
@@ -59,35 +62,32 @@ public class MobRoom extends AbstractRoom {
 
 
 
-   private void fight(GameInput in, Enemy enemy, Random random) throws InvalidInputException, PlayerDeadException {
+   private void fight(GameInput in, Enemy enemy, Weapon equippedWeapon) throws InvalidInputException, PlayerDeadException {
       int input = in.inputInteger();
       ItemGenerator itemGenerator = new ItemGenerator();
 
       if (input == 1) {
-         if (random.nextBoolean()) {
-            try {
-               Player.getPlayerInstance().attack(enemy);
-            } catch (EnemyDeadException e) {
-               System.out.println(e.getMessage());
-               in.winGame();
-               itemGenerator.interactWithRoomLoot();
-               return;
-            }
-            System.out.println("Treffer!");
-         } else {
-            System.out.println("Der Gegner hat den Angriff abgewehrt");
+         try {
+            player.attack(enemy, equippedWeapon);
+         } catch (EnemyDeadException e) {
+            System.out.println(e.getMessage());
+            in.winGame();
+            itemGenerator.interactWithRoomLoot();
+            return;
          }
       }
 
-      if (random.nextBoolean()) {
-         if (input == 2) {
-            System.out.println("Du hast den Angriff des Gegner abgewehrt!");
-         } else {
-            enemy.attack(Player.getPlayerInstance());
-            System.out.println("Du wurdest getroffen!");
+      if (input == 2) {
+         if (Math.random() < 0.5)
+            System.out.println("Dein Abwehrversuch war erfolgreich!");
+         else {
+            System.out.println("Also diese Abwehr ist ja mehr als lächerlich... " +
+                    "\n Dein Gegner ist nicht gerade begeistert und greift an!");
+            enemy.attack(player);
          }
       }
    }
+
 
    private void evaluateFight(GameInput in, Enemy enemy, Player player) {
       System.out.println("Lebenspunkte des Players: " + Player.getPlayerInstance().getHealthState());
