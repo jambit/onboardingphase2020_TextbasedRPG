@@ -74,35 +74,49 @@ public class GameEngine {
               "\n [statte Waffe aus] [lege Waffe ab] " +
               "\n [überprüfe Inventar]");
 
+      System.out.println("Oder willst du den Raum direkt betreten? Tippe:" +
+              "\n [eintreten]");
+
       String line = input.nextLine();
 
-      while (!line.equalsIgnoreCase("enter")) {
+      while (!line.equalsIgnoreCase("eintreten")) {
 
-         if (line.equalsIgnoreCase("[Heiltrank]")) {
+         if (line.equalsIgnoreCase("Heiltrank")) {
             if (player.getConsumableFromInventory("Heiltrank") != null) {
                player.getConsumableFromInventory("Heiltrank").consume();
             } else {
                System.out.println("Du hast keinen Heiltrank im Inventar!");
             }
 
-         } else if (line.equalsIgnoreCase("[Fluchttrick]")) {
+         } else if (line.equalsIgnoreCase("Fluchttrick")) {
             if (player.getConsumableFromInventory("Fluchttrick") != null) {
                player.getConsumableFromInventory("Fluchttrick").consume();
+            } else {
+               System.out.println("Du hast keinen Fluchttrick im Inventar!");
             }
 
          } else if (line.equalsIgnoreCase("statte Waffe aus")) {
-            System.out.println("Aktuell hast du folgende Waffen im Inventar:");
-            player.printWeaponsFromInventory();
-            System.out.println("Wähle eine Waffe, um diese auszustatten");
-            int index;
-            try {
-               index = Integer.parseInt(in.readLine());
-            } catch (Exception e) {
-               index = 0;
-               System.out.println("Ungültiger Zahlenwert für Waffe, wähle einen Gültigen Index");
-            }
-            if (index < player.getWeaponsFromInventory().size() && index != 0) {
-               player.equipWeapon(player.getWeaponsFromInventory().get(index - 1));
+            if (!player.printWeaponsFromInventory()) {
+               System.out.println("Du hast im Moment keine Waffen im Inventar. Tippe: " +
+                       "\n [Heiltrank] [Fluchttrick]" +
+                       "\n [statte Waffe aus] [lege Waffe ab] " +
+                       "\n [überprüfe Inventar]" +
+                       "\noder" +
+                       "\n [eintreten]");
+            } else {
+               System.out.println("Aktuell hast du folgende Waffen im Inventar:");
+               player.printWeaponsFromInventory();
+               System.out.println("Wähle eine Waffe, um diese auszustatten");
+               int index;
+               try {
+                  index = Integer.parseInt(in.readLine());
+               } catch (Exception e) {
+                  index = 0;
+                  System.out.println("Ungültiger Zahlenwert für Waffe, wähle einen Gültigen Index");
+               }
+               if (index < player.getWeaponsFromInventory().size() && index != 0) {
+                  player.equipWeapon(player.getWeaponsFromInventory().get(index - 1));
+               }
             }
          } else if (line.equalsIgnoreCase("lege Waffe ab")) {
             player.unequipWeapon();
