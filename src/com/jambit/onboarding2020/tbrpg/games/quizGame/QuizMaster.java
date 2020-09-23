@@ -15,7 +15,7 @@ public class QuizMaster implements Playable {
     @Override
     public void play() throws PlayerDeadException, InterruptedException {
 
-
+        //TODO: Extract method to printWelcomeScreen() or similar. Think of single responsibility of that method.
         System.out.println(">>Willkommen bei meinem...<<" +
                 "\n" +
                 "\n" +
@@ -32,6 +32,8 @@ public class QuizMaster implements Playable {
         System.out.println(">>Du wirst drei Fragen beantworten müssen... nur so kannst du diesen Raum verlassen!<<");
         System.out.println(">>Die erste Frage lautet...<<");
 
+
+        //Todo: extract this to separate Method. Either add it to the constructor or a method e.g. "initGame()"
         ArrayList<Quiz> possibleQuizzes = new ArrayList<>();
         possibleQuizzes.add(new Quiz_01());
         possibleQuizzes.add(new Quiz_02());
@@ -47,12 +49,19 @@ public class QuizMaster implements Playable {
         //todo: no repitition
 
         ArrayList<Quizzzable> quizList = new ArrayList<>();
+        //Todo: Maximum number of quizzes could be constructor parameter. Then you can create a Quizmaster-Object add pass the number of quizz-questions
+        // easily. :)
+
+        //Todo: Extract the whole quizz-generation to a separate method and then just call ArrayList<Quizzes> generateQuizzes(int count)
         for (int i = 0; i < 3; i++) {
             int randomIndex = random.nextInt(possibleQuizzes.size());
             quizList.add(possibleQuizzes.get(randomIndex));
             possibleQuizzes.remove(randomIndex);
 
         }
+
+
+        //Todo: extract the whole quiz-logic to a separate method.
         int rightAnswerCount = 0;
         for (Quizzzable quiz : quizList) {
             System.out.println("**************************************************************");
@@ -92,6 +101,7 @@ public class QuizMaster implements Playable {
                 System.out.println(">>Richtig!<<");
                 rightAnswerCount++;
 
+                // Todo: Is right answer count equal to the number of quizzes in the List? ;)
                 if (rightAnswerCount == 3) {
 
                     player.increaseHealthState(5);
