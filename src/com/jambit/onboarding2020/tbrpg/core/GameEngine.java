@@ -3,7 +3,6 @@ package com.jambit.onboarding2020.tbrpg.core;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
-import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -101,7 +100,7 @@ public class GameEngine {
             }
 
          } else if (line.equalsIgnoreCase("statte Waffe aus")) {
-            if (!player.isWeapenInventoryEmpty()) {
+            if (!player.isWeaponInventoryEmpty()) {
                System.out.println("Du hast im Moment keine Waffen im Inventar. Tippe: " +
                        "\n [Heiltrank] [Fluchttrick]" +
                        "\n [statte Waffe aus] [lege Waffe ab] " +
