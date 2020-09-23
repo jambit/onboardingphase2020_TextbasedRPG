@@ -315,7 +315,7 @@ public class TicTacToe {
                     "\n [links mitte] [mitte] [rechts mitte]" +
                     "\n [links unten] [unten mitte] [rechts unten]");
             printBoard();
-            String place = scan.nextLine(); //player tips in first position
+            String place = scan.nextLine(); //domain.player tips in first position
             pcTip(place);
             PlayerMovesCounter++;
         } else {
@@ -335,7 +335,7 @@ public class TicTacToe {
                     "\n [links oben] [oben mitte] [rechts oben]" +
                     "\n [links mitte] [mitte] [rechts mitte]" +
                     "\n [links unten] [unten mitte] [rechts unten]");
-            String place = scan.nextLine(); //player tips in first position
+            String place = scan.nextLine(); //domain.player tips in first position
 
             pcTip(place);
             PlayerMovesCounter++;
