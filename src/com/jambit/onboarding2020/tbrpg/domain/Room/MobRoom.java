@@ -41,7 +41,7 @@ public class MobRoom extends AbstractRoom {
         Random random = new Random();
         Weapon equippedWeapon = player.getEquippedWeapon();
 
-        System.out.println("Du bist gefangen und kommst nur raus, wenn du den Gegner tötest, oder 'quit' drückst");
+        System.out.println("Du bist gefangen und kommst nur raus, wenn du den Gegner tötest");
         System.out.println("Health State Player: " + player.getHealthState());
         System.out.println("Health State Enemy: " + enemy.getHealthState());
         System.out.println("Equipped Weapon: " + player.getEquippedWeapon());
@@ -75,6 +75,8 @@ public class MobRoom extends AbstractRoom {
                 itemGenerator.interactWithRoomLoot();
                 return;
             }
+            System.out.println("Der Gegner ist an der Reihe!");
+            enemy.attack(player);
         }
 
         if (input == 2) {
@@ -90,64 +92,74 @@ public class MobRoom extends AbstractRoom {
 
 
     private void evaluateFight(GameInput in, Enemy enemy, Player player) {
-        System.out.println("Lebenspunkte des Players: " + Player.getPlayerInstance().getHealthState());
-        System.out.println("Lebenspunkte des Enemy: " + enemy.getHealthState());
+        System.out.println("Lebenspunkte des Spielers: " + Player.getPlayerInstance().getHealthState());
+        System.out.println("Lebenspunkte des Gegners: " + enemy.getHealthState());
         chooseItem(player);
     }
 
     private void chooseItem(Player player) {
         System.out.println("Möchstest du ein Item einsetzen? " +
-                "\n Wenn ja, tippe [Health Potion] oder [Escape Rope]" +
+                "\n Wenn ja, tippe [Heiltrank] oder [Fluchtseil]" +
                 "\n ansonsten, tippe [nein]");
 
         String input = scan.nextLine();
-        while (!(input.equals("Health Potion")) && !(input.equals("Escape Rope")) && !(input.equals("nein"))) {
+        while (!(input.equals("Heiltrank")) && !(input.equals("Fluchtseil")) && !(input.equals("nein"))) {
             System.out.println("Falsche Eingabe, bitte erneut eintippen");
             input = scan.nextLine();
         }
 
-       switch (input) {
-          case "Health Potion":
-             if (Inventory.size()==0)
-                System.out.println("Dein Inventar ist leer!");
-             else{
-             for (Item i : Inventory) {
-                if (i.getName().equals("Heiltrank")) {
-                   System.out.println("Du setzt einen Heiltrank ein");
-                   player.getConsumableFromInventory("Heiltrank").consume();
+        switch (input) {
+            case "Heiltrank":
+                if (Inventory.size() == 0)
+                    System.out.println("Dein Inventar ist leer!");
+                else if (checkHealthPotion()) {
+                    System.out.println("Du setzt einen Heiltrank ein");
+                    player.getConsumableFromInventory("Heiltrank").consume();
                 } else {
-                   System.out.println("Du hast keinen Heiltrank!");
+                    System.out.println("Du hast keinen Heiltrank!");
                 }
+
                 break;
-             }
 
 
-             }
+            case "Fluchtseil":
+                if (Inventory.size() == 0)
+                    System.out.println("Dein Inventar ist leer!");
+                else if (checkEscRope()) {
+                    System.out.println("Du setzt ein Fluchtseil ein!");
+                    skip();
+                    player.getConsumableFromInventory("Fluchtseil").consume();
+                } else {
+                    System.out.println("Du hast kein Fluchtseil!");
 
-
-             break;
-          case "Escape Rope":
-             if (Inventory.size()==0)
-                System.out.println("Dein Inventar ist leer!");
-             else {
-                for (Item i : Inventory) {
-                   if (i.getName().equals(input)) {
-                      System.out.println("Du setzt ein Escape Rope ein!");
-                      skip();
-                      player.getConsumableFromInventory("Escape Rope").consume();
-                   } else {
-                      System.out.println("Du hast kein Escape Rope!");
-
-                   }
                 }
-             }
-             break;
-          case "nein":
-             return;
-       }
+
+                break;
+            case "nein":
+                return;
+        }
 
     }
 
+
+    public boolean checkEscRope() {
+        for (Item i : Inventory) {
+            if (i.getName().equalsIgnoreCase("Fluchtseil")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkHealthPotion() {
+        for (Item i : Inventory) {
+            if (i.getName().equalsIgnoreCase("Heiltrank")) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     @Override
     public void skip() {

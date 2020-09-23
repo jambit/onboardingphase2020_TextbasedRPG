@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
+import com.jambit.onboarding2020.tbrpg.domain.Items.EscapeRope;
 import com.jambit.onboarding2020.tbrpg.domain.Items.HealthPotion;
 import com.jambit.onboarding2020.tbrpg.domain.Items.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
@@ -15,9 +16,11 @@ public class Test_Room {
 
         Player player = Player.getPlayerInstance();
         HealthPotion hp = new HealthPotion();
+        EscapeRope er = new EscapeRope();
 
         System.out.print("Spielerinventar:");
         player.putInInventory(hp);
+        player.putInInventory(er);
         player.printInventory();
         System.out.println();
         System.out.println(player.getBalance());

@@ -6,13 +6,14 @@ public class Enemy extends Person {
     private int hitChance;
 
     public Enemy () {
-        this.attackDamage = (int)(Math.random()*10);
-        this.healthState = (int)(Math.random()*100);
-        this.critChance = (int)Math.random();
-        this.hitChance = (int)Math.random();
+        this.attackDamage = (int)(Math.random()*20 + 10);
+        this.healthState = (int)(Math.random()*100 + 50);
+
     }
 
     public void attack (Player damagedPerson) throws PlayerDeadException{
+        this.critChance = (int)(Math.random() + 0.3);
+        this.hitChance = (int)(Math.random() + 0.3);
         if (Math.random() <= hitChance){
             if (Math.random()<= critChance) {
                 damagedPerson.decreaseHealthState((int) (this.attackDamage
