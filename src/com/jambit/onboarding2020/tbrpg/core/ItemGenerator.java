@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
+import com.jambit.onboarding2020.tbrpg.domain.Item.EscapeRope;
 import com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
@@ -7,12 +8,9 @@ import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class ItemGenerator {
 
@@ -47,17 +45,9 @@ public class ItemGenerator {
         if (consumable.equals("health")) {
             return new HealthPotion();
         } else if (consumable.equals("escape")) {
-            return newEscapeRope();
+            return new EscapeRope();
         }
         return null;
-    }
-
-    /*private Item newHealthPotion() {
-        return new Item(5, "Heiltrank", "Heilt dich ein bisschen :)");
-    }*/
-
-    private Item newEscapeRope() {
-        return new Item(10, "Fluchttrick", "Bruder muss los!");
     }
 
     private void initializeJunkNames() {
