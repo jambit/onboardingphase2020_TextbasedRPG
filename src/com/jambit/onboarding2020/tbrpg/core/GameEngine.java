@@ -3,7 +3,6 @@ package com.jambit.onboarding2020.tbrpg.core;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
-import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom;
 
 import java.io.BufferedReader;
@@ -16,7 +15,6 @@ public class GameEngine {
 
    private final ArrayList<AbstractRoom> rooms;
    private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-   private final GameState gameState = new GameState();
    public Scanner input = new Scanner(System.in);
 
    public GameEngine(ArrayList<AbstractRoom> rooms) {
@@ -50,8 +48,8 @@ public class GameEngine {
 
          room.printWelcomeMessage();
 
-         if (!gameState.escapeRopeActive) {
-            gameState.escapeRopeActive = false;
+         if (!GameState.getGameStateInstance().escapeRopeActive) {
+            GameState.getGameStateInstance().escapeRopeActive = false;
 
             try {
                room.enter();
@@ -108,7 +106,7 @@ public class GameEngine {
             }
 
          } else if (line.equalsIgnoreCase("statte Waffe aus")) {
-            if (!player.isWeapenInventoryEmpty()) {
+            if (!player.isWeaponInventoryEmpty()) {
                System.out.println("Du hast im Moment keine Waffen im Inventar. Tippe: " +
                        "\n [Heiltrank] [Fluchttrick]" +
                        "\n [statte Waffe aus] [lege Waffe ab] " +
