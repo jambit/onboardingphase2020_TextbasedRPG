@@ -6,6 +6,6 @@ import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 public interface Playable {
 
    //This method starts a game
-   void play() throws PlayerDeadException;
+   void play() throws PlayerDeadException, InterruptedException;
    Player player = Player.getPlayerInstance();
 }

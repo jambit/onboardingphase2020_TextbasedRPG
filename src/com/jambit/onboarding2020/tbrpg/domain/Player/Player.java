@@ -1,9 +1,9 @@
 package com.jambit.onboarding2020.tbrpg.domain.Player;
 
-import com.jambit.onboarding2020.tbrpg.domain.Item.*;
+import com.jambit.onboarding2020.tbrpg.domain.Item.Consumable;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
-import com.jambit.onboarding2020.tbrpg.utils.*;
+import com.jambit.onboarding2020.tbrpg.utils.GameConstants;
 
 import javax.naming.InsufficientResourcesException;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class Player extends Person {
     private final ArrayList<Item> inventory;
     private Weapon equippedWeapon;
 
-    public Player() {
+    private Player() {
         inventory = new ArrayList<>();
         attackDamage = GameConstants.PLAYER_ATTACK_DAMAGE;
     }
@@ -134,8 +134,14 @@ public class Player extends Person {
         return this.inventory;
     }
 
-    public Weapon getEquippedWeapon(){
-        return equippedWeapon;
+    public Weapon getEquippedWeapon() {
+               return equippedWeapon;
+    }
+    public String printEquippedWeapon() {
+        if (equippedWeapon == null){
+            return "Keine";
+        }
+        return getEquippedWeapon().toString();
     }
 
     public void equipWeapon(Weapon weapon) {
@@ -197,13 +203,23 @@ public class Player extends Person {
         return weaponList;
     }
 
-    public void printWeaponsFromInventory() {
+    public boolean printWeaponsFromInventory() {
         ArrayList<Weapon> weaponsFromInventory = this.getWeaponsFromInventory();
         int counter = 1;
         for (Weapon weapon : weaponsFromInventory) {
             System.out.println(counter + ": " + weapon);
             counter++;
         }
+        return counter != 1;
+    }
+
+    public boolean isWeaponInventoryEmpty() {
+        ArrayList<Weapon> weaponsFromInventory = this.getWeaponsFromInventory();
+        int counter = 1;
+        for (Weapon weapon : weaponsFromInventory) {
+            counter++;
+        }
+        return counter != 1;
     }
 
     public Item takeItemFromInventory(String itemName) {

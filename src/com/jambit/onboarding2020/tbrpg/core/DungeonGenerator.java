@@ -15,9 +15,15 @@ public class DungeonGenerator {
 
     public DungeonGenerator() {
         possibleRooms.add(new MobRoom());
+        possibleRooms.add(new MobRoom());
+        possibleRooms.add(new MobRoom());
+        possibleRooms.add(new MerchantRoom());
         possibleRooms.add(new MerchantRoom());
         possibleRooms.add(new QuizRoom());
+        possibleRooms.add(new QuizRoom());
+        possibleRooms.add(new QuizRoom());
         possibleRooms.add(new TicTacToeRoom());
+        possibleRooms.add(new NPCRoom_PublicOfficial());
 
     }
 
