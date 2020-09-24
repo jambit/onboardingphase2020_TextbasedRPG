@@ -31,7 +31,7 @@ public class MerchantRoom extends AbstractRoom {
     @Override
     public void enter() {
 
-        System.out.println("Willkommen in Tante Emmas Waffenladen");
+        System.out.println("Willkommen in Tante Emma's Waffenladen");
 
         String line = "";
         System.out.println("                       _        ,\n" +
