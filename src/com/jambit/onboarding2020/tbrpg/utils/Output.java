@@ -6,7 +6,7 @@ public abstract class Output {
         for (char character : outputString.toCharArray()) {
             System.out.print(character);
             try {
-                Thread.sleep(7);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 System.out.print("");
             }

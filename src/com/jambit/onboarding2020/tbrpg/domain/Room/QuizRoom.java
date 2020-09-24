@@ -9,14 +9,13 @@ public class QuizRoom extends AbstractRoom {
 
     @Override
     public void printRoomMessage() {
-        System.out.println("Eine neue Herausforderung wartet: der Quizraum...");
+        System.out.println("Der nächste Raum wird von Flutlichtschaltern beleuchtet. Es erinnert dich an Gameshows oder Quizspiele.");
     }
-    public void printWelcomeMessage() throws InterruptedException {
+    public void printWelcomeMessage() {
         System.out.println("Du betrittst den Raum." +
-                "\nVor dir siehst du eine große Höhle, die kaum von ein paar Kerzen auf dem Boden erhellt wird." +
-                "\nEine merkwürdige Gestalt erwartet dich, verborgen im Schatten nur wenige Meter vor dir." +
+                "\nVor dir siehst du eine große Halle, die hell erleuchtet und mit Kameras ausgestattet ist." +
+                "\nEine merkwürdige Gestalt erwartet dich, verborgen hinter einem Vorhang nur wenige Meter vor dir." +
                 "\nSie scheint in einen langen Umhang gehüllt zu sein." +
-                "\nPlötzlich springt die Gestalt auf und enthüllt einen pinken Anzug und eine glitzernde Krawatte." +
                 "\nPlötzlich springt die Gestalt auf und enthüllt einen pinken Anzug und eine glitzernde Krawatte." +
                 "\n>>Du bist in meine Falle getappt, du Narr! Ich bin der QUIZMASTER!<<" +
                 "\nDer QuizMaster macht eine Verbeugung, wobei sein zu kurzer Anzug so etwas wie " +

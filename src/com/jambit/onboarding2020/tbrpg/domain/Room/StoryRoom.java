@@ -1,6 +1,8 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
+import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
+import com.jambit.onboarding2020.tbrpg.utils.Output;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +14,7 @@ public class StoryRoom extends AbstractRoom {
     @Override
     public void printWelcomeMessage() {
 
-        System.out.println("       *     \n" +
+        String space ="       *     \n" +
                 "\t.\t \t\t\t\t\n" +
                 "\t\t *          ^\n" +
                 "\t\t+  *        ^\n" +
@@ -43,7 +45,8 @@ public class StoryRoom extends AbstractRoom {
                 "                       \\     `=./`,        '\n" +
                 "                        '=.__.='`='      *\n" +
                 "   +                         +\n" +
-                "        O              '       .");
+                "        O              '       .\n";
+        Output.slow(space);
 
     }
 
@@ -55,9 +58,9 @@ public class StoryRoom extends AbstractRoom {
                 "Alleine im Weltraum.\n" +
                 "Vor Stunden schon hast du die Erde, deinen Heimatplaneten, in der Ferne verschwinden sehen.\n" +
                 "Wie ist das nur passiert?\n" +
-                "Welche Entscheidungen hättest du anders treffen müssen?\n" +
-                "...\n" +
-                "Die Entscheidung, einfach in die Raumkapsel zu steigen, die du verlassen im Wald gefunden hast?\n" +
+                "Welche Entscheidungen hättest du anders treffen müssen?\n");
+        Output.slow("                                                               \n");
+        System.out.println("Die Entscheidung, einfach in die Raumkapsel zu steigen, die du verlassen im Wald gefunden hast?\n" +
                 "...möglich.\n" +
                 "Aber wer kann das jetzt schon sagen.\n" +
                 "\n" +
@@ -81,7 +84,9 @@ public class StoryRoom extends AbstractRoom {
 
         getActionButtonpressFromPlayer(line);
 
-        System.out.println("Du drückst >Nach Hause<. Die Steuerkonsole gibt ein unzufrieden klingendes BEEEP von sich.\n" +
+        Output.slow(  "                                ");
+
+        System.out.println("\nDu drückst >Nach Hause<. Die Steuerkonsole gibt ein unzufrieden klingendes BEEEP von sich.\n" +
                 "         ___________________________________________________________________\n" +
                 "\t\t|  ERROR: KEINE RECHTE FÜR DIESEN BEFEHL - PASSIERSCHEIN EINREICHEN\t|\n" +
                 "\t\t|___________________________________________________________________|\n" +
@@ -94,21 +99,21 @@ public class StoryRoom extends AbstractRoom {
 
         getActionExplanationchoiceFromPlayer(line);
 
-        System.out.println("                   .'.");
-        System.out.println("                   |o|");
-        System.out.println("                  .'o'.");
-        System.out.println("                  |.-.|");
-        System.out.println("                  '   '");
-        System.out.println("                   ( )");
-        System.out.println("                    )");
-        System.out.println("                   ( )");
+        Output.slow("\n                   .'.\n");
+        Output.slow("                   |o|\n");
+        Output.slow("                  .'o'.\n");
+        Output.slow("                  |.-.|\n");
+        Output.slow("                  '   '\n");
+        Output.slow("                   ( )\n");
+        Output.slow("                    )\n");
+        Output.slow("                   ( )\n");
 
-        //todo:sleeps einfügen
+
 
         System.out.println("Die Raumkapsel macht sich auf den Weg Richtung galVerFaGre. \n" +
-                "In der Zeit lässt du dir vom Computer erklären, was es mit dieser Behörde auf sich hat.\n" +
-                "...\n" +
-                "Es klingt nicht gut.\n" +
+                "In der Zeit lässt du dir vom Computer erklären, was es mit dieser Behörde auf sich hat.\n");
+        Output.slow("...");
+        System.out.println("Es klingt nicht gut.\n" +
                 "Der Computer spricht eine Warnung aus und bezeichnet die galaktische Bürokratie als >>Kriegswaffe,\n" +
                 "die eigentlich mit der Genfer Konvention verboten wurde und nur deshalb noch existiert, weil beim\n" +
                 "Antrag auf Schließung bei Anlage B-17 die Unterschrift des Assistenzratsvorsitzenden fehlte.<<\n" +
@@ -116,8 +121,10 @@ public class StoryRoom extends AbstractRoom {
                 "Besucher geben dem galVerFaGre durchschnittlich einen von fünf Sternen auf galakMaps.\n" +
                 "\n" +
                 "Dennoch machst du dich auf den Weg, um wieder auf deinen Heimatplaneten Erde zurückzufinden.\n" +
-                "Das sind die wichtigen Regeln, die du laut dem Computer wissen musst:\n" +
-                "\n" +
+                "Das sind die wichtigen Regeln, die du laut dem Computer wissen musst:\n");
+        GameInput.waitTillEnter();
+
+        System.out.println("\n" +
                 ".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.\n" +
                 "|  1) Du musst durch alle Räume der Behörde und zum Schluss den         |\n" +
                 "|     den Passierschein am Schalter für Heimführungsgesuche abholen.    |\n" +
@@ -185,7 +192,8 @@ public class StoryRoom extends AbstractRoom {
         while (!line.equalsIgnoreCase("H") && !line.equalsIgnoreCase("Nach hause")
                 && !line.equalsIgnoreCase("skip")) {
             if (line.equalsIgnoreCase("D") || line.equalsIgnoreCase("Auto Destroy")) {
-                System.out.println("Vor dir im All schwebt ein Auto vorbei und explodiert plötzlich in einem Feuerball.\n" +
+                Output.slow("Plötzlich taucht ein Auto vor dir auf und explodiert in einem Feuerball.");
+                System.out.println("\n" +
                         "                      ____\n" +
                         "                     __,-~~/~    `---.\n" +
                         "                   _/_,---(      ,    )\n" +
@@ -237,10 +245,10 @@ public class StoryRoom extends AbstractRoom {
 
             }
             else if (line.equalsIgnoreCase("Z")||line.equalsIgnoreCase("Zusammenfassung")){
-                System.out.println("._________________________________________________________________________________________________________.\n" +
-                        "|\tZUSAMMENFASSUNG: Ein Passierschein muss von der zuständigen galaktischen Behörde (das galaktische     | \n" +
-                        "|\t Verwaltungsfachgremium, galVerFaGre)abgeholt werden, bevor die Heimholung initialisiert werden kann. |\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n" +
-                        "'---------------------------------------------------------------------------------------------------------'\n");
+                System.out.println(".__________________________________________________________________________________________________________.\n" +
+                        "|\tZUSAMMENFASSUNG: Ein Passierschein muss von der zuständigen galaktischen Behörde (das galaktische      | \n" +
+                        "|\t Verwaltungsfachgremium, galVerFaGre) abgeholt werden, bevor die Heimholung initialisiert werden kann. |\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n" +
+                        "'----------------------------------------------------------------------------------------------------_-----'\n");
                 System.out.println("\t\t _________________________________________________________________________\n" +
                         "\t\t| PASSIERSCHEIN: ERKLÄRUNG[E] ZUSAMMENFASSUNG[Z] KURZE ZUSAMMENFASSUNG[K] |\n" +
                         "\t\t|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  |\n" +

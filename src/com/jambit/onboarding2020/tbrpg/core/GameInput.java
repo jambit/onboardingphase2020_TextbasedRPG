@@ -67,6 +67,7 @@ public class GameInput extends BufferedReader {
         boolean abort = false;
         while (!abort) {
             String input = scanner.nextLine();
+
             if (input.equalsIgnoreCase("")) { //if enter-key is pressed
                 System.out.println("Enter key pressed or empty input ");
                 abort = true;

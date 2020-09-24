@@ -62,24 +62,24 @@ public class ItemGenerator {
     private void initializeJunkLore() {
         this.junkLore.add("Wie das glitzert...");
         this.junkLore.add("Das sieht wertvoll aus.");
-        this.junkLore.add("Ich hoffe das ist wertvoller als es aussieht.");
+        this.junkLore.add("Wie zum Teufel kommt das hier hin?");
         this.junkLore.add("Das kann ich verkaufen.");
         this.junkLore.add("Juhu");
-        this.junkLore.add("#Insert junk-lore here");
+        this.junkLore.add("Das stecke ich besser ein, um es dem Besitzer zurückzugeben ;)");
     }
 
     private void initializeWeaponNames() {
-        this.weaponNames.add("Schwert");
         this.weaponNames.add("Dolch");
         this.weaponNames.add("Messer");
+        this.weaponNames.add("Schwert");
         this.weaponNames.add("Katana");
         this.weaponNames.add("Bastardschwert");
     }
 
     private void initializeWeaponLore() {
-        this.weaponLore.add("Achtung Scharf!");
-        this.weaponLore.add("Super zum Käseschneiden");
-        this.weaponLore.add("Hat schonmal bessere Tage gesehen");
+        this.weaponLore.add("Das sieht ziemlich scharf aus... >>Autsch!<< Ja, ist es.");
+        this.weaponLore.add("Super zum Käseschneiden. Sehr nützlich.");
+        this.weaponLore.add("Ist bestimmt nach irgendeinem Gesetz verboten. Perfekt!");
         this.weaponLore.add("KATANA!");
         this.weaponLore.add("Was ein Bastard...");
     }
@@ -98,7 +98,7 @@ public class ItemGenerator {
     public void interactWithRoomLoot() {
 
         Item lootItem = this.getRoomLoot();
-        int lootMoney = (random.nextInt(30));
+        int lootMoney = (random.nextInt(15)+10);
 
 
         Player.getPlayerInstance().increaseBalance(lootMoney);

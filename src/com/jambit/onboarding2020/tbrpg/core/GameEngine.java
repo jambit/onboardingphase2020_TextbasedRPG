@@ -78,14 +78,14 @@ public class GameEngine {
       Player player = Player.getPlayerInstance();
 
 
-      System.out.println("Du ruhst dich im Gang zwischen den Räumen kurz aus");
+      System.out.println("Du ruhst dich im Gang zwischen den Räumen kurz aus...");
 
       System.out.println("Was möchtest du in der Zwischenzeit tun?" +
-              "\n Heiltrank [h] Fluchttrick [f]" +
-              "\n statte Waffe aus [s] lege Waffe ab [l] " +
-              "\n überprüfe Inventar [ü]");
+              "\nHeiltrank [h]\t\t\tFluchttrick [f]" +
+              "\nstatte Waffe aus [s]\t\t\tlege Waffe ab [l] " +
+              "\nüberprüfe Inventar [ü]");
 
-      System.out.println("Oder willst du den Raum direkt betreten? Tippe:" +
+      System.out.println("\nOder willst du den Raum direkt betreten? Tippe:" +
               "\n eintreten [e]");
 
       String line = input.nextLine();
@@ -109,21 +109,21 @@ public class GameEngine {
          } else if (line.equalsIgnoreCase("statte Waffe aus") || line.equalsIgnoreCase("s")) {
             if (!player.isWeaponInventoryEmpty()) {
                System.out.println("Du hast im Moment keine Waffen im Inventar. Tippe: " +
-                       "\n Heiltrank [h] Fluchttrick [f]" +
-                       "\n statte Waffe aus [s] lege Waffe ab [l] " +
-                       "\n überprüfe Inventar [ü]" +
+                       "\nHeiltrank [h] \t\tFluchttrick [f]" +
+                       "\nstatte Waffe aus [s] \t\tlege Waffe ab [l] " +
+                       "\nüberprüfe Inventar [ü]" +
                        "\noder" +
-                       "\n eintreten[e]");
+                       "\neintreten[e]");
             } else {
                System.out.println("Aktuell hast du folgende Waffen im Inventar:");
                player.printWeaponsFromInventory();
-               System.out.println("Wähle eine Waffe, um diese auszustatten");
+               System.out.println("Wähle eine Waffe, um diese auszustatten.");
                int index;
                try {
                   index = Integer.parseInt(in.readLine());
                } catch (Exception e) {
                   index = 0;
-                  System.out.println("Ungültiger Zahlenwert für Waffe, wähle einen Gültigen Index");
+                  System.out.println("Ungültiger Zahlenwert für Waffe, wähle einen gültigen Index.");
                }
                if (index < player.getWeaponsFromInventory().size() && index != 0) {
                   player.equipWeapon(player.getWeaponsFromInventory().get(index - 1));
@@ -136,11 +136,11 @@ public class GameEngine {
             System.out.println("SpaceDollar: " + player.getBalance());
          } else {
             System.out.println("Ungültige Eingabe. Tippe: " +
-                    "\n Heiltrank [h] Fluchttrick [f]" +
-                    "\n statte Waffe aus [s] lege Waffe ab [l] " +
-                    "\n überprüfe Inventar [ü]" +
+                    "\nHeiltrank [h] \t\tFluchttrick [f]" +
+                    "\nstatte Waffe aus [s] \t\tlege Waffe ab [l] " +
+                    "\nüberprüfe Inventar [ü]" +
                     "\noder" +
-                    "\n eintreten[e]");
+                    "\neintreten[e]");
          }
 
          System.out.println("Was möchtest du in der Zwischenzeit tun?");

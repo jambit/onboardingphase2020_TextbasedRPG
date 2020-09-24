@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Player extends Person {
 
     private static final Player playerInstance = new Player();
-    private int balance = 100;
+    private int balance = 0;
     private final ArrayList<Item> inventory;
     private Weapon equippedWeapon;
 

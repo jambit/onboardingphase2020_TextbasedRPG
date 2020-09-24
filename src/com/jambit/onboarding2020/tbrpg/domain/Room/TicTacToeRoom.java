@@ -5,6 +5,7 @@ import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.TicTacToe;
+import com.jambit.onboarding2020.tbrpg.utils.Output;
 
 public class TicTacToeRoom extends AbstractRoom {
 
@@ -13,7 +14,11 @@ public class TicTacToeRoom extends AbstractRoom {
         System.out.println("Als nächstes musst du den TicTacToe Room überleben...");
     }
     public void printWelcomeMessage() {
-        System.out.println("Willkommen im TicTacToe Room" + "" +
+        System.out.println("Du betrittst den Raum. Vor dir steht ein großes Alien vor einem Whiteboard.");
+        Output.slow(">>Willst du das neueste Spiel ausprobieren?" +
+                "\nDie Technik ist komplett neu. Die Grafik ist unglaublich." +
+                "\nDas kannst du nicht verpassen!!<<");
+        System.out.println(">>Willkommen im TicTacToe Room!<<" + "" +
                 "\n  _________  ___  ________ _________  ________  ________ _________  ________  _______      \n" +
                 "|\\___   ___\\\\  \\|\\   ____\\\\___   ___\\\\   __  \\|\\   ____\\\\___   ___\\\\   __  \\|\\  ___ \\     \n" +
                 "\\|___ \\  \\_\\ \\  \\ \\  \\___\\|___ \\  \\_\\ \\  \\|\\  \\ \\  \\___\\|___ \\  \\_\\ \\  \\|\\  \\ \\   __/|    \n" +
@@ -45,6 +50,7 @@ public class TicTacToeRoom extends AbstractRoom {
             System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 5 Lebenspunkte." +
                     "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
+            printGameIsWon();
 
             itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.WON_MIDDLE) {
@@ -52,6 +58,7 @@ public class TicTacToeRoom extends AbstractRoom {
             System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 10 Lebenspunkte." +
                     "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
+            printGameIsWon();
 
             itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.WON_DIFFICULT) {
@@ -59,6 +66,7 @@ public class TicTacToeRoom extends AbstractRoom {
             System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 15 Lebenspunkte." +
                     "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
+            printGameIsWon();
 
             itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.LOST) {
@@ -66,10 +74,22 @@ public class TicTacToeRoom extends AbstractRoom {
             System.out.println("Vor Frustration hast du 10 Lebenspunkte verloren." +
                     "\nDu hast noch " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
+            System.out.println("Das große Alien starrt auf dich herab.");
+            Output.slow(">>War das nicht das beste Spiel, das du je gespielt hast?<<");
+            System.out.println("Du lächelst gequält und drängst dich an ihm vorbei aus dem Raum.");
 
         }
+
 
         return;
 
     }
+
+    private void printGameIsWon() {
+        Output.slow("Endlich geschafft.");
+        System.out.println("Das große Alien starrt auf dich herab.");
+        Output.slow(">>War das nicht das beste Spiel, das du je gespielt hast?<<");
+        System.out.println("Du nickst, lächelst und drängst dich an ihm vorbei aus dem Raum.");
+    }
+
 }

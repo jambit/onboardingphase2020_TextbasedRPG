@@ -2,6 +2,7 @@ package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.games.sentenceGenerator.MarkovChain;
+import com.jambit.onboarding2020.tbrpg.utils.Output;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,18 +12,29 @@ import java.util.Random;
 
 public class NPCRoom_PublicOfficial extends AbstractRoom {
 
-    //MarkovChain markovChain = new MarkovChain();
     private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
     @Override
     public void printRoomMessage() {
-        super.printRoomMessage();
+        System.out.println("Der nächste Raum wirkt ungefährlich... Du hörst leises Murmeln durch die Tür. ");
+
     }
 
     @Override
     public void printWelcomeMessage() {
-        System.out.println("Der nächste Raum wirkt ungefährlich. ");
-    }
+        System.out.println("Du triffst auf ein menschlich aussehendes Wesen, das dir den Weiterweg blockiert.");
+        System.out.println("Es sieht nicht gefährlich aus, nur etwas verwirrt. Sein an den Kragen gestecktes Schildchen" +
+                "\nweist es als einen Beamten des galaktischen Verwaltungsfachgremiums aus:");
+        System.out.println("\n" +
+                "  (¯`·.¸¸.·´¯`·.¸¸.·´¯)\n" +
+                "  ( \\                 / )\n" +
+                " ( \\ )  BEAMTER des  ( / )\n" +
+                "  ) (  >galVerFaGre<  ) ( \n" +
+                " ( / )               ( \\ )\n" +
+                "  ( /  nicht füttern  \\ )\n" +
+                "   (_.·´¯`·.¸¸.·´¯`·.¸_)\n" +
+                "   \n" +
+                "   ");    }
 
     @Override
     public void enter() {
@@ -38,19 +50,7 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
         smallTalkList.add(">>... ja, ja, aber könnten Sie bitte...");
 
 
-        System.out.println("Du triffst auf ein menschlich aussehendes Wesen, das dir den Weiterweg blockiert.");
-        System.out.println("Es sieht nicht gefährlich aus, nur etwas verwirrt. Sein an den Kragen gestecktes Schildchen" +
-                "\nweist es als einen Beamten des galaktischen Verwaltungsfachgremiums aus:");
-        System.out.println("\n" +
-                "  (¯`·.¸¸.·´¯`·.¸¸.·´¯)\n" +
-                "  ( \\                 / )\n" +
-                " ( \\ )  BEAMTER des  ( / )\n" +
-                "  ) (  >galVerFaGre<  ) ( \n" +
-                " ( / )               ( \\ )\n" +
-                "  ( /  nicht füttern  \\ )\n" +
-                "   (_.·´¯`·.¸¸.·´¯`·.¸_)\n" +
-                "   \n" +
-                "   ");
+
 
         System.out.print("Mit weit aufgerissenen Augen murmelt er vor sich hin: \n\n>>...");
         printRandomSentence();
@@ -81,6 +81,7 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
             }
         }
         System.out.println("Endlich dreht sich die Gestalt weg und du kannst weiter gehen.");
+        Output.slow("                                                           ");
         itemGenerator.interactWithRoomLoot();
     }
 

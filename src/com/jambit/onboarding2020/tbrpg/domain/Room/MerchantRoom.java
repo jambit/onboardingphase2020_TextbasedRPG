@@ -24,24 +24,17 @@ public class MerchantRoom extends AbstractRoom {
     }
 
     public void printRoomMessage() {
-        System.out.println("Zur abwechslung mal ein kleiner Shoppingtrip... ");
+        System.out.println("Zur Abwechslung mal ein kleiner Shoppingtrip... ");
     }
 
 
     @Override
     public void enter() {
 
-        System.out.println("Willkommen in Tante Emma's Waffenladen");
+
 
         String line = "";
-        System.out.println("                       _        ,\n" +
-                "                      (_\\______/________\n" +
-                "                         \\-|-|/|-|-|-|-|/\n" +
-                "                          \\==/-|-|-|-|-/\n" +
-                "                           \\/|-|-|-|,-'\n" +
-                "                            \\--|-'''\n" +
-                "                             \\_j________\n" +
-                "                             (_)     (_)");
+
         this.initializeInventory();
 
         while (!(line.equalsIgnoreCase("verlassen") || line.equalsIgnoreCase("vl"))) {
@@ -79,7 +72,16 @@ public class MerchantRoom extends AbstractRoom {
 
     @Override
     public void printWelcomeMessage() {
-        System.out.println("Du siest das Schild \" Tante Emmas\" willst du eintreten");
+        System.out.println("Willkommen in Tante Emma's Waffenladen");
+        System.out.println("                       _        ,\n" +
+                "                      (_\\______/________\n" +
+                "                         \\-|-|/|-|-|-|-|/\n" +
+                "                          \\==/-|-|-|-|-/\n" +
+                "                           \\/|-|-|-|,-'\n" +
+                "                            \\--|-'''\n" +
+                "                             \\_j________\n" +
+                "                             (_)     (_)");
+
     }
 
     private void initializeInventory() {
@@ -95,7 +97,7 @@ public class MerchantRoom extends AbstractRoom {
     private void sellToMerchant() throws Exception {
 
         while (true) {
-            System.out.println("Du hast folgendes im Inventar:");
+            System.out.println("Du hast Folgendes im Inventar:");
             player.printInventory();
             System.out.println("Was möchtest du verkaufen? \nWähle die Nummer des Items:");
             int index;
@@ -103,7 +105,7 @@ public class MerchantRoom extends AbstractRoom {
             if (index <= player.getInventory().size() && index > 0) {
                 player.sell(player.getInventory().get(index - 1));
             } else {
-                System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder abbrechen");
+                System.out.println("Ungültige Eingabe: Wähle ein Item, dass Tante Emma hat oder abbrechen[abb]");
             }
         }
     }
@@ -114,7 +116,7 @@ public class MerchantRoom extends AbstractRoom {
         int index;
 
         while (true) {
-            System.out.println("Du hast " + player.getBalance() + " SpaceDollar zur verfügung");
+            System.out.println("Du hast " + player.getBalance() + " SpaceDollar zur Verfügung");
             this.printInventory();
             System.out.println("Was möchtest du kaufen? \nWähle die Nummer des Items:");
             index = this.takeIntOrAbortFromCLI();
@@ -123,10 +125,10 @@ public class MerchantRoom extends AbstractRoom {
                     player.buy(this.inventory.get(index - 1));
                     this.inventory.remove(index - 1);
                 } catch (InsufficientResourcesException insufficientResourcesException) {
-                    System.out.println("Du hast nicht genügend SpaceDollar um dir das zu kaufen");
+                    System.out.println("Du hast nicht genügend SpaceDollar, um dir das zu kaufen");
                 }
             } else {
-                System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder abbrechen [abb]");
+                System.out.println("Ungültige Eingabe: Wähle ein Item, dass Tante Emma hat oder abbrechen[abb]");
             }
         }
     }
@@ -137,7 +139,7 @@ public class MerchantRoom extends AbstractRoom {
         if (this.inventory.size() == 0) {
             System.out.println("--AUSVERKAUFT--");
         } else {
-            System.out.println("Der Händler hat folgendes Angebot:");
+            System.out.println("Tante Emma hat folgendes Angebot:");
             int counter = 1;
             for (Item item : inventory) {
                 System.out.println(counter + ":\t" + item.toString());
