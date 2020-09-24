@@ -4,6 +4,10 @@ import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 
+import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
+import com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom;
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -25,7 +29,7 @@ public class GameEngine {
       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
       String line = "";
 
-
+      startStory();
 
       for (AbstractRoom room : rooms) {
 
@@ -61,6 +65,12 @@ public class GameEngine {
 
       System.out.println("Spiel beendet.");
       in.close();
+   }
+
+   private void startStory() {
+      StoryRoom storyRoom = new StoryRoom();
+      storyRoom.printWelcomeMessage();
+      storyRoom.enter();
    }
 
    public void interactWithInventory() {
@@ -123,7 +133,7 @@ public class GameEngine {
             player.unequipWeapon();
          } else if (line.equalsIgnoreCase("überprüfe Inventar")) {
             player.printInventory();
-            System.out.println("Dein Gold: " + player.getBalance());
+            System.out.println("SpaceDollar: " + player.getBalance());
          } else {
             System.out.println("Ungültige Eingabe. Tippe: " +
                     "\n [Heiltrank] [Fluchttrick]" +
