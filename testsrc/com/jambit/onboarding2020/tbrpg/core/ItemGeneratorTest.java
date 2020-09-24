@@ -1,7 +1,8 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+//import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

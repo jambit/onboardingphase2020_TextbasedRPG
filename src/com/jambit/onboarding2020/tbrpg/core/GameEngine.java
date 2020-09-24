@@ -81,7 +81,7 @@ public class GameEngine {
       System.out.println("Du ruhst dich im Gang zwischen den Räumen kurz aus");
 
       System.out.println("Was möchtest du in der Zwischenzeit tun?" +
-              "\n [Heiltrank] [Fluchttrick]" +
+              "\n [Heiltrank] [Fluchtseil]" +
               "\n [statte Waffe aus] [lege Waffe ab] " +
               "\n [überprüfe Inventar]");
 
@@ -99,17 +99,17 @@ public class GameEngine {
                System.out.println("Du hast keinen Heiltrank im Inventar!");
             }
 
-         } else if (line.equalsIgnoreCase("Fluchttrick")) {
-            if (player.getConsumableFromInventory("Fluchttrick") != null) {
-               player.getConsumableFromInventory("Fluchttrick").consume();
+         } else if (line.equalsIgnoreCase("Fluchtseil")) {
+            if (player.getConsumableFromInventory("Fluchtseil") != null) {
+               player.getConsumableFromInventory("Fluchtseil").consume();
             } else {
-               System.out.println("Du hast keinen Fluchttrick im Inventar!");
+               System.out.println("Du hast kein Fluchtseil im Inventar!");
             }
 
          } else if (line.equalsIgnoreCase("statte Waffe aus")) {
             if (!player.isWeaponInventoryEmpty()) {
                System.out.println("Du hast im Moment keine Waffen im Inventar. Tippe: " +
-                       "\n [Heiltrank] [Fluchttrick]" +
+                       "\n [Heiltrank] [Fluchtseil]" +
                        "\n [statte Waffe aus] [lege Waffe ab] " +
                        "\n [überprüfe Inventar]" +
                        "\noder" +
@@ -136,7 +136,7 @@ public class GameEngine {
             System.out.println("SpaceDollar: " + player.getBalance());
          } else {
             System.out.println("Ungültige Eingabe. Tippe: " +
-                    "\n [Heiltrank] [Fluchttrick]" +
+                    "\n [Heiltrank] [Fluchtseil]" +
                     "\n [statte Waffe aus] [lege Waffe ab] " +
                     "\n [überprüfe Inventar]");
          }

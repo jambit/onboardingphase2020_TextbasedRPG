@@ -99,6 +99,67 @@ public class Player extends Person {
             System.out.println("Was ist denn mit deinem Aim los?! Das war daneben!");
     }
 
+    public void attackBoss (Boss boss, Weapon equippedWeapon) throws EnemyDeadException {
+        if (equippedWeapon == null){
+            System.out.println("Du hast bei nem Endgegner keine Waffe angelegt? Hast du nicht mehr alle Tassen im Schrank?!" +
+                    "\n_____________________________________________________");
+            if(Math.random() <= 0.9){
+                boss.decreaseHealthState(this.attackDamage);
+                System.out.println("            __ __\n" +
+                        "    /´¯`/'   '/´ /¯`•\n" +
+                        "   /'/  /    /    /¨  /¯\\\n" +
+                        "  ('(    ´    ´   ¯´/'   ')\n" +
+                        "   \\                 '   /\n" +
+                        "    '\\'   \\            •´\n" +
+                        "      \\              (\n" +
+                        "       \\             )  " +
+                        "\nDeine Fäuste treffen Ash ! Mit deinen Fäusten kitzelst du ihn ja nur..." +
+                        "\n_____________________________________________________");
+            }
+            else {
+                System.out.println("Das war zwar ein Treffer aber... Streng dich doch mal an! Das ist ein BOSSKAMPF");
+            }
+            return;
+        }
+        if (Math.random() <= equippedWeapon.getHitChance()){
+            if (Math.random()<= equippedWeapon.getCritChance()){
+                boss.decreaseHealthState((int) (this.attackDamage
+                        + (this.attackDamage*equippedWeapon.getCritChance())));
+                System.out.println("   .\n" +
+                        "  / \\\n" +
+                        "  | |\n" +
+                        "  | |\n" +
+                        "  |.|\n" +
+                        "  |.|\n" +
+                        "  |:|\n" +
+                        "  |:|\n" +
+                        "`--8--'\n" +
+                        "   8\n" +
+                        "   O\n" +
+                        "\n" +
+                        "\n Geht doch! Ein kritischer Treffer!!");
+            }
+            else{
+                boss.decreaseHealthState(this.attackDamage);
+                System.out.println("   .\n" +
+                        "  / \\\n" +
+                        "  | |\n" +
+                        "  | |\n" +
+                        "  |.|\n" +
+                        "  |.|\n" +
+                        "  |:|\n" +
+                        "  |:|\n" +
+                        "`--8--'\n" +
+                        "   8\n" +
+                        "   O\n" +
+                        "\n" +
+                        "\nWenn du den Boss besiegen willst, musst du schon härter zuschlagen...");
+            }
+        }
+        else
+            System.out.println("Sag mal hast du Tomaten auf den Augen? Das war DANEBEN!");
+    }
+
     @Override
     public void decreaseHealthState(int lostHP) throws PlayerDeadException {
         this.healthState -= lostHP;

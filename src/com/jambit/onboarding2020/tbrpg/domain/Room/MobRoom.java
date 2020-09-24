@@ -137,26 +137,27 @@ public class MobRoom extends AbstractRoom {
             } else {
                 System.out.println("Du hast keinen Heiltrank!");
             }
+        }
 
 
-            if (input.equalsIgnoreCase("Fluchtseil") || input.equalsIgnoreCase("fs"))
+            if (input.equalsIgnoreCase("Fluchtseil") || input.equalsIgnoreCase("fs")) {
                 if (Inventory.size() == 0)
                     System.out.println("Dein Inventar ist leer!");
                 else if (checkEscRope()) {
                     System.out.println("Du setzt ein Fluchtseil ein!");
                     skip();
-                    player.takeItemFromInventory("Fluchtseil");
                     player.getConsumableFromInventory("Fluchtseil").consume();
                 } else {
                     System.out.println("Du hast kein Fluchtseil!");
 
                 }
+            }
 
             if (input.equalsIgnoreCase("nein") || input.equalsIgnoreCase("n"))
                 return;
         }
 
-    }
+
 
 
     public boolean checkEscRope() {

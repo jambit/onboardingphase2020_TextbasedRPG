@@ -78,7 +78,7 @@ public class BossRoom extends AbstractRoom {
 
         Weapon equippedWeapon = player.getEquippedWeapon();
 
-        printWelcomeMessage();
+
         System.out.println("\n--------------------------" +
                 "     __.,,------.._\n" +
                         "      ,'\"   _      _   \"`.\n" +
@@ -104,7 +104,7 @@ public class BossRoom extends AbstractRoom {
         System.out.println("|Deine Lebenspunkte: " + player.getHealthState() + "|" +
                 "\n|Lebenspunkte Ash: " + boss.getHealthState() + "|" +
                 "\n|Equipped Weapon: " + player.getEquippedWeapon() + "|" +
-                "█     ▄███▄     ▄▄▄▄▀ ▄▄▄▄▄       ▄████  ▄█   ▄▀   ▄  █    ▄▄▄▄▀ \n" +
+                "\n█     ▄███▄     ▄▄▄▄▀ ▄▄▄▄▄       ▄████  ▄█   ▄▀   ▄  █    ▄▄▄▄▀ \n" +
                 "█     █▀   ▀ ▀▀▀ █   █     ▀▄     █▀   ▀ ██ ▄▀    █   █ ▀▀▀ █    \n" +
                 "█     ██▄▄       █ ▄  ▀▀▀▀▄       █▀▀    ██ █ ▀▄  ██▀▀█     █    \n" +
                 "███▄  █▄   ▄▀   █   ▀▄▄▄▄▀        █      ▐█ █   █ █   █    █     \n" +
@@ -126,13 +126,14 @@ public class BossRoom extends AbstractRoom {
 
     }
 
-    private void fight(GameInput in, Enemy enemy, Weapon equippedWeapon) throws InvalidInputException, PlayerDeadException {
+    private void fight(GameInput in, Boss boss, Weapon equippedWeapon) throws InvalidInputException, PlayerDeadException {
         int input = in.inputInteger();
         ItemGenerator itemGenerator = new ItemGenerator();
 
+
         if (input == 1) {
             try {
-                player.attack(enemy, equippedWeapon);
+                player.attackBoss(boss, equippedWeapon);
             } catch (EnemyDeadException e) {
                 System.out.println(e.getMessage());
                 System.out.println("Endlich frei!!");
@@ -141,28 +142,30 @@ public class BossRoom extends AbstractRoom {
                 return;
             }
             System.out.println("Der Gegner ist an der Reihe!");
-            enemy.attack(player);
-            evaluateFight(in, enemy, player);
+            boss.attack(player);
+            evaluateFight(in, boss, player);
         }
 
         if (input == 2) {
             System.out.println("HAST DU GERADE ERNSTHAFT VERSUCHT MICH ZU STREICHELN?! DU MICKRIGER MENSCH HAHAHA" +
                     "\n_____________________________________________" +
                     "\nDu hast Ash aggressiv gemacht! Er wird noch stärker und greift dich an!");
-            player.decreaseHealthState((int)0.5*player.getHealthState());
+            player.decreaseHealthState((int)(0.5 * player.getHealthState()));
             bossDamage = bossDamage + 10;
+            evaluateFight(in, boss, player);
             }
         }
 
 
-    private void evaluateFight(GameInput in, Enemy enemy, Player player) {
+    private void evaluateFight(GameInput in, Boss boss, Player player) {
         System.out.println("|Lebenspunkte des Spielers: " + Player.getPlayerInstance().getHealthState() + "|");
-        System.out.println("|Lebenspunkte des Gegners: " + enemy.getHealthState() + "|");
+        System.out.println("|Lebenspunkte von Ash: " + boss.getHealthState() + "|");
         chooseItem(player);
-        System.out.println("               _                          _ \n" +
-                "  _ _  _____ _| |_   _ _ ___ _  _ _ _  __| |\n" +
-                " | ' \\/ -_) \\ /  _| | '_/ _ \\ || | ' \\/ _` |\n" +
-                " |_||_\\___/_\\_\\\\__| |_| \\___/\\_,_|_||_\\__,_|");
+        System.out.println(" ▐ ▄ ▄▄▄ .▐▄• ▄ ▄▄▄▄▄    ▄▄▄        ▄• ▄▌ ▐ ▄ ·▄▄▄▄  \n" +
+                "•█▌▐█▀▄.▀· █▌█▌▪•██      ▀▄ █·▪     █▪██▌•█▌▐███▪ ██ \n" +
+                "▐█▐▐▌▐▀▀▪▄ ·██·  ▐█.▪    ▐▀▀▄  ▄█▀▄ █▌▐█▌▐█▐▐▌▐█· ▐█▌\n" +
+                "██▐█▌▐█▄▄▌▪▐█·█▌ ▐█▌·    ▐█•█▌▐█▌.▐▌▐█▄█▌██▐█▌██. ██ \n" +
+                "▀▀ █▪ ▀▀▀ •▀▀ ▀▀ ▀▀▀     .▀  ▀ ▀█▄▀▪ ▀▀▀ ▀▀ █▪▀▀▀▀▀• ");
     }
 
     private void chooseItem(Player player) {

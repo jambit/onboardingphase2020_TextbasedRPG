@@ -22,12 +22,12 @@ public class Boss extends Enemy{
          }
 
         public void attack (Player damagedPerson) throws PlayerDeadException{
-            this.critChance = (int)(Math.random() + 0.4);
-            this.hitChance = (int)(Math.random() + 0.5);
+            this.critChance = (int)(Math.random() + 0.3);
+            this.hitChance = (int)(Math.random() + 0.4);
             if (Math.random() <= hitChance){
                 if (Math.random()<= critChance) {
-                    damagedPerson.decreaseHealthState((int) (this.attackDamage
-                            + (this.attackDamage * critChance)));
+                    damagedPerson.decreaseHealthState(this.attackDamage
+                            + (this.attackDamage * critChance));
                     System.out.println(" ██░ ██  ▄▄▄          ██░ ██  ▄▄▄          ██░ ██  ▄▄▄      \n" +
                                     "▓██░ ██▒▒████▄       ▓██░ ██▒▒████▄       ▓██░ ██▒▒████▄    \n" +
                                     "▒██▀▀██░▒██  ▀█▄     ▒██▀▀██░▒██  ▀█▄     ▒██▀▀██░▒██  ▀█▄  \n" +
@@ -48,7 +48,7 @@ public class Boss extends Enemy{
                                     " █▀▀▀    ▄▀        ▄▀▀▀▀▀▄  █     █    ▄▀▄▄▄▀ ▄ ▄ ▄ \n" +
                                     " ▐      █         █       █ ▐     ▐   █    ▐        \n" +
                                     "        ▐         ▐       ▐           ▐             " +
-                            "\nDer Gegner hat dich getroffen... das war nicht sehr effektiv");
+                            "\nDer Gegner hat dich getroffen... Verdammt tut das weh!");
                 }
             }
             else
@@ -64,7 +64,7 @@ public class Boss extends Enemy{
 
             if (this.healthState <= 0) {
                 this.healthState = 0;
-                throw new EnemyDeadException("Du hast deinen Gegner besiegt!");
+                throw new EnemyDeadException("Glückwunsch! Du hast Ash besiegt und somit den Passierschein erhalten!");
             }
         }
 
