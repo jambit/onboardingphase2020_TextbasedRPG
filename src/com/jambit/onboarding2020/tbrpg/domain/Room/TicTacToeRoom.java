@@ -11,7 +11,7 @@ public class TicTacToeRoom extends AbstractRoom {
 
     @Override
     public void printRoomMessage() {
-        System.out.println("Als nächstes musst du den TicTacToe Room überleben...");
+        System.out.println("Hinter der nächsten Tür erspähst du etwas, das dich an TicTacToe denken lässt... aber...?");
     }
     public void printWelcomeMessage() {
         System.out.println("Du betrittst den Raum. Vor dir steht ein großes Alien vor einem Whiteboard.");
@@ -46,33 +46,36 @@ public class TicTacToeRoom extends AbstractRoom {
         game.play();
 
         if (game.getGameresult() == RoomGamesResult.WON_EASY) {
+
+            System.out.println("Die Euphorie um das gewonnene Spiel heilt dich ein wenig.");
             player.increaseHealthState(5);
-            System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 5 Lebenspunkte." +
-                    "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+            System.out.println("Du hast jetzt " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
             printGameIsWon();
 
             itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.WON_MIDDLE) {
+
+            System.out.println("Die Euphorie um das gewonnene Spiel heilt dich ein wenig.");
             player.increaseHealthState(10);
-            System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 10 Lebenspunkte." +
-                    "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+            System.out.println("Du hast jetzt " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
             printGameIsWon();
 
             itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.WON_DIFFICULT) {
+
+            System.out.println("Die Euphorie um das gewonnene Spiel heilt dich ein wenig.");
             player.increaseHealthState(15);
-            System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 15 Lebenspunkte." +
-                    "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
+            System.out.println("Du hast jetzt " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
             printGameIsWon();
 
             itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.LOST) {
+            System.out.println("Vor Frustration hast du Lebenspunkte verloren.");
             player.decreaseHealthState(10);
-            System.out.println("Vor Frustration hast du 10 Lebenspunkte verloren." +
-                    "\nDu hast noch " + player.getHealthState() + " Lebenspunkte.");
+            System.out.println("Du hast noch " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
             System.out.println("Das große Alien starrt auf dich herab.");
             Output.slow(">>War das nicht das beste Spiel, das du je gespielt hast?<<");

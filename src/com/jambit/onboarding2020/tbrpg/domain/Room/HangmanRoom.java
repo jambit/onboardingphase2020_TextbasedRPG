@@ -130,5 +130,6 @@ public class HangmanRoom extends AbstractRoom {
         }
 
         return result;
+
     }
 }

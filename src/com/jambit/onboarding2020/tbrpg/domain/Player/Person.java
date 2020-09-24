@@ -18,7 +18,7 @@ public abstract class Person {
         }
         else{
             this.healthState += additionalHP;
-            System.out.println("Du wurdest um " + additionalHP + "geheilt.");
+            System.out.println("Du wurdest um " + additionalHP + " Lebenspunkte geheilt.");
         }
     }
 

@@ -113,11 +113,11 @@ public class Player extends Person {
                         "    '\\'   \\            •´\n" +
                         "      \\              (\n" +
                         "       \\             )  " +
-                        "\nDeine Fäuste treffen Ash ! Mit deinen Fäusten kitzelst du ihn ja nur..." +
+                        "\nDeine Fäuste treffen Ash ! Damit kitzelst du ihn ja nur..." +
                         "\n_____________________________________________________");
             }
             else {
-                System.out.println("Das war zwar ein Treffer aber... Streng dich doch mal an! Das ist ein BOSSKAMPF");
+                System.out.println("Das war zwar ein Treffer aber... Streng dich doch mal an! Das ist ein BOSSKAMPF!");
             }
             return;
         }
@@ -137,7 +137,7 @@ public class Player extends Person {
                         "   8\n" +
                         "   O\n" +
                         "\n" +
-                        "\n Geht doch! Ein kritischer Treffer!!");
+                        "\n Geht doch! Ein kritischer Treffer!");
             }
             else{
                 boss.decreaseHealthState(this.attackDamage);
@@ -157,7 +157,7 @@ public class Player extends Person {
             }
         }
         else
-            System.out.println("Sag mal hast du Tomaten auf den Augen? Das war DANEBEN!");
+            System.out.println("Sag mal, hast du Tomaten auf den Augen? Das war DANEBEN!");
     }
 
     @Override
@@ -166,7 +166,7 @@ public class Player extends Person {
 
         if (this.healthState <= 0) {
             this.healthState = 0;
-            throw new PlayerDeadException("Spieler ist tot");
+            throw new PlayerDeadException("Spieler ist tot.");
         }
     }
 
@@ -183,11 +183,15 @@ public class Player extends Person {
             System.out.println("--LEER--");
         } else {
             System.out.println("Dein Inventar:");
+            System.out.println("------------------------------------");
             int counter = 1;
             for (Item i : inventory) {
                 System.out.println(counter + ": " + i);
                 counter++;
+
             }
+            System.out.println("------------------------------------");
+
         }
     }
 

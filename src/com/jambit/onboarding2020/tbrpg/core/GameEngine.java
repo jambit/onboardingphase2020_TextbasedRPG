@@ -82,12 +82,12 @@ public class GameEngine {
       System.out.println("Du ruhst dich im Gang zwischen den Räumen kurz aus...");
 
       System.out.println("Was möchtest du in der Zwischenzeit tun?" +
-              "\nHeiltrank [h]\t\t\tFluchtseil [f]" +
-              "\nstatte Waffe aus [s]\t\t\tlege Waffe ab [l] " +
+              "\nHeiltrank [h]\t\t\t\tFluchtseil [f]" +
+              "\nstatte Waffe aus [s]\t\tlege Waffe ab [l] " +
               "\nüberprüfe Inventar [ü]");
 
       System.out.println("\nOder willst du den Raum direkt betreten? Tippe:" +
-              "\n eintreten [e]");
+              "\neintreten [e]");
 
       String line = input.nextLine();
 
@@ -110,8 +110,8 @@ public class GameEngine {
          } else if (line.equalsIgnoreCase("statte Waffe aus") || line.equalsIgnoreCase("s")) {
             if (!player.isWeaponInventoryEmpty()) {
                System.out.println("Du hast im Moment keine Waffen im Inventar. Tippe: " +
-                       "\nHeiltrank [h] Fluchtseil [f]" +
-                       "\nstatte Waffe aus [s] lege Waffe ab [l] " +
+                       "\nHeiltrank [h] \t\t\t\tFluchtseil [f]" +
+                       "\nstatte Waffe aus [s] \t\tlege Waffe ab [l] " +
                        "\nüberprüfe Inventar [ü]" +
                        "\noder" +
                        "\neintreten[e]");

@@ -81,7 +81,7 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
             }
         }
         System.out.println("Endlich dreht sich die Gestalt weg und du kannst weiter gehen.");
-        Output.slow("                                                           ");
+        Output.slow("                                                           \n");
         itemGenerator.interactWithRoomLoot();
     }
 

@@ -13,13 +13,13 @@ public class StoryRoom extends AbstractRoom {
 
     @Override
     public void printWelcomeMessage() {
-
-        String space ="       *     \n" +
+        System.out.println("       *     \n" +
                 "\t.\t \t\t\t\t\n" +
                 "\t\t *          ^\n" +
                 "\t\t+  *        ^\n" +
-                "\t\t  .                      °              *\n" +
-                "        +          .'.                      +         o\n" +
+                "\t\t  .                      °              *");
+
+        String space = "       +          .'.                      +         o\n" +
                 "            '      |o|\n" +
                 "                  .'o'.\t\t\to\n" +
                 "                  |.-.|                  \n" +
@@ -33,20 +33,11 @@ public class StoryRoom extends AbstractRoom {
                 "\t\t\t    ------------------\t\t\t   '\n" +
                 "                   \t    o\t\t\t   \n" +
                 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n" +
-                " o              +\n" +
-                "\t\t\t\t\t\t\t .   *         °    \n" +
-                "    ~+\n" +
-                "\n" +
-                "                                 +\n" +
-                "        °           '                 |\n" +
-                "               ()    .-.,=\"``\"=.    - o -\n" +
-                "                     '=/_       \\     |\n" +
-                "                  *   |  '=._    |\n" +
-                "                       \\     `=./`,        '\n" +
-                "                        '=.__.='`='      *\n" +
-                "   +                         +\n" +
-                "        O              '       .\n";
+                " o              +";
+
+
         Output.slow(space);
+
 
     }
 
@@ -54,7 +45,7 @@ public class StoryRoom extends AbstractRoom {
     public void enter() {
         String line = "";
 
-        System.out.println("Wie bist du nur hier gelandet?\n" +
+        System.out.println("\nWie bist du nur hier gelandet?\n" +
                 "Alleine im Weltraum.\n" +
                 "Vor Stunden schon hast du die Erde, deinen Heimatplaneten, in der Ferne verschwinden sehen.\n" +
                 "Wie ist das nur passiert?\n" +
@@ -122,7 +113,9 @@ public class StoryRoom extends AbstractRoom {
                 "\n" +
                 "Dennoch machst du dich auf den Weg, um wieder auf deinen Heimatplaneten Erde zurückzufinden.\n" +
                 "Das sind die wichtigen Regeln, die du laut dem Computer wissen musst:\n");
+        System.out.println("[Bei Pausen wie diesen drücke ENTER]");
         GameInput.waitTillEnter();
+
 
         System.out.println("\n" +
                 ".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.\n" +

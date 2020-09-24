@@ -103,7 +103,7 @@ public class ItemGenerator {
     public void interactWithRoomLoot() {
 
         Item lootItem = this.getRoomLoot();
-        int lootMoney = (random.nextInt(15)+10);
+        int lootMoney = (random.nextInt(15) + 10);
 
 
         Player.getPlayerInstance().increaseBalance(lootMoney);
@@ -114,22 +114,28 @@ public class ItemGenerator {
         Player.getPlayerInstance().printInventory();
 
         System.out.println(". . . . . . . . . . . . . . . . . . . . .");
-        System.out.println("|  Deine SpaceDollar: \t\t" + Player.getPlayerInstance().getBalance()+"\t\t\t|");
-        System.out.println("|  Deine Lebenspunkte: \t\t" + Player.getPlayerInstance().getHealthState()+"\t\t\t|");
-        System.out.println("|  Dein Angriffsschaden: \t"+ Player.getPlayerInstance().getAttackDamage()+"\t\t\t|");
-        System.out.println("|  Ausgerüstete Waffe: \t\t" +Player.getPlayerInstance().printEquippedWeapon()+"\t\t|");
+        System.out.println("|  Deine SpaceDollar: \t\t" + Player.getPlayerInstance().getBalance() + "\t\t\t|");
+        System.out.println("|  Deine Lebenspunkte: \t\t" + Player.getPlayerInstance().getHealthState() + "\t\t\t|");
+        System.out.println("|  Dein Angriffsschaden: \t" + Player.getPlayerInstance().getAttackDamage() + "\t\t\t|");
+        System.out.println("|  Ausgerüstete Waffe: \t\t" + Player.getPlayerInstance().printEquippedWeapon() + "\t\t|");
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
 
         System.out.println();
 
-        
-
 
         System.out.println("Außerdem findest du folgendes Item:");
+        System.out.println("         __________\n" +
+                "        /\\____;;___\\\n" +
+                "       | /         /\n" +
+                "       `. ________/   \n" +
+                "        |\\         \\\n" +
+                "        | |---------|\n" +
+                "        \\ |    ))   |\n" +
+                "         \\|_________|\n");
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
         System.out.println("=> " + lootItem + "  " + lootItem.getLore());
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("Möchtest du es [einstecken] oder es liegen lassen und den Raum [verlassen]?");
+        System.out.println("Möchtest du es einstecken [e] oder es liegen lassen und weitergehen [w]?");
 
 
         String gameInput = "";
@@ -138,22 +144,33 @@ public class ItemGenerator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-     
-            if (gameInput.equalsIgnoreCase("einstecken")) {
+
+        while (!(gameInput.equalsIgnoreCase("weitergehen") || gameInput.equalsIgnoreCase("w"))) {
+            if (gameInput.equalsIgnoreCase("einstecken") || gameInput.equalsIgnoreCase("e")) {
                 Player.getPlayerInstance().putInInventory(lootItem);
                 System.out.println("Du steckst das Item ein und gehst weiter.");
                 return;
             } else {
-                System.out.println("Du kannst das Item nur [einstecken] oder es liegen lassen und den Raum [verlassen].");
-
+                System.out.println("Möchtest du das Item einstecken [e] oder es liegen lassen und weitergehen [w]?");
             }
 
-        if (gameInput.equalsIgnoreCase("weitergehen"))  {
-            System.out.println("Du lässt das Item liegen und gehst weiter.");
+            System.out.println("Bist du dir sicher, dass du den schönen Loot einfach liegen lassen willst? " +
+                    "\nJa[j] oder Nein[n]?");
+            gameInput = "";
+            try {
+                gameInput = in.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (gameInput.equalsIgnoreCase("n") || gameInput.equalsIgnoreCase("nein")) {
+                Player.getPlayerInstance().putInInventory(lootItem);
+                System.out.println("Du steckst das Item ein und gehst weiter.");
+                return;
+            } else {
+                System.out.println("Du lässt das Item liegen und gehst weiter.");
+            }
+
         }
-
-        return;
-
     }
 }
 

@@ -22,12 +22,14 @@ public class MobRoom extends AbstractRoom {
     ArrayList<Item> Inventory = player.getInventory();
 
     public void printRoomMessage() {
-        System.out.println("Um weiter zu kommen musst du deinen Gegner bezwingen");
+        System.out.println("Du hörst Kampfschreie hinter der nächsten Tür.");
     }
 
     @Override
     public void printWelcomeMessage() {
-        System.out.println("Du stehst einem mächtigen Gegner gegenüber.");
+        System.out.println("Du trittst ein. Es sieht aus, als würden in diesem Raum Kämpfe stattfinden." +
+                "\nTatsächlich! Du stehst plötzlich einem Gegner gegenüber, der darauf besteht, dich nach einem" +
+                "\nbestimmten, rundenbasierten Ritual zu besiegen.");
     }
 
     @Override
@@ -38,14 +40,16 @@ public class MobRoom extends AbstractRoom {
         Enemy enemy = new Enemy();
         Weapon equippedWeapon = player.getEquippedWeapon();
 
-        System.out.println("Du bist gefangen und kommst nur raus, wenn du den Gegner tötest!" +
+        System.out.println("Aus diesem Raum kommst du nur, wenn du den Gegner tötest!" +
                 "\n--------------------------" +
                 "\nDein Gegner ist ein Alien... es sieht aus wie....." + enemy.getName() +
                 "\n" + enemy.getAsciiArt(enemy.getName()));
-        System.out.println("|Deine Lebenspunkte: " + player.getHealthState() + "|" +
-        "\n|Lebenspunkte Gegner: " + enemy.getHealthState() + "|" +
-        "\n|Equipped Weapon: " + player.getEquippedWeapon() + "|" +
-                "\n  _     _         __ _      _   _   _ \n" +
+        System.out.println("__________________________________");
+        System.out.println(" |  Deine Lebenspunkte: " + player.getHealthState() + "\t|" +
+        "\n |  Lebenspunkte Gegner: " + enemy.getHealthState() + "\t|" +
+        "\n |  Equipped Weapon: " + player.getEquippedWeapon() + "\t|" +
+                "_______________________________");
+        System.out.println("\n  _     _         __ _      _   _   _ \n" +
                 " | |___| |_ ___  / _(_)__ _| |_| |_| |\n" +
                 " | / -_)  _(_-< |  _| / _` | ' \\  _|_|\n" +
                 " |_\\___|\\__/__/ |_| |_\\__, |_||_\\__(_)\n" +
@@ -53,7 +57,7 @@ public class MobRoom extends AbstractRoom {
 
 
       while (in.isGameRunning()) {
-         System.out.println("Drücke 1) um anzugreifen oder 2) um das Pokemon zu streicheln");
+         System.out.println("Drücke [1] um anzugreifen oder [2] um das Pokemon zu streicheln.");
 
             try {
                 fight(in, enemy, equippedWeapon);
@@ -106,8 +110,11 @@ public class MobRoom extends AbstractRoom {
 
 
     private void evaluateFight(GameInput in, Enemy enemy, Player player) {
-        System.out.println("|Lebenspunkte des Spielers: " + Player.getPlayerInstance().getHealthState() + "|");
-        System.out.println("|Lebenspunkte des Gegners: " + enemy.getHealthState() + "|");
+        System.out.println("---------------------------------------");
+        System.out.println(" |  Lebenspunkte des Spielers: " + Player.getPlayerInstance().getHealthState() + "\t|");
+        System.out.println(" |  Lebenspunkte des Gegners: " + enemy.getHealthState() + "\t\t|");
+        System.out.println("---------------------------------------");
+
         chooseItem(player);
         System.out.println("               _                          _ \n" +
                 "  _ _  _____ _| |_   _ _ ___ _  _ _ _  __| |\n" +
@@ -117,14 +124,14 @@ public class MobRoom extends AbstractRoom {
 
     private void chooseItem(Player player) {
         System.out.println("Möchstest du ein Item einsetzen? " +
-                "\n Wenn ja, tippe Heiltrank [ht] oder Fluchtseil [fs]" +
-                "\n ansonsten, tippe Nein [n]");
+                "\nWenn ja, tippe Heiltrank [ht] oder Fluchtseil [fs]" +
+                "\nansonsten, tippe Nein [n]");
 
         String input = scan.nextLine();
         while (!(input.equalsIgnoreCase("Heiltrank")) && !(input.equalsIgnoreCase("ht"))
                 && !(input.equalsIgnoreCase("Fluchtseil")) && !(input.equalsIgnoreCase("fs"))
                 && !(input.equalsIgnoreCase("nein")) && !(input.equalsIgnoreCase("n"))) {
-            System.out.println("Falsche Eingabe, bitte erneut eintippen");
+            System.out.println("Falsche Eingabe, bitte erneut eintippen.");
             input = scan.nextLine();
         }
 
@@ -132,7 +139,7 @@ public class MobRoom extends AbstractRoom {
             if (Inventory.size() == 0)
                 System.out.println("Dein Inventar ist leer!");
             else if (checkHealthPotion()) {
-                System.out.println("Du setzt einen Heiltrank ein");
+                System.out.println("Du setzt einen Heiltrank ein.");
                 player.getConsumableFromInventory("Heiltrank").consume();
             } else {
                 System.out.println("Du hast keinen Heiltrank!");

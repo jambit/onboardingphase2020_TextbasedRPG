@@ -43,7 +43,7 @@ public class Enemy extends Person {
                         "  / _ \\| |_    _ _  ___(_)_ _ | |\n" +
                         " | (_) | ' \\  | ' \\/ -_) | ' \\|_|\n" +
                         "  \\___/|_||_| |_||_\\___|_|_||_(_)" +
-                        "\nDer Gegner hat dich getroffen... das war nicht sehr effektiv");
+                        "\nDer Gegner hat dich getroffen... das war nicht sehr effektiv.");
             }
         }
         else

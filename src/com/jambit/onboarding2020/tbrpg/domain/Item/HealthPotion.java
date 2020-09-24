@@ -8,7 +8,7 @@ public class HealthPotion extends Item implements Consumable {
 
     public HealthPotion() {
         this.setName("Heiltrank");
-        this.setLore("Damit du nicht gleich abkrazt...");
+        this.setLore("Damit du nicht gleich abkratzt...");
         this.setSellValue(5);
     }
 
