@@ -44,7 +44,7 @@ public class MerchantRoom extends AbstractRoom {
                 "                             (_)     (_)");
         this.initializeInventory();
 
-        while (!line.equalsIgnoreCase("verlassen") || line.equalsIgnoreCase("vl")) {
+        while (!(line.equalsIgnoreCase("verlassen") || line.equalsIgnoreCase("vl"))) {
 
             //Buy or sell
             playerWantsToLeave = false;
