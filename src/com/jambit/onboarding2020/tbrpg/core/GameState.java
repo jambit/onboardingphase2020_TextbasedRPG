@@ -10,6 +10,9 @@ public class GameState {
     public boolean escapeRopeActive = false;
     public static final ArrayList<Quiz> QuizMasterQuizzes = new ArrayList<>();
 
+    private GameState() {
+    }
+
     public static GameState getGameStateInstance() {
         return gameStateInstance;
     }

@@ -14,7 +14,6 @@ public class GameEngine {
 
    private final ArrayList<AbstractRoom> rooms;
    private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-   private final GameState gameState = new GameState();
    public Scanner input = new Scanner(System.in);
 
    public GameEngine(ArrayList<AbstractRoom> rooms) {
@@ -48,8 +47,8 @@ public class GameEngine {
 
          room.printWelcomeMessage();
 
-         if (!gameState.escapeRopeActive) {
-            gameState.escapeRopeActive = false;
+         if (!GameState.getGameStateInstance().escapeRopeActive) {
+            GameState.getGameStateInstance().escapeRopeActive = false;
 
             try {
                room.enter();
