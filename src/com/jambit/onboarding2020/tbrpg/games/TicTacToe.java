@@ -327,10 +327,13 @@ public class TicTacToe {
             }
 
             System.out.println("Wo setzt du dein Kreuz? Tippe: " +
+                    
+
                     "\n links oben [lo] \toben mitte [om] \trechts oben [ro]" +
                     "\n links mitte [lm] \tmitte [m]     \trechts mitte [rm]" +
                     "\n links unten [lu] \tunten mitte [um] \trechts unten [ru]");
-            String place = scan.nextLine(); //domain.player tips in first position
+            String place = scan.nextLine(); //player tips in first position
+
 
             pcTip(place);
             PlayerMovesCounter++;
