@@ -9,6 +9,7 @@ import com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom;
 
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class GameEngine {
       startStory();
 
       for (AbstractRoom room : rooms) {
-
+         room.printWelcomeMessage();
 
          System.out.println();
          System.out.println("*************************************************************" +
@@ -42,9 +43,9 @@ public class GameEngine {
          room.printRoomMessage();
 
          System.out.println("Wenn du willst, kannst du vorher dein Inventar verwalten? Tippe: " +
-                 "\n [ja] [nein]");
+                 "\n ja [j] nein [n]");
          line = this.getPlayerInput();
-         if (line.equalsIgnoreCase("ja")) {
+         if (line.equalsIgnoreCase("ja") || line.equalsIgnoreCase("j")) {
             this.interactWithInventory();
          }
 
@@ -55,7 +56,7 @@ public class GameEngine {
 
             try {
                room.enter();
-            } catch (PlayerDeadException | InterruptedException e) {
+            } catch (PlayerDeadException | InterruptedException | FileNotFoundException e) {
                System.out.println(e.getMessage());
                break;
             }
@@ -81,39 +82,39 @@ public class GameEngine {
       System.out.println("Du ruhst dich im Gang zwischen den Räumen kurz aus");
 
       System.out.println("Was möchtest du in der Zwischenzeit tun?" +
-              "\n [Heiltrank] [Fluchtseil]" +
-              "\n [statte Waffe aus] [lege Waffe ab] " +
-              "\n [überprüfe Inventar]");
+              "\n Heiltrank [h] Fluchtseil [f]" +
+              "\n statte Waffe aus [s] lege Waffe ab [l] " +
+              "\n überprüfe Inventar [ü]");
 
       System.out.println("Oder willst du den Raum direkt betreten? Tippe:" +
-              "\n [eintreten]");
+              "\n eintreten [e]");
 
       String line = input.nextLine();
 
-      while (!line.equalsIgnoreCase("eintreten")) {
+      while (!line.equalsIgnoreCase("e")) {
 
-         if (line.equalsIgnoreCase("Heiltrank")) {
+         if (line.equalsIgnoreCase("Heiltrank") || line.equalsIgnoreCase("h")) {
             if (player.getConsumableFromInventory("Heiltrank") != null) {
                player.getConsumableFromInventory("Heiltrank").consume();
             } else {
                System.out.println("Du hast keinen Heiltrank im Inventar!");
             }
 
-         } else if (line.equalsIgnoreCase("Fluchtseil")) {
+         } else if (line.equalsIgnoreCase("Fluchtseil") || line.equalsIgnoreCase("f")) {
             if (player.getConsumableFromInventory("Fluchtseil") != null) {
                player.getConsumableFromInventory("Fluchtseil").consume();
             } else {
                System.out.println("Du hast kein Fluchtseil im Inventar!");
             }
 
-         } else if (line.equalsIgnoreCase("statte Waffe aus")) {
+         } else if (line.equalsIgnoreCase("statte Waffe aus") || line.equalsIgnoreCase("s")) {
             if (!player.isWeaponInventoryEmpty()) {
                System.out.println("Du hast im Moment keine Waffen im Inventar. Tippe: " +
-                       "\n [Heiltrank] [Fluchtseil]" +
-                       "\n [statte Waffe aus] [lege Waffe ab] " +
-                       "\n [überprüfe Inventar]" +
+                       "\n Heiltrank [h] Fluchtseil [f]" +
+                       "\n statte Waffe aus [s] lege Waffe ab [l] " +
+                       "\n überprüfe Inventar [ü]" +
                        "\noder" +
-                       "\n [eintreten]");
+                       "\n eintreten[e]");
             } else {
                System.out.println("Aktuell hast du folgende Waffen im Inventar:");
                player.printWeaponsFromInventory();
@@ -129,16 +130,18 @@ public class GameEngine {
                   player.equipWeapon(player.getWeaponsFromInventory().get(index - 1));
                }
             }
-         } else if (line.equalsIgnoreCase("lege Waffe ab")) {
+         } else if (line.equalsIgnoreCase("lege Waffe ab") || line.equalsIgnoreCase("l")) {
             player.unequipWeapon();
-         } else if (line.equalsIgnoreCase("überprüfe Inventar")) {
+         } else if (line.equalsIgnoreCase("überprüfe Inventar") || line.equalsIgnoreCase("ü")) {
             player.printInventory();
             System.out.println("SpaceDollar: " + player.getBalance());
          } else {
             System.out.println("Ungültige Eingabe. Tippe: " +
-                    "\n [Heiltrank] [Fluchtseil]" +
-                    "\n [statte Waffe aus] [lege Waffe ab] " +
-                    "\n [überprüfe Inventar]");
+                    "\n Heiltrank [h] Fluchtseil [f]" +
+                    "\n statte Waffe aus [s] lege Waffe ab [l] " +
+                    "\n überprüfe Inventar [ü]" +
+                    "\noder" +
+                    "\n eintreten[e]");
          }
 
          System.out.println("Was möchtest du in der Zwischenzeit tun?");

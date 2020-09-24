@@ -52,8 +52,8 @@ public class MobRoom extends AbstractRoom {
                 "                      |___/           ");
 
 
-        while (in.gameState()) {
-            System.out.println("Drücke 1) um anzugreifen oder 2) um das Pokemon zu streicheln");
+      while (in.isGameRunning()) {
+         System.out.println("Drücke 1) um anzugreifen oder 2) um das Pokemon zu streicheln");
 
             try {
                 fight(in, enemy, equippedWeapon);
@@ -76,7 +76,7 @@ public class MobRoom extends AbstractRoom {
             } catch (EnemyDeadException e) {
                 System.out.println(e.getMessage());
                 System.out.println("Hoffentlich kommst du damit klar, ein Pokemon getötet zu haben... du Mörder!");
-                in.winGame();
+                in.endGame();
                 itemGenerator.interactWithRoomLoot();
                 return;
             }

@@ -112,7 +112,7 @@ public class BossRoom extends AbstractRoom {
                 "                                    ▀               ▀            ");
 
 
-        while (in.gameState()) {
+        while (in.isGameRunning()) {
             System.out.println("Drücke [1] um anzugreifen oder [2] um Ash zu streicheln?!");
 
             try {
@@ -137,7 +137,7 @@ public class BossRoom extends AbstractRoom {
             } catch (EnemyDeadException e) {
                 System.out.println(e.getMessage());
                 System.out.println("Endlich frei!!");
-                in.winGame();
+                in.endGame();
                 itemGenerator.interactWithRoomLoot();
                 return;
             }
