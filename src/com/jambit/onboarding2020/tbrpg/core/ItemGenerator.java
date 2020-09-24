@@ -122,7 +122,7 @@ public class ItemGenerator {
 
         System.out.println("Außerdem findest du folgendes Item:");
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("=> "+lootItem);
+        System.out.println("=> " + lootItem + "  " + lootItem.getLore());
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
         System.out.println("Möchtest du es [einstecken] oder es liegen lassen und den Raum [verlassen]?");
 
