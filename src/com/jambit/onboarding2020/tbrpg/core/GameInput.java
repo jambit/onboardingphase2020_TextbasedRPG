@@ -4,24 +4,18 @@ import java.io.*;
 import java.util.Scanner;
 
 public class GameInput extends BufferedReader {
-    private boolean gameState = true;
+    private boolean isGameRunning = true;
 
     public GameInput(Reader in) {
         super(in);
     }
 
-    public boolean gameState() {
-        return gameState;
+    public boolean isGameRunning() {
+        return isGameRunning;
     }
 
-    public void exitGame() {
-        System.out.println("Du hast das Spiel beendet!");
-        this.gameState = false;
-    }
-
-    public void winGame() {
-        System.out.println("Du hast gewonnen!");
-        this.gameState = false;
+    public void endGame() {
+        this.isGameRunning = false;
     }
 
     public int inputInteger() throws InvalidInputException{
@@ -37,6 +31,21 @@ public class GameInput extends BufferedReader {
         return intInput;
     }
 
+    public String inputStringToUppercase() throws InvalidInputException {
+        String input;
+
+        try {
+            input = this.readLine();
+        } catch (Exception e) {
+            throw new InvalidInputException("Ungültige Eingabe. Versuche es nochmal!");
+        }
+
+        if (input.length() == 0) {
+            throw new InvalidInputException("Gib einen Buchstabe oder das ganze Wort ein");
+        }
+
+        return input.toUpperCase();
+    }
     public boolean inputRoomdecision() throws InvalidInputException{
         String input = "";
 
@@ -49,7 +58,7 @@ public class GameInput extends BufferedReader {
         if (input.equalsIgnoreCase("enter")) {
             return true;
         } else if (input.equalsIgnoreCase("quit")) {
-            this.exitGame();
+            this.endGame();
             return false;
         }
 

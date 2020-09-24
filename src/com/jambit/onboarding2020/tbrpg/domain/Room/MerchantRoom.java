@@ -1,7 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
-import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
+import com.jambit.onboarding2020.tbrpg.domain.Item.*;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
 import javax.naming.InsufficientResourcesException;

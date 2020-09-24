@@ -38,8 +38,126 @@ public class Player extends Person {
         this.balance += item.getSellValue();
     }
 
-    public void attack (Enemy damagedPerson) throws EnemyDeadException {
-        damagedPerson.decreaseHealthState(this.attackDamage);
+    public void attack (Enemy damagedPerson, Weapon equippedWeapon) throws EnemyDeadException {
+        if (equippedWeapon == null){
+            System.out.println("Du hast keine Waffe angelegt... viel Glück mit deinen Fäusten!" +
+                    "\n_____________________________________________________");
+            if(Math.random() <= 0.8){
+            damagedPerson.decreaseHealthState(this.attackDamage);
+            System.out.println("            __ __\n" +
+                    "    /´¯`/'   '/´ /¯`•\n" +
+                    "   /'/  /    /    /¨  /¯\\\n" +
+                    "  ('(    ´    ´   ¯´/'   ')\n" +
+                    "   \\                 '   /\n" +
+                    "    '\\'   \\            •´\n" +
+                    "      \\              (\n" +
+                    "       \\             )  " +
+                    "\nDeine Fäuste treffen das Pokemon! Aber es scheint nicht so viel davon zu halten..." +
+                    "\n_____________________________________________________");
+            }
+            else {
+                System.out.println("Komm schon, das war ja meilenweit daneben geschlagen!");
+            }
+            return;
+        }
+        if (Math.random() <= equippedWeapon.getHitChance()){
+            if (Math.random()<= equippedWeapon.getCritChance()){
+                damagedPerson.decreaseHealthState((int) (this.attackDamage
+                        + (this.attackDamage*equippedWeapon.getCritChance())));
+                System.out.println("   .\n" +
+                        "  / \\\n" +
+                        "  | |\n" +
+                        "  | |\n" +
+                        "  |.|\n" +
+                        "  |.|\n" +
+                        "  |:|\n" +
+                        "  |:|\n" +
+                        "`--8--'\n" +
+                        "   8\n" +
+                        "   O\n" +
+                        "\n" +
+                        "\n Du greifst das arme Pokemon mit einer WAFFE AN?!... Das ist sehr effektiv!");
+            }
+            else{
+                damagedPerson.decreaseHealthState(this.attackDamage);
+                System.out.println("   .\n" +
+                        "  / \\\n" +
+                        "  | |\n" +
+                        "  | |\n" +
+                        "  |.|\n" +
+                        "  |.|\n" +
+                        "  |:|\n" +
+                        "  |:|\n" +
+                        "`--8--'\n" +
+                        "   8\n" +
+                        "   O\n" +
+                        "\n" +
+                        "\nDas war ja nicht gerade ein harter Schlag... ");
+            }
+    }
+        else
+            System.out.println("Was ist denn mit deinem Aim los?! Das war daneben!");
+    }
+
+    public void attackBoss (Boss boss, Weapon equippedWeapon) throws EnemyDeadException {
+        if (equippedWeapon == null){
+            System.out.println("Du hast bei nem Endgegner keine Waffe angelegt? Hast du nicht mehr alle Tassen im Schrank?!" +
+                    "\n_____________________________________________________");
+            if(Math.random() <= 0.9){
+                boss.decreaseHealthState(this.attackDamage);
+                System.out.println("            __ __\n" +
+                        "    /´¯`/'   '/´ /¯`•\n" +
+                        "   /'/  /    /    /¨  /¯\\\n" +
+                        "  ('(    ´    ´   ¯´/'   ')\n" +
+                        "   \\                 '   /\n" +
+                        "    '\\'   \\            •´\n" +
+                        "      \\              (\n" +
+                        "       \\             )  " +
+                        "\nDeine Fäuste treffen Ash ! Mit deinen Fäusten kitzelst du ihn ja nur..." +
+                        "\n_____________________________________________________");
+            }
+            else {
+                System.out.println("Das war zwar ein Treffer aber... Streng dich doch mal an! Das ist ein BOSSKAMPF");
+            }
+            return;
+        }
+        if (Math.random() <= equippedWeapon.getHitChance()){
+            if (Math.random()<= equippedWeapon.getCritChance()){
+                boss.decreaseHealthState((int) (this.attackDamage
+                        + (this.attackDamage*equippedWeapon.getCritChance())));
+                System.out.println("   .\n" +
+                        "  / \\\n" +
+                        "  | |\n" +
+                        "  | |\n" +
+                        "  |.|\n" +
+                        "  |.|\n" +
+                        "  |:|\n" +
+                        "  |:|\n" +
+                        "`--8--'\n" +
+                        "   8\n" +
+                        "   O\n" +
+                        "\n" +
+                        "\n Geht doch! Ein kritischer Treffer!!");
+            }
+            else{
+                boss.decreaseHealthState(this.attackDamage);
+                System.out.println("   .\n" +
+                        "  / \\\n" +
+                        "  | |\n" +
+                        "  | |\n" +
+                        "  |.|\n" +
+                        "  |.|\n" +
+                        "  |:|\n" +
+                        "  |:|\n" +
+                        "`--8--'\n" +
+                        "   8\n" +
+                        "   O\n" +
+                        "\n" +
+                        "\nWenn du den Boss besiegen willst, musst du schon härter zuschlagen...");
+            }
+        }
+        else
+            System.out.println("Sag mal hast du Tomaten auf den Augen? Das war DANEBEN!");
     }
 
     @Override

@@ -25,7 +25,8 @@ public class DungeonGenerator {
         possibleRooms.add(new TicTacToeRoom());
         possibleRooms.add(new TicTacToeRoom());
         possibleRooms.add(new NPCRoom_PublicOfficial());
-
+        possibleRooms.add(new HangmanRoom());
+        possibleRooms.add(new HangmanRoom());
     }
 
     public ArrayList<AbstractRoom> generateRooms() {

@@ -10,7 +10,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class ItemGenerator {
 
@@ -36,9 +39,11 @@ public class ItemGenerator {
     }
 
     public Weapon newWeapon(int currentAtk) {
+        double critChance = Math.random();
+        double hitChance = Math.random();
         int nameindex = random.nextInt(weaponNames.size());
         int atkDamage = currentAtk - 5 + random.nextInt(20);
-        return new Weapon(atkDamage, weaponNames.get(nameindex), weaponLore.get(nameindex), atkDamage);
+        return new Weapon(atkDamage, weaponNames.get(nameindex), weaponLore.get(nameindex), atkDamage, critChance, hitChance);
     }
 
     public Item newConsumable(String consumable) {
@@ -84,7 +89,7 @@ public class ItemGenerator {
         this.weaponLore.add("Was ein Bastard...");
     }
 
-    public Item getRoomLoot() {
+    private Item getRoomLoot() {
         ArrayList<Item> lootList = new ArrayList<>();
         lootList.add(newWeapon(Player.getPlayerInstance().getAttackDamage()));
         lootList.add(newJunk());

@@ -15,7 +15,7 @@ public class HealthPotion extends Item implements Consumable {
     @Override
     public void consume() {
         player.increaseHealthState(20);
-        System.out.println("Der Spieler wurde um 20 Punkte geheilt.\nAktuelle HP: " + player.getHealthState());
+        System.out.println("Aktuelle HP: " + player.getHealthState());
         player.takeItemFromInventory("Heiltrank");
     }
 }
