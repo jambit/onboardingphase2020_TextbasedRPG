@@ -45,21 +45,21 @@ public class TicTacToeRoom extends AbstractRoom {
             System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 5 Lebenspunkte." +
                     "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
-            Thread.sleep(3000);
+
             itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.WON_MIDDLE) {
             player.increaseHealthState(10);
             System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 10 Lebenspunkte." +
                     "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
-            Thread.sleep(3000);
+
             itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.WON_DIFFICULT) {
             player.increaseHealthState(15);
             System.out.println("Die Euphorie um das gewonnene Spiel heilt dich um 15 Lebenspunkte." +
                     "\nDu hast jetzt " + player.getHealthState() + " Lebenspunkte.");
             System.out.println();
-            Thread.sleep(3000);
+
             itemGenerator.interactWithRoomLoot();
         } else if (game.getGameresult() == RoomGamesResult.LOST) {
             player.decreaseHealthState(10);
