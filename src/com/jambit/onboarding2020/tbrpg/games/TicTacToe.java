@@ -9,7 +9,7 @@ public class TicTacToe {
     private final int PC_INTEGER = 5;
     private final int NPC_INTEGER = 2;
     private final int MAXIMUM_PLAYER_MOVES = 8;
-    private int[][] board = new int[3][3];
+    private final int[][] board = new int[3][3];
 
     public RoomGamesResult getGameresult () {
         return gameresult;
@@ -43,10 +43,8 @@ public class TicTacToe {
     private boolean whoBegins () { //random selection who get the first shot
         double ran = Math.random();
 
-        if (ran > 0.5)
-            return true; //PC starts
-        else
-            return false; //NPC starts
+        //NPC starts
+        return ran > 0.5; //PC starts
     }
 
     private void pcTip (String place) { //PC is 5 NPC is 2
@@ -93,7 +91,7 @@ public class TicTacToe {
         }
         else if (difficulty.equals(("schwer"))) {
             gameresult = RoomGamesResult.WON_DIFFICULT;
-            dificult();
+            difficult();
         }
         else
             System.out.println("Falsche Eingabe"); //noch anpassen!!!!
@@ -121,7 +119,7 @@ public class TicTacToe {
             easy();
     }
 
-    public void dificult () {
+    public void difficult() {
         if (tryToWin())
             return;
         else if (preventWinning()) {
@@ -242,7 +240,7 @@ public class TicTacToe {
         return false;
     }
 
-
+    // TODO: 24.09.2020 die folgende Methode entspricht random.nextInt(3)
     public int randomGenerator () {
         double random = Math.random();
 
@@ -304,7 +302,7 @@ public class TicTacToe {
 
     public boolean play () {
 
-        String dificulty = getDifficulty();
+        String difficulty = getDifficulty();
 
         int PlayerMovesCounter = 0;
 
@@ -323,7 +321,7 @@ public class TicTacToe {
         }
         while (PlayerMovesCounter <= MAXIMUM_PLAYER_MOVES) { //PC start
 
-            NPCtip(dificulty); // NPC sets
+            NPCtip(difficulty); // NPC sets
             printBoard();
             PlayerMovesCounter++;
 
@@ -344,7 +342,7 @@ public class TicTacToe {
                 return false;
             }
 
-            if (PlayerMovesCounter == MAXIMUM_PLAYER_MOVES) {  // TODO: 16.09.2020 Untenschieden sometimes doesn´t work
+            if (PlayerMovesCounter >= MAXIMUM_PLAYER_MOVES) {
                 System.out.println("Unentschieden! Du darfst nochmal spielen");
                 TicTacToe tieTicTacToe = new TicTacToe();
                 tieTicTacToe.play();

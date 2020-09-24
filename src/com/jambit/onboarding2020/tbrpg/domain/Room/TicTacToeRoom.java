@@ -37,7 +37,7 @@ public class TicTacToeRoom extends AbstractRoom {
         Player player = Player.getPlayerInstance();
 
         TicTacToe game = new TicTacToe();
-//
+
         game.play();
 
         if (game.getGameresult() == RoomGamesResult.WON_EASY) {
