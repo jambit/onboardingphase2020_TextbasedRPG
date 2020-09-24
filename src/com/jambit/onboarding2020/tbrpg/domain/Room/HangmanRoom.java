@@ -2,6 +2,7 @@ package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.core.InvalidInputException;
+import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.hangman.Hangman;
@@ -15,11 +16,24 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HangmanRoom extends AbstractRoom {
+    ItemGenerator itemGenerator = new ItemGenerator();
+
 
     private final String wordlist = System.getProperty("user.dir") + "/resources/nouns_10-20.txt";
 
     @Override
+    public void printRoomMessage() {
+        System.out.println("Im nächsten Raum kannst du einen Galgen erspähen...");
+    }
+
+    @Override
     public void printWelcomeMessage() {
+        System.out.println("In diesem Raum siehst du einen großen Galgen und mehrere Gestalten, die auf dich zulaufen.");
+        System.out.println(">>Spiel!<< >>Spiel mit uns<< >>Ja, spielen!<<");
+        System.out.println(">>Spiel!<< >>Spiel!<< >>Ja, wir wollen spielen!<<");
+        System.out.println(">>Spiel!<< >>Spiel!<< >>Spiel!<< \">>Spiel!<<");
+
+
         System.out.println("Willkommen zu " +
                 "\n _" +
                 "\n| |" +
@@ -31,6 +45,9 @@ public class HangmanRoom extends AbstractRoom {
                 "\n                   |___/" +
                 "\n"
         );
+        System.out.println("Diese Gestalten wollen, dass du ein Wort errätst.");
+        System.out.println("Finde zuerst die richtigen Buchstaben und gib dann das Wort ein.");
+        System.out.println("Aber... wofür... ist der Galgen?!");
     }
 
     @Override
@@ -62,9 +79,9 @@ public class HangmanRoom extends AbstractRoom {
                 }
             } catch (HangmanLoseException e) {
                 System.out.println(e.getMessage());
-                System.out.println("\nDas richtige Wort wäre " + String.valueOf(hangman.getSearchedWord()) + " gewesen..");
+                System.out.println("\nDas richtige Wort wäre " + String.valueOf(hangman.getSearchedWord()) + " gewesen...");
                 Player.getPlayerInstance().decreaseHealthState(20);
-                System.out.println("Du hast 20 Lebenspunkte verloren. \nDu hast noch " + Player.getPlayerInstance().getHealthState() + " Lebenspunkte");
+                System.out.println("Du hast 20 Lebenspunkte verloren. \nDu hast noch " + Player.getPlayerInstance().getHealthState() + " Lebenspunkte.");
                 gameInput.endGame();
             }
 
@@ -76,7 +93,8 @@ public class HangmanRoom extends AbstractRoom {
     private void evaluateWord(GameInput in, Hangman hangman, String input) throws HangmanLoseException {
         if (hangman.guessWord(input)) {
             in.endGame();
-            System.out.println("Spiel gewonnen");
+            System.out.println("Du hast das Spiel gewonnen!");
+            itemGenerator.interactWithRoomLoot();
         } else {
             System.out.println("Buchstabe falsch geraten!");
             hangman.increaseStage();
@@ -90,7 +108,9 @@ public class HangmanRoom extends AbstractRoom {
             System.out.println("Buchstabe richtig geraten!");
             if (hangman.guessWord(hangman.getKnownWord())) {
                 in.endGame();
-                System.out.println("Spiel gewonnen");
+                System.out.println("Du hast das Spiel gewonnen!");
+                itemGenerator.interactWithRoomLoot();
+
             }
         } else {
             System.out.println("Buchstabe falsch geraten!");
