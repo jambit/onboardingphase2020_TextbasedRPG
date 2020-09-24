@@ -36,7 +36,7 @@ public class GameInput extends BufferedReader {
         return intInput;
     }
 
-    public String inputHangmanString() throws InvalidInputException {
+    public String inputStringToUppercase() throws InvalidInputException {
         String input;
 
         try {
