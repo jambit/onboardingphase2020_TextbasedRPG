@@ -17,8 +17,8 @@ public class Enemy extends Person {
     List<String> possibleNames = new ArrayList<>();
 
     public Enemy () {
-        this.attackDamage = (int)(Math.random()*20 + 10);
-        this.healthState = (int)(Math.random()*100 + 50);
+        this.attackDamage = (int)(Math.random()*10 + 10);
+        this.healthState = (int)(Math.random()*75 + 50);
         this.name = getRandomName();
     }
 
