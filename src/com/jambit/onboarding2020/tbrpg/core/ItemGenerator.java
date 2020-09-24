@@ -128,7 +128,7 @@ public class ItemGenerator {
                 "        \\ |    ))   |\n" +
                 "         \\|_________|\n");
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("=> " + lootItem);
+        System.out.println("=> " + lootItem + "  " + lootItem.getLore());
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
         System.out.println("Möchtest du es einstecken [e] oder es liegen lassen und weitergehen [w]?");
 

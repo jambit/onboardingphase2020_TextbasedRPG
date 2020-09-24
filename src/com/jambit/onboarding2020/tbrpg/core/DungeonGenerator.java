@@ -23,6 +23,7 @@ public class DungeonGenerator {
         possibleRooms.add(new QuizRoom());
         possibleRooms.add(new QuizRoom());
         possibleRooms.add(new TicTacToeRoom());
+        possibleRooms.add(new TicTacToeRoom());
         possibleRooms.add(new NPCRoom_PublicOfficial());
 
     }
