@@ -9,8 +9,8 @@ public class Quiz_03 extends Quiz implements Quizzzable {
         wrongAnswer1 = 3;
         wrongAnswer2 = 5;
         correctAnswer = 6;
-        question = "Der kleine Hans leiht sich von ̶m̶i̶r̶ seinem lieben Freund 150 Gold und verspricht,\n" +
-                "jeden Tag doppelt so viel wie am letzten zu zahlen... Am ersten Tag 5 Gold, am zweiten 10 und so weiter.\n" +
+        question = "Der kleine Hans leiht sich von ̶m̶i̶r̶ seinem lieben Freund 150 SpaceDollar und verspricht,\n" +
+                "jeden Tag doppelt so viel wie am letzten zu zahlen... Am ersten Tag 5 SpaceDollar, am zweiten 10 und so weiter.\n" +
                 "̶s̶o̶n̶s̶t̶ ̶g̶e̶h̶ö̶r̶t̶ ̶e̶r̶ ̶m̶i̶r̶\n" +
                 "In wievielen Tagen schuldet er  ̶m̶i̶r̶ nichts mehr?";
     }

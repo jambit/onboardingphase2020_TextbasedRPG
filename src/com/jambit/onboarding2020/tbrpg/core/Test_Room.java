@@ -1,13 +1,15 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
 import com.jambit.onboarding2020.tbrpg.domain.Room.NPCRoom_PublicOfficial;
+import com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom;
 
 public class Test_Room {
     // TODO: 16.09.2020 Delete this class if not further needed
     public static void main(String[] args) {
 
-        NPCRoom_PublicOfficial npcRoomPublicOfficial = new NPCRoom_PublicOfficial();
-        npcRoomPublicOfficial.enter();
+        StoryRoom story = new StoryRoom();
+        story.printWelcomeMessage();
+        story.enter();
 /*
 
 

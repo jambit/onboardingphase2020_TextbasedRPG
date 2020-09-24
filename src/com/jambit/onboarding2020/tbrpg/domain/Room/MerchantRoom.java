@@ -28,11 +28,10 @@ public class MerchantRoom extends AbstractRoom {
     }
 
 
-
     @Override
     public void enter() {
 
-        System.out.println("Willkommen in Tante Emmas Waffenladen");
+        System.out.println("Willkommen in Tante Emma's Waffenladen");
 
         String line = "";
         System.out.println("                       _        ,\n" +
@@ -45,38 +44,38 @@ public class MerchantRoom extends AbstractRoom {
                 "                             (_)     (_)");
         this.initializeInventory();
 
-        while (!line.equalsIgnoreCase("verlassen")) {
+        while (!(line.equalsIgnoreCase("verlassen") || line.equalsIgnoreCase("vl"))) {
 
             //Buy or sell
             playerWantsToLeave = false;
 
-            if (line.equalsIgnoreCase("kaufen")) {
+            if (line.equalsIgnoreCase("kaufen") || line.equalsIgnoreCase("k")) {
                 try {
                     this.buyFromMerchant();
                 } catch (Exception playerAbortsAction) {
                     playerWantsToLeave = true;
                 }
-            } else if (line.equalsIgnoreCase("verkaufen")) {
+            } else if (line.equalsIgnoreCase("verkaufen") || line.equalsIgnoreCase("vk")) {
                 try {
                     this.sellToMerchant();
                 } catch (Exception playerAbortsAction) {
                     playerWantsToLeave = true;
                 }
             }
-                if (playerWantsToLeave) {
+            if (playerWantsToLeave) {
+                line = "";
+            } else {
+                System.out.println("Möchtest du kaufen [k] oder verkaufen [vk] oder den Raum verlassen [vl]?");
+                try {
                     line = "";
-                } else {
-                    System.out.println("Möchtest du [kaufen] oder [verkaufen] oder den Raum [verlassen]?");
-                    try {
-                        line = "";
-                        line = in.readLine();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    line = in.readLine();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-
             }
+
         }
+    }
 
     @Override
     public void printWelcomeMessage() {
@@ -115,7 +114,7 @@ public class MerchantRoom extends AbstractRoom {
         int index;
 
         while (true) {
-            System.out.println("Du hast " + player.getBalance() + " an Geld zur verfügung");
+            System.out.println("Du hast " + player.getBalance() + " SpaceDollar zur verfügung");
             this.printInventory();
             System.out.println("Was möchtest du kaufen? \nWähle die Nummer des Items:");
             index = this.takeIntOrAbortFromCLI();
@@ -124,10 +123,10 @@ public class MerchantRoom extends AbstractRoom {
                     player.buy(this.inventory.get(index - 1));
                     this.inventory.remove(index - 1);
                 } catch (InsufficientResourcesException insufficientResourcesException) {
-                    System.out.println("Du hast nicht genügend Geld um dir das zu kaufen");
+                    System.out.println("Du hast nicht genügend SpaceDollar um dir das zu kaufen");
                 }
             } else {
-                System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder [abbrechen]");
+                System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder abbrechen [abb]");
             }
         }
     }
@@ -154,7 +153,7 @@ public class MerchantRoom extends AbstractRoom {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (line.equalsIgnoreCase("abbrechen")) {
+        if (line.equalsIgnoreCase("abbrechen") || line.equalsIgnoreCase("abb")) {
             throw new Exception();
         }
         try {

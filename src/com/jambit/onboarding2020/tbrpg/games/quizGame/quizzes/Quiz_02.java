@@ -8,8 +8,8 @@ public class Quiz_02 extends Quiz implements Quizzzable  {
         wrongAnswer1 = 15;
         wrongAnswer2 = 10;
         correctAnswer = 5;
-        question = " Eine Flasche ̶K̶i̶n̶d̶e̶r̶b̶l̶u̶t̶... Eine Flasche Wein kostet mit Korken 110 Gold. " +
-                "\nDie Flasche allein kostet schon 100 Gold mehr als der Korken. " +
+        question = " Eine Flasche ̶K̶i̶n̶d̶e̶r̶b̶l̶u̶t̶... Eine Flasche Wein kostet mit Korken 110 SpaceDollar. " +
+                "\nDie Flasche allein kostet schon 100 SpaceDollar mehr als der Korken. " +
                 "\nWie viel kostet der Korken?";
     }
 
