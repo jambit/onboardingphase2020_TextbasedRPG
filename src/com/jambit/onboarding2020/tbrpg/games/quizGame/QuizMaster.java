@@ -38,7 +38,6 @@ public class QuizMaster implements Playable {
 
         initialzePossibleQuizzList();
 
-        //todo: no repitition
         ArrayList<Quizzzable> quizList = getQuizList();
 
         int rightAnswerCount = 0;

@@ -40,12 +40,22 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
 
         System.out.println("Du triffst auf ein menschlich aussehendes Wesen, das dir den Weiterweg blockiert.");
         System.out.println("Es sieht nicht gefährlich aus, nur etwas verwirrt. Sein an den Kragen gestecktes Schildchen" +
-                "\nweist es als einen Beamten des galaktischen Verwaltungsfachgremiums aus.");
-        //todo: Ascii art von dem Schildchen
+                "\nweist es als einen Beamten des galaktischen Verwaltungsfachgremiums aus:");
+        System.out.println("\n" +
+                "  (¯`·.¸¸.·´¯`·.¸¸.·´¯)\n" +
+                "  ( \\                 / )\n" +
+                " ( \\ )  BEAMTER des  ( / )\n" +
+                "  ) (  >galVerFaGre<  ) ( \n" +
+                " ( / )               ( \\ )\n" +
+                "  ( /  nicht füttern  \\ )\n" +
+                "   (_.·´¯`·.¸¸.·´¯`·.¸_)\n" +
+                "   \n" +
+                "   ");
+
         System.out.print("Mit weit aufgerissenen Augen murmelt er vor sich hin: \n\n>>...");
         printRandomSentence();
         System.out.println("...<<\n");
-        System.out.println("Du musst hier vorbei. Vielleicht kannst du die Gestalt [ansprechen] und zum Gehen bewegen?");
+        System.out.println("Du musst hier vorbei. Vielleicht kannst du die Gestalt ansprechen[A] und zum Gehen bewegen?");
 
         String line = "";
 
@@ -54,19 +64,19 @@ public class NPCRoom_PublicOfficial extends AbstractRoom {
         while (talkCount != 3) {
 
 
-            if (line.equalsIgnoreCase("ansprechen") && talkCount == 0) {
+            if ((line.equalsIgnoreCase("ansprechen") || line.equalsIgnoreCase("A")) && talkCount == 0) {
                 talkCount = printFirstTry(random, smallTalkList, talkCount);
                 line = getInputStringFromPlayer(line);
 
-            } else if (line.equalsIgnoreCase("ansprechen") && talkCount == 1) {
+            } else if ((line.equalsIgnoreCase("ansprechen") || line.equalsIgnoreCase("A")) && talkCount == 1) {
                 talkCount = printSecondTry(random, smallTalkList, talkCount);
                 line = getInputStringFromPlayer(line);
 
-            } else if (line.equalsIgnoreCase("ansprechen") && talkCount == 2) {
+            } else if ((line.equalsIgnoreCase("ansprechen") || line.equalsIgnoreCase("A")) && talkCount == 2) {
                 talkCount = printThirdTry(random, smallTalkList, talkCount);
                 line = getInputStringFromPlayer(line);
             } else {
-                System.out.println("Du kommst noch nicht aus dem Raum. Vielleicht kannst du die Gestalt [ansprechen]?");
+                System.out.println("Du kommst noch nicht aus dem Raum. Vielleicht kannst du die Gestalt ansprechen[A]?");
                 line = getInputStringFromPlayer(line);
             }
         }
