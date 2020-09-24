@@ -30,7 +30,7 @@ public class BossRoom extends AbstractRoom {
         System.out.println("Attack Damage Player: " + Player.getPlayerInstance().getHealthState());
         System.out.println("Attack Damage Enemy: " + enemy.getHealthState());
 
-        while (in.gameState()) {
+        while (in.isGameRunning()) {
             System.out.println("Drücke 1) um anzugreifen oder 2) um zu verteidigen.");
 
             try {
@@ -54,7 +54,7 @@ public class BossRoom extends AbstractRoom {
                     System.out.println("Du besiegst den Boss." +
                             "\nPlötzlich bist du von Ehrfurcht für die Spieleentwickler erfüllt." +
                             "\nDas ist wahrhaftig das beste Spiel, das du je gesehen hast.");
-                    in.winGame();
+                    in.endGame();
                     return;
                 }
                 System.out.println("Treffer!");

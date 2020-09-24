@@ -3,9 +3,9 @@ package com.jambit.onboarding2020.tbrpg.core;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
-import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class GameEngine {
 
             try {
                room.enter();
-            } catch (PlayerDeadException e) {
+            } catch (PlayerDeadException | FileNotFoundException e) {
                System.out.println(e.getMessage());
                break;
             }

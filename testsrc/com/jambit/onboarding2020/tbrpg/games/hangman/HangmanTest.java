@@ -24,17 +24,16 @@ class HangmanTest {
     void getKnownWord() {
         Hangman hangman = new Hangman(testword);
 
-        char[] knownWord = hangman.getKnownWord();
-        Assertions.assertFalse(knownWord.toString().isBlank());
+        Assertions.assertFalse(hangman.getKnownWord().isBlank());
 
-        Assertions.assertEquals(testword.length(), hangman.getKnownWord().length);
+        Assertions.assertEquals(testword.length(), hangman.getKnownWord().length());
     }
 
     @Test
     void guessWord() {
         Hangman hangman = new Hangman(testword);
 
-        boolean isGuessedRight = hangman.guessWord(testword.toCharArray());
+        boolean isGuessedRight = hangman.guessWord(testword);
 
         Assertions.assertTrue(isGuessedRight);
     }

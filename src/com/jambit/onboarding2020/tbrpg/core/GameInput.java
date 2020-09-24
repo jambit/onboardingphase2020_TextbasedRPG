@@ -3,24 +3,18 @@ package com.jambit.onboarding2020.tbrpg.core;
 import java.io.*;
 
 public class GameInput extends BufferedReader {
-    private boolean gameState = true;
+    private boolean isGameRunning = true;
 
     public GameInput(Reader in) {
         super(in);
     }
 
-    public boolean gameState() {
-        return gameState;
+    public boolean isGameRunning() {
+        return isGameRunning;
     }
 
-    public void exitGame() {
-        System.out.println("Du hast das Spiel beendet!");
-        this.gameState = false;
-    }
-
-    public void winGame() {
-        System.out.println("Du hast gewonnen!");
-        this.gameState = false;
+    public void endGame() {
+        this.isGameRunning = false;
     }
 
     public int inputInteger() throws InvalidInputException{
@@ -63,7 +57,7 @@ public class GameInput extends BufferedReader {
         if (input.equalsIgnoreCase("enter")) {
             return true;
         } else if (input.equalsIgnoreCase("quit")) {
-            this.exitGame();
+            this.endGame();
             return false;
         }
 

@@ -1,5 +1,0 @@
-command:
-cat ngerman | awk 'length(bash)>10 && length(bash)<20' | grep -o '\<[A-Z][a-z]*\>' > nouns_10-20.txt
-
-origin:
-https://github.com/davidblitz/german-wordlist

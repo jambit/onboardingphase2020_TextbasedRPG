@@ -9,10 +9,10 @@ public class Hangman {
 
     public Hangman(String randomWord) {
         this.searchedWord = randomWord.toCharArray();
-        initialisizeKnownWord();
+        initialiseKnownWord();
     }
 
-    private void initialisizeKnownWord() {
+    private void initialiseKnownWord() {
         this.knownWord = new char[searchedWord.length];
         for (int i = 0, wordLength = this.searchedWord.length; i < wordLength; i++) {
             this.knownWord[i] = '_';
@@ -142,8 +142,8 @@ public class Hangman {
         return status;
     }
 
-    public char[] getKnownWord() {
-        return knownWord;
+    public String getKnownWord() {
+        return Arrays.toString(knownWord);
     }
 
     public void increaseStage() throws HangmanLoseException {
@@ -154,7 +154,7 @@ public class Hangman {
         }
     }
 
-    public boolean guessWord(char[] guessedWord) {
-        return Arrays.equals(guessedWord, this.searchedWord);
+    public boolean guessWord(String guessedWord) {
+        return Arrays.equals(guessedWord.toCharArray(), this.searchedWord);
     }
 }

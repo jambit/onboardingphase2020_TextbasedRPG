@@ -34,27 +34,21 @@ public class HangmanRoom extends AbstractRoom {
     }
 
     @Override
-    public void enter() throws PlayerDeadException {
+    public void enter() throws PlayerDeadException, FileNotFoundException {
 
-        GameInput in = new GameInput(new InputStreamReader(System.in));
-        String line = "";
-        String randomWord = "TESTWORD";
-
-        try {
-            randomWord = this.getRandomWord();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        GameInput gameInput = new GameInput(new InputStreamReader(System.in));
+        String randomWord = "";
+        randomWord = this.getRandomWord();
 
         Hangman hangman = new Hangman(randomWord);
         hangman.drawPitch();
         hangman.drawLetterInput();
 
-        while (in.gameState()) {
+        while (gameInput.isGameRunning()) {
             String input = "";
 
             try {
-                input = in.inputStringToUppercase();
+                input = gameInput.inputStringToUppercase();
             } catch (InvalidInputException e) {
                 System.out.println(e.getMessage());
                 continue;
@@ -62,16 +56,16 @@ public class HangmanRoom extends AbstractRoom {
 
             try {
                 if (input.length() > 1) {
-                    evaluateWord(in, hangman, input);
+                    evaluateWord(gameInput, hangman, input);
                 } else {
-                    evaluateLetter(in, hangman, input);
+                    evaluateLetter(gameInput, hangman, input);
                 }
             } catch (HangmanLoseException e) {
                 System.out.println(e.getMessage());
-                System.out.println("Das richtige Wort wäre " + Arrays.toString(hangman.getSearchedWord()) + " gewesen..");
+                System.out.println("\nDas richtige Wort wäre " + String.valueOf(hangman.getSearchedWord()) + " gewesen..");
                 Player.getPlayerInstance().decreaseHealthState(20);
-                System.out.println("Du hast 20 Lebenspunkte verloren. \nDu hast noch " + Player.getPlayerInstance().getHealthState() + "Lebenspunkte");
-                in.exitGame();
+                System.out.println("Du hast 20 Lebenspunkte verloren. \nDu hast noch " + Player.getPlayerInstance().getHealthState() + " Lebenspunkte");
+                gameInput.endGame();
             }
 
             hangman.drawPitch();
@@ -80,8 +74,8 @@ public class HangmanRoom extends AbstractRoom {
     }
 
     private void evaluateWord(GameInput in, Hangman hangman, String input) throws HangmanLoseException {
-        if (hangman.guessWord(input.toCharArray())) {
-            in.winGame();
+        if (hangman.guessWord(input)) {
+            in.endGame();
             System.out.println("Spiel gewonnen");
         } else {
             System.out.println("Buchstabe falsch geraten!");
@@ -95,7 +89,7 @@ public class HangmanRoom extends AbstractRoom {
         if (hangman.guessLetter(inputChar)) {
             System.out.println("Buchstabe richtig geraten!");
             if (hangman.guessWord(hangman.getKnownWord())) {
-                in.winGame();
+                in.endGame();
                 System.out.println("Spiel gewonnen");
             }
         } else {
