@@ -1,12 +1,14 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
+import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster;
 
 public class QuizRoom extends AbstractRoom {
 
     @Override
+
     public void printRoomMessage() {
         System.out.println("Eine neue Herausforderung wartet: der Quizraum...");
     }
@@ -19,22 +21,25 @@ public class QuizRoom extends AbstractRoom {
                 "\n>>Du bist in meine Falle getappt, du Narr! Ich bin der QUIZMASTER!<<" +
                 "\nDer QuizMaster macht eine Verbeugung, wobei sein zu kurzer Anzug so etwas wie " +
                 "\neinen Echsenschwanz nicht verbergen kann.");
-        Thread.sleep(5000);
+        GameInput.waitTillEnter();
     }
 
     @Override
     public void enter() throws PlayerDeadException, InterruptedException {
-
         QuizMaster quizMaster = new QuizMaster();
         quizMaster.play();
         System.out.println("Der QuizMaster fässt sich ans Herz." +
                 "\nSeine schlitzartigen Pupillen weiten sich." +
                 "\n>>Argh! Du hast mich... besiegt!<<" +
                 "\nDer QuizMaster sinkt zu Boden. Dein Weg ist frei!");
+        GameInput.waitTillEnter();
+
+
 
         ItemGenerator itemGenerator = new ItemGenerator();
         itemGenerator.interactWithRoomLoot();
 
     }
+
 
 }

@@ -54,7 +54,7 @@ public class ItemGenerator {
         junkNames.add("Rubin");
         junkNames.add("Smaragd");
         junkNames.add("Diamant");
-        junkNames.add("Eisen");
+        junkNames.add("Platin");
         junkNames.add("Goldring");
         junkNames.add("Medallion");
     }
@@ -99,10 +99,10 @@ public class ItemGenerator {
 
         Item lootItem = this.getRoomLoot();
         int lootMoney = (random.nextInt(30));
-        //todo: change lootMoney variable based on difficulty?
+
 
         Player.getPlayerInstance().increaseBalance(lootMoney);
-        System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + " Gold.");
+        System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + " SpaceDollar.");
 
         System.out.println("\nSo sieht dein Inventar gerade aus:");
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");

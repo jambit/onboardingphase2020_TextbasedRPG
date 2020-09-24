@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
+import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.core.GameState;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
@@ -29,14 +30,14 @@ public class QuizMaster implements Playable {
                 " ░ ▒░  ░ ░░▒░ ░ ░  ▒ ░░░▒ ▒ ░ ▒ ░  ░ \n" +
                 "   ░   ░  ░░░ ░ ░  ▒ ░░ ░ ░ ░ ░    ░ \n" +
                 "    ░       ░      ░    ░ ░     ░    ");
-        Thread.sleep(2000);
+
         System.out.println(">>Du wirst drei Fragen beantworten müssen... nur so kannst du diesen Raum verlassen!<<");
         System.out.println(">>Die erste Frage lautet...<<");
+        GameInput.waitTillEnter();
 
 
         initialzePossibleQuizzList();
 
-        //todo: no repitition
         ArrayList<Quizzzable> quizList = getQuizList();
 
         int rightAnswerCount = 0;
