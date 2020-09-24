@@ -14,11 +14,24 @@ public class DungeonGenerator {
     ArrayList<AbstractRoom> possibleRooms = new ArrayList<>();
 
     public DungeonGenerator() {
+        possibleRooms.add(new MobRoom());
+        possibleRooms.add(new MobRoom());
+        possibleRooms.add(new MobRoom());
+        possibleRooms.add(new MerchantRoom());
+        possibleRooms.add(new MerchantRoom());
+        possibleRooms.add(new QuizRoom());
+        possibleRooms.add(new QuizRoom());
+        possibleRooms.add(new QuizRoom());
+        possibleRooms.add(new TicTacToeRoom());
+        possibleRooms.add(new TicTacToeRoom());
+        possibleRooms.add(new NPCRoom_PublicOfficial());
+        possibleRooms.add(new HangmanRoom());
         possibleRooms.add(new HangmanRoom());
     }
 
     public ArrayList<AbstractRoom> generateRooms() {
         Collections.shuffle(possibleRooms);
+
         possibleRooms.add(new BossRoom());
         return possibleRooms;
     }

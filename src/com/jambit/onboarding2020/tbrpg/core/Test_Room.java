@@ -1,19 +1,25 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
-import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Room.NPCRoom_PublicOfficial;
+import com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom;
 
 public class Test_Room {
     // TODO: 16.09.2020 Delete this class if not further needed
     public static void main(String[] args) {
 
-        Player player = Player.getPlayerInstance();
+        StoryRoom story = new StoryRoom();
+        story.printWelcomeMessage();
+        story.enter();
+/*
 
-        System.out.print("Spielerinventar:");
-        player.printInventory();
-        System.out.println();
-        System.out.println(player.getBalance());
 
-        System.out.print("Händlerinventar: ");
+
+        for (int i = 0; i < 100; i++) {
+            MarkovChain.printRandomSentence();
+            System.out.println();
+        }
+*/
+
 
     }
 }

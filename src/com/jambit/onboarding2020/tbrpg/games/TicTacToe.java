@@ -9,16 +9,16 @@ public class TicTacToe {
     private final int PC_INTEGER = 5;
     private final int NPC_INTEGER = 2;
     private final int MAXIMUM_PLAYER_MOVES = 8;
-    private int[][] board = new int[3][3];
+    private final int[][] board = new int[3][3];
 
-    public RoomGamesResult getGameresult () {
+    public RoomGamesResult getGameresult() {
         return gameresult;
     }
 
     private RoomGamesResult gameresult;
     public Scanner scan = new Scanner(System.in);
 
-    public void printBoard () {
+    public void printBoard() {
 
         System.out.println(getToken(0, 0) + " | " + getToken(0, 1) + " | " + getToken(0, 2));
         System.out.println("--+---+--");
@@ -29,7 +29,7 @@ public class TicTacToe {
     }
 
     //muss es public sein?
-    public char getToken (int i, int j) {
+    public char getToken(int i, int j) {
         if (board[i][j] == PC_INTEGER)
             return 'X';
 
@@ -40,65 +40,61 @@ public class TicTacToe {
             return ' ';
     }
 
-    private boolean whoBegins () { //random selection who get the first shot
+    private boolean whoBegins() { //random selection who get the first shot
         double ran = Math.random();
 
-        if (ran > 0.5)
-            return true; //PC starts
-        else
-            return false; //NPC starts
+        //NPC starts
+        return ran > 0.5; //PC starts
     }
 
-    private void pcTip (String place) { //PC is 5 NPC is 2
+    private void pcTip(String place) { //PC is 5 NPC is 2
 
-        if (place.equals("links oben") && board[0][0] == 0) {
+        if (place.equals("links oben") || place.equals("lo") && board[0][0] == 0) {
             board[0][0] = PC_INTEGER;
-        } else if (place.equals("links unten") && board[2][0] == 0) {
+        } else if (place.equals("links unten") || place.equals("lu") && board[2][0] == 0) {
             board[2][0] = PC_INTEGER;
-        } else if (place.equals("links mitte") && board[1][0] == 0) {
+        } else if (place.equals("links mitte") || place.equals("lm") && board[1][0] == 0) {
             board[1][0] = PC_INTEGER;
-        } else if (place.equals("rechts oben") && board[0][2] == 0) {
+        } else if (place.equals("rechts oben") || place.equals("ro") && board[0][2] == 0) {
             board[0][2] = PC_INTEGER;
-        } else if (place.equals("rechts unten") && board[2][2] == 0) {
+        } else if (place.equals("rechts unten") || place.equals("ru") && board[2][2] == 0) {
             board[2][2] = PC_INTEGER;
-        } else if (place.equals("rechts mitte") && board[1][2] == 0) {
+        } else if (place.equals("rechts mitte") || place.equals("rm") && board[1][2] == 0) {
             board[1][2] = PC_INTEGER;
-        } else if (place.equals("mitte") && board[1][1] == 0) {
+        } else if (place.equals("mitte") || place.equals("m") && board[1][1] == 0) {
             board[1][1] = PC_INTEGER;
-        } else if (place.equals("oben mitte") && board[0][1] == 0) {
+        } else if (place.equals("oben mitte") || place.equals("om") && board[0][1] == 0) {
             board[0][1] = PC_INTEGER;
-        } else if (place.equals("unten mitte") && board[2][1] == 0) {
+        } else if (place.equals("unten mitte") || place.equals("um") && board[2][1] == 0) {
             board[2][1] = PC_INTEGER;
         } else {
             exception();
         }
     }
 
-    public void exception () {
-        System.out.println("Feld ist schon belegt, bitte wähle einanderes! oder ungültige Eingabe");
+    public void exception() {
+        System.out.println("Entweder ist das Feld schon belegt, bitte wähle ein einanderes! " +
+                " \nOder deine Eingabe war ungültig.");
         String place = scan.nextLine();
         pcTip(place);
     }
 
 
-    public void NPCtip (String difficulty) {
-        if (difficulty.equals("einfach")) {
+    public void NPCtip(String difficulty) {
+        if (difficulty.equals("einfach") || difficulty.equalsIgnoreCase("e")) {
             gameresult = RoomGamesResult.WON_EASY;
             easy();
-        }
-        else if (difficulty.equals("mittel")) {
+        } else if (difficulty.equals("mittel") || difficulty.equalsIgnoreCase("m")) {
             gameresult = RoomGamesResult.WON_MIDDLE;
             medium();
-        }
-        else if (difficulty.equals(("schwer"))) {
+        } else if (difficulty.equals("schwer") || difficulty.equalsIgnoreCase("s")) {
             gameresult = RoomGamesResult.WON_DIFFICULT;
-            dificult();
-        }
-        else
+            difficult();
+        } else
             System.out.println("Falsche Eingabe"); //noch anpassen!!!!
     }
 
-    public void easy () { //Level 1: random, easy
+    public void easy() { //Level 1: random, easy
 
         while (true) {
             int y = randomGenerator();
@@ -110,7 +106,7 @@ public class TicTacToe {
         }
     }
 
-    public void medium () {
+    public void medium() {
 
         if (tryToWin())
             return;
@@ -120,7 +116,7 @@ public class TicTacToe {
             easy();
     }
 
-    public void dificult () {
+    public void difficult() {
         if (tryToWin())
             return;
         else if (preventWinning()) {
@@ -131,7 +127,7 @@ public class TicTacToe {
             easy();
     }
 
-    private boolean preventWinning () {
+    private boolean preventWinning() {
 
         for (int i = 0; i < board.length; i++) { //checks vertical
             if (board[i][0] + board[i][1] + board[i][2] == PC_INTEGER * 2)
@@ -167,7 +163,7 @@ public class TicTacToe {
         return false;
     }
 
-    public boolean tipNear () {
+    public boolean tipNear() {
 
         for (int i = 0; i < board.length; i++)  //checks horizontal
             if (board[i][0] + board[i][1] + board[i][2] == NPC_INTEGER)
@@ -204,7 +200,7 @@ public class TicTacToe {
     }
 
 
-    public boolean tryToWin () { //NPC checks if he can win
+    public boolean tryToWin() { //NPC checks if he can win
 
         for (int i = 0; i < board.length; i++) { //checks vertical
             if (board[i][0] + board[i][1] + board[i][2] == NPC_INTEGER * 2)
@@ -241,8 +237,8 @@ public class TicTacToe {
         return false;
     }
 
-
-    public int randomGenerator () {
+    // TODO: 24.09.2020 die folgende Methode entspricht random.nextInt(3)
+    public int randomGenerator() {
         double random = Math.random();
 
         if (random < 0.33)
@@ -257,7 +253,7 @@ public class TicTacToe {
         return random2;
     }
 
-    public int win () { //-1 PC lose; 1 PC wins; 0 nobody wins;
+    public int win() { //-1 PC lose; 1 PC wins; 0 nobody wins;
 
         for (int i = 0; i < board.length; i++) { //checks vertical
             if (board[i][0] + board[i][1] + board[i][2] == PC_INTEGER * 3)
@@ -287,29 +283,34 @@ public class TicTacToe {
         return 0;
     }
 
-    public String getDifficulty () {
+    public String getDifficulty() {
 
-        System.out.println("Welche Schwierigkeit? Tippe einfach, mittel oder schwer");
+        System.out.println();
+        System.out.println("Welche Schwierigkeit? Tippe:" +
+                "\n einfach [e], mittel [m] oder schwer [s]");
         String diff = scan.nextLine();
 
-        while (!(diff.equals("einfach") || diff.equals("mittel") || diff.equals("schwer"))) {
-            System.out.println("Falsche Eingabe! Bitte einfach, mittel oder schwer eintippen");
+        while (!(diff.equals("einfach") || diff.equals("e") || diff.equals("mittel") || diff.equals("m") || diff.equals("schwer") || diff.equals("s"))) {
+            System.out.println("Falsche Eingabe! Bitte einfach [e], mittel [m] oder schwer [s] eintippen");
             diff = scan.nextLine();
         }
         return diff;
     }
 
-    public boolean play () {
+    public boolean play() {
 
-        String dificulty = getDifficulty();
+        String difficulty = getDifficulty();
 
         int PlayerMovesCounter = 0;
 
         if (whoBegins()) {
 
-            System.out.println("Du darfst anfangen, wo setzt du dein Kreuz? Tippe links oben, links unten, links mitte, mitte, etc.");
+            System.out.println("Du darfst anfangen, wo setzt du dein Kreuz? Tippe: " +
+                    "\n links oben [lo] \toben mitte [om] \trechts oben [ro]" +
+                    "\n links mitte [lm] \tmitte [m]     \trechts mitte [rm]" +
+                    "\n links unten [lu] \tunten mitte [um] \trechts unten [ru]");
             printBoard();
-            String place = scan.nextLine(); //player tips in first position
+            String place = scan.nextLine(); //domain.player tips in first position
             pcTip(place);
             PlayerMovesCounter++;
         } else {
@@ -317,7 +318,7 @@ public class TicTacToe {
         }
         while (PlayerMovesCounter <= MAXIMUM_PLAYER_MOVES) { //PC start
 
-            NPCtip(dificulty); // NPC sets
+            NPCtip(difficulty); // NPC sets
             printBoard();
             PlayerMovesCounter++;
 
@@ -325,8 +326,14 @@ public class TicTacToe {
                 return false;
             }
 
-            System.out.println("Wo setzt du dein Kreuz? Tippe links oben, links unten, links mitte, mitte, etc.");
+            System.out.println("Wo setzt du dein Kreuz? Tippe: " +
+                    
+
+                    "\n links oben [lo] \toben mitte [om] \trechts oben [ro]" +
+                    "\n links mitte [lm] \tmitte [m]     \trechts mitte [rm]" +
+                    "\n links unten [lu] \tunten mitte [um] \trechts unten [ru]");
             String place = scan.nextLine(); //player tips in first position
+
 
             pcTip(place);
             PlayerMovesCounter++;
@@ -335,7 +342,7 @@ public class TicTacToe {
                 return false;
             }
 
-            if (PlayerMovesCounter == MAXIMUM_PLAYER_MOVES) {  // TODO: 16.09.2020 Untenschieden sometimes doesn´t work
+            if (PlayerMovesCounter >= MAXIMUM_PLAYER_MOVES) {
                 System.out.println("Unentschieden! Du darfst nochmal spielen");
                 TicTacToe tieTicTacToe = new TicTacToe();
                 tieTicTacToe.play();
@@ -345,7 +352,7 @@ public class TicTacToe {
         return true;
     }
 
-    public boolean endsGameIfWon () {
+    public boolean endsGameIfWon() {
         if (win() == -1) { //check if somebody won
             printBoard();
             System.out.println("Du hast verloren");

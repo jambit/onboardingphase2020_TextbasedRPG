@@ -2,6 +2,7 @@ package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.core.InvalidInputException;
+import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Enemy;
 import com.jambit.onboarding2020.tbrpg.domain.Player.EnemyDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
@@ -12,9 +13,13 @@ import java.util.Random;
 
 public class MobRoom extends AbstractRoom {
 
+   public void printRoomMessage() {
+      System.out.println("Um weiter zu kommen musst du einen Gegner bezwingen");
+   }
+
    @Override
    public void printWelcomeMessage() {
-      System.out.println("Du stehst vor Raum '" + this.getClass().getSimpleName() + "'. Hier kannst du dies und das machen. Möchtest du eintreten?");
+      System.out.println("Du stehst einem mächtigen Gegner gegenüber.");
    }
 
    @Override
@@ -43,6 +48,7 @@ public class MobRoom extends AbstractRoom {
 
    private void fight(GameInput in, Enemy enemy, Random random) throws InvalidInputException, PlayerDeadException {
       int input = in.inputInteger();
+      ItemGenerator itemGenerator = new ItemGenerator();
 
       if (input == 1) {
          if (random.nextBoolean()) {
@@ -51,6 +57,7 @@ public class MobRoom extends AbstractRoom {
             } catch (EnemyDeadException e) {
                System.out.println(e.getMessage());
                in.endGame();
+               itemGenerator.interactWithRoomLoot();
                return;
             }
             System.out.println("Treffer!");

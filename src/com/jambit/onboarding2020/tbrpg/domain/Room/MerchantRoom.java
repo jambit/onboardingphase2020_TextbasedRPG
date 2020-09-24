@@ -11,23 +11,29 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class MerchantRoom extends AbstractRoom {
-    boolean playerWantsToLeave = false;
-    ItemGenerator itemGenerator;
-    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    // TODO: 16.09.2020 Abhängigkeiten der Methoden voneinander auflösen
+
+    private final ItemGenerator itemGenerator;
+    private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    Player player = Player.getPlayerInstance();
     private final ArrayList<Item> inventory;
+    private boolean playerWantsToLeave = false;
 
     public MerchantRoom() {
         this.itemGenerator = new ItemGenerator();
         this.inventory = new ArrayList<>();
     }
 
+    public void printRoomMessage() {
+        System.out.println("Zur abwechslung mal ein kleiner Shoppingtrip... ");
+    }
+
+
     @Override
     public void enter() {
 
-        Player player = Player.getPlayerInstance();
+        System.out.println("Willkommen in Tante Emma's Waffenladen");
+
         String line = "";
-        System.out.println("Willkommen in Tante Emmas Waffenladen");
         System.out.println("                       _        ,\n" +
                 "                      (_\\______/________\n" +
                 "                         \\-|-|/|-|-|-|-|/\n" +
@@ -36,32 +42,39 @@ public class MerchantRoom extends AbstractRoom {
                 "                            \\--|-'''\n" +
                 "                             \\_j________\n" +
                 "                             (_)     (_)");
-        this.initializeInventory(player);
+        this.initializeInventory();
 
-        while (line.equalsIgnoreCase("quit") == false) {
+        while (!(line.equalsIgnoreCase("verlassen") || line.equalsIgnoreCase("vl"))) {
 
-            System.out.println("Möchtest du kaufen oder verkaufen?");
-            playerWantsToLeave = false;
             //Buy or sell
-            if (line.equalsIgnoreCase("kaufen")) {
-                this.buyFromMerchant(player);
-                line = "";
-            } else if (line.equalsIgnoreCase("verkaufen")) {
-                this.sellToMerchant(player);
+            playerWantsToLeave = false;
+
+            if (line.equalsIgnoreCase("kaufen") || line.equalsIgnoreCase("k")) {
+                try {
+                    this.buyFromMerchant();
+                } catch (Exception playerAbortsAction) {
+                    playerWantsToLeave = true;
+                }
+            } else if (line.equalsIgnoreCase("verkaufen") || line.equalsIgnoreCase("vk")) {
+                try {
+                    this.sellToMerchant();
+                } catch (Exception playerAbortsAction) {
+                    playerWantsToLeave = true;
+                }
+            }
+            if (playerWantsToLeave) {
                 line = "";
             } else {
-                System.out.println("Du hast folgende Möglichkeiten: \"kaufen\" , \"verkaufen\" oder quit");
-            }
-
-            if (!playerWantsToLeave) {
+                System.out.println("Möchtest du kaufen [k] oder verkaufen [vk] oder den Raum verlassen [vl]?");
                 try {
+                    line = "";
                     line = in.readLine();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
+
         }
-        return;
     }
 
     @Override
@@ -69,7 +82,7 @@ public class MerchantRoom extends AbstractRoom {
         System.out.println("Du siest das Schild \" Tante Emmas\" willst du eintreten");
     }
 
-    private void initializeInventory(Player player) {
+    private void initializeInventory() {
         inventory.add(itemGenerator.newJunk());
         inventory.add(itemGenerator.newJunk());
         inventory.add(itemGenerator.newConsumable("health"));
@@ -79,43 +92,41 @@ public class MerchantRoom extends AbstractRoom {
     }
 
     //includes the complete handling for the buy-action
-    private void sellToMerchant(Player player) {
+    private void sellToMerchant() throws Exception {
 
-        playerWantsToLeave = false;
-        while (!playerWantsToLeave) {
+        while (true) {
             System.out.println("Du hast folgendes im Inventar:");
             player.printInventory();
             System.out.println("Was möchtest du verkaufen? \nWähle die Nummer des Items:");
-            int index = this.takeIntFromCLI();
+            int index;
+            index = this.takeIntOrAbortFromCLI();
             if (index <= player.getInventory().size() && index > 0) {
                 player.sell(player.getInventory().get(index - 1));
-            } else if (!playerWantsToLeave) break;
-            else {
-                System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder quit");
+            } else {
+                System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder abbrechen");
             }
         }
     }
 
-    //includes the complete handling for the buy-action
-    private void buyFromMerchant(Player player) {
-        int index;
-        playerWantsToLeave = false;
 
-        while (!playerWantsToLeave) {
-            System.out.println("Du hast " + player.getBalance() + " an Geld zur verfügung");
+    //includes the complete handling for the buy-action
+    private void buyFromMerchant() throws Exception {
+        int index;
+
+        while (true) {
+            System.out.println("Du hast " + player.getBalance() + " SpaceDollar zur verfügung");
             this.printInventory();
             System.out.println("Was möchtest du kaufen? \nWähle die Nummer des Items:");
-            index = this.takeIntFromCLI();
+            index = this.takeIntOrAbortFromCLI();
             if (index <= this.inventory.size() && index > 0) {
                 try {
                     player.buy(this.inventory.get(index - 1));
                     this.inventory.remove(index - 1);
                 } catch (InsufficientResourcesException insufficientResourcesException) {
-                    System.out.println("Du hast nicht genügend Geld um dir das zu kaufen");
+                    System.out.println("Du hast nicht genügend SpaceDollar um dir das zu kaufen");
                 }
-            } else if (index == 99) break;
-            else {
-                System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder quit");
+            } else {
+                System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder abbrechen [abb]");
             }
         }
     }
@@ -135,52 +146,22 @@ public class MerchantRoom extends AbstractRoom {
         }
     }
 
-    //gets a new Int from the CLI and catches all possible exceptions
-    //if the Read-In String ist quit it returns 99
-    private int takeIntFromCLI() {
+    private int takeIntOrAbortFromCLI() throws Exception {
         String line = "";
-// TODO: 16.09.2020 Eingaben über statische Klasse zentralisiert realisieren 
         try {
             line = in.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        while (line.equalsIgnoreCase("quit") == false) {
-            try {
-                return Integer.parseInt(line);
-            } catch (NumberFormatException nfe) {
-                System.out.println("Die Eingabe war ungültig, bitte gib nur eine Zahl ein!");
-            }
-
-            try {
-                line = in.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        if (line.equalsIgnoreCase("abbrechen") || line.equalsIgnoreCase("abb")) {
+            throw new Exception();
         }
-        this.playerWantsToLeave = false;
-        return 99;
+        try {
+            return Integer.parseInt(line);
+        } catch (NumberFormatException nfe) {
+            System.out.print("");
+        }
+        return -1;
     }
-
-/*//Searches the inventory for an Item with name
-       public boolean isItemInInventory(String name) {
-        for (Item item : this.inventory) {
-            if (item.getName().equals(name)) {
-                return true;
-            }
-        }
-        return false;
-    }*/
-
-/*    public String takeStringFromCLI() {
-        String line = "";
-        try {
-            line = in.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return line;
-    }*/
 
 }

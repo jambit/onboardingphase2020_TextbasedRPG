@@ -1,17 +1,20 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
+import com.jambit.onboarding2020.tbrpg.domain.Item.EscapeRope;
 import com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 public class ItemGenerator {
 
-
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
     Random random = new Random();
     ArrayList<String> junkNames = new ArrayList<>();
@@ -42,17 +45,9 @@ public class ItemGenerator {
         if (consumable.equals("health")) {
             return new HealthPotion();
         } else if (consumable.equals("escape")) {
-            return newEscapeRope();
+            return new EscapeRope();
         }
         return null;
-    }
-
-    /*private Item newHealthPotion() {
-        return new Item(5, "Heiltrank", "Heilt dich ein bisschen :)");
-    }*/
-
-    private Item newEscapeRope() {
-        return new Item(10, "Fluchttrick", "Bruder muss los!");
     }
 
     private void initializeJunkNames() {
@@ -88,27 +83,75 @@ public class ItemGenerator {
         this.weaponLore.add("KATANA!");
         this.weaponLore.add("Was ein Bastard...");
     }
-    public Item generateRandomItem() {
 
-        ArrayList<Item> roomLoot = new ArrayList<>();
-            roomLoot.add(newJunk());
-            roomLoot.add(newConsumable("health"));
-            roomLoot.add(newConsumable("escape"));
-            roomLoot.add(newWeapon(Player.getPlayerInstance().getAttackDamage()));
+    public Item getRoomLoot() {
+        ArrayList<Item> lootList = new ArrayList<>();
+        lootList.add(newWeapon(Player.getPlayerInstance().getAttackDamage()));
+        lootList.add(newJunk());
+        lootList.add(newConsumable("health"));
+        lootList.add(newConsumable("escape"));
 
-        return roomLoot.get(random.nextInt(roomLoot.size()));
-    }
-    public void dropLoot(){
-
-//todo: ausprinten + später erst ins inventar
-
-//todo:if player wants to take item
-
-        Player.getPlayerInstance().putInInventory(generateRandomItem());
-
+        return lootList.get(random.nextInt(lootList.size()));
 
     }
 
+    public void interactWithRoomLoot() {
+
+        Item lootItem = this.getRoomLoot();
+        int lootMoney = (random.nextInt(30));
 
 
+        Player.getPlayerInstance().increaseBalance(lootMoney);
+        System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + " SpaceDollar.");
+
+        System.out.println("\nSo sieht dein Inventar gerade aus:");
+        System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
+        Player.getPlayerInstance().printInventory();
+
+        System.out.println(". . . . . . . . . . . . . . . . . . . . .");
+        System.out.println("|  Deine SpaceDollar: \t\t" + Player.getPlayerInstance().getBalance()+"\t\t\t|");
+        System.out.println("|  Deine Lebenspunkte: \t\t" + Player.getPlayerInstance().getHealthState()+"\t\t\t|");
+        System.out.println("|  Dein Angriffsschaden: \t"+ Player.getPlayerInstance().getAttackDamage()+"\t\t\t|");
+        System.out.println("|  Ausgerüstete Waffe: \t\t" +Player.getPlayerInstance().printEquippedWeapon()+"\t\t|");
+        System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
+
+        System.out.println();
+
+        
+
+
+        System.out.println("Außerdem findest du folgendes Item:");
+        System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
+        System.out.println("=> " + lootItem + "  " + lootItem.getLore());
+        System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
+        System.out.println("Möchtest du es [einstecken] oder es liegen lassen und den Raum [verlassen]?");
+
+
+        String gameInput = "";
+        try {
+            gameInput = in.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+     
+            if (gameInput.equalsIgnoreCase("einstecken")) {
+                Player.getPlayerInstance().putInInventory(lootItem);
+                System.out.println("Du steckst das Item ein und gehst weiter.");
+                return;
+            } else {
+                System.out.println("Du kannst das Item nur [einstecken] oder es liegen lassen und den Raum [verlassen].");
+
+            }
+
+        if (gameInput.equalsIgnoreCase("weitergehen"))  {
+            System.out.println("Du lässt das Item liegen und gehst weiter.");
+        }
+
+        return;
+
+    }
 }
+
+
+
+

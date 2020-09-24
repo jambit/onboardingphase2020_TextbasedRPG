@@ -1,6 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class GameInput extends BufferedReader {
     private boolean isGameRunning = true;
@@ -68,4 +69,18 @@ public class GameInput extends BufferedReader {
         for (int i = 0; i < 80 * 300; i++)
             System.out.print("\n");
     }
+
+    public static void waitTillEnter() {
+
+        Scanner scanner = new Scanner(System.in);
+        boolean abort = false;
+        while (!abort) {
+            String input = scanner.nextLine();
+            if (input.equalsIgnoreCase("")) { //if enter-key is pressed
+                System.out.println("Enter key pressed or empty input ");
+                abort = true;
+            }
+        }
+    }
+
 }

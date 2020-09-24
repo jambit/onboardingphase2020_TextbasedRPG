@@ -46,6 +46,6 @@ public class Item {
     @Override
     public String toString() {
         return this.getName() + ", \t" +
-                "Preis = " + this.getSellValue();
+                "Verkaufspreis: " + this.getSellValue();
     }
 }

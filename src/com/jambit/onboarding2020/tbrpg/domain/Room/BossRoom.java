@@ -12,6 +12,10 @@ import java.util.Random;
 
 public class BossRoom extends AbstractRoom {
 
+    public void printRoomMessage() {
+        System.out.println("Die finale Challenge: du musst den Boss bezwingen... ");
+    }
+
     @Override
     public void printWelcomeMessage() {
         System.out.println("Du entscheidest dich, dem Boss gegenüberzutreten..." +
