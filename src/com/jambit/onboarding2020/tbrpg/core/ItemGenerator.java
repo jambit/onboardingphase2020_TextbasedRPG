@@ -99,7 +99,7 @@ public class ItemGenerator {
 
         Item lootItem = this.getRoomLoot();
         int lootMoney = (random.nextInt(30));
-        //todo: change lootMoney variable based on difficulty?
+
 
         Player.getPlayerInstance().increaseBalance(lootMoney);
         System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + " SpaceDollar.");
@@ -109,7 +109,7 @@ public class ItemGenerator {
         Player.getPlayerInstance().printInventory();
 
         System.out.println(". . . . . . . . . . . . . . . . . . . . .");
-        System.out.println("|  Dein gesamtes SpaceDollar: \t\t" + Player.getPlayerInstance().getBalance()+"\t\t\t|");
+        System.out.println("|  Deine SpaceDollar: \t\t" + Player.getPlayerInstance().getBalance()+"\t\t\t|");
         System.out.println("|  Deine Lebenspunkte: \t\t" + Player.getPlayerInstance().getHealthState()+"\t\t\t|");
         System.out.println("|  Dein Angriffsschaden: \t"+ Player.getPlayerInstance().getAttackDamage()+"\t\t\t|");
         System.out.println("|  Ausgerüstete Waffe: \t\t" +Player.getPlayerInstance().printEquippedWeapon()+"\t\t|");
