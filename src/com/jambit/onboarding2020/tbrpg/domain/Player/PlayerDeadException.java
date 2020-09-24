@@ -1,4 +1,4 @@
-package com.jambit.onboarding2020.tbrpg.domain.Players;
+package com.jambit.onboarding2020.tbrpg.domain.Player;
 
 public class PlayerDeadException extends EnemyDeadException {
 

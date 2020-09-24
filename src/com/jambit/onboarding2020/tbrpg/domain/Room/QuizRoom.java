@@ -1,7 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
-import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
-import com.jambit.onboarding2020.tbrpg.domain.Players.PlayerDeadException;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster;
 
 public class QuizRoom extends AbstractRoom {

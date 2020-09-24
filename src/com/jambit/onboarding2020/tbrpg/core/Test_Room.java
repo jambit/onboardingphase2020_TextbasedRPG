@@ -1,13 +1,10 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
-import com.jambit.onboarding2020.tbrpg.domain.Items.EscapeRope;
-import com.jambit.onboarding2020.tbrpg.domain.Items.HealthPotion;
-import com.jambit.onboarding2020.tbrpg.domain.Items.Item;
-import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
-import com.jambit.onboarding2020.tbrpg.domain.Players.PlayerDeadException;
+import com.jambit.onboarding2020.tbrpg.domain.Item.EscapeRope;
+import com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom;
-
-import java.util.ArrayList;
 
 public class Test_Room {
 

@@ -1,9 +1,9 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
-import com.jambit.onboarding2020.tbrpg.domain.Items.HealthPotion;
-import com.jambit.onboarding2020.tbrpg.domain.Items.Item;
-import com.jambit.onboarding2020.tbrpg.domain.Items.Weapon;
-import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion;
+import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
+import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
 import java.io.BufferedReader;
 import java.io.IOException;

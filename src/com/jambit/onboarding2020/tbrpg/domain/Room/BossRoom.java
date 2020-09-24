@@ -2,11 +2,11 @@ package com.jambit.onboarding2020.tbrpg.domain.Room;
 
 import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.core.InvalidInputException;
-import com.jambit.onboarding2020.tbrpg.domain.Items.Weapon;
-import com.jambit.onboarding2020.tbrpg.domain.Players.Enemy;
-import com.jambit.onboarding2020.tbrpg.domain.Players.EnemyDeadException;
-import com.jambit.onboarding2020.tbrpg.domain.Players.Player;
-import com.jambit.onboarding2020.tbrpg.domain.Players.PlayerDeadException;
+import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Enemy;
+import com.jambit.onboarding2020.tbrpg.domain.Player.EnemyDeadException;
+import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
+import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 
 import java.io.InputStreamReader;
 import java.util.Random;
