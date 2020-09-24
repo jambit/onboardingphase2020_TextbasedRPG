@@ -115,7 +115,7 @@ public class MerchantRoom extends AbstractRoom {
         int index;
 
         while (true) {
-            System.out.println("Du hast " + player.getBalance() + " an Geld zur verfügung");
+            System.out.println("Du hast " + player.getBalance() + " SpaceDollar zur verfügung");
             this.printInventory();
             System.out.println("Was möchtest du kaufen? \nWähle die Nummer des Items:");
             index = this.takeIntOrAbortFromCLI();
@@ -124,7 +124,7 @@ public class MerchantRoom extends AbstractRoom {
                     player.buy(this.inventory.get(index - 1));
                     this.inventory.remove(index - 1);
                 } catch (InsufficientResourcesException insufficientResourcesException) {
-                    System.out.println("Du hast nicht genügend Geld um dir das zu kaufen");
+                    System.out.println("Du hast nicht genügend SpaceDollar um dir das zu kaufen");
                 }
             } else {
                 System.out.println("Ungültige Eingabe: Wähle ein Item, dass der Händler hat oder [abbrechen]");
