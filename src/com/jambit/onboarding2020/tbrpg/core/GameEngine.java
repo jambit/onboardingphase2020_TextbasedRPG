@@ -133,7 +133,7 @@ public class GameEngine {
             player.unequipWeapon();
          } else if (line.equalsIgnoreCase("überprüfe Inventar")) {
             player.printInventory();
-            System.out.println("Dein Gold: " + player.getBalance());
+            System.out.println("SpaceDollar: " + player.getBalance());
          } else {
             System.out.println("Ungültige Eingabe. Tippe: " +
                     "\n [Heiltrank] [Fluchttrick]" +
