@@ -33,7 +33,7 @@ public class GameEngine {
       startStory();
 
       for (AbstractRoom room : rooms) {
-         room.printWelcomeMessage();
+         
 
          System.out.println();
          System.out.println("*************************************************************" +
