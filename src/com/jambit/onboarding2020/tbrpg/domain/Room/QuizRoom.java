@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.domain.Room;
 
+import com.jambit.onboarding2020.tbrpg.core.GameInput;
 import com.jambit.onboarding2020.tbrpg.core.RoomGamesResult;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
@@ -20,7 +21,7 @@ public class QuizRoom extends AbstractRoom {
                 "\n>>Du bist in meine Falle getappt, du Narr! Ich bin der QUIZMASTER!<<" +
                 "\nDer QuizMaster macht eine Verbeugung, wobei sein zu kurzer Anzug so etwas wie " +
                 "\neinen Echsenschwanz nicht verbergen kann.");
-        Thread.sleep(5000);
+        GameInput.waitTillEnter();
     }
 
     @Override
@@ -32,9 +33,7 @@ public class QuizRoom extends AbstractRoom {
                 "\nSeine schlitzartigen Pupillen weiten sich." +
                 "\n>>Argh! Du hast mich... besiegt!<<" +
                 "\nDer QuizMaster sinkt zu Boden. Dein Weg ist frei!");
-
-
-
+        GameInput.waitTillEnter();
 
 
     }

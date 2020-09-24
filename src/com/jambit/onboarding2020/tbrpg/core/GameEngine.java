@@ -29,7 +29,6 @@ public class GameEngine {
 
       for (AbstractRoom room : rooms) {
 
-         Thread.sleep(3000);
 
          System.out.println();
          System.out.println("*************************************************************" +
@@ -69,8 +68,7 @@ public class GameEngine {
       Player player = Player.getPlayerInstance();
 
 
-      System.out.println("Nicht schlecht, du hast den Raum geschafft \n" +
-              "Du ruhst dich im Gang zwischen den Räumen kurz aus");
+      System.out.println("Du ruhst dich im Gang zwischen den Räumen kurz aus");
 
       System.out.println("Was möchtest du in der Zwischenzeit tun?" +
               "\n [Heiltrank] [Fluchttrick]" +
