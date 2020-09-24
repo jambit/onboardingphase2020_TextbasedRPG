@@ -40,10 +40,20 @@ public class Player extends Person {
 
     public void attack (Enemy damagedPerson, Weapon equippedWeapon) throws EnemyDeadException {
         if (equippedWeapon == null){
-            System.out.println("Du hast keine Waffe angelegt... viel Glück mit deinen Fäusten!");
+            System.out.println("Du hast keine Waffe angelegt... viel Glück mit deinen Fäusten!" +
+                    "\n_____________________________________________________");
             if(Math.random() <= 0.8){
             damagedPerson.decreaseHealthState(this.attackDamage);
-            System.out.println("Deine Fäuste treffen den Gegner! Aber der scheint nicht so viel davon zu halten...");
+            System.out.println("            __ __\n" +
+                    "    /´¯`/'   '/´ /¯`•\n" +
+                    "   /'/  /    /    /¨  /¯\\\n" +
+                    "  ('(    ´    ´   ¯´/'   ')\n" +
+                    "   \\                 '   /\n" +
+                    "    '\\'   \\            •´\n" +
+                    "      \\              (\n" +
+                    "       \\             )  " +
+                    "\nDeine Fäuste treffen das Pokemon! Aber es scheint nicht so viel davon zu halten..." +
+                    "\n_____________________________________________________");
             }
             else {
                 System.out.println("Komm schon, das war ja meilenweit daneben geschlagen!");
@@ -54,15 +64,39 @@ public class Player extends Person {
             if (Math.random()<= equippedWeapon.getCritChance()){
                 damagedPerson.decreaseHealthState((int) (this.attackDamage
                         + (this.attackDamage*equippedWeapon.getCritChance())));
-                System.out.println("< Ha nimm das! > Das ist sehr effektiv!");
+                System.out.println("   .\n" +
+                        "  / \\\n" +
+                        "  | |\n" +
+                        "  | |\n" +
+                        "  |.|\n" +
+                        "  |.|\n" +
+                        "  |:|\n" +
+                        "  |:|\n" +
+                        "`--8--'\n" +
+                        "   8\n" +
+                        "   O\n" +
+                        "\n" +
+                        "\n Du greifst das arme Pokemon mit einer WAFFE AN?!... Das ist sehr effektiv!");
             }
             else{
                 damagedPerson.decreaseHealthState(this.attackDamage);
-                System.out.println("Das war ja nicht gerade ein harter Schlag... Naja, immerhin hast du getroffen");
+                System.out.println("   .\n" +
+                        "  / \\\n" +
+                        "  | |\n" +
+                        "  | |\n" +
+                        "  |.|\n" +
+                        "  |.|\n" +
+                        "  |:|\n" +
+                        "  |:|\n" +
+                        "`--8--'\n" +
+                        "   8\n" +
+                        "   O\n" +
+                        "\n" +
+                        "\nDas war ja nicht gerade ein harter Schlag... ");
             }
     }
         else
-            System.out.println("Was ist denn mit deinem Aim los?! Das war ja nicht mal knapp daneben!");
+            System.out.println("Was ist denn mit deinem Aim los?! Das war daneben!");
     }
 
     @Override

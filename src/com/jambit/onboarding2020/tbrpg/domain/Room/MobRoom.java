@@ -24,7 +24,7 @@ public class MobRoom extends AbstractRoom {
     ArrayList<Item> Inventory = player.getInventory();
 
     public void printRoomMessage() {
-        System.out.println("Um weiter zu kommen musst du einen Gegner bezwingen");
+        System.out.println("Um weiter zu kommen musst du deinen Gegner bezwingen");
     }
 
     @Override
@@ -37,18 +37,25 @@ public class MobRoom extends AbstractRoom {
 
 
         GameInput in = new GameInput(new InputStreamReader(System.in));
-        Enemy enemy = new Enemy(); // Name übergeben von Enemy
-        Random random = new Random();
+        Enemy enemy = new Enemy();
         Weapon equippedWeapon = player.getEquippedWeapon();
 
-        System.out.println("Du bist gefangen und kommst nur raus, wenn du den Gegner tötest");
-        System.out.println("Health State Player: " + player.getHealthState());
-        System.out.println("Health State Enemy: " + enemy.getHealthState());
-        System.out.println("Equipped Weapon: " + player.getEquippedWeapon());
+        System.out.println("Du bist gefangen und kommst nur raus, wenn du den Gegner tötest!" +
+                "\n--------------------------" +
+                "\nDein Gegner ist ein Alien... es sieht aus wie....." + enemy.getName() +
+                "\n" + enemy.getAsciiArt(enemy.getName()));
+        System.out.println("|Deine Lebenspunkte: " + player.getHealthState() + "|" +
+        "\n|Lebenspunkte Gegner: " + enemy.getHealthState() + "|" +
+        "\n|Equipped Weapon: " + player.getEquippedWeapon() + "|" +
+                "\n  _     _         __ _      _   _   _ \n" +
+                " | |___| |_ ___  / _(_)__ _| |_| |_| |\n" +
+                " | / -_)  _(_-< |  _| / _` | ' \\  _|_|\n" +
+                " |_\\___|\\__/__/ |_| |_\\__, |_||_\\__(_)\n" +
+                "                      |___/           ");
 
 
         while (in.gameState()) {
-            System.out.println("Drücke 1) um anzugreifen oder 2) um zu verteidigen.");
+            System.out.println("Drücke 1) um anzugreifen oder 2) um das Pokemon zu streicheln");
 
             try {
                 fight(in, enemy, equippedWeapon);
@@ -56,7 +63,6 @@ public class MobRoom extends AbstractRoom {
                 System.out.println(e.getMessage());
             }
 
-            evaluateFight(in, enemy, player);
 
         }
     }
@@ -71,71 +77,84 @@ public class MobRoom extends AbstractRoom {
                 player.attack(enemy, equippedWeapon);
             } catch (EnemyDeadException e) {
                 System.out.println(e.getMessage());
+                System.out.println("Hoffentlich kommst du damit klar, ein Pokemon getötet zu haben... du Mörder!");
                 in.winGame();
                 itemGenerator.interactWithRoomLoot();
                 return;
             }
             System.out.println("Der Gegner ist an der Reihe!");
             enemy.attack(player);
+            evaluateFight(in, enemy, player);
         }
 
         if (input == 2) {
-            if (Math.random() < 0.5)
-                System.out.println("Dein Abwehrversuch war erfolgreich!");
-            else {
-                System.out.println("Also diese Abwehr ist ja mehr als lächerlich... " +
-                        "\n Dein Gegner ist nicht gerade begeistert und greift an!");
+            if (Math.random() < 0.5) {
+                System.out.println(
+                        "\n                   .-.  .-.\n" +
+                        "                  |   \\/   |\n" +
+                        "                  \\        /\n" +
+                        "                   `\\    /`\n" +
+                        "                     `\\/`" +
+                        "\nDas Pokemon scheint die Streicheleinheit genossen zu haben. Es greift dich nicht an!");
+                evaluateFight(in, enemy, player);
+            } else {
+                System.out.println("Also ein Talent im Streicheln hast du schon mal nicht..." +
+                        "\n Das Pokemon greift dich an!");
                 enemy.attack(player);
+                evaluateFight(in, enemy, player);
             }
         }
     }
 
 
     private void evaluateFight(GameInput in, Enemy enemy, Player player) {
-        System.out.println("Lebenspunkte des Spielers: " + Player.getPlayerInstance().getHealthState());
-        System.out.println("Lebenspunkte des Gegners: " + enemy.getHealthState());
+        System.out.println("|Lebenspunkte des Spielers: " + Player.getPlayerInstance().getHealthState() + "|");
+        System.out.println("|Lebenspunkte des Gegners: " + enemy.getHealthState() + "|");
         chooseItem(player);
+        System.out.println("               _                          _ \n" +
+                "  _ _  _____ _| |_   _ _ ___ _  _ _ _  __| |\n" +
+                " | ' \\/ -_) \\ /  _| | '_/ _ \\ || | ' \\/ _` |\n" +
+                " |_||_\\___/_\\_\\\\__| |_| \\___/\\_,_|_||_\\__,_|");
     }
 
     private void chooseItem(Player player) {
         System.out.println("Möchstest du ein Item einsetzen? " +
-                "\n Wenn ja, tippe [Heiltrank] oder [Fluchtseil]" +
-                "\n ansonsten, tippe [nein]");
+                "\n Wenn ja, tippe Heiltrank [ht] oder Fluchtseil [fs]" +
+                "\n ansonsten, tippe Nein [n]");
 
         String input = scan.nextLine();
-        while (!(input.equals("Heiltrank")) && !(input.equals("Fluchtseil")) && !(input.equals("nein"))) {
+        while (!(input.equalsIgnoreCase("Heiltrank")) && !(input.equalsIgnoreCase("ht"))
+                && !(input.equalsIgnoreCase("Fluchtseil")) && !(input.equalsIgnoreCase("fs"))
+                && !(input.equalsIgnoreCase("nein")) && !(input.equalsIgnoreCase("n"))) {
             System.out.println("Falsche Eingabe, bitte erneut eintippen");
             input = scan.nextLine();
         }
 
-        switch (input) {
-            case "Heiltrank":
-                if (Inventory.size() == 0)
-                    System.out.println("Dein Inventar ist leer!");
-                else if (checkHealthPotion()) {
-                    System.out.println("Du setzt einen Heiltrank ein");
-                    player.getConsumableFromInventory("Heiltrank").consume();
-                } else {
-                    System.out.println("Du hast keinen Heiltrank!");
-                }
-
-                break;
+        if (input.equalsIgnoreCase("Heiltrank") || input.equalsIgnoreCase("ht")) {
+            if (Inventory.size() == 0)
+                System.out.println("Dein Inventar ist leer!");
+            else if (checkHealthPotion()) {
+                System.out.println("Du setzt einen Heiltrank ein");
+                player.getConsumableFromInventory("Heiltrank").consume();
+            } else {
+                System.out.println("Du hast keinen Heiltrank!");
+            }
 
 
-            case "Fluchtseil":
+            if (input.equalsIgnoreCase("Fluchtseil") || input.equalsIgnoreCase("fs"))
                 if (Inventory.size() == 0)
                     System.out.println("Dein Inventar ist leer!");
                 else if (checkEscRope()) {
                     System.out.println("Du setzt ein Fluchtseil ein!");
                     skip();
+                    player.takeItemFromInventory("Fluchtseil");
                     player.getConsumableFromInventory("Fluchtseil").consume();
                 } else {
                     System.out.println("Du hast kein Fluchtseil!");
 
                 }
 
-                break;
-            case "nein":
+            if (input.equalsIgnoreCase("nein") || input.equalsIgnoreCase("n"))
                 return;
         }
 

@@ -12,6 +12,7 @@ public class EscapeRope extends Item implements Consumable{
 
     @Override
     public void consume() {
+
         GameState.getGameStateInstance().escapeRopeActive = true;
     }
 }
