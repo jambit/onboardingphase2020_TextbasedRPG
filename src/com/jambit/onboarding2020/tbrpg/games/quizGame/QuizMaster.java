@@ -1,6 +1,7 @@
 package com.jambit.onboarding2020.tbrpg.games.quizGame;
 
-import com.jambit.onboarding2020.tbrpg.core.ItemGenerator;
+import com.jambit.onboarding2020.tbrpg.core.GameInput;
+import com.jambit.onboarding2020.tbrpg.core.GameState;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.games.Playable;
@@ -11,6 +12,7 @@ import java.util.*;
 public class QuizMaster implements Playable {
 
     Random random = new Random();
+    private ArrayList<Quiz> possibleQuizzes;
 
     @Override
     public void play() throws PlayerDeadException, InterruptedException {
@@ -28,31 +30,16 @@ public class QuizMaster implements Playable {
                 " ░ ▒░  ░ ░░▒░ ░ ░  ▒ ░░░▒ ▒ ░ ▒ ░  ░ \n" +
                 "   ░   ░  ░░░ ░ ░  ▒ ░░ ░ ░ ░ ░    ░ \n" +
                 "    ░       ░      ░    ░ ░     ░    ");
-        Thread.sleep(2000);
+
         System.out.println(">>Du wirst drei Fragen beantworten müssen... nur so kannst du diesen Raum verlassen!<<");
         System.out.println(">>Die erste Frage lautet...<<");
-
-        ArrayList<Quiz> possibleQuizzes = new ArrayList<>();
-        possibleQuizzes.add(new Quiz_01());
-        possibleQuizzes.add(new Quiz_02());
-        possibleQuizzes.add(new Quiz_03());
-        possibleQuizzes.add(new Quiz_04());
-        possibleQuizzes.add(new Quiz_05());
-        possibleQuizzes.add(new Quiz_06());
-        possibleQuizzes.add(new Quiz_07());
-        possibleQuizzes.add(new Quiz_08());
-        possibleQuizzes.add(new Quiz_09());
+        GameInput.waitTillEnter();
 
 
-        //todo: no repitition
+        initialzePossibleQuizzList();
 
-        ArrayList<Quizzzable> quizList = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            int randomIndex = random.nextInt(possibleQuizzes.size());
-            quizList.add(possibleQuizzes.get(randomIndex));
-            possibleQuizzes.remove(randomIndex);
+        ArrayList<Quizzzable> quizList = getQuizList();
 
-        }
         int rightAnswerCount = 0;
         for (Quizzzable quiz : quizList) {
             System.out.println("**************************************************************");
@@ -127,6 +114,33 @@ public class QuizMaster implements Playable {
         return playerInput;
     }
 
+    private void initialzePossibleQuizzList() {
+        if (GameState.QuizMasterQuizzes == null || GameState.QuizMasterQuizzes.size() < 3) {
+            GameState.QuizMasterQuizzes.clear();
+            GameState.QuizMasterQuizzes.add(new Quiz_01());
+            GameState.QuizMasterQuizzes.add(new Quiz_02());
+            GameState.QuizMasterQuizzes.add(new Quiz_03());
+            GameState.QuizMasterQuizzes.add(new Quiz_04());
+            GameState.QuizMasterQuizzes.add(new Quiz_05());
+            GameState.QuizMasterQuizzes.add(new Quiz_06());
+            GameState.QuizMasterQuizzes.add(new Quiz_07());
+            GameState.QuizMasterQuizzes.add(new Quiz_08());
+            GameState.QuizMasterQuizzes.add(new Quiz_09());
+        }
+        possibleQuizzes = GameState.QuizMasterQuizzes;
+    }
+
+    private ArrayList<Quizzzable> getQuizList() {
+        ArrayList<Quizzzable> quizList = new ArrayList<>();
+        if (possibleQuizzes.size() >= 3) {
+            for (int i = 0; i < 3; i++) {
+                int randomIndex = random.nextInt(possibleQuizzes.size());
+                quizList.add(possibleQuizzes.get(randomIndex));
+                possibleQuizzes.remove(randomIndex);
+            }
+        } else initialzePossibleQuizzList();
+        return quizList;
+    }
 
 }
 

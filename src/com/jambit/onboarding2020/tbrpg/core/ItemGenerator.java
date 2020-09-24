@@ -1,5 +1,6 @@
 package com.jambit.onboarding2020.tbrpg.core;
 
+import com.jambit.onboarding2020.tbrpg.domain.Item.EscapeRope;
 import com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Item;
 import com.jambit.onboarding2020.tbrpg.domain.Item.Weapon;
@@ -7,12 +8,9 @@ import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class ItemGenerator {
 
@@ -47,24 +45,16 @@ public class ItemGenerator {
         if (consumable.equals("health")) {
             return new HealthPotion();
         } else if (consumable.equals("escape")) {
-            return newEscapeRope();
+            return new EscapeRope();
         }
         return null;
-    }
-
-    /*private Item newHealthPotion() {
-        return new Item(5, "Heiltrank", "Heilt dich ein bisschen :)");
-    }*/
-
-    private Item newEscapeRope() {
-        return new Item(10, "Fluchttrick", "Bruder muss los!");
     }
 
     private void initializeJunkNames() {
         junkNames.add("Rubin");
         junkNames.add("Smaragd");
         junkNames.add("Diamant");
-        junkNames.add("Eisen");
+        junkNames.add("Platin");
         junkNames.add("Goldring");
         junkNames.add("Medallion");
     }
@@ -109,10 +99,10 @@ public class ItemGenerator {
 
         Item lootItem = this.getRoomLoot();
         int lootMoney = (random.nextInt(30));
-        //todo: change lootMoney variable based on difficulty?
+
 
         Player.getPlayerInstance().increaseBalance(lootMoney);
-        System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + " Gold.");
+        System.out.println("Beim Verlassen des Raumes findest du " + lootMoney + " SpaceDollar.");
 
         System.out.println("\nSo sieht dein Inventar gerade aus:");
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
@@ -120,21 +110,27 @@ public class ItemGenerator {
 
         System.out.println(". . . . . . . . . . . . . . . . . . . . .");
         System.out.println("|  Dein gesamtes Gold: \t\t" + Player.getPlayerInstance().getBalance()+"\t\t\t|");
-        System.out.println("|  Deine Lebenspunkte: \t\t" + Player.getPlayerInstance().getHealthState()+"\t\t\t|");
-        System.out.println("|  Dein Angriffsschaden: \t"+ Player.getPlayerInstance().getAttackDamage()+"\t\t\t|");
-        System.out.println("|  Ausgerüstete Waffe: \t\t" +Player.getPlayerInstance().printEquippedWeapon()+"\t\t|");
+        System.out.println("|  Deine Lebenspunkte: \t\t" + Player.getPlayerInstance().getHealthState() + "\t\t\t|");
+        System.out.println("|  Dein Angriffsschaden: \t" + Player.getPlayerInstance().getAttackDamage() + "\t\t\t|");
+        System.out.println("|  Ausgerüstete Waffe: \t\t" + Player.getPlayerInstance().printEquippedWeapon() + "\t\t|");
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
 
         System.out.println();
 
-        
-
 
         System.out.println("Außerdem findest du folgendes Item:");
+        System.out.println("         __________\n" +
+                "        /\\____;;___\\\n" +
+                "       | /         /\n" +
+                "       `. ________/   \n" +
+                "        |\\         \\\n" +
+                "        | |---------|\n" +
+                "        \\ |    ))   |\n" +
+                "         \\|_________|\n");
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("=> "+lootItem);
+        System.out.println("=> " + lootItem);
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("Möchtest du es [einstecken] oder es liegen lassen und den Raum [verlassen]?");
+        System.out.println("Möchtest du es einstecken [e] oder es liegen lassen und weitergehen [w]?");
 
 
         String gameInput = "";
@@ -143,22 +139,38 @@ public class ItemGenerator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-     
-            if (gameInput.equalsIgnoreCase("einstecken")) {
+
+        while (!(gameInput.equalsIgnoreCase("weitergehen") || gameInput.equalsIgnoreCase("w"))) {
+            if (gameInput.equalsIgnoreCase("einstecken") || gameInput.equalsIgnoreCase("e")) {
                 Player.getPlayerInstance().putInInventory(lootItem);
                 System.out.println("Du steckst das Item ein und gehst weiter.");
                 return;
             } else {
-                System.out.println("Du kannst das Item nur [einstecken] oder es liegen lassen und den Raum [verlassen].");
+                System.out.println("Möchtest du es einstecken [e] oder es liegen lassen und weitergehen [w]?");
 
             }
-
-        if (gameInput.equalsIgnoreCase("weitergehen"))  {
-            System.out.println("Du lässt das Item liegen und gehst weiter.");
+            gameInput = "";
+            try {
+                gameInput = in.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        return;
-
+        System.out.println("Bist du dir sicher, dass du den schönen Loot einfach liegen lassen willst? Tippe: [J]a/[N]ein");
+        gameInput = "";
+        try {
+            gameInput = in.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (gameInput.equalsIgnoreCase("n") || gameInput.equalsIgnoreCase("nein")) {
+            Player.getPlayerInstance().putInInventory(lootItem);
+            System.out.println("Du steckst das Item ein und gehst weiter.");
+            return;
+        } else {
+            System.out.println("Du lässt das Item liegen und gehst weiter.");
+        }
     }
 }
 

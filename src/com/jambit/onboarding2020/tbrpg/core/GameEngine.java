@@ -16,7 +16,6 @@ public class GameEngine {
 
    private final ArrayList<AbstractRoom> rooms;
    private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-   private final GameState gameState = new GameState();
    public Scanner input = new Scanner(System.in);
 
    public GameEngine(ArrayList<AbstractRoom> rooms) {
@@ -32,7 +31,6 @@ public class GameEngine {
 
       for (AbstractRoom room : rooms) {
 
-         Thread.sleep(3000);
 
          System.out.println();
          System.out.println("*************************************************************" +
@@ -50,8 +48,8 @@ public class GameEngine {
 
          room.printWelcomeMessage();
 
-         if (!gameState.escapeRopeActive) {
-            gameState.escapeRopeActive = false;
+         if (!GameState.getGameStateInstance().escapeRopeActive) {
+            GameState.getGameStateInstance().escapeRopeActive = false;
 
             try {
                room.enter();
@@ -78,8 +76,7 @@ public class GameEngine {
       Player player = Player.getPlayerInstance();
 
 
-      System.out.println("Nicht schlecht, du hast den Raum geschafft \n" +
-              "Du ruhst dich im Gang zwischen den Räumen kurz aus");
+      System.out.println("Du ruhst dich im Gang zwischen den Räumen kurz aus");
 
       System.out.println("Was möchtest du in der Zwischenzeit tun?" +
               "\n [Heiltrank] [Fluchttrick]" +
@@ -108,7 +105,7 @@ public class GameEngine {
             }
 
          } else if (line.equalsIgnoreCase("statte Waffe aus")) {
-            if (!player.isWeapenInventoryEmpty()) {
+            if (!player.isWeaponInventoryEmpty()) {
                System.out.println("Du hast im Moment keine Waffen im Inventar. Tippe: " +
                        "\n [Heiltrank] [Fluchttrick]" +
                        "\n [statte Waffe aus] [lege Waffe ab] " +
