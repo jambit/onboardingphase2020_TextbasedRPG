@@ -109,26 +109,26 @@ public class GameEngine {
    }
 
    private void rollCredits(){
-      Output.slow("::::::CREDITS::::::");
-      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
-      Output.slow("\t\tStefan");
-      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
-      Output.slow("\t\tEva");
-      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
-      Output.slow("\t\tCarina");
-      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
-      Output.slow("\t\tChristoph");
-      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
-      Output.slow("\t\tLukas");
-      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
-      Output.slow("\t\tSteffi");
+      Output.slow("::::::CREDITS::::::\n");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-\n");
+      Output.slow("\t\tStefan\n");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-\n");
+      Output.slow("\t\tEva\n");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-\n");
+      Output.slow("\t\tCarina\n");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-\n");
+      Output.slow("\t\tChristoph\n");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-\n");
+      Output.slow("\t\tLukas\n");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-\n");
+      Output.slow("\t\tSteffi\n");
 
-      Output.slow("::::::SPECIAL THANKS::::::");
-      Output.slow("\t\tCherry");
-      Output.slow("\t\tDie Zweitjahr-Azubis");
-      Output.slow("\t\tCherry");
-      Output.slow("\t\tHannah F.");
-      Output.slow("\t\tCherry");
+      Output.slow("::::::SPECIAL THANKS::::::\n");
+      Output.slow("\t\tCherry\n");
+      Output.slow("\t\tDie Zweitjahr-Azubis\n");
+      Output.slow("\t\tCherry\n");
+      Output.slow("\t\tHannah F.\n");
+      Output.slow("\t\tCherry\n");
 
 
    }

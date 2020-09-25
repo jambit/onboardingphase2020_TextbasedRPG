@@ -69,7 +69,7 @@ public class ItemGenerator {
         this.junkLore.add("Das sieht wertvoll aus.");
         this.junkLore.add("Wie zum Teufel kommt das hier hin?");
         this.junkLore.add("Das kann ich verkaufen.");
-        this.junkLore.add("Juhu");
+        this.junkLore.add("Mmein Ssschatz!");
         this.junkLore.add("Das stecke ich besser ein, um es dem Besitzer zurückzugeben ;)");
     }
 

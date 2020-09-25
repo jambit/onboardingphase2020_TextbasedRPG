@@ -166,7 +166,22 @@ public class Player extends Person {
 
         if (this.healthState <= 0) {
             this.healthState = 0;
-            throw new PlayerDeadException("Spieler ist tot.");
+            throw new PlayerDeadException("             ___          \n" +
+                    "            /   \\\\        \n" +
+                    "       /\\\\ | . . \\\\       \n" +
+                    "     ////\\\\|     ||       \n" +
+                    "   ////   \\\\ ___//\\       U DED\n" +
+                    "  ///      \\\\      \\      \n" +
+                    " ///       |\\\\      |     \n" +
+                    "//         | \\\\  \\   \\    \n" +
+                    "/          |  \\\\  \\   \\   \n" +
+                    "           |   \\\\ /   /   \n" +
+                    "           |    \\/   /    \n" +
+                    "           |     \\\\/|     \n" +
+                    "           |      \\\\|     \n" +
+                    "           |       \\\\     \n" +
+                    "           |        |     \n" +
+                    "           |_________\\    ");
         }
     }
 
