@@ -19,7 +19,7 @@ public class StoryRoom extends AbstractRoom {
                 "\t\t+  *        ^\n" +
                 "\t\t  .                      °              *");
 
-        String space = "       +          .'.                      +         o\n" +
+        String space = "       +           .'.                      +         o\n" +
                 "            '      |o|\n" +
                 "                  .'o'.\t\t\to\n" +
                 "                  |.-.|                  \n" +
@@ -120,7 +120,7 @@ public class StoryRoom extends AbstractRoom {
         System.out.println("\n" +
                 ".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.\n" +
                 "|  1) Du musst durch alle Räume der Behörde und zum Schluss den         |\n" +
-                "|     den Passierschein am Schalter für Heimführungsgesuche abholen.    |\n" +
+                "|     Passierschein am Schalter für Heimführungsgesuche abholen.        |\n" +
                 "|                                                                       |\n" +
                 "|  2) Die Gesetze der Physik oder Logik spielen innerhalb der           |\n" +
                 "|     Behörde verrückt. Räume ändern sich. Wesen werden verrückt.       |\n" +

@@ -11,6 +11,7 @@ public class QuizRoom extends AbstractRoom {
     public void printRoomMessage() {
         System.out.println("Der nächste Raum wird von Flutlichtern beleuchtet. Es erinnert dich an Gameshows oder Quizspiele.");
     }
+
     public void printWelcomeMessage() {
         System.out.println("Du betrittst den Raum." +
                 "\nVor dir siehst du eine große Halle, die hell erleuchtet und mit Kameras ausgestattet ist." +
@@ -33,7 +34,6 @@ public class QuizRoom extends AbstractRoom {
                 "\n>>Argh! Du hast mich... besiegt!<<" +
                 "\nDer QuizMaster sinkt zu Boden. Dein Weg ist frei!");
         GameInput.waitTillEnter();
-
 
 
         ItemGenerator itemGenerator = new ItemGenerator();
