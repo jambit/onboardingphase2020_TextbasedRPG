@@ -15,6 +15,7 @@ import java.util.Scanner;
 
 public class GameEngine {
 
+   private boolean gameWon = true;
    private final ArrayList<AbstractRoom> rooms;
    private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
    public Scanner input = new Scanner(System.in);
@@ -48,13 +49,13 @@ public class GameEngine {
          }
 
 
-
          if (!GameState.getGameStateInstance().escapeRopeActive) {
             room.printWelcomeMessage();
             try {
                room.enter();
             } catch (PlayerDeadException | InterruptedException | FileNotFoundException e) {
                System.out.println(e.getMessage());
+               gameWon = false;
                break;
             }
          }
@@ -62,6 +63,14 @@ public class GameEngine {
       }
 
 
+      if (gameWon) {
+         printGameWonText();
+      }
+      rollCredits();
+      in.close();
+   }
+
+   private void printGameWonText() {
       System.out.println("Glückwunsch! Du hast das Spiel gewonnen. Jetzt kannst du wieder auf deinen Heimatplaneten zurück,\n" +
               "auf dem ein solches Chaos unvorstellbar ist!");
       String firework = "        .\n" +
@@ -104,8 +113,6 @@ public class GameEngine {
               "               *        '             '                          .\n" +
               "     .                          *        .           *  *\n" +
               "             *        .                                    '");
-      rollCredits();
-      in.close();
    }
 
    private void rollCredits(){
@@ -129,8 +136,6 @@ public class GameEngine {
       Output.slow("\t\tCherry\n");
       Output.slow("\t\tHannah F.\n");
       Output.slow("\t\tCherry\n");
-
-
    }
 
    private void startStory() {
