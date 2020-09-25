@@ -196,7 +196,7 @@ public class GameEngine {
                   index = 0;
                   System.out.println("Ungültiger Zahlenwert für Waffe, wähle einen gültigen Index.");
                }
-               if (index < player.getWeaponsFromInventory().size() && index != 0) {
+               if ((index <= player.getWeaponsFromInventory().size()) && (index > 0)) {
                   player.equipWeapon(player.getWeaponsFromInventory().get(index - 1));
                }
             }
