@@ -143,7 +143,7 @@ public class Hangman {
     }
 
     public String getKnownWord() {
-        return Arrays.toString(knownWord);
+        return String.valueOf(knownWord);
     }
 
     public void increaseStage() throws HangmanLoseException {

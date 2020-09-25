@@ -73,9 +73,13 @@ public class HangmanRoom extends AbstractRoom {
 
             try {
                 if (input.length() > 1) {
-                    evaluateWord(gameInput, hangman, input);
+                    if (evaluateWord(gameInput, hangman, input)) {
+                        break;
+                    }
                 } else {
-                    evaluateLetter(gameInput, hangman, input);
+                    if (evaluateLetter(gameInput, hangman, input)) {
+                        break;
+                    }
                 }
             } catch (HangmanLoseException e) {
                 System.out.println(e.getMessage());
@@ -90,18 +94,21 @@ public class HangmanRoom extends AbstractRoom {
         }
     }
 
-    private void evaluateWord(GameInput in, Hangman hangman, String input) throws HangmanLoseException {
+    private boolean evaluateWord(GameInput in, Hangman hangman, String input) throws HangmanLoseException {
         if (hangman.guessWord(input)) {
             in.endGame();
             System.out.println("Du hast das Spiel gewonnen!");
             itemGenerator.interactWithRoomLoot();
+            return true;
         } else {
             System.out.println("Buchstabe falsch geraten!");
             hangman.increaseStage();
         }
+
+        return false;
     }
 
-    private void evaluateLetter(GameInput in, Hangman hangman, String input) throws HangmanLoseException {
+    private boolean evaluateLetter(GameInput in, Hangman hangman, String input) throws HangmanLoseException {
         char inputChar = input.charAt(0);
 
         if (hangman.guessLetter(inputChar)) {
@@ -110,12 +117,14 @@ public class HangmanRoom extends AbstractRoom {
                 in.endGame();
                 System.out.println("Du hast das Spiel gewonnen!");
                 itemGenerator.interactWithRoomLoot();
-
+                return true;
             }
         } else {
             System.out.println("Buchstabe falsch geraten!");
             hangman.increaseStage();
         }
+
+        return false;
     }
 
     public String getRandomWord() throws FileNotFoundException {
