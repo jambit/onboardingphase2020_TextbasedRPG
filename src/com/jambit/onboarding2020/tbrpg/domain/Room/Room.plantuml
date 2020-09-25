@@ -1,0 +1,184 @@
+@startuml
+
+title __ROOM's Class Diagram__\n
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      abstract class com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom {
+          + enter()
+          + printRoomMessage()
+          + printWelcomeMessage()
+          + skip()
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom {
+          ~ Inventory : ArrayList<Item>
+          ~ bossDamage : int
+          ~ scan : Scanner
+          - in : BufferedReader
+          + checkEscRope()
+          + checkHealthPotion()
+          + enter()
+          + printRoomMessage()
+          + printWelcomeMessage()
+          + skip()
+          - chooseItem()
+          - evaluateFight()
+          - fight()
+          - getInputStringFromPlayer()
+          - interactWithFirstBoss()
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.ExampleRoom {
+          + enter()
+          + printWelcomeMessage()
+          + skip()
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.HangmanRoom {
+          - wordlist : String
+          + enter()
+          + getRandomWord()
+          + printRoomMessage()
+          + printWelcomeMessage()
+          - evaluateLetter()
+          - evaluateWord()
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom {
+          - in : BufferedReader
+          - inventory : ArrayList<Item>
+          - playerWantsToLeave : boolean
+          + MerchantRoom()
+          + enter()
+          + printInventory()
+          + printRoomMessage()
+          + printWelcomeMessage()
+          - buyFromMerchant()
+          - initializeInventory()
+          - sellToMerchant()
+          - takeIntOrAbortFromCLI()
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom {
+          ~ Inventory : ArrayList<Item>
+          ~ scan : Scanner
+          + checkEscRope()
+          + checkHealthPotion()
+          + enter()
+          + printRoomMessage()
+          + printWelcomeMessage()
+          + skip()
+          - chooseItem()
+          - evaluateFight()
+          - fight()
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.NPCRoom_PublicOfficial {
+          - in : BufferedReader
+          + enter()
+          {static} + printRandomSentence()
+          + printRoomMessage()
+          + printWelcomeMessage()
+          - getInputStringFromPlayer()
+          - printFirstTry()
+          - printSecondTry()
+          - printThirdTry()
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.QuizRoom {
+          + enter()
+          + printRoomMessage()
+          + printWelcomeMessage()
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom {
+          - in : BufferedReader
+          + enter()
+          + printWelcomeMessage()
+          - getActionButtonpressFromPlayer()
+          - getActionExplanationchoiceFromPlayer()
+          - getActionLookaroundFromPlayer()
+          - getInputStringFromPlayer()
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.TicTacToeRoom {
+          + enter()
+          + printRoomMessage()
+          + printWelcomeMessage()
+          - printGameIsWon()
+      }
+    }
+  }
+  
+
+  com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom o-- com.jambit.onboarding2020.tbrpg.domain.Player.Boss : boss
+  com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom o-- com.jambit.onboarding2020.tbrpg.domain.Player.Player : player
+  com.jambit.onboarding2020.tbrpg.domain.Room.ExampleRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.HangmanRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.HangmanRoom o-- com.jambit.onboarding2020.tbrpg.core.ItemGenerator : itemGenerator
+  com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom o-- com.jambit.onboarding2020.tbrpg.domain.Player.Player : player
+  com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom o-- com.jambit.onboarding2020.tbrpg.core.ItemGenerator : itemGenerator
+  com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom o-- com.jambit.onboarding2020.tbrpg.domain.Player.Player : player
+  com.jambit.onboarding2020.tbrpg.domain.Room.NPCRoom_PublicOfficial -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.QuizRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.TicTacToeRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,511 @@
+@startuml
+
+title __ONBOARDINGPHASE2020_TEXTBASEDRPG's Class Diagram__\n
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    class com.jambit.onboarding2020.tbrpg.Main {
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace core {
+      class com.jambit.onboarding2020.tbrpg.core.DungeonGenerator {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace core {
+      class com.jambit.onboarding2020.tbrpg.core.GameEngine {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace core {
+      class com.jambit.onboarding2020.tbrpg.core.GameInput {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace core {
+      class com.jambit.onboarding2020.tbrpg.core.GameState {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace core {
+      class com.jambit.onboarding2020.tbrpg.core.InvalidInputException {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace core {
+      class com.jambit.onboarding2020.tbrpg.core.ItemGenerator {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace core {
+      enum RoomGamesResult {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace core {
+      class com.jambit.onboarding2020.tbrpg.core.Test_Room {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Item {
+      interface com.jambit.onboarding2020.tbrpg.domain.Item.Consumable {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Item {
+      class com.jambit.onboarding2020.tbrpg.domain.Item.EscapeRope {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Item {
+      class com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Item {
+      class com.jambit.onboarding2020.tbrpg.domain.Item.Item {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Item {
+      class com.jambit.onboarding2020.tbrpg.domain.Item.Weapon {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Player {
+      class com.jambit.onboarding2020.tbrpg.domain.Player.Boss {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Player {
+      class com.jambit.onboarding2020.tbrpg.domain.Player.Enemy {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Player {
+      class com.jambit.onboarding2020.tbrpg.domain.Player.EnemyDeadException {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Player {
+      abstract class com.jambit.onboarding2020.tbrpg.domain.Player.Person {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Player {
+      class com.jambit.onboarding2020.tbrpg.domain.Player.Player {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Player {
+      class com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      abstract class com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.ExampleRoom {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.HangmanRoom {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.NPCRoom_PublicOfficial {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.QuizRoom {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace domain.Room {
+      class com.jambit.onboarding2020.tbrpg.domain.Room.TicTacToeRoom {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      class com.jambit.onboarding2020.tbrpg.games.Magic8Ball {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      interface com.jambit.onboarding2020.tbrpg.games.Playable {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      class com.jambit.onboarding2020.tbrpg.games.TicTacToe {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace hangman {
+        class com.jambit.onboarding2020.tbrpg.games.hangman.Hangman {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace hangman {
+        class com.jambit.onboarding2020.tbrpg.games.hangman.HangmanLoseException {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        class com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        class com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_01 {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_02 {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_03 {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_04 {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_05 {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_06 {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_07 {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_08 {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_09 {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          interface com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace sentenceGenerator {
+        class com.jambit.onboarding2020.tbrpg.games.sentenceGenerator.MarkovChain {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace utils {
+      class com.jambit.onboarding2020.tbrpg.utils.GameConstants {
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace utils {
+      abstract class com.jambit.onboarding2020.tbrpg.utils.Output {
+      }
+    }
+  }
+  
+
+  com.jambit.onboarding2020.tbrpg.core.GameInput -up-|> java.io.BufferedReader
+  com.jambit.onboarding2020.tbrpg.domain.Item.EscapeRope .up.|> com.jambit.onboarding2020.tbrpg.domain.Item.Consumable
+  com.jambit.onboarding2020.tbrpg.domain.Item.EscapeRope -up-|> com.jambit.onboarding2020.tbrpg.domain.Item.Item
+  com.jambit.onboarding2020.tbrpg.domain.Item.EscapeRope o-- com.jambit.onboarding2020.tbrpg.domain.Player.Player : player
+  com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion .up.|> com.jambit.onboarding2020.tbrpg.domain.Item.Consumable
+  com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion -up-|> com.jambit.onboarding2020.tbrpg.domain.Item.Item
+  com.jambit.onboarding2020.tbrpg.domain.Item.HealthPotion o-- com.jambit.onboarding2020.tbrpg.domain.Player.Player : player
+  com.jambit.onboarding2020.tbrpg.domain.Item.Weapon -up-|> com.jambit.onboarding2020.tbrpg.domain.Item.Item
+  com.jambit.onboarding2020.tbrpg.domain.Player.Boss -up-|> com.jambit.onboarding2020.tbrpg.domain.Player.Enemy
+  com.jambit.onboarding2020.tbrpg.domain.Player.Enemy -up-|> com.jambit.onboarding2020.tbrpg.domain.Player.Person
+  com.jambit.onboarding2020.tbrpg.domain.Player.Player -up-|> com.jambit.onboarding2020.tbrpg.domain.Player.Person
+  com.jambit.onboarding2020.tbrpg.domain.Player.Player o-- com.jambit.onboarding2020.tbrpg.domain.Item.Weapon : equippedWeapon
+  com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException -up-|> com.jambit.onboarding2020.tbrpg.domain.Player.EnemyDeadException
+  com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom o-- com.jambit.onboarding2020.tbrpg.domain.Player.Boss : boss
+  com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom o-- com.jambit.onboarding2020.tbrpg.domain.Player.Player : player
+  com.jambit.onboarding2020.tbrpg.domain.Room.ExampleRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.HangmanRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.HangmanRoom o-- com.jambit.onboarding2020.tbrpg.core.ItemGenerator : itemGenerator
+  com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom o-- com.jambit.onboarding2020.tbrpg.domain.Player.Player : player
+  com.jambit.onboarding2020.tbrpg.domain.Room.MerchantRoom o-- com.jambit.onboarding2020.tbrpg.core.ItemGenerator : itemGenerator
+  com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.MobRoom o-- com.jambit.onboarding2020.tbrpg.domain.Player.Player : player
+  com.jambit.onboarding2020.tbrpg.domain.Room.NPCRoom_PublicOfficial -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.QuizRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.domain.Room.TicTacToeRoom -up-|> com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom
+  com.jambit.onboarding2020.tbrpg.games.Magic8Ball .up.|> com.jambit.onboarding2020.tbrpg.games.Playable
+  com.jambit.onboarding2020.tbrpg.games.TicTacToe o-- com.jambit.onboarding2020.tbrpg.core.RoomGamesResult : gameresult
+  com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.QuizMaster .up.|> com.jambit.onboarding2020.tbrpg.games.Playable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_01 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_02 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_02 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_03 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_03 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_04 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_04 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_05 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_05 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_06 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_06 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_07 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_07 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_08 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_08 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_09 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_09 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
