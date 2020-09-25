@@ -3,11 +3,8 @@ package com.jambit.onboarding2020.tbrpg.core;
 import com.jambit.onboarding2020.tbrpg.domain.Player.Player;
 import com.jambit.onboarding2020.tbrpg.domain.Player.PlayerDeadException;
 import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
-
-import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom;
 import com.jambit.onboarding2020.tbrpg.utils.Output;
-
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -50,11 +47,10 @@ public class GameEngine {
             this.interactWithInventory();
          }
 
-         room.printWelcomeMessage();
+
 
          if (!GameState.getGameStateInstance().escapeRopeActive) {
-            GameState.getGameStateInstance().escapeRopeActive = false;
-
+            room.printWelcomeMessage();
             try {
                room.enter();
             } catch (PlayerDeadException | InterruptedException | FileNotFoundException e) {
@@ -62,6 +58,7 @@ public class GameEngine {
                break;
             }
          }
+         GameState.getGameStateInstance().escapeRopeActive = false;
       }
 
 
