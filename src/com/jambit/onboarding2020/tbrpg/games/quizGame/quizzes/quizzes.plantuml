@@ -1,0 +1,164 @@
+@startuml
+
+title __QUIZZES's Class Diagram__\n
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_01 {
+              + Quiz_01()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_02 {
+              + Quiz_02()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_03 {
+              + Quiz_03()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_04 {
+              + Quiz_04()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_05 {
+              + Quiz_05()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_06 {
+              + Quiz_06()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_07 {
+              + Quiz_07()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_08 {
+              + Quiz_08()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          class com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_09 {
+              + Quiz_09()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.jambit.onboarding2020.tbrpg {
+    namespace games {
+      namespace quizGame {
+        namespace quizzes {
+          interface com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable {
+              {abstract} + checkAnswer()
+              {abstract} + checkWrongs()
+              {abstract} + getAnswers()
+              {abstract} + getQuizQuestion()
+          }
+        }
+      }
+    }
+  }
+  
+
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_01 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_02 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_02 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_03 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_03 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_04 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_04 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_05 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_05 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_06 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_06 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_07 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_07 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_08 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_08 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_09 .up.|> com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quizzzable
+  com.jambit.onboarding2020.tbrpg.games.quizGame.quizzes.Quiz_09 -up-|> com.jambit.onboarding2020.tbrpg.games.quizGame.Quiz
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
