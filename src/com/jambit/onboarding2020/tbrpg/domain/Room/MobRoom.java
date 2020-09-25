@@ -124,7 +124,7 @@ public class MobRoom extends AbstractRoom {
 
     private void chooseItem(Player player) {
         System.out.println("Möchstest du ein Item einsetzen? " +
-                "\nWenn ja, tippe Heiltrank [ht] oder Fluchtseil [fs]" +
+                "\nWenn ja, tippe Heiltrank [ht]" +
                 "\nansonsten, tippe Nein [n]");
 
         String input = scan.nextLine();

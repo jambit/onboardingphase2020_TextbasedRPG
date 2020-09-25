@@ -170,7 +170,7 @@ public class BossRoom extends AbstractRoom {
 
     private void chooseItem(Player player) {
         System.out.println("Möchstest du ein Item einsetzen? " +
-                "\n Wenn ja, tippe Heiltrank [ht] oder Fluchtseil [fs]" +
+                "\n Wenn ja, tippe Heiltrank [ht]" +
                 "\n ansonsten, tippe Nein [n]");
 
         String input = scan.nextLine();

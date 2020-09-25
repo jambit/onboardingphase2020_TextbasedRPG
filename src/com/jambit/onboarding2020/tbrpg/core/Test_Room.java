@@ -9,9 +9,7 @@ public class Test_Room {
     // TODO: 16.09.2020 Delete this class if not further needed
     public static void main(String[] args) throws PlayerDeadException {
 
-       BossRoom bossRoom= new BossRoom();
-        bossRoom.printWelcomeMessage();
-        bossRoom.enter();
+
 /*
 
 

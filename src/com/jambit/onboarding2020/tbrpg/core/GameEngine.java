@@ -6,6 +6,7 @@ import com.jambit.onboarding2020.tbrpg.domain.Room.AbstractRoom;
 
 import com.jambit.onboarding2020.tbrpg.domain.Room.BossRoom;
 import com.jambit.onboarding2020.tbrpg.domain.Room.StoryRoom;
+import com.jambit.onboarding2020.tbrpg.utils.Output;
 
 
 import java.io.BufferedReader;
@@ -64,8 +65,75 @@ public class GameEngine {
       }
 
 
-      System.out.println("Spiel beendet.");
+      System.out.println("Glückwunsch! Du hast das Spiel gewonnen. Jetzt kannst du wieder auf deinen Heimatplaneten zurück,\n" +
+              "auf dem ein solches Chaos unvorstellbar ist!");
+      String firework = "        .\n" +
+              "      .' |\t\n" +
+              "    .'   |\t \n" +
+              "    /`-._'\t  \n" +
+              "   /   /\t\n" +
+              "  /   /\n" +
+              " /   /  z\n" +
+              "(`-./\t z\n" +
+              " )\t\t  z\n" +
+              "'\t\t   zzzzzz";
+      Output.slow(firework);
+      System.out.println("\n" +
+              "              *    *\n" +
+              "   *         '       *       .  *   '     .           * *\n" +
+              "                                                               '\n" +
+              "       *                *'          *          *        '\n" +
+              "   .           *               |               /\n" +
+              "               '.         |    |      '       |   '     *\n" +
+              "                 \\*        \\   \\             /\n" +
+              "       '          \\     '* |    |  *        |*                *  *\n" +
+              "            *      `.       \\   |     *     /    *      '\n" +
+              "  .                  \\      |   \\          /               *\n" +
+              "     *'  *     '      \\      \\   '.       |\n" +
+              "        -._            `                  /         *\n" +
+              "  ' '      ``._   *                           '          .      '\n" +
+              "   *           *\\*          * .   .      *\n" +
+              "*  '        *    `-._                       .         _..:='        *\n" +
+              "             .  '      *       *    *   .       _.:--'\n" +
+              "          *           .     .     *         .-'         *\n" +
+              "   .               '             . '   *           *         .\n" +
+              "  *       ___.-=--..-._     *                '               '\n" +
+              "                                  *       *\n" +
+              "                *        _.'  .'       `.        '  *             *\n" +
+              "     *              *_.-'   .'            `.               *\n" +
+              "                   .'                       `._             *  '\n" +
+              "   '       '                        .       .  `.     .\n" +
+              "       .                      *                  `\n" +
+              "               *        '             '                          .\n" +
+              "     .                          *        .           *  *\n" +
+              "             *        .                                    '");
+      rollCredits();
       in.close();
+   }
+
+   private void rollCredits(){
+      Output.slow("::::::CREDITS::::::");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
+      Output.slow("\t\tStefan");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
+      Output.slow("\t\tEva");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
+      Output.slow("\t\tCarina");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
+      Output.slow("\t\tChristoph");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
+      Output.slow("\t\tLukas");
+      Output.slow("-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-");
+      Output.slow("\t\tSteffi");
+
+      Output.slow("::::::SPECIAL THANKS::::::");
+      Output.slow("\t\tCherry");
+      Output.slow("\t\tDie Zweitjahr-Azubis");
+      Output.slow("\t\tCherry");
+      Output.slow("\t\tHannah F.");
+      Output.slow("\t\tCherry");
+
+
    }
 
    private void startStory() {
