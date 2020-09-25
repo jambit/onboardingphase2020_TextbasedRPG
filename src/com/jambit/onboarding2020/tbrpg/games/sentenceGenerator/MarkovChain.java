@@ -63,7 +63,8 @@ public class MarkovChain {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(markov("src/com/jambit/onboarding2020/tbrpg/games/sentenceGenerator/alice_oz.txt", 3, 200));
+        String aliceURI = System.getProperty("user.dir") + "/resources/alice_oz.txt";
+        System.out.println(markov(aliceURI, 3, 200));
     }
 
 /*    public static void printRandomSentence() {
