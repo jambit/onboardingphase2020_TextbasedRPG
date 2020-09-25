@@ -39,8 +39,8 @@ public class ItemGenerator {
     }
 
     public Weapon newWeapon(int currentAtk) {
-        double critChance = Math.random();
-        double hitChance = Math.random();
+        double critChance = (Math.random()+ 0.2);
+        double hitChance = (Math.random() + 0.4);
         int nameindex = random.nextInt(weaponNames.size());
         int atkDamage = currentAtk - 5 + random.nextInt(20);
         return new Weapon(atkDamage, weaponNames.get(nameindex), weaponLore.get(nameindex), atkDamage, critChance, hitChance);
