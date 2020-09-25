@@ -190,7 +190,7 @@ public class TicTacToe {
 
         if (board[0][2] + board[1][1] + board[2][0] == NPC_INTEGER)  //checks diagonals
             for (int i = 0; i < board.length; i++)
-                for (int k = board.length; k >= 0; k--)
+                for (int k = board.length - 1; k >= 0; k--)
                     if (board[i][k] == 0) {
                         board[i][k] = NPC_INTEGER;
                         return true;
