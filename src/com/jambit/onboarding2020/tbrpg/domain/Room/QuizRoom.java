@@ -9,7 +9,7 @@ public class QuizRoom extends AbstractRoom {
 
     @Override
     public void printRoomMessage() {
-        System.out.println("Der nächste Raum wird von Flutlichtschaltern beleuchtet. Es erinnert dich an Gameshows oder Quizspiele.");
+        System.out.println("Der nächste Raum wird von Flutlichtern beleuchtet. Es erinnert dich an Gameshows oder Quizspiele.");
     }
     public void printWelcomeMessage() {
         System.out.println("Du betrittst den Raum." +
