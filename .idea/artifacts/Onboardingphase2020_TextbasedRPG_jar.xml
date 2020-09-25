@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Onboardingphase2020_TextbasedRPG:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Onboardingphase2020_TextbasedRPG_jar</output-path>
+    <root id="archive" name="Onboardingphase2020_TextbasedRPG.jar">
+      <element id="module-output" name="Onboardingphase2020_TextbasedRPG" />
+    </root>
+  </artifact>
+</component>
